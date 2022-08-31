@@ -1,0 +1,435 @@
+## Free text ##################################
+
+random: begin
+
+l: ft1
+t: textline
+i: {center} pair1_0_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft2
+t: textline
+i: {center} pair1_1_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft3
+t: textline
+i: {center} pair1_2_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft4
+t: textline
+i: {center} pair1_3_s.jpg
+q: How would you gender categorize this person?
+- 
+
+
+l: ft5
+t: textline
+i: {center} pair1_4_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft6
+t: textline
+i: {center} pair1_5_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft7
+t: textline
+i: {center} pair1_6_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft8
+t: textline
+i: {center} pair2_0_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft9
+t: textline
+i: {center} pair2_1_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft10
+t: textline
+i: {center} pair2_2_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft11
+t: textline
+i: {center} pair2_3_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft12
+t: textline
+i: {center} pair2_4_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft13
+t: textline
+i: {center} pair2_5_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft14
+t: textline
+i: {center} pair2_6_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft15
+t: textline
+i: {center} pair3_0_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft16
+t: textline
+i: {center} pair3_1_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft17
+t: textline
+i: {center} pair3_2_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft18
+t: textline
+i: {center} pair3_3_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft19
+t: textline
+i: {center} pair3_4_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft20
+t: textline
+i: {center} pair3_5_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft21
+t: textline
+i: {center} pair3_6_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft22
+t: textline
+i: {center} pair4_0_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft23
+t: textline
+i: {center} pair4_1_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft24
+t: textline
+i: {center} pair4_2_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft25
+t: textline
+i: {center} pair4_3_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft26
+t: textline
+i: {center} pair4_4_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft27
+t: textline
+i: {center} pair4_5_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft28
+t: textline
+i: {center} pair4_6_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft29
+t: textline
+i: {center} pair5_0_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft30
+t: textline
+i: {center} pair5_1_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft31
+t: textline
+i: {center} pair5_2_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft32
+t: textline
+i: {center} pair5_3_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft33
+t: textline
+i: {center} pair5_4_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft34
+t: textline
+i: {center} pair5_5_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft35
+t: textline
+i: {center} pair5_6_s.jpg
+q: How would you gender categorize this person?
+- 
+random: end
+
+l: break
+t: info
+q: You have completed half the experiment. <br><br> We suggest you take a short break before moving on with the second half.
+
+random: begin
+
+
+l: ft36
+t: textline
+i: {center} pair6_0_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft37
+t: textline
+i: {center} pair6_1_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft38
+t: textline
+i: {center} pair6_2_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft39
+t: textline
+i: {center} pair6_3_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft40
+t: textline
+i: {center} pair6_4_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft41
+t: textline
+i: {center} pair6_5_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft42
+t: textline
+i: {center} pair6_6_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft43
+t: textline
+i: {center} pair7_0_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft44
+t: textline
+i: {center} pair7_1_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft45
+t: textline
+i: {center} pair7_2_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft46
+t: textline
+i: {center} pair7_3_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft47
+t: textline
+i: {center} pair7_4_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft48
+t: textline
+i: {center} pair7_5_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft49
+t: textline
+i: {center} pair7_6_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft50
+t: textline
+i: {center} pair8_0_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft51
+t: textline
+i: {center} pair8_1_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft52
+t: textline
+i: {center} pair8_2_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft53
+t: textline
+i: {center} pair8_3_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft54
+t: textline
+i: {center} pair8_4_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft55
+t: textline
+i: {center} pair8_5_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft56
+t: textline
+i: {center} pair8_6_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft57
+t: textline
+i: {center} pair9_0_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft58
+t: textline
+i: {center} pair9_1_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft59
+t: textline
+i: {center} pair9_2_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft60
+t: textline
+i: {center} pair9_3_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft61
+t: textline
+i: {center} pair9_4_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft62
+t: textline
+i: {center} pair9_5_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft63
+t: textline
+i: {center} pair9_6_s.jpg
+q: How would you gender categorize this person?
+- 
+
+
+l: ft64
+t: textline
+i: {center} pair10_0_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft65
+t: textline
+i: {center} pair10_1_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft66
+t: textline
+i: {center} pair10_2_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft67
+t: textline
+i: {center} pair10_3_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft68
+t: textline
+i: {center} pair10_4_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft69
+t: textline
+i: {center} pair10_5_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft70
+t: textline
+i: {center} pair10_6_s.jpg
+q: How would you gender categorize this person?
+- 
+
+random: end 

@@ -1,0 +1,1954 @@
+StartDate,EndDate,Status,IPAddress,Progress,Duration (in seconds),Finished,RecordedDate,ResponseId,RecipientLastName,RecipientFirstName,RecipientEmail,ExternalReference,LocationLatitude,LocationLongitude,DistributionChannel,UserLanguage,Q166,Age,Gender,Prolifix,mdf_2_50_9,Q229_1,Q229_2,Q229_3,Q229_4,mdf_1_00_9,Q190_1,Q190_2,Q190_3,Q190_4,mdm_2_00_9,Q191_1,Q191_2,Q191_3,Q191_4,mdf_1_100_9,Q192_1,Q192_2,Q192_3,Q192_4,mdf_1_17_9,Q193_1,Q193_2,Q193_3,Q193_4,mdf_1_83_9,Q194_1,Q194_2,Q194_3,Q194_4,md_2_17_9,Q195_1,Q195_2,Q195_3,Q195_4,mdf_1_34_9,Q196_1,Q196_2,Q196_3,Q196_4,mdm_2_83_9,Q197_1,Q197_2,Q197_3,Q197_4,mdm_2_34_9,Q198_1,Q198_2,Q198_3,Q198_4,mdf_1_67_9,Q199_1,Q199_2,Q199_3,Q199_4,mdm_2_67_9,Q200_1,Q200_2,Q200_3,Q200_4,mdf_1_50_9,Q201_1,Q201_2,Q201_3,Q201_4,sd_1_00_9,Q202_1,Q202_2,Q202_3,Q202_4,sd_2_00_9,Q203_1,Q203_2,Q203_3,Q203_4,sd_1_100_9,Q204_1,Q204_2,Q204_3,Q204_4,sd_2_100_9,Q205_1,Q205_2,Q205_3,Q205_4,sd_1_17_9,Q206_1,Q206_2,Q206_3,Q206_4,sd_2_17_9,Q207_1,Q207_2,Q207_3,Q207_4,sd_1_83_9,Q208_1,Q208_2,Q208_3,Q208_4,sd_2_83_9,Q209_1,Q209_2,Q209_3,Q209_4,sd_1_34_9,Q210_1,Q210_2,Q210_3,Q210_4,sd_2_34_9,Q211_1,Q211_2,Q211_3,Q211_4,1sd_2_67_9,Q212_1,Q212_2,Q212_3,Q212_4,sd_3_67_9,Q213_1,Q213_2,Q213_3,Q213_4,sd_2_50_9,Q214_1,Q214_2,Q214_3,Q214_4,sd_3_50_9,Q215_1,Q215_2,Q215_3,Q215_4,ft_1_00,Q216_1,Q216_2,Q216_3,Q216_4,ft_1_17,Q217_1,Q217_2,Q217_3,Q217_4,ft_2_17,Q218_1,Q218_2,Q218_3,Q218_4,ft_1_34,Q219_1,Q219_2,Q219_3,Q219_4,ft_2_34,Q220_1,Q220_2,Q220_3,Q220_4,ft_1_50,Q221_1,Q221_2,Q221_3,Q221_4,ft_2_50,Q222_1,Q222_2,Q222_3,Q222_4,ft_1_83,Q223_1,Q223_2,Q223_3,Q223_4,ft_2_83,Q224_1,Q224_2,Q224_3,Q224_4,ft_1_67,Q225_1,Q225_2,Q225_3,Q225_4,ft_2_67,Q226_1,Q226_2,Q226_3,Q226_4,ft_1_100,Q227_1,Q227_2,Q227_3,Q227_4,ft_3_100,Q228_1,Q228_2,Q228_3,Q228_4,xb_1_00,Q229_1,Q229_2,Q229_3,Q229_4,xb_2_0,Q230_1,Q230_2,Q230_3,Q230_4,xb_1_100,Q231_1,Q231_2,Q231_3,Q231_4,xb_2_100,Q232_1,Q232_2,Q232_3,Q232_4,xb_1_17,Q233_1,Q233_2,Q233_3,Q233_4,xb_2_17,Q234_1,Q234_2,Q234_3,Q234_4,xb_1_83,Q235_1,Q235_2,Q235_3,Q235_4,xb_2_83,Q236_1,Q236_2,Q236_3,Q236_4,xb_1_34,Q237_1,Q237_2,Q237_3,Q237_4,xb_2_34,Q238_1,Q238_2,Q238_3,Q238_4,xb_1_67,Q239_1,Q239_2,Q239_3,Q239_4,xb_1_50,Q240_1,Q240_2,Q240_3,Q240_4,xb_3_67,Q241_1,Q241_2,Q241_3,Q241_4,xb_2_50,Q242_1,Q242_2,Q242_3,Q242_4,mc_1_00,Q243_1,Q243_2,Q243_3,Q243_4,MC_1_100,Q244_1,Q244_2,Q244_3,Q244_4,mc_2_00,Q245_1,Q245_2,Q245_3,Q245_4,mc_2_100,Q246_1,Q246_2,Q246_3,Q246_4,mc_1_17,Q247_1,Q247_2,Q247_3,Q247_4,mc_1_83,Q248_1,Q248_2,Q248_3,Q248_4,mc_2_17,Q249_1,Q249_2,Q249_3,Q249_4,mc_2_83,Q250_1,Q250_2,Q250_3,Q250_4,mc_3_67,Q251_1,Q251_2,Q251_3,Q251_4,mc_1_34,Q252_1,Q252_2,Q252_3,Q252_4,mc_2_34,Q253_1,Q253_2,Q253_3,Q253_4,mc_2_67,Q254_1,Q254_2,Q254_3,Q254_4,"!mc_1_50",Q255_1,Q255_2,Q255_3,Q255_4,mc_3_50,Q256_1,Q256_2,Q256_3,Q256_4,check1,check2,check3,check4,check5,masc,fem,script1,script 2,filler1,filler2,filler 3,filler 4,OI,Q,W,M,MC1,MC2,SDA1,SDA2,MDA1,MDA2,condition
+Start Date,End Date,Response Type,IP Address,Progress,Duration (in seconds),Finished,Recorded Date,Response ID,Recipient Last Name,Recipient First Name,Recipient Email,External Data Reference,Location Latitude,Location Longitude,Distribution Channel,User Language,"Welcome to a study about impression formation
+
+
+ 
+
+This study involves appraising people based on short descriptions. We estimate that the total amount of time to complete the study is approximately 5-10 minutes.
+As this study is a preliminary test of material to be used in a later experiment, you will also be asked a few questions about your experiences completing the survey.
+
+
+ 
+
+The corresponding author is Elli van Berlekom, a PhD candidate at Stockholm University. For further inquiries, please email the following address: elli.vanberlekom@psychology.su.se.
+Any data you input will be saved and used for research, but your response will be completely anonymous. Any results will only be published at the group level.",How old are you?,What is your gender identity?,Please enter your prolific ID,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+  
+
+ 
+
+ 
+
+[Field-Q] - 9",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - 9",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+ 
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+ 
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+ 
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+ 
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - 9",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - [Field-W]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+  
+
+ 
+
+ 
+
+[Field-Q] - 9",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,"[Field-OI]: 
+
+  
+
+ 
+
+ 
+
+[Field-Q]",How would you rate the person on the following traits? - Imaginative,How would you rate the person on the following traits? - Rational,How would you rate the person on the following traits? - Expressive,How would you rate the person on the following traits? - Mathematical,What did you think the survey was about?,"Did you feel like you were ""expected"" to answer in a certain way? How?",What was your impression of the gender categorization question?,What was your impression of the personality traits questions,What was your overall impression of the survey?,masc,fem,script1,script 2,filler1,filler2,filler 3,filler 4,OI,Q,W,M,MC1,MC2,SDA1,SDA2,MDA1,MDA2,condition
+"{""ImportId"":""startDate"",""timeZone"":""America/Denver""}","{""ImportId"":""endDate"",""timeZone"":""America/Denver""}","{""ImportId"":""status""}","{""ImportId"":""ipAddress""}","{""ImportId"":""progress""}","{""ImportId"":""duration""}","{""ImportId"":""finished""}","{""ImportId"":""recordedDate"",""timeZone"":""America/Denver""}","{""ImportId"":""_recordId""}","{""ImportId"":""recipientLastName""}","{""ImportId"":""recipientFirstName""}","{""ImportId"":""recipientEmail""}","{""ImportId"":""externalDataReference""}","{""ImportId"":""locationLatitude""}","{""ImportId"":""locationLongitude""}","{""ImportId"":""distributionChannel""}","{""ImportId"":""userLanguage""}","{""ImportId"":""QID218""}","{""ImportId"":""QID220_TEXT""}","{""ImportId"":""QID222_TEXT""}","{""ImportId"":""QID315_TEXT""}","{""ImportId"":""QID215_9""}","{""ImportId"":""QID229_1""}","{""ImportId"":""QID229_2""}","{""ImportId"":""QID229_3""}","{""ImportId"":""QID229_4""}","{""ImportId"":""QID196_9""}","{""ImportId"":""QID242_1""}","{""ImportId"":""QID242_2""}","{""ImportId"":""QID242_3""}","{""ImportId"":""QID242_4""}","{""ImportId"":""QID197_9""}","{""ImportId"":""QID243_1""}","{""ImportId"":""QID243_2""}","{""ImportId"":""QID243_3""}","{""ImportId"":""QID243_4""}","{""ImportId"":""QID199_9""}","{""ImportId"":""QID244_1""}","{""ImportId"":""QID244_2""}","{""ImportId"":""QID244_3""}","{""ImportId"":""QID244_4""}","{""ImportId"":""QID202_9""}","{""ImportId"":""QID245_1""}","{""ImportId"":""QID245_2""}","{""ImportId"":""QID245_3""}","{""ImportId"":""QID245_4""}","{""ImportId"":""QID205_9""}","{""ImportId"":""QID246_1""}","{""ImportId"":""QID246_2""}","{""ImportId"":""QID246_3""}","{""ImportId"":""QID246_4""}","{""ImportId"":""QID203_9""}","{""ImportId"":""QID247_1""}","{""ImportId"":""QID247_2""}","{""ImportId"":""QID247_3""}","{""ImportId"":""QID247_4""}","{""ImportId"":""QID208_9""}","{""ImportId"":""QID248_1""}","{""ImportId"":""QID248_2""}","{""ImportId"":""QID248_3""}","{""ImportId"":""QID248_4""}","{""ImportId"":""QID206_9""}","{""ImportId"":""QID249_1""}","{""ImportId"":""QID249_2""}","{""ImportId"":""QID249_3""}","{""ImportId"":""QID249_4""}","{""ImportId"":""QID209_9""}","{""ImportId"":""QID250_1""}","{""ImportId"":""QID250_2""}","{""ImportId"":""QID250_3""}","{""ImportId"":""QID250_4""}","{""ImportId"":""QID211_9""}","{""ImportId"":""QID251_1""}","{""ImportId"":""QID251_2""}","{""ImportId"":""QID251_3""}","{""ImportId"":""QID251_4""}","{""ImportId"":""QID212_9""}","{""ImportId"":""QID252_1""}","{""ImportId"":""QID252_2""}","{""ImportId"":""QID252_3""}","{""ImportId"":""QID252_4""}","{""ImportId"":""QID214_9""}","{""ImportId"":""QID253_1""}","{""ImportId"":""QID253_2""}","{""ImportId"":""QID253_3""}","{""ImportId"":""QID253_4""}","{""ImportId"":""QID91_9""}","{""ImportId"":""QID254_1""}","{""ImportId"":""QID254_2""}","{""ImportId"":""QID254_3""}","{""ImportId"":""QID254_4""}","{""ImportId"":""QID93_9""}","{""ImportId"":""QID255_1""}","{""ImportId"":""QID255_2""}","{""ImportId"":""QID255_3""}","{""ImportId"":""QID255_4""}","{""ImportId"":""QID92_9""}","{""ImportId"":""QID256_1""}","{""ImportId"":""QID256_2""}","{""ImportId"":""QID256_3""}","{""ImportId"":""QID256_4""}","{""ImportId"":""QID94_9""}","{""ImportId"":""QID257_1""}","{""ImportId"":""QID257_2""}","{""ImportId"":""QID257_3""}","{""ImportId"":""QID257_4""}","{""ImportId"":""QID97_9""}","{""ImportId"":""QID258_1""}","{""ImportId"":""QID258_2""}","{""ImportId"":""QID258_3""}","{""ImportId"":""QID258_4""}","{""ImportId"":""QID99_9""}","{""ImportId"":""QID259_1""}","{""ImportId"":""QID259_2""}","{""ImportId"":""QID259_3""}","{""ImportId"":""QID259_4""}","{""ImportId"":""QID98_9""}","{""ImportId"":""QID260_1""}","{""ImportId"":""QID260_2""}","{""ImportId"":""QID260_3""}","{""ImportId"":""QID260_4""}","{""ImportId"":""QID100_9""}","{""ImportId"":""QID261_1""}","{""ImportId"":""QID261_2""}","{""ImportId"":""QID261_3""}","{""ImportId"":""QID261_4""}","{""ImportId"":""QID104_9""}","{""ImportId"":""QID262_1""}","{""ImportId"":""QID262_2""}","{""ImportId"":""QID262_3""}","{""ImportId"":""QID262_4""}","{""ImportId"":""QID105_9""}","{""ImportId"":""QID263_1""}","{""ImportId"":""QID263_2""}","{""ImportId"":""QID263_3""}","{""ImportId"":""QID263_4""}","{""ImportId"":""QID106_9""}","{""ImportId"":""QID264_1""}","{""ImportId"":""QID264_2""}","{""ImportId"":""QID264_3""}","{""ImportId"":""QID264_4""}","{""ImportId"":""QID103_9""}","{""ImportId"":""QID265_1""}","{""ImportId"":""QID265_2""}","{""ImportId"":""QID265_3""}","{""ImportId"":""QID265_4""}","{""ImportId"":""QID110_9""}","{""ImportId"":""QID266_1""}","{""ImportId"":""QID266_2""}","{""ImportId"":""QID266_3""}","{""ImportId"":""QID266_4""}","{""ImportId"":""QID111_9""}","{""ImportId"":""QID267_1""}","{""ImportId"":""QID267_2""}","{""ImportId"":""QID267_3""}","{""ImportId"":""QID267_4""}","{""ImportId"":""QID175_TEXT""}","{""ImportId"":""QID268_1""}","{""ImportId"":""QID268_2""}","{""ImportId"":""QID268_3""}","{""ImportId"":""QID268_4""}","{""ImportId"":""QID181_TEXT""}","{""ImportId"":""QID269_1""}","{""ImportId"":""QID269_2""}","{""ImportId"":""QID269_3""}","{""ImportId"":""QID269_4""}","{""ImportId"":""QID182_TEXT""}","{""ImportId"":""QID270_1""}","{""ImportId"":""QID270_2""}","{""ImportId"":""QID270_3""}","{""ImportId"":""QID270_4""}","{""ImportId"":""QID187_TEXT""}","{""ImportId"":""QID271_1""}","{""ImportId"":""QID271_2""}","{""ImportId"":""QID271_3""}","{""ImportId"":""QID271_4""}","{""ImportId"":""QID188_TEXT""}","{""ImportId"":""QID272_1""}","{""ImportId"":""QID272_2""}","{""ImportId"":""QID272_3""}","{""ImportId"":""QID272_4""}","{""ImportId"":""QID193_TEXT""}","{""ImportId"":""QID273_1""}","{""ImportId"":""QID273_2""}","{""ImportId"":""QID273_3""}","{""ImportId"":""QID273_4""}","{""ImportId"":""QID194_TEXT""}","{""ImportId"":""QID274_1""}","{""ImportId"":""QID274_2""}","{""ImportId"":""QID274_3""}","{""ImportId"":""QID274_4""}","{""ImportId"":""QID184_TEXT""}","{""ImportId"":""QID275_1""}","{""ImportId"":""QID275_2""}","{""ImportId"":""QID275_3""}","{""ImportId"":""QID275_4""}","{""ImportId"":""QID185_TEXT""}","{""ImportId"":""QID276_1""}","{""ImportId"":""QID276_2""}","{""ImportId"":""QID276_3""}","{""ImportId"":""QID276_4""}","{""ImportId"":""QID190_TEXT""}","{""ImportId"":""QID277_1""}","{""ImportId"":""QID277_2""}","{""ImportId"":""QID277_3""}","{""ImportId"":""QID277_4""}","{""ImportId"":""QID191_TEXT""}","{""ImportId"":""QID278_1""}","{""ImportId"":""QID278_2""}","{""ImportId"":""QID278_3""}","{""ImportId"":""QID278_4""}","{""ImportId"":""QID178_TEXT""}","{""ImportId"":""QID279_1""}","{""ImportId"":""QID279_2""}","{""ImportId"":""QID279_3""}","{""ImportId"":""QID279_4""}","{""ImportId"":""QID180_TEXT""}","{""ImportId"":""QID280_1""}","{""ImportId"":""QID280_2""}","{""ImportId"":""QID280_3""}","{""ImportId"":""QID280_4""}","{""ImportId"":""QID77""}","{""ImportId"":""QID281_1""}","{""ImportId"":""QID281_2""}","{""ImportId"":""QID281_3""}","{""ImportId"":""QID281_4""}","{""ImportId"":""QID78""}","{""ImportId"":""QID282_1""}","{""ImportId"":""QID282_2""}","{""ImportId"":""QID282_3""}","{""ImportId"":""QID282_4""}","{""ImportId"":""QID90""}","{""ImportId"":""QID283_1""}","{""ImportId"":""QID283_2""}","{""ImportId"":""QID283_3""}","{""ImportId"":""QID283_4""}","{""ImportId"":""QID88""}","{""ImportId"":""QID284_1""}","{""ImportId"":""QID284_2""}","{""ImportId"":""QID284_3""}","{""ImportId"":""QID284_4""}","{""ImportId"":""QID74""}","{""ImportId"":""QID285_1""}","{""ImportId"":""QID285_2""}","{""ImportId"":""QID285_3""}","{""ImportId"":""QID285_4""}","{""ImportId"":""QID75""}","{""ImportId"":""QID286_1""}","{""ImportId"":""QID286_2""}","{""ImportId"":""QID286_3""}","{""ImportId"":""QID286_4""}","{""ImportId"":""QID87""}","{""ImportId"":""QID287_1""}","{""ImportId"":""QID287_2""}","{""ImportId"":""QID287_3""}","{""ImportId"":""QID287_4""}","{""ImportId"":""QID223""}","{""ImportId"":""QID288_1""}","{""ImportId"":""QID288_2""}","{""ImportId"":""QID288_3""}","{""ImportId"":""QID288_4""}","{""ImportId"":""QID84""}","{""ImportId"":""QID289_1""}","{""ImportId"":""QID289_2""}","{""ImportId"":""QID289_3""}","{""ImportId"":""QID289_4""}","{""ImportId"":""QID72""}","{""ImportId"":""QID290_1""}","{""ImportId"":""QID290_2""}","{""ImportId"":""QID290_3""}","{""ImportId"":""QID290_4""}","{""ImportId"":""QID82""}","{""ImportId"":""QID291_1""}","{""ImportId"":""QID291_2""}","{""ImportId"":""QID291_3""}","{""ImportId"":""QID291_4""}","{""ImportId"":""QID64""}","{""ImportId"":""QID292_1""}","{""ImportId"":""QID292_2""}","{""ImportId"":""QID292_3""}","{""ImportId"":""QID292_4""}","{""ImportId"":""QID71""}","{""ImportId"":""QID293_1""}","{""ImportId"":""QID293_2""}","{""ImportId"":""QID293_3""}","{""ImportId"":""QID293_4""}","{""ImportId"":""QID67""}","{""ImportId"":""QID294_1""}","{""ImportId"":""QID294_2""}","{""ImportId"":""QID294_3""}","{""ImportId"":""QID294_4""}","{""ImportId"":""QID112""}","{""ImportId"":""QID295_1""}","{""ImportId"":""QID295_2""}","{""ImportId"":""QID295_3""}","{""ImportId"":""QID295_4""}","{""ImportId"":""QID113""}","{""ImportId"":""QID296_1""}","{""ImportId"":""QID296_2""}","{""ImportId"":""QID296_3""}","{""ImportId"":""QID296_4""}","{""ImportId"":""QID114""}","{""ImportId"":""QID297_1""}","{""ImportId"":""QID297_2""}","{""ImportId"":""QID297_3""}","{""ImportId"":""QID297_4""}","{""ImportId"":""QID115""}","{""ImportId"":""QID298_1""}","{""ImportId"":""QID298_2""}","{""ImportId"":""QID298_3""}","{""ImportId"":""QID298_4""}","{""ImportId"":""QID118""}","{""ImportId"":""QID299_1""}","{""ImportId"":""QID299_2""}","{""ImportId"":""QID299_3""}","{""ImportId"":""QID299_4""}","{""ImportId"":""QID119""}","{""ImportId"":""QID300_1""}","{""ImportId"":""QID300_2""}","{""ImportId"":""QID300_3""}","{""ImportId"":""QID300_4""}","{""ImportId"":""QID120""}","{""ImportId"":""QID301_1""}","{""ImportId"":""QID301_2""}","{""ImportId"":""QID301_3""}","{""ImportId"":""QID301_4""}","{""ImportId"":""QID121""}","{""ImportId"":""QID302_1""}","{""ImportId"":""QID302_2""}","{""ImportId"":""QID302_3""}","{""ImportId"":""QID302_4""}","{""ImportId"":""QID124""}","{""ImportId"":""QID303_1""}","{""ImportId"":""QID303_2""}","{""ImportId"":""QID303_3""}","{""ImportId"":""QID303_4""}","{""ImportId"":""QID125""}","{""ImportId"":""QID304_1""}","{""ImportId"":""QID304_2""}","{""ImportId"":""QID304_3""}","{""ImportId"":""QID304_4""}","{""ImportId"":""QID126""}","{""ImportId"":""QID305_1""}","{""ImportId"":""QID305_2""}","{""ImportId"":""QID305_3""}","{""ImportId"":""QID305_4""}","{""ImportId"":""QID127""}","{""ImportId"":""QID306_1""}","{""ImportId"":""QID306_2""}","{""ImportId"":""QID306_3""}","{""ImportId"":""QID306_4""}","{""ImportId"":""QID130""}","{""ImportId"":""QID307_1""}","{""ImportId"":""QID307_2""}","{""ImportId"":""QID307_3""}","{""ImportId"":""QID307_4""}","{""ImportId"":""QID131""}","{""ImportId"":""QID308_1""}","{""ImportId"":""QID308_2""}","{""ImportId"":""QID308_3""}","{""ImportId"":""QID308_4""}","{""ImportId"":""QID311_TEXT""}","{""ImportId"":""QID312_TEXT""}","{""ImportId"":""QID314_TEXT""}","{""ImportId"":""QID316_TEXT""}","{""ImportId"":""QID313_TEXT""}","{""ImportId"":""masc""}","{""ImportId"":""fem""}","{""ImportId"":""script1""}","{""ImportId"":""script 2""}","{""ImportId"":""filler1""}","{""ImportId"":""filler2""}","{""ImportId"":""filler 3""}","{""ImportId"":""filler 4""}","{""ImportId"":""OI""}","{""ImportId"":""Q""}","{""ImportId"":""W""}","{""ImportId"":""M""}","{""ImportId"":""MC1""}","{""ImportId"":""MC2""}","{""ImportId"":""SDA1""}","{""ImportId"":""SDA2""}","{""ImportId"":""MDA1""}","{""ImportId"":""MDA2""}","{""ImportId"":""condition""}"
+2022-04-28 06:33:20,2022-04-28 06:39:51,IP Address,130.237.240.129,100,390,True,2022-04-28 06:39:51,R_2rOcBxF8ncA2bVb,,,,,59.3274,18.0653,anonymous,EN,Please confirm that you have read the above and consent to participate in the study,2222,IGNORE,IGNORE,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,adsfa,,,,,"competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure","affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Now fem
+ fem = ""affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm"";
+    fem = fem.split("","");
+    r2 = Math.floor(Math.random() * fem.length);
+ 
+   // Store the selected named and remove it from the list
+    property4 = fem[r1].trim();
+    fem.splice(r2, 1);
+ 
+   // Store the selected named and remove it from the list
+    r2 = Math.floor(Math.random() * fem.length);
+ property5 = fem[r2].trim();
+    fem.splice(r2, 1);
+ 
+ // Store the selected named and remove it from the list
+     r2 = Math.floor(Math.random() * fem.length);  
+ property6 = fem[r2].trim();
+    fem.splice(r2, 1);
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 + "", "" + property4 + "", "" + property5 + "", "" + property6  
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;",Placeholder question,Placeholder question 2,Placeholder question 3,Placeholder question 4,Please imagine a person with the following traits,<b>How wold you gender categorize this person?<b>,Woman,Man,Other,I don't know,A woman,A man,Not a woman,Not a man,md
+2022-04-28 06:59:45,2022-04-28 07:10:15,IP Address,24.47.216.60,100,630,True,2022-04-28 07:10:16,R_26m80CXIXeja9AJ,,,,,40.9451,-74.2531,anonymous,EN,Please confirm that you have read the above and consent to participate in the study,65,female,5eb6f666c792cd6143878d27,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,${e://Field/M},6,5,5,6,${e://Field/W},Very much  7,Very much  7,Very much  7,5,${e://Field/M},5,5,5,5,${e://Field/W},6,6,6,3,${e://Field/M},5,5,6,Very much  7,${e://Field/W},Very much  7,Very much  7,Very much  7,3,${e://Field/M},6,Very much  7,6,Very much  7,${e://Field/M},Very much  7,6,Very much  7,Very much  7,${e://Field/W},Very much  7,Very much  7,Very much  7,5,${e://Field/M},6,6,6,4,${e://Field/M},5,6,6,4,${e://Field/W},Very much  7,Very much  7,Very much  7,Very much  7,${e://Field/W},Very much  7,Very much  7,Very much  7,5,${e://Field/M},5,5,5,6,how different or not different genders are,no,i think both genders have same and different traits..depends are person," man or woman some are stronger than others",i think mostly women are more nuturing than men,"competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure","affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Now fem
+ fem = ""affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm"";
+    fem = fem.split("","");
+    r2 = Math.floor(Math.random() * fem.length);
+ 
+   // Store the selected named and remove it from the list
+    property4 = fem[r1].trim();
+    fem.splice(r2, 1);
+ 
+   // Store the selected named and remove it from the list
+    r2 = Math.floor(Math.random() * fem.length);
+ property5 = fem[r2].trim();
+    fem.splice(r2, 1);
+ 
+ // Store the selected named and remove it from the list
+     r2 = Math.floor(Math.random() * fem.length);  
+ property6 = fem[r2].trim();
+    fem.splice(r2, 1);
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 + "", "" + property4 + "", "" + property5 + "", "" + property6  
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;",Placeholder question,Placeholder question 2,Placeholder question 3,Placeholder question 4,Please imagine a person with the following traits,<b>How wold you gender categorize this person?<b>,Woman,Man,Other,I don't know,A woman,A man,Not a woman,Not a man,mc
+2022-04-28 07:05:00,2022-04-28 07:13:05,IP Address,107.13.218.71,100,485,True,2022-04-28 07:13:05,R_p5Jgc8aVJorntCx,,,,,35.6353,-78.4503,anonymous,EN,Please confirm that you have read the above and consent to participate in the study,34,male,5e5d641259df370779040d9e,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,${e://Field/M},3,4,Very much  7,5,${e://Field/MC2},6,5,5,5,${e://Field/M},3,4,6,3,${e://Field/W},Very much  7,6,Very much  7,4,${e://Field/MC2},4,6,3,3,${e://Field/W},6,6,6,4,${e://Field/MC2},4,5,5,4,${e://Field/W},6,5,6,4,${e://Field/W},6,6,6,5,${e://Field/MC2},5,5,6,4,${e://Field/MC2},5,6,6,6,${e://Field/W},6,5,Very much  7,3,${e://Field/MC2},4,6,5,3,${e://Field/MC2},5,4,5,3,Which attributes are more closely associated with which gender,No,It seems central to the concept of what you're looking for,It was a little hard to form an opinion based on so little information,Easy to understand and good pace,"competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure","affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Now fem
+ fem = ""affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm"";
+    fem = fem.split("","");
+    r2 = Math.floor(Math.random() * fem.length);
+ 
+   // Store the selected named and remove it from the list
+    property4 = fem[r1].trim();
+    fem.splice(r2, 1);
+ 
+   // Store the selected named and remove it from the list
+    r2 = Math.floor(Math.random() * fem.length);
+ property5 = fem[r2].trim();
+    fem.splice(r2, 1);
+ 
+ // Store the selected named and remove it from the list
+     r2 = Math.floor(Math.random() * fem.length);  
+ property6 = fem[r2].trim();
+    fem.splice(r2, 1);
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 + "", "" + property4 + "", "" + property5 + "", "" + property6  
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;",Placeholder question,Placeholder question 2,Placeholder question 3,Placeholder question 4,Please imagine a person with the following traits,<b>How wold you gender categorize this person?<b>,Woman,Man,Other,I don't know,A woman,A man,Not a woman,Not a man,mc
+2022-04-28 07:04:38,2022-04-28 07:21:32,IP Address,69.116.77.113,100,1014,True,2022-04-28 07:21:33,R_3QJKTAFlLH7D0Hs,,,,,40.0881,-74.1963,anonymous,EN,Please confirm that you have read the above and consent to participate in the study,82,his/him,61521b6c4e475047457baddb,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,93,2,Very little 1,5,4,87,2,6,2,4,13,6,2,6,4,0,6,3,6,4,91,2,5,4,4,88,6,5,5,4,11,6,4,5,4,17,6,4,6,4,78,3,6,5,4,94,2,2,6,4,17,5,3,5,4,81,3,5,4,4,17,6,3,6,4,12,6,3,6,4,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,male and female emotional characteristics,"softer characteristics were expected to be female and dominate, male","expected to be be male/female definitions, such as soft female and dominate to be male",the mathematical question didnt work because its not a personality trait in my opinion,has some problems,"competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure","affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Now fem
+ fem = ""affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm"";
+    fem = fem.split("","");
+    r2 = Math.floor(Math.random() * fem.length);
+ 
+   // Store the selected named and remove it from the list
+    property4 = fem[r1].trim();
+    fem.splice(r2, 1);
+ 
+   // Store the selected named and remove it from the list
+    r2 = Math.floor(Math.random() * fem.length);
+ property5 = fem[r2].trim();
+    fem.splice(r2, 1);
+ 
+ // Store the selected named and remove it from the list
+     r2 = Math.floor(Math.random() * fem.length);  
+ property6 = fem[r2].trim();
+    fem.splice(r2, 1);
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 + "", "" + property4 + "", "" + property5 + "", "" + property6  
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;",Placeholder question,Placeholder question 2,Placeholder question 3,Placeholder question 4,Please imagine a person with the following traits,<b>How wold you gender categorize this person?<b>,Woman,Man,Other,I don't know,A woman,A man,Not a woman,Not a man,sd
+2022-04-28 07:12:04,2022-04-28 07:24:27,IP Address,104.171.171.57,100,743,True,2022-04-28 07:24:28,R_22wOUT6OVJ8iakn,,,,,39.0469,-77.4903,anonymous,EN,Please confirm that you have read the above and consent to participate in the study,27,Female,6128fd492700069e594016c9,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,${e://Field/M},3,4,5,6,${e://Field/M},Very little 1,5,Very much  7,Very much  7,${e://Field/W},6,Very much  7,Very much  7,4,${e://Field/W},6,6,4,2,${e://Field/W},Very much  7,3,6,2,${e://Field/M},5,5,4,3,${e://Field/W},6,5,4,2,${e://Field/W},6,4,4,3,${e://Field/W},3,5,6,Very much  7,${e://Field/M},2,5,Very much  7,Very much  7,${e://Field/W},6,5,6,2,${e://Field/W},3,Very much  7,6,6,${e://Field/M},6,5,4,3,${e://Field/M},3,5,6,Very much  7,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,it was trying to know how someone differtiate others with ther traits.,no,"it was okay ",i think it was enough to judge someone,"i liked it ","competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure","affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Now fem
+ fem = ""affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm"";
+    fem = fem.split("","");
+    r2 = Math.floor(Math.random() * fem.length);
+ 
+   // Store the selected named and remove it from the list
+    property4 = fem[r1].trim();
+    fem.splice(r2, 1);
+ 
+   // Store the selected named and remove it from the list
+    r2 = Math.floor(Math.random() * fem.length);
+ property5 = fem[r2].trim();
+    fem.splice(r2, 1);
+ 
+ // Store the selected named and remove it from the list
+     r2 = Math.floor(Math.random() * fem.length);  
+ property6 = fem[r2].trim();
+    fem.splice(r2, 1);
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 + "", "" + property4 + "", "" + property5 + "", "" + property6  
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;",Placeholder question,Placeholder question 2,Placeholder question 3,Placeholder question 4,Please imagine a person with the following traits,<b>How wold you gender categorize this person?<b>,Woman,Man,Other,I don't know,A woman,A man,Not a woman,Not a man,xb
+2022-04-28 07:16:54,2022-04-28 07:27:41,IP Address,76.86.129.247,100,646,True,2022-04-28 07:27:42,R_r9nNNDLUzJSQttD,,,,,34.1211,-117.4362,anonymous,EN,Please confirm that you have read the above and consent to participate in the study,41,Female,5efc7ce3a68c6601284caaf0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,4,6,6,5,,5,6,6,6,,6,6,Very much  7,Very much  7,,5,6,Very much  7,Very much  7,,4,Very much  7,Very much  7,4,,6,Very much  7,Very much  7,6,,Very much  7,6,6,5,,6,6,Very much  7,6,,5,6,6,5,,6,Very much  7,Very much  7,5,,Very much  7,Very much  7,Very much  7,Very much  7,,Very much  7,Very much  7,Very much  7,6,,6,Very much  7,4,5,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,human character,no,no,a lot of,good,"competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure","affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Now fem
+ fem = ""affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm"";
+    fem = fem.split("","");
+    r2 = Math.floor(Math.random() * fem.length);
+ 
+   // Store the selected named and remove it from the list
+    property4 = fem[r1].trim();
+    fem.splice(r2, 1);
+ 
+   // Store the selected named and remove it from the list
+    r2 = Math.floor(Math.random() * fem.length);
+ property5 = fem[r2].trim();
+    fem.splice(r2, 1);
+ 
+ // Store the selected named and remove it from the list
+     r2 = Math.floor(Math.random() * fem.length);  
+ property6 = fem[r2].trim();
+    fem.splice(r2, 1);
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 + "", "" + property4 + "", "" + property5 + "", "" + property6  
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;",Placeholder question,Placeholder question 2,Placeholder question 3,Placeholder question 4,Please imagine a person with the following traits,<b>How wold you gender categorize this person?<b>,Woman,Man,Other,I don't know,A woman,A man,Not a woman,Not a man,ft
+2022-04-28 07:19:09,2022-04-28 07:28:15,IP Address,76.23.244.76,100,545,True,2022-04-28 07:28:19,R_3e915uMgIiNR9Ul,,,,,42.473,-72.6189,anonymous,EN,Please confirm that you have read the above and consent to participate in the study,31,Male,60dd1732b2c33c6c64c1e674,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,${e://Field/M},6,6,6,5,${e://Field/M},6,5,6,6,${e://Field/W},5,4,6,5,${e://Field/W},6,5,5,3,${e://Field/M},6,6,5,5,${e://Field/M},6,Very much  7,6,6,${e://Field/M},5,5,6,6,${e://Field/W},5,5,4,2,${e://Field/W},3,3,4,2,${e://Field/W},3,4,6,2,${e://Field/M},6,5,Very much  7,4,${e://Field/M},6,5,5,6,${e://Field/W},5,4,4,3,${e://Field/M},6,6,6,5,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure","affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Now fem
+ fem = ""affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm"";
+    fem = fem.split("","");
+    r2 = Math.floor(Math.random() * fem.length);
+ 
+   // Store the selected named and remove it from the list
+    property4 = fem[r1].trim();
+    fem.splice(r2, 1);
+ 
+   // Store the selected named and remove it from the list
+    r2 = Math.floor(Math.random() * fem.length);
+ property5 = fem[r2].trim();
+    fem.splice(r2, 1);
+ 
+ // Store the selected named and remove it from the list
+     r2 = Math.floor(Math.random() * fem.length);  
+ property6 = fem[r2].trim();
+    fem.splice(r2, 1);
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 + "", "" + property4 + "", "" + property5 + "", "" + property6  
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;",Placeholder question,Placeholder question 2,Placeholder question 3,Placeholder question 4,Please imagine a person with the following traits,<b>How wold you gender categorize this person?<b>,Woman,Man,Other,I don't know,A woman,A man,Not a woman,Not a man,xb
+2022-04-28 07:22:46,2022-04-28 07:31:09,IP Address,75.190.168.50,100,503,True,2022-04-28 07:31:10,R_2e9Ei8PLfcgGwvI,,,,,35.9825,-78.5376,anonymous,EN,Please confirm that you have read the above and consent to participate in the study,32,male,5a0a03fa074b190001251b3c,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,${e://Field/M},2,6,3,6,${e://Field/W},5,6,6,4,,5,4,6,6,${e://Field/W},5,4,6,3,${e://Field/M},3,4,5,5,${e://Field/MC2},5,5,2,3,${e://Field/MC2},4,3,6,4,${e://Field/W},6,4,6,6,${e://Field/W},5,4,2,5,${e://Field/MC2},5,6,4,6,${e://Field/MC2},4,4,5,5,${e://Field/W},3,6,6,6,${e://Field/MC2},4,6,6,4,${e://Field/MC2},6,3,5,4,How I percieved the gender of someone based on afew descriptive words.,No... I don't think so,They must be trying to gauge if I had an assumption about their gender based on description.,They must be trying to gauge if I had an assumption about their gender based on description.,"It was, enjoyable! Thanks!","competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure","affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Now fem
+ fem = ""affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm"";
+    fem = fem.split("","");
+    r2 = Math.floor(Math.random() * fem.length);
+ 
+   // Store the selected named and remove it from the list
+    property4 = fem[r1].trim();
+    fem.splice(r2, 1);
+ 
+   // Store the selected named and remove it from the list
+    r2 = Math.floor(Math.random() * fem.length);
+ property5 = fem[r2].trim();
+    fem.splice(r2, 1);
+ 
+ // Store the selected named and remove it from the list
+     r2 = Math.floor(Math.random() * fem.length);  
+ property6 = fem[r2].trim();
+    fem.splice(r2, 1);
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 + "", "" + property4 + "", "" + property5 + "", "" + property6  
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;",Placeholder question,Placeholder question 2,Placeholder question 3,Placeholder question 4,Please imagine a person with the following traits,<b>How wold you gender categorize this person?<b>,Woman,Man,Other,I don't know,A woman,A man,Not a woman,Not a man,mc
+2022-04-28 07:23:58,2022-04-28 07:32:10,IP Address,70.16.158.88,100,491,True,2022-04-28 07:32:10,R_1jqcghrdvKpDyqb,,,,,40.6027,-75.4778,anonymous,EN,Please confirm that you have read the above and consent to participate in the study,51,Female,5d41ee2257382300015d1560,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,92,4,6,3,6,85,3,5,3,5,2,5,3,6,3,1,5,3,6,3,88,4,6,3,5,70,3,6,4,5,8,5,3,6,3,3,5,3,6,3,51,3,4,5,4,74,3,6,4,5,14,5,3,6,3,6,5,3,6,2,79,4,5,3,5,90,4,5,5,4,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,I don't know,No,Good,I had a good impression,It was a very good survey,"competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure","affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Now fem
+ fem = ""affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm"";
+    fem = fem.split("","");
+    r2 = Math.floor(Math.random() * fem.length);
+ 
+   // Store the selected named and remove it from the list
+    property4 = fem[r1].trim();
+    fem.splice(r2, 1);
+ 
+   // Store the selected named and remove it from the list
+    r2 = Math.floor(Math.random() * fem.length);
+ property5 = fem[r2].trim();
+    fem.splice(r2, 1);
+ 
+ // Store the selected named and remove it from the list
+     r2 = Math.floor(Math.random() * fem.length);  
+ property6 = fem[r2].trim();
+    fem.splice(r2, 1);
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 + "", "" + property4 + "", "" + property5 + "", "" + property6  
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;",Placeholder question,Placeholder question 2,Placeholder question 3,Placeholder question 4,Please imagine a person with the following traits,<b>How wold you gender categorize this person?<b>,Woman,Man,Other,I don't know,A woman,A man,Not a woman,Not a man,sd
+2022-04-28 07:25:05,2022-04-28 07:33:59,IP Address,173.16.153.99,100,534,True,2022-04-28 07:34:00,R_2wyOqHJHIhKSCYE,,,,,32.041,-84.2162,anonymous,EN,Please confirm that you have read the above and consent to participate in the study,58,female,5f371531d5b7e818ee0cf328,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,${e://Field/M},5,6,6,5,${e://Field/M},4,6,Very much  7,6,${e://Field/W},6,6,Very much  7,5,${e://Field/W},6,6,Very much  7,4,${e://Field/M},4,6,Very much  7,4,${e://Field/M},4,6,5,6,${e://Field/W},6,5,5,4,${e://Field/W},5,Very much  7,Very much  7,6,${e://Field/W},5,6,4,6,${e://Field/M},5,6,4,6,${e://Field/W},5,5,Very much  7,4,${e://Field/W},6,5,Very much  7,6,${e://Field/W},6,5,6,6,${e://Field/W},5,4,4,6,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,judging characteristics,no. was asked who I think it was,mostly were almost all the same,its alot of others coulda been added,I think it was fun to do,"competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure","affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Now fem
+ fem = ""affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm"";
+    fem = fem.split("","");
+    r2 = Math.floor(Math.random() * fem.length);
+ 
+   // Store the selected named and remove it from the list
+    property4 = fem[r1].trim();
+    fem.splice(r2, 1);
+ 
+   // Store the selected named and remove it from the list
+    r2 = Math.floor(Math.random() * fem.length);
+ property5 = fem[r2].trim();
+    fem.splice(r2, 1);
+ 
+ // Store the selected named and remove it from the list
+     r2 = Math.floor(Math.random() * fem.length);  
+ property6 = fem[r2].trim();
+    fem.splice(r2, 1);
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 + "", "" + property4 + "", "" + property5 + "", "" + property6  
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;",Placeholder question,Placeholder question 2,Placeholder question 3,Placeholder question 4,Please imagine a person with the following traits,<b>How wold you gender categorize this person?<b>,Woman,Man,Other,I don't know,A woman,A man,Not a woman,Not a man,xb
+2022-04-28 07:15:03,2022-04-28 07:35:05,IP Address,67.176.236.235,100,1202,True,2022-04-28 07:35:06,R_31pm7OFqZ6dXzFw,,,,,39.7697,-89.6886,anonymous,EN,Please confirm that you have read the above and consent to participate in the study,22,Female,600dd1ea271cf06201979123,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"Semi cold, reserved",4,3,3,3,Unbothered,3,4,3,4,Energetic,6,5,5,5,Empathetic,5,5,5,4,Confident,6,5,4,5,Confident,5,5,4,4,Excited,5,5,6,3,Inner thinker,5,5,5,4,Able to maintain relationships,4,4,5,3,Inner thinker,5,4,4,3,Sympathetic,5,4,5,4,Gentle,5,5,5,4,Empathetic,4,4,5,3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Gauge participant response on an open ended question,No,None - I assumed some people might have to type a specific passage for their gender. It wasn't necessary for me,N/A Normal,Difficult to come up with answers for the open ended questions,"competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure","affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Now fem
+ fem = ""affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm"";
+    fem = fem.split("","");
+    r2 = Math.floor(Math.random() * fem.length);
+ 
+   // Store the selected named and remove it from the list
+    property4 = fem[r1].trim();
+    fem.splice(r2, 1);
+ 
+   // Store the selected named and remove it from the list
+    r2 = Math.floor(Math.random() * fem.length);
+ property5 = fem[r2].trim();
+    fem.splice(r2, 1);
+ 
+ // Store the selected named and remove it from the list
+     r2 = Math.floor(Math.random() * fem.length);  
+ property6 = fem[r2].trim();
+    fem.splice(r2, 1);
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 + "", "" + property4 + "", "" + property5 + "", "" + property6  
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;",Placeholder question,Placeholder question 2,Placeholder question 3,Placeholder question 4,Please imagine a person with the following traits,<b>How wold you gender categorize this person?<b>,Woman,Man,Other,I don't know,A woman,A man,Not a woman,Not a man,ft
+2022-04-28 07:28:00,2022-04-28 07:35:30,IP Address,165.214.12.85,100,450,True,2022-04-28 07:35:30,R_2CdMkiQRO3X7p1T,,,,,32.9103,-96.7283,anonymous,EN,Please confirm that you have read the above and consent to participate in the study,30,female,61079a59dc92d8a2d47adc3f,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,male,Very little 1,5,Very little 1,Very much  7,male,3,4,Very little 1,6,male,2,6,2,Very much  7,female,3,6,5,4,male,5,5,6,5,male,6,3,4,6,female,4,5,Very much  7,4,female,5,Very much  7,Very much  7,5,female,3,Very much  7,2,5,female,6,6,Very much  7,4,female,5,5,Very much  7,3,female,6,5,Very much  7,4,female,5,6,Very much  7,3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,perceptions of gender roles on personality characteristics,"a little bit. I felt like if i answered one way for one description, I had to repeat that answer for further descriptions.",a little confusing on if i could mention genders that are not strictly male/female. the lack of direction (which was maybe purposeful) had me overthinking!,a bit repetitive. by the end they all seemed the same.,it was interesting and unique and i would be interested to know the purpose of the research,"competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure","affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Now fem
+ fem = ""affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm"";
+    fem = fem.split("","");
+    r2 = Math.floor(Math.random() * fem.length);
+ 
+   // Store the selected named and remove it from the list
+    property4 = fem[r1].trim();
+    fem.splice(r2, 1);
+ 
+   // Store the selected named and remove it from the list
+    r2 = Math.floor(Math.random() * fem.length);
+ property5 = fem[r2].trim();
+    fem.splice(r2, 1);
+ 
+ // Store the selected named and remove it from the list
+     r2 = Math.floor(Math.random() * fem.length);  
+ property6 = fem[r2].trim();
+    fem.splice(r2, 1);
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 + "", "" + property4 + "", "" + property5 + "", "" + property6  
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;",Placeholder question,Placeholder question 2,Placeholder question 3,Placeholder question 4,Please imagine a person with the following traits,<b>How wold you gender categorize this person?<b>,Woman,Man,Other,I don't know,A woman,A man,Not a woman,Not a man,ft
+2022-04-28 07:26:30,2022-04-28 07:36:26,IP Address,173.73.119.204,100,595,True,2022-04-28 07:36:26,R_12x7vVIjimxVain,,,,,38.9064,-77.1278,anonymous,EN,Please confirm that you have read the above and consent to participate in the study,49,Female,5e05ab290db892fcd8036b1a,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,${e://Field/M},3,6,5,Very much  7,${e://Field/W},Very much  7,Very much  7,Very much  7,5,${e://Field/M},4,Very much  7,5,Very much  7,${e://Field/W},6,Very much  7,Very much  7,5,${e://Field/M},3,5,Very much  7,Very much  7,${e://Field/W},Very much  7,Very much  7,Very much  7,5,${e://Field/W},5,6,6,6,${e://Field/W},Very much  7,Very much  7,Very much  7,5,${e://Field/M},5,3,6,5,${e://Field/M},5,5,6,6,${e://Field/W},6,Very much  7,Very much  7,Very much  7,${e://Field/W},Very much  7,Very much  7,Very much  7,Very much  7,${e://Field/W},3,3,5,5,${e://Field/M},5,6,6,6,"Whether or not we associated ""mathematical"", and also the other words, more for a man than for a woman.","Yes, since the small number of adjectives used in carefully curated orders were obviously fishing for reactions.",Fine and acceptable - I understand that this is a fascinating category to research.,Also fascinating... We are all always trying to understand personality traits and what drives them and what might enhance or curtail certain traits.,Challenging to answer and I had to combine concentrating hard on the words with the feeling in my gut.,"competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure","affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Now fem
+ fem = ""affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm"";
+    fem = fem.split("","");
+    r2 = Math.floor(Math.random() * fem.length);
+ 
+   // Store the selected named and remove it from the list
+    property4 = fem[r1].trim();
+    fem.splice(r2, 1);
+ 
+   // Store the selected named and remove it from the list
+    r2 = Math.floor(Math.random() * fem.length);
+ property5 = fem[r2].trim();
+    fem.splice(r2, 1);
+ 
+ // Store the selected named and remove it from the list
+     r2 = Math.floor(Math.random() * fem.length);  
+ property6 = fem[r2].trim();
+    fem.splice(r2, 1);
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 + "", "" + property4 + "", "" + property5 + "", "" + property6  
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;",Placeholder question,Placeholder question 2,Placeholder question 3,Placeholder question 4,Please imagine a person with the following traits,<b>How wold you gender categorize this person?<b>,Woman,Man,Other,I don't know,A woman,A man,Not a woman,Not a man,mc
+2022-04-28 07:26:59,2022-04-28 07:37:43,IP Address,73.145.240.70,100,644,True,2022-04-28 07:37:44,R_2bQmRqEy1VIAsUx,,,,,42.3575,-83.2162,anonymous,EN,Please confirm that you have read the above and consent to participate in the study,27,Female,5ff7a8b2c0a7854b6ce5c375,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,${e://Field/M},4,5,4,5,${e://Field/M},3,5,3,5,${e://Field/W},5,4,5,4,${e://Field/W},6,4,Very much  7,4,${e://Field/M},4,6,4,5,${e://Field/M},4,6,4,5,${e://Field/W},5,4,5,4,${e://Field/W},6,5,5,4,${e://Field/W},4,5,4,4,${e://Field/M},4,6,4,5,${e://Field/M},4,5,4,4,${e://Field/W},4,5,4,4,${e://Field/W},4,5,4,4,${e://Field/W},4,5,4,4,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"I think it was about how I perceived positive/negative characteristic traits and which gender I thought they fit with most. ",No,"It was a little difficult trying to attribute certain characteristics to just one gender. ",I thought they were fine. The only trait that didn't seem to correlate with the others was mathematical.,I thought it was ok.,"competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure","affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Now fem
+ fem = ""affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm"";
+    fem = fem.split("","");
+    r2 = Math.floor(Math.random() * fem.length);
+ 
+   // Store the selected named and remove it from the list
+    property4 = fem[r1].trim();
+    fem.splice(r2, 1);
+ 
+   // Store the selected named and remove it from the list
+    r2 = Math.floor(Math.random() * fem.length);
+ property5 = fem[r2].trim();
+    fem.splice(r2, 1);
+ 
+ // Store the selected named and remove it from the list
+     r2 = Math.floor(Math.random() * fem.length);  
+ property6 = fem[r2].trim();
+    fem.splice(r2, 1);
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 + "", "" + property4 + "", "" + property5 + "", "" + property6  
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;",Placeholder question,Placeholder question 2,Placeholder question 3,Placeholder question 4,Please imagine a person with the following traits,<b>How wold you gender categorize this person?<b>,Woman,Man,Other,I don't know,A woman,A man,Not a woman,Not a man,xb
+2022-04-28 07:22:12,2022-04-28 07:41:31,IP Address,162.201.186.55,100,1158,True,2022-04-28 07:41:31,R_2e9nnQvtLZN93Na,,,,,25.9843,-80.2149,anonymous,EN,Please confirm that you have read the above and consent to participate in the study,73,female,6127072ecbce58c5df452c58,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,male,5,5,Very much  7,5,male,6,5,6,5,male,4,Very much  7,6,5,female,6,Very much  7,6,4,female,4,5,6,3,female,5,6,6,6,male,5,6,6,5,female,Very much  7,Very much  7,6,4,female,4,6,5,4,female,5,Very much  7,6,4,female,6,5,Very much  7,2,female,6,Very much  7,6,5,female,Very much  7,Very much  7,6,4,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,categorizing gender from trait,no,no impression,mathematic was hard to distinquish based on info,good,"competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure","affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Now fem
+ fem = ""affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm"";
+    fem = fem.split("","");
+    r2 = Math.floor(Math.random() * fem.length);
+ 
+   // Store the selected named and remove it from the list
+    property4 = fem[r1].trim();
+    fem.splice(r2, 1);
+ 
+   // Store the selected named and remove it from the list
+    r2 = Math.floor(Math.random() * fem.length);
+ property5 = fem[r2].trim();
+    fem.splice(r2, 1);
+ 
+ // Store the selected named and remove it from the list
+     r2 = Math.floor(Math.random() * fem.length);  
+ property6 = fem[r2].trim();
+    fem.splice(r2, 1);
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 + "", "" + property4 + "", "" + property5 + "", "" + property6  
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;",Placeholder question,Placeholder question 2,Placeholder question 3,Placeholder question 4,Please imagine a person with the following traits,<b>How wold you gender categorize this person?<b>,Woman,Man,Other,I don't know,A woman,A man,Not a woman,Not a man,ft
+2022-04-28 07:10:11,2022-04-28 07:43:28,IP Address,166.205.159.50,100,1997,True,2022-04-28 07:43:29,R_2zP8PgTT2NIw1qX,,,,,26.2681,-80.2092,anonymous,EN,Please confirm that you have read the above and consent to participate in the study,25,"Woman ",60fd6f291baf2fd3c9d68e36,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,${e://Field/M},4,5,3,5,${e://Field/W},6,6,Very much  7,3,${e://Field/M},4,4,3,5,${e://Field/W},6,5,Very much  7,4,${e://Field/M},5,3,5,5,${e://Field/W},6,5,Very much  7,5,${e://Field/M},4,4,5,5,${e://Field/W},6,6,Very much  7,5,${e://Field/W},6,6,6,4,${e://Field/M},4,4,6,6,${e://Field/M},5,4,3,5,${e://Field/M},6,6,6,6,${e://Field/M},5,6,6,6,${e://Field/W},5,6,Very much  7,3,"Seeing how people think of certain characteristics belonging to a certain gender ","Not really, I knew there are certain stereotypes though that I probably used to answer the questions. ","I think it was a good question and interesting to think about. ","They were good, but maybe adding some more or different traits would be helpful too ",I thought the survey was interesting and the results could be helpful to society,"competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure","affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Now fem
+ fem = ""affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm"";
+    fem = fem.split("","");
+    r2 = Math.floor(Math.random() * fem.length);
+ 
+   // Store the selected named and remove it from the list
+    property4 = fem[r1].trim();
+    fem.splice(r2, 1);
+ 
+   // Store the selected named and remove it from the list
+    r2 = Math.floor(Math.random() * fem.length);
+ property5 = fem[r2].trim();
+    fem.splice(r2, 1);
+ 
+ // Store the selected named and remove it from the list
+     r2 = Math.floor(Math.random() * fem.length);  
+ property6 = fem[r2].trim();
+    fem.splice(r2, 1);
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 + "", "" + property4 + "", "" + property5 + "", "" + property6  
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;",Placeholder question,Placeholder question 2,Placeholder question 3,Placeholder question 4,Please imagine a person with the following traits,<b>How wold you gender categorize this person?<b>,Woman,Man,Other,I don't know,A woman,A man,Not a woman,Not a man,mc

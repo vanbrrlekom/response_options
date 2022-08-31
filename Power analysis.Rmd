@@ -1,0 +1,395 @@
+---
+title: "Power analysis"
+author: "EvB"
+date: "12/1/2021"
+output: html_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+set.seed(123)   # Makes it reproduceable even if random number generators are used
+
+```
+
+## Background
+
+```{r setup}
+#load packages & data
+library(rethinking)
+library(rstan)
+library(tidyverse)
+library(tidybayes)
+library(brms)
+source("src/functions.r")
+```
+
+<br>
+<br>
+
+## 1. 
+
+## 1. Data processing
+
+#### 1. 1 Remove extra participants
+First, because of an error when sending the study out, a whole bunch of participants did the experiment twice. The following section makes frequent use of the recode() command. The datafile contains numerical data coded as strings. While I was at it, I also calculated 
+
+```{r recoding, echo=FALSE}
+d <- read.csv("https://raw.githubusercontent.com/vanbrrlekom/Categorization/main/data/categorization1_data.csv", na.strings = "")%>% 
+  mutate(dupe = duplicated(IPAddress)) %>% #Checks if IP adress has occurred previously
+  filter(dupe == FALSE) %>%  # removes duplicated IP adresses
+  mutate( across(starts_with("ess"),  # changes responses to numerical
+                  ~recode(.,"Stämmer inte alls\n1" ="1",
+                          "Stämmer helt\n7" = "7") %>% as.integer()),
+          across(starts_with("hen_attitudes"),
+                 ~recode(.,"Mycket bra\n7" ="1",
+                          "Mycket dåligt\n1" = "7") %>% as.integer()),
+          across(starts_with("GIS"),  # changes responses to numerical
+                  ~recode(.,"Stämmer inte alls\n1" ="1",
+                          "Stämmer helt\n7" = "7") %>% as.integer()), 
+          id =row_number(),
+          hen_use = 
+           recode(hen_use,
+                  "Aldrig" = 1,
+                  "Någon gång om året" = 2,
+                  "Någon gång i månaden" = 3,
+                  "Någon gång per vecka" = 4,
+                  "Dagligen" = 5) %>% as.integer(),
+         hen_hear = 
+           recode(hen_hear,
+                  "Aldrig" = 1,
+                  "Någon gång om året" = 2,
+                  "Någon gång i månaden" = 3,
+                  "Någon gång per vecka" = 4,
+                  "Dagligen" = 5) %>%  as.integer()) %>% 
+  rename(id_feminist = essentialism_7 ,id_lgbtq = essentialism_8)
+
+d <- d[-c(1:2),]
+  
+```
+
+#### 1.2 Check to make sure all participants completed the experiment
+
+The aim of the experiment was to investigate the effect of pronoun use on gender categorization of faces. First, then, participants completed a task where they used a pronoun three times. The following code checks whether participants used the correct pronoun three times. If they didn't they are assigned a NA value
+
+```{r}
+d <- manipulation_check(d)
+```
+
+
+#### 1.3 Clean up variables
+
+We also collected survey data on some personal attitudes. Gender essentialism (essentialism), Gender identity strength and attitudes to the word hen. These were multi-item questionnaires. The following chunk calculates the mean scores for each scale and standardizes them
+
+```{r essentialism & other variables}
+# takes a variable & standardized is
+
+d <- d %>% 
+  mutate(essentialism_s = rowMeans(select(d, starts_with("essentialism"))) %>% standardize(),
+         GIS_s= rowMeans(select(d, starts_with("GIS"))) %>% standardize(),
+         hen_attitudes_s= rowMeans(select(d, starts_with("hen_attitudes"))) %>% standardize())
+         
+```
+
+
+#### 1.4 reshaping
+
+The following chunk selects the relevant columns, the standardized scores, and the responses and melts it all into a long-format data-frame.
+
+```{r}
+#Select only the relevant columns
+d <- d %>% 
+  select(essentialism_s, GIS_s, hen_attitudes_s, hen_use, hen_hear, id_feminist, id_lgbtq,
+         starts_with("X"), id, condition) %>% 
+  pivot_longer(cols = contains("X"), names_to = "face", values_to = "categorization") %>% 
+  mutate(resp = recode(categorization, 
+                       "Icke-binär" = 0,
+                       "Man" = 0, 
+                       "Kvinna" = 1,
+                       "Vet ej" = 0))
+d_all <- d
+
+#This is dumb code, but here we go. Selects only the most feminine faces
+d <- d[grep("X7", d$face),]
+
+mean(d$resp, na.rm = TRUE)
+sd(d$resp, na.rm = TRUE)
+```
+
+````{r}
+# specify idealized hypothesis:
+ideal_group_mean <- 0.78
+ideal_group_sd   <- 0.41
+
+ideal_n_subj         <- 100  # more subjects => higher confidence in hypothesis
+ideal_n_trl_per_subj <- 100  # more trials => higher confidence in hypothesis
+```
+
+Kurz writes: These parameters are for binomial data. To parameterize θ in terms of a mean and standard deviation, we need to define the beta_ab_from_mean_sd() function.
+
+````{r}
+beta_ab_from_mean_sd <- function(mean, sd) {
+  
+  if (mean <= 0 | mean >= 1) stop("must have 0 < mean < 1")
+  if (sd <= 0) stop("sd must be > 0")
+  kappa <- mean * (1 - mean) / sd^2 - 1
+  if (kappa <= 0) stop("invalid combination of mean and sd")
+  a <- mean * kappa
+  b <- (1.0 - mean) * kappa
+  return(list(a = a, b = b))
+  
+}
+```
+
+kurz writes: 
+```{r}
+b <- beta_ab_from_mean_sd(ideal_group_mean, ideal_group_sd)
+
+# make the results reproducible
+set.seed(13)
+
+d <-
+  # make a subject index and generate random theta values for idealized subjects
+  tibble(s     = 1:ideal_n_subj,
+         theta = rbeta(ideal_n_subj, b$a, b$b)) %>% 
+  # transform the theta values to exactly match idealized mean and SD
+  mutate(theta_transformed = ((theta - mean(theta)) / sd(theta)) * ideal_group_sd + ideal_group_mean) %>% 
+  # `theta_transformed` must be between 0 and 1
+  mutate(theta_transformed = ifelse(theta_transformed >= 0.999, 0.999,
+                                    ifelse(theta_transformed <= 0.001, 0.001,
+                                           theta_transformed))) %>% 
+  # generate idealized data very close to thetas
+  mutate(z = round(theta_transformed * ideal_n_trl_per_subj)) %>% 
+  # create vector of 0's and 1's matching the z values generated above
+  mutate(y = map(z, ~c(rep(1, .), rep(0, ideal_n_trl_per_subj - .)))) %>% 
+  unnest(y)
+```
+Kurz:
+ "we are going to fit a hierarchical logistic regression model."
+ 
+```{r}
+fit_sim_1 <-
+  brm(data = d,
+      family = bernoulli(link = logit),
+      y ~ 1 + (1 | s),
+      prior = c(prior(normal(0, 1.5), class = Intercept),
+                prior(normal(0, 1), class = sd)),
+      iter = 2000, warmup = 1000, chains = 4, cores = 4,
+      seed = 13,
+      file = "Models/fit_sim_1")
+
+fit_k_1 <- 
+  brm(data = d, 
+      family = bernoulli(link = logit),
+      resp ~ 1 + (1|id),
+      prior = c(prior(normal(0, 1.5), class = Intercept),
+                prior(normal(0, 1), class = sd)),
+      seed = 13,
+      file = "Models/fit_k_1")
+      )
+```
+ Here’s a look at our two main parameters, our version of the top panels of Figure 13.3.
+```{r}
+posterior_samples(fit_k_1) %>% 
+  pivot_longer(b_Intercept:sd_id__Intercept) %>% 
+  
+  ggplot(aes(x = value, y = 0)) +
+  stat_histinterval(point_interval = mode_hdi, .width = .95,
+                    breaks = 40, normalize = "panels") +
+  scale_y_continuous(NULL, breaks = NULL) +
+  labs(subtitle = "Remember, these are in the log-odds metric.",
+       x = NULL) +
+  facet_wrap(~ name, scales = "free")
+```
+
+With brms, you can sample from those model-implied parameter values with the fitted() function. By default, it will return values in the probability metric for our logistic model. Here we’ll specify a group-level (i.e., s) value that was not in the data. We’ll feed that new value into the newdata argument and set allow_new_levels = T. We’ll also set summary = F, which will return actual probability values rather than a summary.
+
+```{r}
+set.seed(13)
+
+f <-
+  fitted(fit_k_1,
+         newdata = tibble(s = 0),
+         allow_new_levels = T,
+         summary = F) %>% 
+  data.frame() %>% 
+  set_names("theta")
+
+str(f)
+
+f %>% 
+  ggplot(aes(x = theta, y = 0)) +
+  stat_histinterval(point_interval = mode_hdi, .width = .95,
+                     breaks = 20) +
+  scale_y_continuous(NULL, breaks = NULL) +
+  labs(subtitle = "Behold our \"distribution of parameter values consistent\nwith our idealized hypothesis.\"",
+       x = expression(theta)) +
+  xlim(0, 1)
+
+
+```
+We can make a custom function to sample from θ. We might call it sample_theta().
+
+```{r}
+sample_theta <- function(seed, n_subj) {
+  
+  set.seed(seed)
+  
+  bind_cols(s = 1:n_subj,
+            sample_n(f, size = n_subj, replace = T))
+  
+}
+
+# take it for a spin
+sample_theta(seed = 13, n_subj = 5)
+```
+
+Now let’s say I wanted to use our little sample_theta() function to sample θ values for three people s and then use those θ values to sample three draws from the corresponding Bernoulli distribution. We might do that like this.
+
+
+```{r}
+sample_theta(seed = 13, n_subj = 3) %>% 
+  mutate(y = map(theta, rbinom, n = 3, size = 1)) %>% 
+  unnest(y)
+
+sample_data <- function(seed, n_subj, n_trial) {
+  
+  set.seed(seed)
+  
+  bind_cols(s = 1:n_subj,
+            sample_n(f, size = n_subj, replace = T)) %>% 
+    mutate(y = map(theta, rbinom, n = n_trial, size = 1)) %>% 
+    unnest(y)
+  
+}
+
+# test it out
+sample_data(seed = 13, n_subj = 3, n_trial = 3) 
+```
+Before running the simulations in full, we fit the model once and save that fit to iteratively reuse with update().
+```{r}
+# how many subjects should we have?
+n_subj <- 33
+
+# how many trials should we have?
+n     <- 20
+
+# fit that joint
+fit_k_2 <-
+  brm(data = sample_theta(seed = 13, n_subj = 50) %>% 
+        mutate(y = map(theta, rbinom, n = n, size = 1)) %>% 
+        unnest(y),
+      family = bernoulli(link = logit),
+      y ~ 1 + (1 | s),
+      prior = c(prior(normal(0, 1.5), class = Intercept),
+                prior(normal(0, 1), class = sd)),
+      iter = 2000, warmup = 1000, chains = 4, cores = 4,
+      seed = 13,
+      control = list(adapt_delta = .9),
+      file = "models/fit_k_2")
+```
+Kurz:
+our first goal is for the population θ to fall above the range [.48,.52]. The second corresponding width goal is also like before; we want θ to have a width of less than 0.2. But since our aggregated binomial model parameterized θ in the log-odds metric, we’ll have to update our get_hdi() function, which we’ll strategically rename get_theta_hdi().
+
+```{r}
+get_theta_hdi <- function(fit) {
+  
+  fit %>% 
+    posterior_samples() %>% 
+    transmute(theta = inv_logit_scaled(b_Intercept)) %>% 
+    mode_hdi() %>% 
+    select(.lower:.upper)
+  
+}
+
+# how does it work?
+get_theta_hdi(fit_k_2)
+```
+As for the individual-level goals, the two Kruschke outlined in the text apply to our model in a straightforward way. But we will need one more custom function designed to pull the θss for the θss. Let’s call this one get_theta_s_hdi().
+```{r}
+get_theta_s_hdi <- function(fit) {
+  
+  n_col <-
+    coef(fit, summary = F)$s[, , "Intercept"] %>% 
+    ncol()
+    
+  coef(fit, summary = F)$s[, , "Intercept"] %>% 
+    data.frame() %>% 
+    set_names(1:n_col) %>% 
+    mutate_all(inv_logit_scaled) %>% 
+    gather(s, value) %>% 
+    mutate(s = as.numeric(s)) %>% 
+    group_by(s) %>% 
+    mode_hdi(value) %>% 
+    select(s, .lower:.upper) %>% 
+    rename(.lower_s = .lower,
+           .upper_s = .upper)
+  
+}
+
+get_theta_s_hdi(fit_k_2)
+```
+we want to pump our updated model fit into two functions, both get_theta_hdi() and get_theta_s_hdi(). Our work-around will be to make a custom function that updates the fit, saves it as an object, inserts that fit object into both get_theta_hdi() and get_theta_s_hdi(), binds their results together, and the only returns the intervals. We’ll call this function fit_then_hdis().
+
+```{r}
+
+fit_then_hdis <- function(data, seed) {
+  
+  fit <- update(fit_k_2, 
+                newdata = data, 
+                seed = seed)
+  
+  cbind(get_theta_hdi(fit),
+        get_theta_s_hdi(fit))
+}
+
+# how many subjects should we have?
+n_subj <- 50
+
+# how many trials should we have?
+n_trial <- 20
+
+# how many simulations would you like?
+n_sim <- 100
+
+sim3 <-
+  tibble(seed = 1:n_sim) %>% 
+  mutate(data = map(seed, sample_data, n_subj = n_subj, n_trial = n_trial)) %>% 
+  mutate(hdi = map2(data, seed, fit_then_hdis))
+```
+
+If we hold these by the criteria of each HDIθs>ROPE and all to have widths less than 0.2, It looks like our initial data-generating fit13.3 is in the ballpark. Here are the results for the full power analysis, sim3.
+
+```{r}
+sim3_backup <- sim3
+
+sim3 <-
+  sim3 %>% 
+  unnest(hdi) %>%
+  # here we determine whether we passed at the group level
+  mutate(pass_rope_theta  = .lower > 75 | .upper < 85,
+         pass_width_theta = (.upper - .lower) < .1) %>% 
+  # the s-level thetas require two steps.
+  # first, we'll outline the three criteria
+  mutate(exceed_rope_theta_s  = .lower_s > 75,
+         below_rope_theta_s   = .upper_s < 85,
+         narrow_width_theta_s = (.upper_s - .lower_s) < .1) %>% 
+  # second, we'll evaluate those criteria by group
+  group_by(seed) %>% 
+  mutate(pass_rope_theta_s  = sum(exceed_rope_theta_s) > 0 & sum(below_rope_theta_s) == 0,
+         pass_width_theta_s = mean(narrow_width_theta_s) == 1) %>% 
+  ungroup()
+
+head(sim3)
+```
+
+```{r}
+sim3 %>% 
+  summarise(power_rope_theta  = mean(pass_rope_theta),
+            power_width_theta = mean(pass_width_theta))
+```
+
+```{r}
+sim3 %>% 
+  summarise(power_rope_theta_s  = mean(pass_rope_theta_s),
+            power_width_theta_s = mean(pass_width_theta_s))
+```
+

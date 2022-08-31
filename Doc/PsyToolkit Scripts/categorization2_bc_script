@@ -1,0 +1,508 @@
+## Binary choice ###############################
+random: begin
+
+l: xb1
+t: radio
+i: {center} pair1_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb2
+t: radio
+i: {center} pair1_1_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb3
+t: radio
+i: {center} pair1_2_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb4
+t: radio
+i: {center} pair1_3_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb5
+t: radio
+i: {center} pair1_4_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb6
+t: radio
+i: {center} pair1_5_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb7
+t: radio
+i: {center} pair1_6_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb8
+t: radio
+i: {center} pair2_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb9
+t: radio
+i: {center} pair2_1_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb10
+t: radio
+i: {center} pair2_2_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb11
+t: radio
+i: {center} pair2_3_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb12
+t: radio
+i: {center} pair2_4_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb13
+t: radio
+i: {center} pair2_5_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb14
+t: radio
+i: {center} pair2_6_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb15
+t: radio
+i: {center} pair3_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb16
+t: radio
+i: {center} pair3_1_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb17
+t: radio
+i: {center} pair3_2_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb18
+t: radio
+i: {center} pair3_3_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb19
+t: radio
+i: {center} pair3_4_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb20
+t: radio
+i: {center} pair3_5_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb21
+t: radio
+i: {center} pair3_6_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb22
+t: radio
+i: {center} pair4_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb23
+t: radio
+i: {center} pair4_1_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb24
+t: radio
+i: {center} pair4_2_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb25
+t: radio
+i: {center} pair4_3_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb26
+t: radio
+i: {center} pair4_4_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb27
+t: radio
+i: {center} pair4_5_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb28
+t: radio
+i: {center} pair4_6_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb29
+t: radio
+i: {center} pair5_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb30
+t: radio
+i: {center} pair5_1_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb31
+t: radio
+i: {center} pair5_2_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb32
+t: radio
+i: {center} pair5_3_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb33
+t: radio
+i: {center} pair5_4_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb34
+t: radio
+i: {center} pair5_5_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb35
+t: radio
+i: {center} pair5_6_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+##### break ######
+random: end
+
+l: break
+t: info
+q: You have completed half the experiment. <br><br> We suggest you take a short break before moving on with the second half.
+
+random: begin
+
+l: xb36
+t: radio
+i: {center} pair6_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb37
+t: radio
+i: {center} pair6_1_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb38
+t: radio
+i: {center} pair6_2_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb39
+t: radio
+i: {center} pair6_3_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb40
+t: radio
+i: {center} pair6_4_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb41
+t: radio
+i: {center} pair6_5_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb42
+t: radio
+i: {center} pair6_6_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb43
+t: radio
+i: {center} pair7_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb44
+t: radio
+i: {center} pair7_1_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb45
+t: radio
+i: {center} pair7_2_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb46
+t: radio
+i: {center} pair7_3_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb47
+t: radio
+i: {center} pair7_4_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb48
+t: radio
+i: {center} pair7_5_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb49
+t: radio
+i: {center} pair7_6_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb50
+t: radio
+i: {center} pair8_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb51
+t: radio
+i: {center} pair8_1_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb52
+t: radio
+i: {center} pair8_2_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb53
+t: radio
+i: {center} pair8_3_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb54
+t: radio
+i: {center} pair8_4_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb55
+t: radio
+i: {center} pair8_5_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb56
+t: radio
+i: {center} pair8_6_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb57
+t: radio
+i: {center} pair9_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb58
+t: radio
+i: {center} pair9_1_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb59
+t: radio
+i: {center} pair9_2_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb60
+t: radio
+i: {center} pair9_3_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb61
+t: radio
+i: {center} pair9_4_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb62
+t: radio
+i: {center} pair9_5_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb63
+t: radio
+i: {center} pair9_6_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+
+l: xb64
+t: radio
+i: {center} pair10_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb65
+t: radio
+i: {center} pair10_1_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb66
+t: radio
+i: {center} pair10_2_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb67
+t: radio
+i: {center} pair10_3_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb68
+t: radio
+i: {center} pair10_4_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb69
+t: radio
+i: {center} pair10_5_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb70
+t: radio
+i: {center} pair10_6_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+random: end
+
+l:
+t: jump
+- goto endquestion

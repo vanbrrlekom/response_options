@@ -1,0 +1,601 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 TimesNewRomanPSMT;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab709
+\pard\pardeftab709\partightenfactor0
+
+\f0\fs24 \cf0 #keep the following questions on the same pag\
+page: begin\
+\
+l: Demo\
+t: info\
+q: First, we would like to ask you a couple of quick demographic questions.\
+\
+l: Age\
+t: textline\
+q: What is your age?\
+- \{min = 18\}\
+\
+\
+l: Gender\
+t: textline\
+q: What is your gender identity?\
+- \
+\
+page: end\
+\
+l: instructions\
+t: info\
+q: You will be shown a series of faces and asked to categorize them according to gender.<br> The number of faces is quite large, so we recommend that you take frequent breaks.\
+\
+\
+#assign particippants into conditions. B = binary, sd = single dimension, md = multiple dimensions, \
+#mc = multiple choice, ft = free text\
+\
+l: chooserandom\
+t: set\
+- random from 1 2 3 4 5\
+\
+l:\
+t: jump\
+- if $chooserandom == 1 then goto b1\
+- if $chooserandom == 2 then goto sd1\
+- if $chooserandom == 3 then goto md_w1\
+- if $chooserandom == 4 then goto mc1\
+- if $chooserandom == 5 then goto ft1\
+\
+## Binary choice ###############################\
+\
+l: b1\
+t: radio\
+i: Pair1_0_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b2\
+t: radio\
+i: Pair1_1_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b3\
+t: radio\
+i: Pair1_2_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b4\
+t: radio\
+i: Pair1_3_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b5\
+t: radio\
+i: Pair1_4_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b6\
+t: radio\
+i: Pair1_5_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b7\
+t: radio\
+i: Pair1_06_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b8\
+t: radio\
+i: Pair2_0_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b9\
+t: radio\
+i: Pair2_1_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b10\
+t: radio\
+i: Pair2_2_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b11\
+t: radio\
+i: Pair2_3_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b12\
+t: radio\
+i: Pair2_4_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b13\
+t: radio\
+i: Pair2_5_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b14\
+t: radio\
+i: Pair2_6_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b15\
+t: radio\
+i: Pair3_0_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b16\
+t: radio\
+i: Pair3_1_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b17\
+t: radio\
+i: Pair3_2_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b18\
+t: radio\
+i: Pair3_3_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b19\
+t: radio\
+i: Pair3_4_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b20\
+t: radio\
+i: Pair3_5_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b21\
+t: radio\
+i: Pair3_06_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b22\
+t: radio\
+i: Pair4_0_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b23\
+t: radio\
+i: Pair4_1_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b24\
+t: radio\
+i: Pair4_2_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b25\
+t: radio\
+i: Pair4_3_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b26\
+t: radio\
+i: Pair4_4_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b27\
+t: radio\
+i: Pair4_5_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b28\
+t: radio\
+i: Pair4_06_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b29\
+t: radio\
+i: Pair5_0_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b30\
+t: radio\
+i: Pair5_1_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b31\
+t: radio\
+i: Pair5_2_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b32\
+t: radio\
+i: Pair5_3_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b33\
+t: radio\
+i: Pair5_4_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b34\
+t: radio\
+i: Pair5_5_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b35\
+t: radio\
+i: Pair5_6_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b36\
+t: radio\
+i: Pair6_0_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b37\
+t: radio\
+i: Pair6_1_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b38\
+t: radio\
+i: Pair6_2_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b39\
+t: radio\
+i: Pair6_3_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b40\
+t: radio\
+i: Pair6_4_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b41\
+t: radio\
+i: Pair6_5_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b42\
+t: radio\
+i: Pair6_06_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b43\
+t: radio\
+i: Pair7_0_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b44\
+t: radio\
+i: Pair7_1_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b45\
+t: radio\
+i: Pair7_2_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b46\
+t: radio\
+i: Pair7_3_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b47\
+t: radio\
+i: Pair7_4_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b48\
+t: radio\
+i: Pair7_5_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b49\
+t: radio\
+i: Pair7_06_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b50\
+t: radio\
+i: Pair8_0_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b51\
+t: radio\
+i: Pair8_1_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b52\
+t: radio\
+i: Pair8_2_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b53\
+t: radio\
+i: Pair8_3_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b54\
+t: radio\
+i: Pair8_4_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b55\
+t: radio\
+i: Pair8_5_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b56\
+t: radio\
+i: Pair8_6_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b57\
+t: radio\
+i: Pair9_0_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b58\
+t: radio\
+i: Pair9_1_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b59\
+t: radio\
+i: Pair9_2_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b60\
+t: radio\
+i: Pair9_3_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b61\
+t: radio\
+i: Pair9_4_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b62\
+t: radio\
+i: Pair9_5_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b63\
+t: radio\
+i: Pair9_06_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+\
+l: b64\
+t: radio\
+i: Pair10_0_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b65\
+t: radio\
+i: Pair10_1_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b66\
+t: radio\
+i: Pair10_2_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b67\
+t: radio\
+i: Pair10_3_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: 68\
+t: radio\
+i: Pair10_4_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b69\
+t: radio\
+i: Pair10_5_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l: b70\
+t: radio\
+i: Pair10_06_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+\
+l:\
+t: jump\
+- goto endquestion\
+\
+\
+\
+##  Single dimension ###############################\
+\
+l: sd1\
+t: range\
+i: Pair1_0_jpg.jpg\
+q: How would you categorize this person?\
+- \{no_number, min=0, max=100, left=Woman, right=Man, start=50\}\
+\
+l:\
+t: jump\
+- goto endquestion\
+\
+## Multiple dimensions ###############################\
+\
+l: md_w1\
+t: range\
+i: Pair1_0_jpg.jpg\
+q: How would you categorize this person?\
+- \{no_number, min=0, max=100, left=Not woman-like, right=Woman-like, start=50\}\
+\
+\
+l: md_m_2\
+t: range\
+i: Pair1_0_jpg.jpg\
+q: How would you categorize this person?\
+- \{no_number, min=0, max=100, left=Man-like, right=No man-like, start=50\}\
+\
+l:\
+t: jump\
+- goto endquestion\
+\
+## Multiple Choices ###############################\
+\
+l: mc1\
+t: radio\
+i: Pair1_0_jpg.jpg\
+q: How would you categorize this person?\
+- Woman\
+- Man\
+- Other\
+- I don't know\
+\
+## Free text ##################################\
+l: ft1\
+t: textline\
+i: Pair1_0_jpg.jpg\
+q: How would you categorize this person?\
+- \
+\
+l: endquestion\
+t: radio\
+q: Did you like this survey?\
+- Yes\
+- No}

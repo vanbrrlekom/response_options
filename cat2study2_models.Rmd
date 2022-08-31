@@ -1,0 +1,87 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+Start by loading dependencies and the data
+
+```{r}
+library(brms)
+library(tidyr)
+library(dplyr)
+library(bayesplot)
+library(tidybayes)
+d  <- read.csv("data/cat2study1_data.csv")
+```
+
+
+## Binomial models
+Start by working on a model for the binomial* data.
+
+```{r}
+#Wrangle data
+tmp <- d %>% 
+  filter(condition == "xb" | condition == "mc") %>% 
+  mutate(f_cat = ifelse(categorization == "1", 1, 0))
+
+# f_cat is a binary variable coding whether or not a face was categorized as a woman
+#Experimenting with fitting a bayesian model
+fit_binary_stair <- brm(f_cat ~ masc:condition + (1 + masc|id) + (1|face), family = bernoulli(link = 'logit'), 
+          prior = c(prior(normal(0,3), class = "b"),
+                    prior(normal(0,3), class = "Intercept")),
+          data = tmp,
+          iter = 3000, warmup = 1000,
+          cores = 4,
+          file = "models/fit_binary_stair2.1")
+
+summary(fit_binary_stair)
+
+```
+
+```{r}
+#Wrangle data
+tmp <- d %>% 
+  filter(condition == "sd" | condition == "md") %>% 
+  mutate(f_rating = as.numeric(categorization) %>%  ifelse(scale == "f", ., 100- .),
+         scale_new = ifelse(scale == "f" | scale =="m", scale, "sd"))
+
+# f_cat is a binary variable coding whether or not a face was categorized as a woman
+#Experimenting with fitting a bayesian model
+fit_dimensional_stair <- brm(f_rating ~ masc:scale_new + (1 + masc|id) + (1|face), family = gaussian(link = 'identity'), 
+          prior = c(prior(normal(0,1.5), class = "b"),
+                    prior(normal(50,20), class = "Intercept")),
+          data = tmp,
+          iter = 3000, warmup = 1000,
+          cores = 4,
+          file = "models/fit_dimensional_stair")
+
+summary(fit_binary_stair)
+
+# the "dumb" way to do it is just to calculate intercepts at each level masculinity and condition, and 
+#check how similar they are.
+
+tmp <- tmp %>% 
+  mutate(masc = as.factor(masc))
+
+get_prior(formula = (f_rating ~ 1 + masc:condition + (1 + masc|id) + (1|face)), family = gaussian(link = 'identity'), data = tmp)
+
+fit_dimensional_stair_factor <- 
+  brm(f_rating ~ 0 + masc:condition + (1 + masc|id) + (1|face), family = gaussian(link = 'identity'), 
+          prior = c(prior(normal(50,50), class = "b"),
+                    #prior(normal(50,50), class = "Intercept"),
+                    prior(exponential(1), class = "sd"),
+                    prior(lkj(1), class = "cor"),
+                    prior(exponential(1), class = sigma)),
+          data = tmp,
+          iter = 3000, warmup = 1000,
+          cores = 4,
+          sample_prior = TRUE,
+          file = "models/fit_dimensional_stair_factor")
+
+
+```
+
+just writing out the model
+
+a + (b-a)/(1+e^(c-x)/d
+

@@ -1,0 +1,647 @@
+## Multiple Choices ###############################
+random: begin
+
+l: mc1
+t: radio
+i: {center} pair1_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc2
+t: radio
+i: {center} pair1_1_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc3
+t: radio
+i: {center} pair1_2_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc4
+t: radio
+i: {center} pair1_3_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc5
+t: radio
+i: {center} pair1_4_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc6
+t: radio
+i: {center} pair1_5_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc7
+t: radio
+i: {center} pair1_6_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc8
+t: radio
+i: {center} pair2_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc9
+t: radio
+i: {center} pair2_1_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc10
+t: radio
+i: {center} pair2_2_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc11
+t: radio
+i: {center} pair2_3_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc12
+t: radio
+i: {center} pair2_4_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc13
+t: radio
+i: {center} pair2_5_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc14
+t: radio
+i: {center} pair2_6_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc15
+t: radio
+i: {center} pair3_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc16
+t: radio
+i: {center} pair3_1_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc17
+t: radio
+i: {center} pair3_2_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc18
+t: radio
+i: {center} pair3_3_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc19
+t: radio
+i: {center} pair3_4_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc20
+t: radio
+i: {center} pair3_5_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc21
+t: radio
+i: {center} pair3_6_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc22
+t: radio
+i: {center} pair4_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc23
+t: radio
+i: {center} pair4_1_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc24
+t: radio
+i: {center} pair4_2_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc25
+t: radio
+i: {center} pair4_3_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc26
+t: radio
+i: {center} pair4_4_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc27
+t: radio
+i: {center} pair4_5_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc28
+t: radio
+i: {center} pair4_6_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc29
+t: radio
+i: {center} pair5_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc30
+t: radio
+i: {center} pair5_1_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc31
+t: radio
+i: {center} pair5_2_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc32
+t: radio
+i: {center} pair5_3_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc33
+t: radio
+i: {center} pair5_4_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc34
+t: radio
+i: {center} pair5_5_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc35
+t: radio
+i: {center} pair5_6_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+random: end
+
+l: break
+t: info
+q: You have completed half the experiment. <br><br> We suggest you take a short break before moving on with the second half.
+
+random: begin
+
+l: mc36
+t: radio
+i: {center} pair6_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc37
+t: radio
+i: {center} pair6_1_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc38
+t: radio
+i: {center} pair6_2_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc39
+t: radio
+i: {center} pair6_3_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc40
+t: radio
+i: {center} pair6_4_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc41
+t: radio
+i: {center} pair6_5_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc42
+t: radio
+i: {center} pair6_6_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc43
+t: radio
+i: {center} pair7_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc44
+t: radio
+i: {center} pair7_1_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc45
+t: radio
+i: {center} pair7_2_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc46
+t: radio
+i: {center} pair7_3_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc47
+t: radio
+i: {center} pair7_4_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc48
+t: radio
+i: {center} pair7_5_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc49
+t: radio
+i: {center} pair7_6_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc50
+t: radio
+i: {center} pair8_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc51
+t: radio
+i: {center} pair8_1_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc52
+t: radio
+i: {center} pair8_2_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc53
+t: radio
+i: {center} pair8_3_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc54
+t: radio
+i: {center} pair8_4_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc55
+t: radio
+i: {center} pair8_5_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc56
+t: radio
+i: {center} pair8_6_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc57
+t: radio
+i: {center} pair9_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc58
+t: radio
+i: {center} pair9_1_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc59
+t: radio
+i: {center} pair9_2_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc60
+t: radio
+i: {center} pair9_3_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc61
+t: radio
+i: {center} pair9_4_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc62
+t: radio
+i: {center} pair9_5_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc63
+t: radio
+i: {center} pair9_6_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+
+l: mc64
+t: radio
+i: {center} pair10_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc65
+t: radio
+i: {center} pair10_1_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc66
+t: radio
+i: {center} pair10_2_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc67
+t: radio
+i: {center} pair10_3_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc68
+t: radio
+i: {center} pair10_4_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc69
+t: radio
+i: {center} pair10_5_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc70
+t: radio
+i: {center} pair10_6_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+random: end
+
+l:
+t: jump
+- goto endquestion

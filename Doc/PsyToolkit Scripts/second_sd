@@ -1,0 +1,590 @@
+random: begin
+
+l: xb_b2_0
+t: radio
+i: {center} b2_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b2_1
+t: radio
+i: {center} b2_1_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b2_2
+t: radio
+i: {center} b1_2_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b2_3
+t: radio
+i: {center} b2_3_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b2_4
+t: radio
+i: {center} b2_4_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b2_5
+t: radio
+i: {center} b2_5_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b2_6
+t: radio
+i: {center} b1_6_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b4_0
+t: radio
+i: {center} b4_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b4_1
+t: radio
+i: {center} b4_1_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b4_2
+t: radio
+i: {center} b4_2_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b4_3
+t: radio
+i: {center} b4_3_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b4_4
+t: radio
+i: {center} b4_4_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b4_5
+t: radio
+i: {center} b3_5_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b4_6
+t: radio
+i: {center} b4_6_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b5_0
+t: radio
+i: {center} b5_0_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b5_1
+t: radio
+i: {center} b5_1_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b5_2
+t: radio
+i: {center} b5_2_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b5_3
+t: radio
+i: {center} b5_3_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b5_4
+t: radio
+i: {center} b5_4_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b5_5
+t: radio
+i: {center} b5_5_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b5_6
+t: radio
+i: {center} b5_6_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b6_0
+t: radio
+i: {center} b6_0_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b6_1
+t: radio
+i: {center} b6_1_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b6_2
+t: radio
+i: {center} b6_2_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b6_3
+t: radio
+i: {center} b6_3_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b6_4
+t: radio
+i: {center} b6_4_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b6_5
+t: radio
+i: {center} b6_5_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b6_6
+t: radio
+i: {center} b2_6_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b7_0
+t: radio
+i: {center} b7_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b7_1
+t: radio
+i: {center} b7_1_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b7_2
+t: radio
+i: {center} b7_2_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b7_3
+t: radio
+i: {center} b7_3_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b7_4
+t: radio
+i: {center} b7_4_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b7_5
+t: radio
+i: {center} b7_5_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b7_6
+t: radio
+i: {center} b7_6_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b9_0
+t: radio
+i: {center} b9_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b9_1
+t: radio
+i: {center} b9_1_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b9_2
+t: radio
+i: {center} b9_2_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b9_3
+t: radio
+i: {center} b9_3_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b9_4
+t: radio
+i: {center} b9_4_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b9_5
+t: radio
+i: {center} b9_5_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_b9_6
+t: radio
+i: {center} b9_6_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a1_0
+t: radio
+i: {center} pair6_0_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a1_1
+t: radio
+i: {center} pair6_1_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a1_2
+t: radio
+i: {center} pair6_2_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a1_3
+t: radio
+i: {center} pair6_3_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a1_4
+t: radio
+i: {center} pair6_4_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a1_5
+t: radio
+i: {center} pair6_5_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a1_6
+t: radio
+i: {center} pair6_6_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a3_0
+t: radio
+i: {center} a3_0_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a3_1
+t: radio
+i: {center} a3_1_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a3_2
+t: radio
+i: {center} a3_2_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a3_3
+t: radio
+i: {center} a3_3_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a3_4
+t: radio
+i: {center} a3_4_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a3_5
+t: radio
+i: {center} a3_5_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a3_6
+t: radio
+i: {center} a3_6_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+
+l: xb_a4_0
+t: radio
+i: {center} a4_0_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a4_1
+t: radio
+i: {center} a4_1_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a4_2
+t: radio
+i: {center} a4_2_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a4_3
+t: radio
+i: {center} a4_3_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a4_4
+t: radio
+i: {center} a4_4_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a4_5
+t: radio
+i: {center} a4_5_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a4_6
+t: radio
+i: {center} a4_6_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a5_0
+t: radio
+i: {center} a5_0_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a5_1
+t: radio
+i: {center} a5_1_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a5_2
+t: radio
+i: {center} a5_2_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a5_3
+t: radio
+i: {center} a5_3_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a5_4
+t: radio
+i: {center} a5_4_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a5_5
+t: radio
+i: {center} a5_5_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a5_6
+t: radio
+i: {center} a5_6_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a8_0
+t: radio
+i: {center} a8_0_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a8_1
+t: radio
+i: {center} a8_1_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a8_2
+t: radio
+i: {center} a8_2_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a8_3
+t: radio
+i: {center} a8_3_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a8_4
+t: radio
+i: {center} a8_4_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a8_5
+t: radio
+i: {center} a8_5_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a8_6
+t: radio
+i: {center} a8_6_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a10_0
+t: radio
+i: {center} a10_0_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a10_1
+t: radio
+i: {center} a10_1_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a10_2
+t: radio
+i: {center} a10_2_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a10_3
+t: radio
+i: {center} a10_3_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a10_4
+t: radio
+i: {center} a10_4_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a10_5
+t: radio
+i: {center} a10_5_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_a10_6
+t: radio
+i: {center} a10_6_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man

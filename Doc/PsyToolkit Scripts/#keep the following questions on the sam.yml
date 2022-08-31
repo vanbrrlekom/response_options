@@ -1,0 +1,63 @@
+#keep the following questions on the same page
+page: begin
+
+l: Demo
+t: info
+q: First, we would like to ask you a couple of quick demographic questions.
+
+l: Age
+t: textline
+q: What is your age?
+- {min = 18}
+
+
+l: Gender
+t: textline
+q: What is your gender identity?
+- 
+
+page: end
+
+l: instructions
+t: info
+q: You will be shown 70 faces and asked to categorize them according to gender.<br> The number of faces is quite large, so we recommend that you take frequent breaks.
+
+l: xb1
+t: radio
+i: {center} pair1_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: sd1
+t: range
+i: {center} pair1_0_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+l: mc1
+t: radio
+i: {center} pair1_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: md_w1
+t: range
+i: {center} pair1_0_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Clearly a coman, start=50}
+
+l: md_m1
+t: range
+i: {center} pair1_0_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Clearly a man, start=50}
+
+l: ft1
+t: textline
+i: {center} pair1_0_s.jpg
+q: How would you gender categorize this person?
+- 

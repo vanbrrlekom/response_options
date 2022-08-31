@@ -1,0 +1,506 @@
+##  Single dimension ###############################
+random: begin
+
+l: sd1
+t: range
+i: {center} pair1_0_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+l: sd2
+t: range
+i: {center} pair1_1_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd3
+t: range
+i: {center} pair1_2_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd4
+t: range
+i: {center} pair1_3_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd5
+t: range
+i: {center} pair1_4_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd6
+t: range
+i: {center} pair1_5_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd7
+t: range
+i: {center} pair1_6_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd8
+t: range
+i: {center} pair2_0_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd9
+t: range
+i: {center} pair2_1_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd10
+t: range
+i: {center} pair2_2_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd11
+t: range
+i: {center} pair2_3_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd12
+t: range
+i: {center} pair2_4_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd13
+t: range
+i: {center} pair2_5_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd14
+t: range
+i: {center} pair2_6_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd15
+t: range
+i: {center} pair3_0_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd16
+t: range
+i: {center} pair3_1_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd17
+t: range
+i: {center} pair3_2_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd18
+t: range
+i: {center} pair3_3_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd19
+t: range
+i: {center} pair3_4_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd20
+t: range
+i: {center} pair3_5_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd21
+t: range
+i: {center} pair3_6_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd22
+t: range
+i: {center} pair4_0_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd23
+t: range
+i: {center} pair4_1_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd24
+t: range
+i: {center} pair4_2_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd25
+t: range
+i: {center} pair4_3_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd26
+t: range
+i: {center} pair4_4_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd27
+t: range
+i: {center} pair4_5_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd28
+t: range
+i: {center} pair4_6_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd29
+t: range
+i: {center} pair5_0_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd30
+t: range
+i: {center} pair5_1_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd31
+t: range
+i: {center} pair5_2_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd32
+t: range
+i: {center} pair5_3_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd33
+t: range
+i: {center} pair5_4_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd34
+t: range
+i: {center} pair5_5_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd35
+t: range
+i: {center} pair5_6_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+random: end
+
+#break #######
+l: break
+t: info
+q: You have completed half the experiment. <br><br> We suggest you take a short break before moving on with the second half.
+
+random: begin
+
+
+l: sd36
+t: range
+i: {center} pair6_0_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd37
+t: range
+i: {center} pair6_1_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd38
+t: range
+i: {center} pair6_2_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd39
+t: range
+i: {center} pair6_3_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd40
+t: range
+i: {center} pair6_4_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd41
+t: range
+i: {center} pair6_5_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd42
+t: range
+i: {center} pair6_6_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd43
+t: range
+i: {center} pair7_0_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd44
+t: range
+i: {center} pair7_1_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd45
+t: range
+i: {center} pair7_2_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd46
+t: range
+i: {center} pair7_3_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd47
+t: range
+i: {center} pair7_4_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd48
+t: range
+i: {center} pair7_5_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd49
+t: range
+i: {center} pair7_6_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd50
+t: range
+i: {center} pair8_0_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd51
+t: range
+i: {center} pair8_1_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd52
+t: range
+i: {center} pair8_2_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd53
+t: range
+i: {center} pair8_3_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd54
+t: range
+i: {center} pair8_4_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd55
+t: range
+i: {center} pair8_5_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd56
+t: range
+i: {center} pair8_6_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd57
+t: range
+i: {center} pair9_0_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd58
+t: range
+i: {center} pair9_1_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd59
+t: range
+i: {center} pair9_2_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd60
+t: range
+i: {center} pair9_3_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd61
+t: range
+i: {center} pair9_4_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd62
+t: range
+i: {center} pair9_5_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd63
+t: range
+i: {center} pair9_6_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+
+l: sd64
+t: range
+i: {center} pair10_0_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd65
+t: range
+i: {center} pair10_1_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd66
+t: range
+i: {center} pair10_2_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd67
+t: range
+i: {center} pair10_3_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd68
+t: range
+i: {center} pair10_4_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd69
+t: range
+i: {center} pair10_5_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+
+l: sd70
+t: range
+i: {center} pair10_6_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Clearly a woman, right=Clearly a man, start=50}
+
+random: end
+
+l:
+t: jump
+- goto endquestion

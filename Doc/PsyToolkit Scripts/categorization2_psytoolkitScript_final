@@ -1,0 +1,2946 @@
+l: Demo
+t: info
+q: First, we would like to ask you a couple of quick demographic questions.
+
+page: begin
+
+l: Age
+t: textline
+q: What is your age?
+- {min = 18}
+
+
+l: Gender
+t: textline
+q: What is your gender identity?
+- 
+
+page: end
+
+l: condition
+t: set
+- random from 1 2 3 4 5
+
+l:
+t: jump
+- if $condition == 1 then goto xb_cb1
+- if $condition == 2 then goto sd_cb1
+- if $condition == 3 then goto md_assign
+- if $condition == 4 then goto mc_cb1
+- if $condition == 5 then goto ft_cb1
+
+l: xb_cb1
+t: info
+q: You will be shown 70 faces and asked to categorize them according to gender.<br> The number of faces is quite large, so we recommend that you take frequent breaks.
+
+random: begin
+
+l: xb_01
+t: radio
+i: {center} pair1_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_02
+t: radio
+i: {center} pair1_1_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_03
+t: radio
+i: {center} pair1_2_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_04
+t: radio
+i: {center} pair1_3_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_05
+t: radio
+i: {center} pair1_4_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_06
+t: radio
+i: {center} pair1_5_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_07
+t: radio
+i: {center} pair1_6_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_15
+t: radio
+i: {center} pair3_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_16
+t: radio
+i: {center} pair3_1_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_17
+t: radio
+i: {center} pair3_2_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_18
+t: radio
+i: {center} pair3_3_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_19
+t: radio
+i: {center} pair3_4_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_20
+t: radio
+i: {center} pair3_5_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_21
+t: radio
+i: {center} pair3_6_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_101
+t: radio
+i: {center} pair1_0_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_102
+t: radio
+i: {center} pair1_1_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_103
+t: radio
+i: {center} pair1_2_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_104
+t: radio
+i: {center} pair1_3_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_105
+t: radio
+i: {center} pair1_4_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_106
+t: radio
+i: {center} pair1_5_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_107
+t: radio
+i: {center} pair1_6_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_108
+t: radio
+i: {center} pair2_0_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_109
+t: radio
+i: {center} pair2_1_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_110
+t: radio
+i: {center} pair2_2_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_111
+t: radio
+i: {center} pair2_3_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_112
+t: radio
+i: {center} pair2_4_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_113
+t: radio
+i: {center} pair2_5_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_114
+t: radio
+i: {center} pair2_6_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_22
+t: radio
+i: {center} pair4_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_23
+t: radio
+i: {center} pair4_1_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_24
+t: radio
+i: {center} pair4_2_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_25
+t: radio
+i: {center} pair4_3_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_26
+t: radio
+i: {center} pair4_4_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_27
+t: radio
+i: {center} pair4_5_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_28
+t: radio
+i: {center} pair4_6_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_29
+t: radio
+i: {center} pair5_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_30
+t: radio
+i: {center} pair5_1_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_31
+t: radio
+i: {center} pair5_2_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_32
+t: radio
+i: {center} pair5_3_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_33
+t: radio
+i: {center} pair5_4_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_34
+t: radio
+i: {center} pair5_5_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_35
+t: radio
+i: {center} pair5_6_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_136
+t: radio
+i: {center} pair6_0_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_137
+t: radio
+i: {center} pair6_1_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_138
+t: radio
+i: {center} pair6_2_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_139
+t: radio
+i: {center} pair6_3_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_140
+t: radio
+i: {center} pair6_4_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_141
+t: radio
+i: {center} pair6_5_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_142
+t: radio
+i: {center} pair6_6_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_57
+t: radio
+i: {center} pair9_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_58
+t: radio
+i: {center} pair9_1_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_59
+t: radio
+i: {center} pair9_2_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_60
+t: radio
+i: {center} pair9_3_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_61
+t: radio
+i: {center} pair9_4_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_62
+t: radio
+i: {center} pair9_5_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_63
+t: radio
+i: {center} pair9_6_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+
+l: xb_64
+t: radio
+i: {center} pair10_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_65
+t: radio
+i: {center} pair10_1_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_66
+t: radio
+i: {center} pair10_2_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_67
+t: radio
+i: {center} pair10_3_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_68
+t: radio
+i: {center} pair10_4_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_69
+t: radio
+i: {center} pair10_5_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_70
+t: radio
+i: {center} pair10_6_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+
+l: xb_150
+t: radio
+i: {center} pair8_0_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_151
+t: radio
+i: {center} pair8_1_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_152
+t: radio
+i: {center} pair8_2_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_153
+t: radio
+i: {center} pair8_3_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_154
+t: radio
+i: {center} pair8_4_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_155
+t: radio
+i: {center} pair8_5_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+l: xb_156
+t: radio
+i: {center} pair8_6_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+
+random: end
+
+j: demo 
+
+l: sd_cb1
+t: info
+q: You will be shown 70 faces and asked to categorize them according to gender.<br> The number of faces is quite large, so we recommend that you take frequent breaks.
+
+random: begin
+
+l: sd_01
+t: range
+i: {center} pair1_0_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_02
+t: range
+i: {center} pair1_1_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_03
+t: range
+i: {center} pair1_2_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_04
+t: range
+i: {center} pair1_3_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_05
+t: range
+i: {center} pair1_4_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_06
+t: range
+i: {center} pair1_5_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_07
+t: range
+i: {center} pair1_6_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_15
+t: range
+i: {center} pair3_0_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_16
+t: range
+i: {center} pair3_1_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_17
+t: range
+i: {center} pair3_2_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_18
+t: range
+i: {center} pair3_3_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_19
+t: range
+i: {center} pair3_4_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_20
+t: range
+i: {center} pair3_5_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_21
+t: range
+i: {center} pair3_6_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_101
+t: range
+i: {center} pair1_0_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_102
+t: range
+i: {center} pair1_1_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_103
+t: range
+i: {center} pair1_2_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_104
+t: range
+i: {center} pair1_3_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_105
+t: range
+i: {center} pair1_4_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_106
+t: range
+i: {center} pair1_5_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_107
+t: range
+i: {center} pair1_6_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_108
+t: range
+i: {center} pair2_0_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_109
+t: range
+i: {center} pair2_1_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_110
+t: range
+i: {center} pair2_2_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_111
+t: range
+i: {center} pair2_3_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_112
+t: range
+i: {center} pair2_4_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_113
+t: range
+i: {center} pair2_5_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_114
+t: range
+i: {center} pair2_6_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_22
+t: range
+i: {center} pair4_0_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_23
+t: range
+i: {center} pair4_1_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_24
+t: range
+i: {center} pair4_2_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_25
+t: range
+i: {center} pair4_3_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_26
+t: range
+i: {center} pair4_4_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_27
+t: range
+i: {center} pair4_5_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_28
+t: range
+i: {center} pair4_6_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_29
+t: range
+i: {center} pair5_0_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_30
+t: range
+i: {center} pair5_1_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_31
+t: range
+i: {center} pair5_2_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_32
+t: range
+i: {center} pair5_3_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_33
+t: range
+i: {center} pair5_4_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_34
+t: range
+i: {center} pair5_5_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_35
+t: range
+i: {center} pair5_6_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_136
+t: range
+i: {center} pair6_0_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_137
+t: range
+i: {center} pair6_1_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_138
+t: range
+i: {center} pair6_2_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_139
+t: range
+i: {center} pair6_3_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_140
+t: range
+i: {center} pair6_4_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_141
+t: range
+i: {center} pair6_5_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_142
+t: range
+i: {center} pair6_6_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_64
+t: range
+i: {center} pair10_0_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_65
+t: range
+i: {center} pair10_1_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_66
+t: range
+i: {center} pair10_2_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_67
+t: range
+i: {center} pair10_3_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_68
+t: range
+i: {center} pair10_4_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_69
+t: range
+i: {center} pair10_5_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_70
+t: range
+i: {center} pair10_6_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_150
+t: range
+i: {center} pair8_0_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_151
+t: range
+i: {center} pair8_1_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_152
+t: range
+i: {center} pair8_2_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_153
+t: range
+i: {center} pair8_3_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_154
+t: range
+i: {center} pair8_4_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_155
+t: range
+i: {center} pair8_5_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_156
+t: range
+i: {center} pair8_6_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_57
+t: range
+i: {center} pair9_0_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_58
+t: range
+i: {center} pair9_1_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_59
+t: range
+i: {center} pair9_2_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_60
+t: range
+i: {center} pair9_3_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_61
+t: range
+i: {center} pair9_4_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_62
+t: range
+i: {center} pair9_5_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+l: sd_63
+t: range
+i: {center} pair9_6_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Woman, right=Man, start=50}
+
+random: end
+
+j: demo
+
+l: mc_cb1
+t: info
+q: You will be shown 70 faces and asked to categorize them according to gender.<br> The number of faces is quite large, so we recommend that you take frequent breaks.
+
+random: begin
+
+l: mc_01
+t: radio
+i: {center} pair1_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_02
+t: radio
+i: {center} pair1_1_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_03
+t: radio
+i: {center} pair1_2_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_04
+t: radio
+i: {center} pair1_3_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_05
+t: radio
+i: {center} pair1_4_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_06
+t: radio
+i: {center} pair1_5_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_07
+t: radio
+i: {center} pair1_6_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_15
+t: radio
+i: {center} pair3_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_16
+t: radio
+i: {center} pair3_1_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_17
+t: radio
+i: {center} pair3_2_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_18
+t: radio
+i: {center} pair3_3_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_19
+t: radio
+i: {center} pair3_4_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_20
+t: radio
+i: {center} pair3_5_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_21
+t: radio
+i: {center} pair3_6_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_101
+t: radio
+i: {center} pair1_0_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_102
+t: radio
+i: {center} pair1_1_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_103
+t: radio
+i: {center} pair1_2_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_104
+t: radio
+i: {center} pair1_3_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_105
+t: radio
+i: {center} pair1_4_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_106
+t: radio
+i: {center} pair1_5_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_107
+t: radio
+i: {center} pair1_6_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_108
+t: radio
+i: {center} pair2_0_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_109
+t: radio
+i: {center} pair2_1_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_110
+t: radio
+i: {center} pair2_2_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_111
+t: radio
+i: {center} pair2_3_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_112
+t: radio
+i: {center} pair2_4_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_113
+t: radio
+i: {center} pair2_5_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_114
+t: radio
+i: {center} pair2_6_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_22
+t: radio
+i: {center} pair4_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_23
+t: radio
+i: {center} pair4_1_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_24
+t: radio
+i: {center} pair4_2_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_25
+t: radio
+i: {center} pair4_3_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_26
+t: radio
+i: {center} pair4_4_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_27
+t: radio
+i: {center} pair4_5_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_28
+t: radio
+i: {center} pair4_6_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_29
+t: radio
+i: {center} pair5_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_30
+t: radio
+i: {center} pair5_1_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_31
+t: radio
+i: {center} pair5_2_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_32
+t: radio
+i: {center} pair5_3_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_33
+t: radio
+i: {center} pair5_4_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_34
+t: radio
+i: {center} pair5_5_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_35
+t: radio
+i: {center} pair5_6_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_136
+t: radio
+i: {center} pair6_0_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_137
+t: radio
+i: {center} pair6_1_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_138
+t: radio
+i: {center} pair6_2_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_139
+t: radio
+i: {center} pair6_3_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_140
+t: radio
+i: {center} pair6_4_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_141
+t: radio
+i: {center} pair6_5_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_142
+t: radio
+i: {center} pair6_6_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+
+l: mc_64
+t: radio
+i: {center} pair10_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_65
+t: radio
+i: {center} pair10_1_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_66
+t: radio
+i: {center} pair10_2_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_67
+t: radio
+i: {center} pair10_3_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_68
+t: radio
+i: {center} pair10_4_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_69
+t: radio
+i: {center} pair10_5_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_70
+t: radio
+i: {center} pair10_6_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_150
+t: radio
+i: {center} pair8_0_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_151
+t: radio
+i: {center} pair8_1_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_152
+t: radio
+i: {center} pair8_2_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_153
+t: radio
+i: {center} pair8_3_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_154
+t: radio
+i: {center} pair8_4_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_155
+t: radio
+i: {center} pair8_5_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_156
+t: radio
+i: {center} pair8_6_s.png
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_57
+t: radio
+i: {center} pair9_0_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_58
+t: radio
+i: {center} pair9_1_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_59
+t: radio
+i: {center} pair9_2_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_60
+t: radio
+i: {center} pair9_3_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_61
+t: radio
+i: {center} pair9_4_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_62
+t: radio
+i: {center} pair9_5_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+l: mc_63
+t: radio
+i: {center} pair9_6_s.jpg
+q: How would you gender categorize this person?
+- Woman
+- Man
+- Other
+- I don't know
+
+random: end
+
+j: demo
+
+l: md_assign
+t: set
+- random 1 2 
+
+l:
+t: jump
+- if $md_assign == 1 then goto counterbalance1
+- if $md_assign == 2 then goto counterbalance2
+
+l: counterbalance1
+t: info
+q: You will be shown 70 faces and asked to categorize them according to gender.<br> The number of faces is quite large, so we recommend that you take frequent breaks.
+
+random: begin
+
+l: md_f01
+t: range
+i: {center} pair1_0_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f02
+t: range
+i: {center} pair1_1_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f03
+t: range
+i: {center} pair1_2_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f04
+t: range
+i: {center} pair1_3_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f05
+t: range
+i: {center} pair1_4_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f06
+t: range
+i: {center} pair1_5_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f07
+t: range
+i: {center} pair1_6_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f15
+t: range
+i: {center} pair3_0_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f16
+t: range
+i: {center} pair3_1_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f17
+t: range
+i: {center} pair3_2_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f18
+t: range
+i: {center} pair3_3_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f19
+t: range
+i: {center} pair3_4_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f20
+t: range
+i: {center} pair3_5_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f21
+t: range
+i: {center} pair3_6_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f101
+t: range
+i: {center} pair1_0_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f102
+t: range
+i: {center} pair1_1_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f103
+t: range
+i: {center} pair1_2_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f104
+t: range
+i: {center} pair1_3_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f105
+t: range
+i: {center} pair1_4_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f106
+t: range
+i: {center} pair1_5_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f107
+t: range
+i: {center} pair1_6_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f22
+t: range
+i: {center} pair4_0_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f23
+t: range
+i: {center} pair4_1_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f24
+t: range
+i: {center} pair4_2_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f25
+t: range
+i: {center} pair4_3_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f26
+t: range
+i: {center} pair4_4_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f27
+t: range
+i: {center} pair4_5_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f28
+t: range
+i: {center} pair4_6_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+: md_f108
+t: range
+i: {center} pair2_0_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f109
+t: range
+i: {center} pair2_1_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f110
+t: range
+i: {center} pair2_2_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f111
+t: range
+i: {center} pair2_3_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f112
+t: range
+i: {center} pair2_4_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f113
+t: range
+i: {center} pair2_5_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f114
+t: range
+i: {center} pair2_6_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+random: end
+
+l: break_fff
+t: info
+q: You have completed half the experiment. <br><br> We suggest you take a short break before moving on with the second half. <br><br> Note that the questions are slightly different from now on.
+
+random: begin
+
+l: md_m01
+t: range
+i: {center} pair1_0_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m02
+t: range
+i: {center} pair1_1_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m03
+t: range
+i: {center} pair1_2_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m04
+t: range
+i: {center} pair1_3_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m05
+t: range
+i: {center} pair1_4_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m06
+t: range
+i: {center} pair1_5_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m07
+t: range
+i: {center} pair1_6_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m101
+t: range
+i: {center} pair1_0_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m102
+t: range
+i: {center} pair1_1_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m103
+t: range
+i: {center} pair1_2_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m104
+t: range
+i: {center} pair1_3_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m105
+t: range
+i: {center} pair1_4_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m106
+t: range
+i: {center} pair1_5_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m107
+t: range
+i: {center} pair1_6_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m108
+t: range
+i: {center} pair2_0_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m109
+t: range
+i: {center} pair2_1_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m110
+t: range
+i: {center} pair2_2_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m111
+t: range
+i: {center} pair2_3_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m112
+t: range
+i: {center} pair2_4_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m113
+t: range
+i: {center} pair2_5_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m114
+t: range
+i: {center} pair2_6_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m15
+t: range
+i: {center} pair3_0_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m16
+t: range
+i: {center} pair3_1_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m17
+t: range
+i: {center} pair3_2_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m18
+t: range
+i: {center} pair3_3_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m19
+t: range
+i: {center} pair3_4_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m20
+t: range
+i: {center} pair3_5_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m21
+t: range
+i: {center} pair3_6_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m22
+t: range
+i: {center} pair4_0_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m23
+t: range
+i: {center} pair4_1_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m24
+t: range
+i: {center} pair4_2_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m25
+t: range
+i: {center} pair4_3_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m26
+t: range
+i: {center} pair4_4_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m27
+t: range
+i: {center} pair4_5_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m28
+t: range
+i: {center} pair4_6_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+random: end
+
+j: demo
+
+l: counterbalance2
+t: info
+q: You will be shown 70 faces and asked to categorize them according to gender.<br> The number of faces is quite large, so we recommend that you take frequent breaks.
+
+random: begin
+
+l: md_f137
+t: range
+i: {center} pair6_1_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f138
+t: range
+i: {center} pair6_2_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f139
+t: range
+i: {center} pair6_3_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f140
+t: range
+i: {center} pair6_4_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f141
+t: range
+i: {center} pair6_5_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f142
+t: range
+i: {center} pair6_6_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f29
+t: range
+i: {center} pair5_0_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f30
+t: range
+i: {center} pair5_1_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f31
+t: range
+i: {center} pair5_2_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f32
+t: range
+i: {center} pair5_3_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f33
+t: range
+i: {center} pair5_4_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f34
+t: range
+i: {center} pair5_5_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f35
+t: range
+i: {center} pair5_6_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f150
+t: range
+i: {center} pair8_0_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f151
+t: range
+i: {center} pair8_1_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f152
+t: range
+i: {center} pair8_2_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f153
+t: range
+i: {center} pair8_3_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f154
+t: range
+i: {center} pair8_4_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f155
+t: range
+i: {center} pair8_5_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f156
+t: range
+i: {center} pair8_6_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}  
+
+l: md_f64
+t: range
+i: {center} pair10_0_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f65
+t: range
+i: {center} pair10_1_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f66
+t: range
+i: {center} pair10_2_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f67
+t: range
+i: {center} pair10_3_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f68
+t: range
+i: {center} pair10_4_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f69
+t: range
+i: {center} pair10_5_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f70
+t: range
+i: {center} pair10_6_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f57
+t: range
+i: {center} pair9_0_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f58
+t: range
+i: {center} pair9_1_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f59
+t: range
+i: {center} pair9_2_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f60
+t: range
+i: {center} pair9_3_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f61
+t: range
+i: {center} pair9_4_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f62
+t: range
+i: {center} pair9_5_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+l: md_f63
+t: range
+i: {center} pair9_6_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a woman, right=Woman, start=50}
+
+random: end
+
+l: break_XX
+t: info
+q: You have completed half the experiment. <br><br> We suggest you take a short break before moving on with the second half. <br><br> Note that the questions are slightly different from now on.
+
+random: begin
+
+l: md_m136
+t: range
+i: {center} pair6_0_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m137
+t: range
+i: {center} pair6_1_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m138
+t: range
+i: {center} pair6_2_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m139
+t: range
+i: {center} pair6_3_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m140
+t: range
+i: {center} pair6_4_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m141
+t: range
+i: {center} pair6_5_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m142
+t: range
+i: {center} pair6_6_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m29
+t: range
+i: {center} pair5_0_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m30
+t: range
+i: {center} pair5_1_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m31
+t: range
+i: {center} pair5_2_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m32
+t: range
+i: {center} pair5_3_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m33
+t: range
+i: {center} pair5_4_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m34
+t: range
+i: {center} pair5_5_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m35
+t: range
+i: {center} pair5_6_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m150
+t: range
+i: {center} pair8_0_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m151
+t: range
+i: {center} pair8_1_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m152
+t: range
+i: {center} pair8_2_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m153
+t: range
+i: {center} pair8_3_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m154
+t: range
+i: {center} pair8_4_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m155
+t: range
+i: {center} pair8_5_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m156
+t: range
+i: {center} pair8_6_s.png
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m64
+t: range
+i: {center} pair10_0_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m65
+t: range
+i: {center} pair10_1_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m66
+t: range
+i: {center} pair10_2_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m67
+t: range
+i: {center} pair10_3_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m68
+t: range
+i: {center} pair10_4_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m69
+t: range
+i: {center} pair10_5_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m70
+t: range
+i: {center} pair10_6_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m57
+t: range
+i: {center} pair9_0_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m58
+t: range
+i: {center} pair9_1_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m59
+t: range
+i: {center} pair9_2_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m60
+t: range
+i: {center} pair9_3_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m61
+t: range
+i: {center} pair9_4_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m62
+t: range
+i: {center} pair9_5_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+l: md_m63
+t: range
+i: {center} pair9_6_s.jpg
+q: How would you gender categorize this person?
+- {no_number, min=0, max=100, left=Not a man, right=Man, start=50}
+
+random: end
+
+j: demo
+
+l: ft_cb1
+t: info
+q: You will be shown 70 faces and asked to categorize them according to gender.<br> The number of faces is quite large, so we recommend that you take frequent breaks.
+
+random: begin
+
+l: ft_01
+t: textline
+i: {center} pair1_0_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_02
+t: textline
+i: {center} pair1_1_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_03
+t: textline
+i: {center} pair1_2_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_04
+t: textline
+i: {center} pair1_3_s.jpg
+q: How would you gender categorize this person?
+- 
+
+
+l: ft_05
+t: textline
+i: {center} pair1_4_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_06
+t: textline
+i: {center} pair1_5_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_07
+t: textline
+i: {center} pair1_6_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_15
+t: textline
+i: {center} pair3_0_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_16
+t: textline
+i: {center} pair3_1_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_17
+t: textline
+i: {center} pair3_2_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_18
+t: textline
+i: {center} pair3_3_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_19
+t: textline
+i: {center} pair3_4_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_20
+t: textline
+i: {center} pair3_5_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_21
+t: textline
+i: {center} pair3_6_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_101
+t: textline
+i: {center} pair1_0_s.png
+q: How would you gender categorize this person?
+- 
+
+l: ft_102
+t: textline
+i: {center} pair1_1_s.png
+q: How would you gender categorize this person?
+- 
+
+l: ft_103
+t: textline
+i: {center} pair1_2_s.png
+q: How would you gender categorize this person?
+- 
+
+l: ft_104
+t: textline
+i: {center} pair1_3_s.png
+q: How would you gender categorize this person?
+- 
+
+l: ft_105
+t: textline
+i: {center} pair1_4_s.png
+q: How would you gender categorize this person?
+- 
+
+l: ft_106
+t: textline
+i: {center} pair1_5_s.png
+q: How would you gender categorize this person?
+- 
+
+l: ft_107
+t: textline
+i: {center} pair1_6_s.png
+q: How would you gender categorize this person?
+- 
+
+l: ft_22
+t: textline
+i: {center} pair4_0_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_23
+t: textline
+i: {center} pair4_1_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_24
+t: textline
+i: {center} pair4_2_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_25
+t: textline
+i: {center} pair4_3_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_26
+t: textline
+i: {center} pair4_4_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_27
+t: textline
+i: {center} pair4_5_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_28
+t: textline
+i: {center} pair4_6_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_29
+t: textline
+i: {center} pair5_0_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_30
+t: textline
+i: {center} pair5_1_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_31
+t: textline
+i: {center} pair5_2_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_32
+t: textline
+i: {center} pair5_3_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_33
+t: textline
+i: {center} pair5_4_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_34
+t: textline
+i: {center} pair5_5_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_35
+t: textline
+i: {center} pair5_6_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_137
+t: textline
+i: {center} pair6_1_s.png
+q: How would you gender categorize this person?
+- 
+
+l: ft_138
+t: textline
+i: {center} pair6_2_s.png
+q: How would you gender categorize this person?
+- 
+
+l: ft_139
+t: textline
+i: {center} pair6_3_s.png
+q: How would you gender categorize this person?
+- 
+
+l: ft_140
+t: textline
+i: {center} pair6_4_s.png
+q: How would you gender categorize this person?
+- 
+
+l: ft_141
+t: textline
+i: {center} pair6_5_s.png
+q: How would you gender categorize this person?
+- 
+
+l: ft_142
+t: textline
+i: {center} pair6_6_s.png
+q: How would you gender categorize this person?
+- 
+
+l: ft_64
+t: textline
+i: {center} pair10_0_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_65
+t: textline
+i: {center} pair10_1_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_66
+t: textline
+i: {center} pair10_2_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_67
+t: textline
+i: {center} pair10_3_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_68
+t: textline
+i: {center} pair10_4_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_69
+t: textline
+i: {center} pair10_5_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_70
+t: textline
+i: {center} pair10_6_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_150
+t: textline
+i: {center} pair8_0_s.png
+q: How would you gender categorize this person?
+- 
+
+l: ft_151
+t: textline
+i: {center} pair8_1_s.png
+q: How would you gender categorize this person?
+- 
+
+l: ft_152
+t: textline
+i: {center} pair8_2_s.png
+q: How would you gender categorize this person?
+- 
+
+l: ft_153
+t: textline
+i: {center} pair8_3_s.png
+q: How would you gender categorize this person?
+- 
+
+l: ft_154
+t: textline
+i: {center} pair8_4_s.png
+q: How would you gender categorize this person?
+- 
+
+l: ft_155
+t: textline
+i: {center} pair8_5_s.png
+q: How would you gender categorize this person?
+- 
+
+l: ft_156
+t: textline
+i: {center} pair8_6_s.png
+q: How would you gender categorize this person?
+- 
+
+l: ft_57
+t: textline
+i: {center} pair9_0_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_58
+t: textline
+i: {center} pair9_1_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_59
+t: textline
+i: {center} pair9_2_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_60
+t: textline
+i: {center} pair9_3_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_61
+t: textline
+i: {center} pair9_4_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_62
+t: textline
+i: {center} pair9_5_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_63
+t: textline
+i: {center} pair9_6_s.jpg
+q: How would you gender categorize this person?
+- 
+
+l: ft_108
+t: textline
+i: {center} pair2_0_s.png
+q: How would you gender categorize this person?
+- 
+
+l: ft_109
+t: textline
+i: {center} pair2_1_s.png
+q: How would you gender categorize this person?
+- 
+
+l: ft_110
+t: textline
+i: {center} pair2_2_s.png
+q: How would you gender categorize this person?
+- 
+
+l: ft_111
+t: textline
+i: {center} pair2_3_s.png
+q: How would you gender categorize this person?
+- 
+
+l: ft_112
+t: textline
+i: {center} pair2_4_s.png
+q: How would you gender categorize this person?
+- 
+
+l: ft_113
+t: textline
+i: {center} pair2_5_s.png
+q: How would you gender categorize this person?
+- 
+
+l: ft_114
+t: textline
+i: {center} pair2_6_s.png
+q: How would you gender categorize this person?
+- 
+
+random: end 
+
+j: demo
+
+
+l: demo
+t: info
+q: Before you go, we would like to ask you a couple of quick demographic questions.
+
+page: begin
+
+l: Age
+t: textline
+q: What is your age?
+- {min = 18}
+
+
+l: Gender
+t: textline
+q: What is your gender identity?
+- 
+
+page: end
+
+l: GBB
+t: info
+q: Lastly, we would like to ask you a few of quick questions about your attitudes to gender identity.
+
+scale: agree
+- Disagree <br> 1
+- <br> 2
+- <br> 3
+- <br> 4
+- Agree <br> 5
+
+l: Gender_binary_beliefs
+q: How much do you agree with each of the following?
+t: scale agree
+- There are only two genders, male or female
+- All adults identify as either male or female
+- If you are either male or female, then you are that gender for all time
+- All males have a penis and females all have a vagina

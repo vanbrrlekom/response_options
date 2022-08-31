@@ -1,0 +1,193 @@
+StartDate,EndDate,Status,IPAddress,Progress,Duration (in seconds),Finished,RecordedDate,ResponseId,RecipientLastName,RecipientFirstName,RecipientEmail,ExternalReference,LocationLatitude,LocationLongitude,DistributionChannel,UserLanguage,intro,001,002,007,009,010,011,012,013,014,017,017,019,020,021,026,027,031,039,063,068,069,081,083,090,091,094,097,100,102,103,104,107,112,113,118,124,120,115,117,121,130,131,132,134,141,172,173,Q262,Q264,Q270
+Start Date,End Date,Response Type,IP Address,Progress,Duration (in seconds),Finished,Recorded Date,Response ID,Recipient Last Name,Recipient First Name,Recipient Email,External Data Reference,Location Latitude,Location Longitude,Distribution Channel,User Language,"Welcome to this pre-test
+
+
+ 
+
+The purpose of this survey is to test material which will be part of a larger study conducted at the Stockholm University psychology department. 
+
+The survey will take around 5-10 minutes to finish and your answers will be completely anonymous. 
+
+Your task is to judge a series of faces in terms whether they resemble women or men.
+
+ 
+You will be given the opportunity to provide feedback for the study after you have completed it, but if you have any other questions, you can email us at elli.vanberlekom@gmail.com",001,002,007,009,010,011,012,013,014,017,017,019,020,021,026,027,031,039,063,068,069,081,083,090,091,094,097,100,102,103,104,107,112,113,118,124,120,115,117,121,130,131,132,134,141,172,173,Ålder: :,Könsidentitet:,"Tack för att du var med i vår förstudie!
+ 
+
+Innan du skickar in svaren så får du hemskt gärna dela dina tankar kring studien. Hur uppfattade du den? Var det något som var konstigt, någon formulering du inte förstod, etc? Vi vill ha ärliga kommentarer, höga som låga.Stort tack på förhand för dina kommentarer!"
+"{""ImportId"":""startDate"",""timeZone"":""America/Denver""}","{""ImportId"":""endDate"",""timeZone"":""America/Denver""}","{""ImportId"":""status""}","{""ImportId"":""ipAddress""}","{""ImportId"":""progress""}","{""ImportId"":""duration""}","{""ImportId"":""finished""}","{""ImportId"":""recordedDate"",""timeZone"":""America/Denver""}","{""ImportId"":""_recordId""}","{""ImportId"":""recipientLastName""}","{""ImportId"":""recipientFirstName""}","{""ImportId"":""recipientEmail""}","{""ImportId"":""externalDataReference""}","{""ImportId"":""locationLatitude""}","{""ImportId"":""locationLongitude""}","{""ImportId"":""distributionChannel""}","{""ImportId"":""userLanguage""}","{""ImportId"":""QID266""}","{""ImportId"":""QID137""}","{""ImportId"":""QID139""}","{""ImportId"":""QID141""}","{""ImportId"":""QID143""}","{""ImportId"":""QID219""}","{""ImportId"":""QID193""}","{""ImportId"":""QID179""}","{""ImportId"":""QID195""}","{""ImportId"":""QID197""}","{""ImportId"":""QID199""}","{""ImportId"":""QID147""}","{""ImportId"":""QID149""}","{""ImportId"":""QID155""}","{""ImportId"":""QID151""}","{""ImportId"":""QID157""}","{""ImportId"":""QID159""}","{""ImportId"":""QID161""}","{""ImportId"":""QID165""}","{""ImportId"":""QID163""}","{""ImportId"":""QID207""}","{""ImportId"":""QID203""}","{""ImportId"":""QID205""}","{""ImportId"":""QID201""}","{""ImportId"":""QID191""}","{""ImportId"":""QID189""}","{""ImportId"":""QID187""}","{""ImportId"":""QID185""}","{""ImportId"":""QID183""}","{""ImportId"":""QID181""}","{""ImportId"":""QID169""}","{""ImportId"":""QID167""}","{""ImportId"":""QID211""}","{""ImportId"":""QID269""}","{""ImportId"":""QID270""}","{""ImportId"":""QID271""}","{""ImportId"":""QID272""}","{""ImportId"":""QID273""}","{""ImportId"":""QID213""}","{""ImportId"":""QID215""}","{""ImportId"":""QID217""}","{""ImportId"":""QID145""}","{""ImportId"":""QID221""}","{""ImportId"":""QID223""}","{""ImportId"":""QID225""}","{""ImportId"":""QID227""}","{""ImportId"":""QID229""}","{""ImportId"":""QID230""}","{""ImportId"":""QID260_TEXT""}","{""ImportId"":""QID261_TEXT""}","{""ImportId"":""QID264_TEXT""}"
+2021-12-13 07:58:17,2021-12-13 08:00:09,IP Address,90.142.56.132,100,111,True,2021-12-13 08:00:09,R_31m8VAt7YnPD5ji,,,,,59.302398681640625,18.048492431640625,anonymous,EN,Jag har läst ovan och samtycker till att vara med i studien,"Looks like a woman
+7","Looks like a woman
+
+7",,"Looks like a woman
+
+7",,"Looks like a woman
+
+7",,,"Looks like a woman
+
+7",,,,,,,,,,"Looks like a man
+
+7",,,,,,,"Looks like a woman
+
+7","Looks like a woman
+
+7",,"Looks like a woman
+
+7",,,,,"Looks like a woman
+
+7","Looks like a woman
+
+7",,"Looks like a woman
+
+7",,"Looks like a man
+
+7","Looks like a man
+
+7",,,,,,"Looks like a man
+
+7",,22,Man,
+2021-12-13 07:58:16,2021-12-13 08:01:10,IP Address,90.142.59.34,100,174,True,2021-12-13 08:01:11,R_2BfYlsCuCkTAkdL,,,,,59.359100341796875,17.9947967529296875,anonymous,EN,Jag har läst ovan och samtycker till att vara med i studien,"Looks like a woman
+7",,,,,,,,,"Looks like a woman
+
+7",,,,,6,"Looks like a woman
+
+7","Looks like a man
+
+7",,"Looks like a man
+
+7",,,,,,,,,6,,,,,,"Looks like a woman
+
+7",,,,,,"Looks like a man
+
+7",5,"Looks like a man
+
+7",,"Looks like a woman
+
+7","Looks like a man
+
+7","Looks like a man
+
+7","Looks like a man
+
+7",22,Kvinna,
+2021-12-13 07:58:18,2021-12-13 08:03:57,IP Address,85.225.51.71,100,338,True,2021-12-13 08:03:57,R_1PdQCkS7bPIhk40,,,,,59.327392578125,18.0653076171875,anonymous,EN,Jag har läst ovan och samtycker till att vara med i studien,,,,"Looks like a woman
+
+7","Looks like a woman
+
+7",,,"Looks like a woman
+
+7","Looks like a woman
+
+7","Does not look like a womat
+1",,4,"Looks like a woman
+
+7",,"Looks like a man
+
+7",,,,,,,"Looks like a woman
+
+7",,"Looks like a woman
+
+7",,,,,"Looks like a woman
+
+7",,,"Looks like a woman
+
+7","Looks like a woman
+
+7",,,,,,,,,,"Looks like a man
+
+7",,"Looks like a man
+
+7",,,26,Kvinna,"Inga kommentarer, allt kändes tydligt! "
+2021-12-13 07:58:20,2021-12-13 10:52:25,IP Address,81.234.166.12,100,10445,True,2021-12-13 10:52:25,R_1nNHipLISjj7yRZ,,,,,59.368804931640625,18.1179962158203125,anonymous,EN,Jag har läst ovan och samtycker till att vara med i studien,,6,,"Looks like a woman
+
+7",5,,,,"Looks like a woman
+
+7",,,,,"Looks like a man
+
+7",,,,,"Looks like a man
+
+7",,"Looks like a man
+
+7",,"Looks like a woman
+
+7",,"Looks like a woman
+
+7",,,"Looks like a woman
+
+7",,,,"Looks like a woman
+
+7",,,,"Looks like a woman
+
+7",5,,,,,,"Looks like a man
+
+7",,,,"Looks like a man
+
+7",25,Kvinna,
+2021-12-14 08:04:40,2021-12-14 08:06:23,IP Address,90.129.214.38,100,102,True,2021-12-14 08:06:23,R_1dvhb5tmjcSZQyo,,,,,59.3332977294921875,18.0500030517578125,anonymous,EN,Jag har läst ovan och samtycker till att vara med i studien,"Looks like a woman
+7",6,,,,"Looks like a woman
+
+7",,,,,,,,,,"Looks like a woman
+
+7",,,,6,6,,,,"Looks like a woman
+
+7",,,,,,,,"Looks like a woman
+
+7",6,,,5,,,"Looks like a man
+
+7",6,,"Looks like a man
+
+7","Looks like a woman
+
+7","Looks like a man
+
+7",,,21,"Kvinna ",
+2021-12-20 07:04:07,2021-12-20 07:06:55,IP Address,83.251.72.202,100,167,True,2021-12-20 07:06:55,R_1QcinELcYikRRpe,,,,,59.35650634765625,17.9651031494140625,anonymous,EN,Jag har läst ovan och samtycker till att vara med i studien,,,,,,"Looks like a woman
+
+7","Looks like a man
+
+7","Looks like a woman
+
+7",,"Does not look like a womat
+1",,,,,"Looks like a man
+
+7",,"Looks like a man
+
+7","Looks like a woman
+
+7",,,"Looks like a man
+
+7","Looks like a woman
+
+7",,"Looks like a woman
+
+7","Looks like a woman
+
+7",,"Looks like a woman
+
+7",,6,,,,,,"Looks like a woman
+
+7",,,,,,,,,"Looks like a woman
+
+7",,,,28,Kvinna,OBS felstavning av ordet woman i en slide till vänster i skalan
+2021-12-21 08:23:14,2021-12-21 08:32:23,IP Address,95.143.195.203,100,548,True,2021-12-21 08:32:23,R_3EDUdVGikXtDOfW,,,,,61.7133941650390625,17.101104736328125,anonymous,EN,Jag har läst ovan och samtycker till att vara med i studien,"Looks like a woman
+7","Looks like a woman
+
+7",,,"Looks like a woman
+
+7",,,,,,,,,"Looks like a man
+
+7",6,"Looks like a woman
+
+7",,,,,,,,,6,,,,6,"Looks like a man
+
+7","Looks like a man
+
+7",,"Looks like a woman
+
+7","Looks like a woman
+
+7",,,,,,"Looks like a man
+
+7",5,,"Looks like a man
+
+7",,,,,59,annan,vänstra halvan av ansiktena upplevdes som mer kvinnliga eller manliga än den högra sidan.
