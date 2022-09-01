@@ -13,29 +13,15 @@ library(tidyr)
 library(dplyr)
 library(purrr)
 library(ggplot2)
+source("src/Functions.r")
 
-#initiatinggg!!
-d  <- read.csv("data/cat2stduy1_data.csv") %>% 
-  mutate_all(as.character) %>% 
-  mutate(id = 1:nrow(.)) %>% 
-  arrange(condition.1) %>% 
-  pivot_longer(
-    cols = !c(condition.1, id, Age.1, starts_with("Gender"), starts_with("choose"), contains("assign"), starts_with("Prolific"), starts_with("TIME")),
-    names_to = "face",
-    values_to = "categorization") %>% 
-  #separate(face, c("condition", "face", "morph", "scale")) %>% 
-  select(id, face, categorization, Age.1, Gender.1) %>% 
-  filter(!categorization == "") %>%   
-  separate(face, c("condition", "face", "morph", "scale")) %>% 
-  mutate(race = substr(face, 1,1),
-         masc = recode(morph, "0" = "0", "1" = "16.67", "2"= "33.33","3" = "50",
-                       "4" = "66.67", "5" ="83.33", "6" =  "100")) %>% 
-  mutate(masc = as.numeric(masc)) %>% 
-  mutate(masc = ifelse(race != "w", masc, 100 - masc))
+#initiatinggg!! #Throws in an error message that I think is fine to ignore
+d  <- read_and_clean("data/cat2stduy1_data.csv") 
 
-##Plotting the results for free text #######
 
-ft <- d %>%
+##Free text #######
+
+d %>%
   filter(condition == "ft") %>% 
   group_by(masc, race) %>% 
   mutate(categorization = recode(categorization, 
@@ -63,7 +49,7 @@ d %>%
   facet_wrap(~race)
 
 
-#Plotting the results for binary options#######
+##Binary#######
 d %>% filter(condition == "xb") %>%
   group_by(masc, race) %>% 
   count(categorization) %>% 
@@ -80,17 +66,21 @@ d %>% filter(condition == "xb") %>%
   facet_wrap(~race) +
   theme_minimal()
 
-#plotting for multiple categories######
-mc <- d %>% 
+##multiple categories######
+d %>% 
   filter(condition == "mc") %>% 
-  mutate(categorization = recode(categorization, "1" = "1. Woman", "2" = "2. Man", "3" = "3. Other", "4" = "4. Unknown")) %>% 
+  mutate(categorization = recode(categorization, #kludge-y fix to make the categories appear in the same order as in the previous plots
+                                 "1" = "1. Woman",
+                                 "2" = "2. Man", 
+                                 "3" = "3. Other", 
+                                 "4" = "4. Unknown")) %>% 
   group_by(masc, race) %>% 
   count(categorization) %>% 
   ggplot(aes(x=masc, y=n, fill=categorization)) +
   geom_bar(stat="identity", position = "fill")+
   theme_minimal()
 
-mc_race <- d %>% 
+d %>% 
   filter(condition == "mc") %>% 
   mutate(categorization = recode(categorization, "1" = "1. Woman", "2" = "2. Man", "3" = "3. Other", "4" = "4. Unknown")) %>% 
   group_by(masc, race) %>% 
@@ -101,7 +91,7 @@ mc_race <- d %>%
   facet_wrap(~race)
 
 
-# single dimension
+## single dimension #######
 
 d %>% 
   filter(condition == "sd") %>% 
@@ -113,20 +103,20 @@ d %>%
   geom_point()+
   theme_minimal()
 
-#subset by race
+####subset by race###
 d %>%
   filter(condition == "sd") %>% 
   mutate(categorization = as.numeric(categorization)) %>% 
   group_by(masc, race) %>% 
   summarise(mean_rating = mean(categorization))  %>% 
-  ggplot(aes(x=masc, y=mean_rating, group = 1)) +
+  ggplot(aes(x=masc, y=mean_rating, col = race, group = 1)) +
   geom_line()+
   geom_point()+
   theme_minimal()+
   facet_wrap(~race)
 
 
-# multiple dimension
+##multiple dimension #####
 d %>% 
   filter(condition == "md") %>% 
   mutate(categorization = as.numeric(categorization)) %>% 
@@ -137,7 +127,7 @@ d %>%
   geom_point(aes(color = scale))+
   theme_minimal()
 
-#subset by race
+###subset by race
 d %>% 
   filter(condition == "md") %>% 
   mutate(categorization = as.numeric(categorization)) %>% 
