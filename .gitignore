@@ -37,3 +37,6 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+
+#stan models that are too big to upload to git
+Models/*.rds
