@@ -1,5 +1,4 @@
-library(tidyverse)
-library(brms)
+
 # Clear memory and set random seed ---------------------------------------------
 rm(list = ls()) # clear memory
 graphics.off()  # clear all plots
@@ -30,8 +29,8 @@ d %>%
                                  "Nonbinary" = "o", "Non Binary " = "o", "Unsure" = "o", "Non binary " = "o", "good" = "o", "Neutral" = "o", "neutral" = "o", "nonbinary" = "o", "bigender" = "o", "hen" = "o", "don't know"  = "o", "Bottom half male, nose upwards female" = "o" )) %>% 
   count(categorization) %>% 
   ggplot(aes(x=masc, y=n, fill=categorization)) +
-  geom_bar(stat="identity", position = "fill")+
-  #scale_fill()+
+  geom_bar(stat="identity", position = "fill") + 
+  ggtitle("Free Text R esponses")+
   theme_minimal()
 
 #subsetting by race
@@ -48,6 +47,19 @@ d %>%
   theme_minimal() +
   facet_wrap(~race)
 
+#subsetting by id
+d %>%
+  filter(condition == "ft") %>% 
+  group_by(masc, race, id) %>% 
+  mutate(categorization = recode(categorization, 
+                                 "F" = "f", "kvinna" = "f", "female" = "f", "female " = "f", "Female"= "f", "Fenale"= "f", "women" = "f", "woman " = "f", "femLE" = "f", "FEmale" = "f", "Femalw" = "f", "Fwmalw" = "f", "Female " = "f", "woman" = "f", "Woman" = "f", "feMale" = "f", "fermale" = "f", "wman" = "f", "Femae" = "f",
+                                 "man" = "m","Male " = "m", "make" = "m", "Male"= "m", "male" = "m", "man " = "m",  "male " = "m", "guy" = "m", "boy" = "m", "Make" = "m", "M"  = "m", "Man" = "m", "Bottom half male; above nose female., Would have to say Male" = "m", " male" = "m", "male  " = "m", "ale" = "m", "nmale" = "m", "MALE"= "m", "nale"= "m", " Male" = "m",
+                                 "Nonbinary" = "o", "Non Binary " = "o", "Unsure" = "o", "Non binary " = "o", "good" = "o", "Neutral" = "o", "neutral" = "o", "nonbinary" = "o", "bigender" = "o", "hen" = "o", "don't know"  = "o", "Bottom half male, nose upwards female" = "o" ))%>% 
+  count(categorization) %>% 
+  ggplot(aes(x=masc, y=n, fill=categorization)) +
+  geom_bar(stat="identity", position = "fill")+
+  theme_minimal() +
+  facet_wrap(~id)
 
 ##Binary#######
 d %>% filter(condition == "xb") %>%
@@ -90,6 +102,16 @@ d %>%
   theme_minimal() +
   facet_wrap(~race)
 
+d %>% 
+  filter(condition == "mc") %>% 
+  mutate(categorization = recode(categorization, "1" = "1. Woman", "2" = "2. Man", "3" = "3. Other", "4" = "4. Unknown")) %>% 
+  group_by(masc, race, id) %>% 
+  count(categorization) %>% 
+  ggplot(aes(x=masc, y=n, fill=categorization)) +
+  geom_bar(stat="identity", position = "fill")+
+  theme_minimal() +
+  facet_wrap(~id)
+
 
 ## single dimension #######
 
@@ -115,6 +137,16 @@ d %>%
   theme_minimal()+
   facet_wrap(~race)
 
+d %>%
+  filter(condition == "sd") %>% 
+  mutate(categorization = as.numeric(categorization)) %>% 
+  group_by(masc, id) %>% 
+  summarise(mean_rating = mean(categorization))  %>% 
+  ggplot(aes(x=masc, y=mean_rating, group = 1)) +
+  geom_line()+
+  geom_point()+
+  theme_minimal()+
+  facet_wrap(~id)
 
 ##multiple dimension #####
 d %>% 
@@ -138,5 +170,17 @@ d %>%
   geom_point(aes(color = scale))+
   theme_minimal() +
   facet_wrap(~race)
+
+## by id
+d %>% 
+  filter(condition == "md") %>% 
+  mutate(categorization = as.numeric(categorization)) %>% 
+  group_by(masc, scale, id) %>% 
+  summarise(mean_rating = mean(categorization)) %>% 
+  ggplot(aes(x=masc, y=mean_rating, group = scale)) +
+  geom_line(aes(color = scale))+
+  geom_point(aes(color = scale))+
+  theme_minimal() +
+  facet_wrap(~id)
 
 
