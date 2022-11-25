@@ -5,7 +5,7 @@ output: html_notebook
 
 Start by loading dependencies and the data
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 library(brms)
 library(tidyr)
 library(dplyr)
@@ -16,10 +16,11 @@ d  <- read_and_clean("data/cat2stduy1_data.csv")
 
 
 ## Binomial models
-Start by working on a model for the binomial* data.
 
-```{r}
-#Wrangle data
+First I fit a binomial model to the data. 
+
+```{r message=FALSE, warning=FALSE}
+#Well, fist, first I wrangle data
 tmp <- d %>% 
   filter(condition == "xb" | condition == "mc" | condition == "ft") %>% 
   mutate(categorization = recode(categorization, 
@@ -27,27 +28,35 @@ tmp <- d %>%
                                  "man" = "m","Male " = "m", "make" = "m", "Male"= "m", "male" = "m", "man " = "m",  "male " = "m", "guy" = "m", "boy" = "m", "Make" = "m", "M"  = "m", "Man" = "m", "Bottom half male; above nose female., Would have to say Male" = "m", " male" = "m", "male  " = "m", "ale" = "m", "nmale" = "m", "MALE"= "m", "nale"= "m", " Male" = "m",
                                  "Nonbinary" = "o", "Non Binary " = "o", "Unsure" = "o", "Non binary " = "o", "good" = "o", "Neutral" = "o", "neutral" = "o", "nonbinary" = "o", "bigender" = "o", "hen" = "o", "don't know"  = "o", "Bottom half male, nose upwards female" = "o" )) %>% 
   mutate(f_cat = ifelse(categorization == "1", 1, 0))
+```
 
-# f_cat is a binary variable coding whether or not a face was categorized as a woman
-#Experimenting with fitting a bayesian model
-fit_binary_stair <- brm(f_cat ~ 0+ masc*condition + (1 + masc|id) + (1|face), family = bernoulli(link = 'logit'), 
-          prior = c(prior(normal(0,3), class = "b"),
-                    prior(normal(0,3), class = "Intercept")
-                    ),
-          data = tmp,
-          iter = 4000, warmup = 1000,
-          chains = 3,
-          cores = 4,
-          sample_prior = TRUE,
-          #file = "models/fit_binary_stair"
-          )
+Then I fite a binomial logistic model with fixed effect of condition and facial masculinity and varying intercepts for faces, varying intercepts for subjects and varying intercepts for masculinity (i.e. allowing the effect of masculinity to vary for each subject).
 
+$$
+\begin{aligned}
+\text{categorization}_{i} &\sim \mathrm{Binomial}(1,p) \\
+\text{logit}(p_i)&= \gamma_{condition[i]}+ \alpha_{subject[i]} + \beta_{condition[i]}M+ \gamma_{face[i],condition[i]}\\
+\gamma_{condition} &\sim \mathrm{Normal}(0,3),\: \text{for}\: condition =\text{ft, bc, mc}\\
+\alpha_{subject} &\sim \mathrm{Normal}(0, \sigma_{subject}) \\
+\beta_{condition}M & \sim \mathrm{Normal}(0,3),\: \text{for}\: pronoun =1,...,4\\
+\begin{bmatrix}
+\beta_{ft}\\\beta_{bc} \\\beta_{mc}
+\end{bmatrix}
+&\sim \mathrm{MVNormal}\Bigg(\begin{bmatrix} 0\\ 0\\ 0\end{bmatrix}, \Sigma _{face}\Bigg) \\
+\Sigma_{face} & =\textbf{S}_{\beta[cid]}\textbf{R}_{\beta[cid]}\textbf{S}_{\beta[cid]}  \\
+\sigma_{subject} &\sim \mathrm{HalfCauchy}(3) \\
+\sigma_{\gamma_{pronoun}}&\sim \mathrm{HalfCauchy}(3) \\
+\textbf{R} &\sim \mathrm{LKJcorr}(2) \\
+\end{aligned}
+$$
+
+```{r}
 fit_binary_index <- brm(f_cat ~ 0 + condition + masc:condition + (1 +masc|id) + (1|face), family = bernoulli(link = 'logit'), 
-          prior = c(prior(normal(0,5), class = "b", coef = "conditionmc"),
+          prior = c(prior(normal(0,3), class = "b", coef = "conditionmc"),
                     prior(normal(0,3), class ="b", coef= "conditionmc:masc"),
-                    prior(normal(0,5), class = "b", coef = "conditionxb"),
+                    prior(normal(0,3), class = "b", coef = "conditionxb"),
                     prior(normal(0,3), class = "b", coef = "conditionxb:masc"),
-                    prior(normal(0,5), class = "b", coef = "conditionft"),
+                    prior(normal(0,3), class = "b", coef = "conditionft"),
                     prior(normal(0,3), class ="b", coef= "conditionft:masc")
                     ),
           data = tmp,
@@ -57,17 +66,24 @@ fit_binary_index <- brm(f_cat ~ 0 + condition + masc:condition + (1 +masc|id) + 
           sample_prior = TRUE,
           file = "models/fit_binary_stair_index2"
           )
-
-hypothesis(fit_binary_index, "conditionft:masc= conditionxb:masc" )
-hypothesis(fit_binary_index, "conditionft= conditionmc" )
-hypothesis(fit_binary_index, "conditionft= conditionxb" )
-
-
-summary(fit_binary_stair)
-conditional_effects(fit_binary_stair)
-
-hypothesis(fit_binary_stair, "masc:conditionmc = masc:conditionxb")
 ```
+
+Cool, so we fit this data and what do we find? If we just start by getting a summary.
+
+```{r}
+summary(fit_binary_index)
+conditional_effects(fit_binary_index)
+```
+
+The first figures shows the "main effects" of condition and the second illustrates the the interaction, i.e. is the slope of masculnity different depending on condition. If we squint, maybe the ft slope looks a little bit shallower, but it's not very easy to tell. We can directly find the values for the differences in the slopes though using the built-in `hypothesis`function in brms. 
+
+```{r}
+hypothesis(fit_binary_index, "conditionft:masc= conditionxb:masc" )
+hypothesis(fit_binary_index, "conditionf:masc= conditionmc:masc" )
+hypothesis(fit_binary_index, "conditionf:masc= conditionxb:masc" )
+```
+
+## Gaussian models
 
 ```{r}
 #Wrangle data
