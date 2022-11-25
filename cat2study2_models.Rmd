@@ -21,24 +21,52 @@ Start by working on a model for the binomial* data.
 ```{r}
 #Wrangle data
 tmp <- d %>% 
-  filter(condition == "xb" | condition == "mc") %>% 
+  filter(condition == "xb" | condition == "mc" | condition == "ft") %>% 
+  mutate(categorization = recode(categorization, 
+                                 "F" = "1", "kvinna" = "1", "female" = "1", "female " = "1", "Female"= "1", "Fenale"= "1", "women" = "f", "woman " = "1", "femLE" = "1", "FEmale" = "1", "Femalw" = "1", "Fwmalw" = "1", "Female " = "1", "woman" = "1", "Woman" = "1", "feMale" = "1", "fermale" = "1", "wman" = "1", "Femae" = "1",
+                                 "man" = "m","Male " = "m", "make" = "m", "Male"= "m", "male" = "m", "man " = "m",  "male " = "m", "guy" = "m", "boy" = "m", "Make" = "m", "M"  = "m", "Man" = "m", "Bottom half male; above nose female., Would have to say Male" = "m", " male" = "m", "male  " = "m", "ale" = "m", "nmale" = "m", "MALE"= "m", "nale"= "m", " Male" = "m",
+                                 "Nonbinary" = "o", "Non Binary " = "o", "Unsure" = "o", "Non binary " = "o", "good" = "o", "Neutral" = "o", "neutral" = "o", "nonbinary" = "o", "bigender" = "o", "hen" = "o", "don't know"  = "o", "Bottom half male, nose upwards female" = "o" )) %>% 
   mutate(f_cat = ifelse(categorization == "1", 1, 0))
 
 # f_cat is a binary variable coding whether or not a face was categorized as a woman
 #Experimenting with fitting a bayesian model
-fit_binary_stair <- brm(f_cat ~ masc:condition + (1 + masc|id) + (1|face), family = bernoulli(link = 'logit'), 
+fit_binary_stair <- brm(f_cat ~ 0+ masc*condition + (1 + masc|id) + (1|face), family = bernoulli(link = 'logit'), 
           prior = c(prior(normal(0,3), class = "b"),
-                    prior(normal(0,3), class = "Intercept")),
+                    prior(normal(0,3), class = "Intercept")
+                    ),
           data = tmp,
           iter = 4000, warmup = 1000,
           chains = 3,
           cores = 4,
           sample_prior = TRUE,
-          file = "models/fit_binary_stair")
+          #file = "models/fit_binary_stair"
+          )
+
+fit_binary_index <- brm(f_cat ~ 0 + condition + masc:condition + (1 +masc|id) + (1|face), family = bernoulli(link = 'logit'), 
+          prior = c(prior(normal(0,5), class = "b", coef = "conditionmc"),
+                    prior(normal(0,3), class ="b", coef= "conditionmc:masc"),
+                    prior(normal(0,5), class = "b", coef = "conditionxb"),
+                    prior(normal(0,3), class = "b", coef = "conditionxb:masc"),
+                    prior(normal(0,5), class = "b", coef = "conditionft"),
+                    prior(normal(0,3), class ="b", coef= "conditionft:masc")
+                    ),
+          data = tmp,
+          iter = 4000, warmup = 1000,
+          chains = 4,
+          cores = 4,
+          sample_prior = TRUE,
+          file = "models/fit_binary_stair_index2"
+          )
+
+hypothesis(fit_binary_index, "conditionft:masc= conditionxb:masc" )
+hypothesis(fit_binary_index, "conditionft= conditionmc" )
+hypothesis(fit_binary_index, "conditionft= conditionxb" )
+
 
 summary(fit_binary_stair)
 conditional_effects(fit_binary_stair)
 
+hypothesis(fit_binary_stair, "masc:conditionmc = masc:conditionxb")
 ```
 
 ```{r}
@@ -82,7 +110,7 @@ fit_dimensional_stair_factor <-
           sample_prior = TRUE,
           file = "models/fit_dimensional_stair_factor")
 
-conditional_effects(fit_dimensional_stair)
+conditional_effects(fit_dimensional_stair_factor)
 ```
 
 just writing out the model

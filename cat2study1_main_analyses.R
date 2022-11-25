@@ -18,20 +18,23 @@ source("src/Functions.r")
 d  <- read_and_clean("data/cat2stduy1_data.csv") 
 
 
-##Free text #######
+##Free text & binary & multiple categories#######
 
 d %>%
-  filter(condition == "ft") %>% 
-  group_by(masc, race) %>% 
+  filter(condition == "ft" | condition == "xb" | condition == "mc") %>% 
+  group_by(masc, race, condition) %>% 
   mutate(categorization = recode(categorization, 
-                                 "F" = "f", "kvinna" = "f", "female" = "f", "female " = "f", "Female"= "f", "Fenale"= "f", "women" = "f", "woman " = "f", "femLE" = "f", "FEmale" = "f", "Femalw" = "f", "Fwmalw" = "f", "Female " = "f", "woman" = "f", "Woman" = "f", "feMale" = "f", "fermale" = "f", "wman" = "f", "Femae" = "f",
-                                 "man" = "m","Male " = "m", "make" = "m", "Male"= "m", "male" = "m", "man " = "m",  "male " = "m", "guy" = "m", "boy" = "m", "Make" = "m", "M"  = "m", "Man" = "m", "Bottom half male; above nose female., Would have to say Male" = "m", " male" = "m", "male  " = "m", "ale" = "m", "nmale" = "m", "MALE"= "m", "nale"= "m", " Male" = "m",
-                                 "Nonbinary" = "o", "Non Binary " = "o", "Unsure" = "o", "Non binary " = "o", "good" = "o", "Neutral" = "o", "neutral" = "o", "nonbinary" = "o", "bigender" = "o", "hen" = "o", "don't know"  = "o", "Bottom half male, nose upwards female" = "o" )) %>% 
+                                 "1" = "f", "F" = "f", "kvinna" = "f", "female" = "f", "female " = "f", "Female"= "f", "Fenale"= "f", "women" = "f", "woman " = "f", "femLE" = "f", "FEmale" = "f", "Femalw" = "f", "Fwmalw" = "f", "Female " = "f", "woman" = "f", "Woman" = "f", "feMale" = "f", "fermale" = "f", "wman" = "f", "Femae" = "f",
+                                 "2" = "m", "man" = "m","Male " = "m", "make" = "m", "Male"= "m", "male" = "m", "man " = "m",  "male " = "m", "guy" = "m", "boy" = "m", "Make" = "m", "M"  = "m", "Man" = "m", "Bottom half male; above nose female., Would have to say Male" = "m", " male" = "m", "male  " = "m", "ale" = "m", "nmale" = "m", "MALE"= "m", "nale"= "m", " Male" = "m",
+                                 "3" = "o", "Nonbinary" = "o", "Non Binary " = "o", "Unsure" = "o", "Non binary " = "o", "good" = "o", "Neutral" = "o", "neutral" = "o", "nonbinary" = "o", "bigender" = "o", "hen" = "o", "don't know"  = "o", "Bottom half male, nose upwards female" = "o",
+                                 "4" = "unknown", ),
+         condition = recode(condition, "ft" = "Free text", "xb" = "Binary Categories", "mc" = "Multiple Categories"))%>% 
   count(categorization) %>% 
   ggplot(aes(x=masc, y=n, fill=categorization)) +
   geom_bar(stat="identity", position = "fill") + 
-  ggtitle("Free Text R esponses")+
-  theme_minimal()
+  ggtitle("Gender Categorizations by Participants")+
+  theme_minimal()+ 
+  facet_wrap(~condition)
 
 #subsetting by race
 d %>%
@@ -171,7 +174,7 @@ d %>%
   theme_minimal() +
   facet_wrap(~race)
 
-## by id
+### by id
 d %>% 
   filter(condition == "md") %>% 
   mutate(categorization = as.numeric(categorization)) %>% 
