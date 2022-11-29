@@ -13,13 +13,26 @@ library(bayesplot)
 library(tidybayes)
 d  <- read_and_clean("data/cat2stduy1_data.csv") 
 ```
+## Background
 
+So, the background of this study is there's a pretty big literature that looks at social categorization. This tends to assume that gender is binary and that asking people to categorize faces as "man" and "woman" is a consequence free action. 
+
+We thought that maybe it wasn't, and we were interested in whether various response options that situated gender as more binary also shaped people's perception of gender to be more binary. 
+
+So for the experiment, we produced morphed faces of different levels of femininity and masculinity. There were 18 continua, where gender varied in seven increments, for a total of 126 faces.
+
+There were five response options conditions:
+* binary categories - man/woman
+* multiple categories - man/woman/other/don't know
+* free text - a free text box
+* binary dimension - woman ---- man on a slider
+* multiple dimensions - woman / man on separate sliders.
 
 ## Binomial models
 
-First I fit a binomial model to the data. 
+I start by looking at the first three conditions. Because these are all to some extent categorical. This is questionable at best, but I recoded the data so that I have the outcome based on the answer "woman" = 1, anything else = 0.
 
-```{r message=FALSE, warning=FALSE}
+```{r message=FALSE, warning=FALSE, include=FALSE}
 #Well, fist, first I wrangle data
 tmp <- d %>% 
   filter(condition == "xb" | condition == "mc" | condition == "ft") %>% 
@@ -30,15 +43,15 @@ tmp <- d %>%
   mutate(f_cat = ifelse(categorization == "1", 1, 0))
 ```
 
-Then I fite a binomial logistic model with fixed effect of condition and facial masculinity and varying intercepts for faces, varying intercepts for subjects and varying intercepts for masculinity (i.e. allowing the effect of masculinity to vary for each subject).
+Having made thsi questionable choice, first I fitted a binomial logistic model with fixed effect of condition and facial masculinity and varying intercepts for faces, varying intercepts for subjects and varying intercepts for masculinity (i.e. allowing the effect of masculinity to vary for each subject).
 
 $$
 \begin{aligned}
 \text{categorization}_{i} &\sim \mathrm{Binomial}(1,p) \\
-\text{logit}(p_i)&= \gamma_{condition[i]}+ \alpha_{subject[i]} + \beta_{condition[i]}M+ \gamma_{face[i],condition[i]}\\
-\gamma_{condition} &\sim \mathrm{Normal}(0,3),\: \text{for}\: condition =\text{ft, bc, mc}\\
+\text{logit}(p_i)&= \gamma_{cid[i]}+ \alpha_{subject[i]} + \beta_{cid[i]}M+ \gamma_{face[i],cid[i]}\\
+\gamma_{cid} &\sim \mathrm{Normal}(0,3),\: \text{for}\: cid =\text{ft, bc, mc}\\
 \alpha_{subject} &\sim \mathrm{Normal}(0, \sigma_{subject}) \\
-\beta_{condition}M & \sim \mathrm{Normal}(0,3),\: \text{for}\: pronoun =1,...,4\\
+\beta_{cid}M & \sim \mathrm{Normal}(0,3),\: \text{for}\: cid =\text{ft, bc, mc}\\
 \begin{bmatrix}
 \beta_{ft}\\\beta_{bc} \\\beta_{mc}
 \end{bmatrix}
@@ -49,6 +62,7 @@ $$
 \textbf{R} &\sim \mathrm{LKJcorr}(2) \\
 \end{aligned}
 $$
+Here's the code for the model fit. Wow! That's some code all right!
 
 ```{r}
 fit_binary_index <- brm(f_cat ~ 0 + condition + masc:condition + (1 +masc|id) + (1|face), family = bernoulli(link = 'logit'), 
@@ -68,22 +82,31 @@ fit_binary_index <- brm(f_cat ~ 0 + condition + masc:condition + (1 +masc|id) + 
           )
 ```
 
-Cool, so we fit this data and what do we find? If we just start by getting a summary.
+Cool, so we fit this data and what do we find? If we just start by getting a summary. Well, sort of a expected, the conditions don't look very different from each other. Also, because I didn't center the masculinity factor, the intercept isn't super interpretabl, at least not by me. The slopes seem clearly very similar though. But my stats guru McElreath always cautions against making too much of tables so we're also going to plot the data.
 
 ```{r}
 summary(fit_binary_index)
+```
+Plotting the data shows us a couple of things. First, it makes clear that something a little weird is going on with the free text condition. In the first of these figures, we have the main effect of condition, with the y axis showing the expected proportion of faces categorized as women (0.5 meaning, well, half). So, the fact that the free text condition, the estimate is at 0.4, suggests the distribution a slight male bias. I don't think this bias is obvious when I was just looking at the raw data. So maybe it's a bug?
+
+The second image shows the curves, and this confirms what the table told us, that they were quite similar. There is maybe a differenc if you squint, but the credible intervals overlap by a margin.
+
+```{r}
+
 conditional_effects(fit_binary_index)
 ```
 
-The first figures shows the "main effects" of condition and the second illustrates the the interaction, i.e. is the slope of masculnity different depending on condition. If we squint, maybe the ft slope looks a little bit shallower, but it's not very easy to tell. We can directly find the values for the differences in the slopes though using the built-in `hypothesis`function in brms. 
+ We can directly find the values for the differences in the slopes though using the built-in `hypothesis`function in brms. These suggest that there's fairly strong evidence in favor of these curves all being the same. Okay!
 
 ```{r}
 hypothesis(fit_binary_index, "conditionft:masc= conditionxb:masc" )
-hypothesis(fit_binary_index, "conditionf:masc= conditionmc:masc" )
-hypothesis(fit_binary_index, "conditionf:masc= conditionxb:masc" )
+hypothesis(fit_binary_index, "conditionft:masc= conditionmc:masc" )
+hypothesis(fit_binary_index, "conditionmc:masc= conditionxb:masc" )
 ```
 
 ## Gaussian models
+
+
 
 ```{r}
 #Wrangle data
