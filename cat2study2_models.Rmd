@@ -15,6 +15,7 @@ library(dplyr)
 library(bayesplot)
 library(tidybayes)
 library(ggplot2)
+source("src/functions.r")
 d  <- read_and_clean("data/cat2stduy1_data.csv") 
 ```
 
