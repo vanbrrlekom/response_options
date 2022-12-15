@@ -1,0 +1,69 @@
+---
+title: "pronoun pilot"
+format: html
+editor: visual
+---
+
+```{r message=TRUE, warning=FALSE, include = FALSE}
+library(brms)
+library(tidyr)
+library(dplyr)
+library(bayesplot)
+library(tidybayes)
+library(ggplot2)
+```
+
+## Quarto
+
+This is the analyses for the pronoun pilot. See my pm for why I did this analysis. 
+
+
+You can add options to executable code like this
+
+```{r}
+ d <-  read.csv("data/cat2_pronounpilot.csv") %>% 
+    mutate(across(!starts_with("Gender"), as.character))
+
+d <-  read.csv("data/cat2_pronounpilot.csv") %>% 
+    mutate(across(!starts_with("Gender"), as.character)) %>% 
+    mutate(id = 1:nrow(.)) %>% 
+    #arrange(condition.1) %>% 
+    pivot_longer(
+      cols = !c(id, Age, starts_with("Gender"), starts_with("choose"), contains("assign"), starts_with("Prolific"), starts_with("TIME")),
+      names_to = "face",
+      values_to = "categorization") %>% 
+    #separate(face, c("condition", "face", "morph", "scale")) %>% 
+   select(id, face, categorization, Age, Gender, starts_with("Gender")) %>% 
+   filter(!categorization == "") %>%   
+    separate(face, c("condition", "face", "morph", "scale")) %>% 
+    mutate(race = substr(face, 1,1),
+           masc = recode(morph, "0" = "0", "1" = "16.67", "2"= "33.33","3" = "50",
+                         "4" = "66.67", "5" ="83.33", "6" =  "100")) %>% 
+    mutate(masc = as.numeric(masc)) %>% 
+    mutate(masc = ifelse(race != "w", masc, 100 - masc))
+```
+
+Okay, so we've got the data, let's plot it ouuuut! So! It looks like people are more likely to use hen than they are to categorize the person as... other or I don't know. Interesting! 
+
+```{r}
+d %>% 
+  group_by(masc, race) %>% 
+  count(categorization) %>% 
+  ggplot(aes(x=masc, y=n, fill=categorization)) +
+  geom_bar(stat="identity", position = "fill")+
+  theme_minimal()
+```
+
+Let's look at what happens if we break it down to the individuald level.
+
+```{r}
+d %>% 
+  group_by(masc, id) %>% 
+  count(categorization) %>% 
+  ggplot(aes(x=masc, y=n, fill=categorization)) +
+  geom_bar(stat="identity", position = "fill")+
+  facet_wrap(~id)+
+  theme_minimal()
+```
+
+

@@ -187,3 +187,9 @@ d %>%
   facet_wrap(~id)
 
 
+#### just some exploration
+d <- d %>% 
+  mutate(gbb = rowMeans(select(., Gender_binary_beliefs.1: Gender_binary_beliefs.4))) %>% 
+  mutate(gbb_c = gbb - mean(gbb, na.rm = TRUE))
+
+

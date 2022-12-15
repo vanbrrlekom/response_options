@@ -1,0 +1,1191 @@
+
+l: mc_cb1
+t: info
+q: You will be shown 126 faces and asked to categorize them according to gender.<br> Try to answer your first impression, and don't worry too much about getting, the "right" answer. 
+
+
+l: prolific3
+t: textline
+q: Please enter your Prolific ID
+- 
+
+random: begin
+
+l: mc_w1_0
+t: radio
+i: {center} w1_0.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- They/them
+
+
+l: mc_w1_1
+t: radio
+i: {center} w1_1.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w1_2
+t: radio
+i: {center} w1_2.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w1_3
+t: radio
+i: {center} w1_3.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w1_4
+t: radio
+i: {center} w1_4.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w1_5
+t: radio
+i: {center} w1_5.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w1_6
+t: radio
+i: {center} w1_6.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w3_0
+t: radio
+i: {center} w3_0.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w3_1
+t: radio
+i: {center} w3_1.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w3_2
+t: radio
+i: {center} w3_2.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w3_3
+t: radio
+i: {center} w3_3.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w3_4
+t: radio
+i: {center} w3_4.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w3_5
+t: radio
+i: {center} w3_5.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w3_6
+t: radio
+i: {center} w3_6.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w4_0
+t: radio
+i: {center} w4_0.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w4_1
+t: radio
+i: {center} w4_1.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w4_2
+t: radio
+i: {center} w4_2.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w4_3
+t: radio
+i: {center} w4_3.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w4_4
+t: radio
+i: {center} w4_4.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w4_5
+t: radio
+i: {center} w4_5.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w4_6
+t: radio
+i: {center} w4_6.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w5_0
+t: radio
+i: {center} w5_0.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w5_1
+t: radio
+i: {center} w5_1.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w5_2
+t: radio
+i: {center} w5_2.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w5_3
+t: radio
+i: {center} w5_3.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w5_4
+t: radio
+i: {center} w5_4.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w5_5
+t: radio
+i: {center} w5_5.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w5_6
+t: radio
+i: {center} w5_6.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w10_0
+t: radio
+i: {center} w10_0.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w10_1
+t: radio
+i: {center} w10_1.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w10_2
+t: radio
+i: {center} w10_2.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w10_3
+t: radio
+i: {center} w10_3.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w10_4
+t: radio
+i: {center} w10_4.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w10_5
+t: radio
+i: {center} w10_5.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w10_6
+t: radio
+i: {center} w10_6.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w9_0
+t: radio
+i: {center} w9_0.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w9_1
+t: radio
+i: {center} w9_1.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w9_2
+t: radio
+i: {center} w9_2.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w9_3
+t: radio
+i: {center} w9_3.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w9_4
+t: radio
+i: {center} w9_4.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w9_5
+t: radio
+i: {center} w9_5.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_w9_6
+t: radio
+i: {center} w9_6.jpg
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+
+l: mc_b2_0
+t: radio
+i: {center} b2_0.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b2_1
+t: radio
+i: {center} b2_1.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b2_2
+t: radio
+i: {center} b2_2.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b2_3
+t: radio
+i: {center} b2_3.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b2_4
+t: radio
+i: {center} b2_4.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b2_5
+t: radio
+i: {center} b2_5.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b2_6
+t: radio
+i: {center} b2_6.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b4_0
+t: radio
+i: {center} b4_0.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b4_1
+t: radio
+i: {center} b4_1.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b4_2
+t: radio
+i: {center} b4_2.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b4_3
+t: radio
+i: {center} b4_3.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b4_4
+t: radio
+i: {center} b4_4.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b4_5
+t: radio
+i: {center} b4_5.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b4_6
+t: radio
+i: {center} b4_6.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b5_0
+t: radio
+i: {center} b5_0.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b5_1
+t: radio
+i: {center} b5_1.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b5_2
+t: radio
+i: {center} b5_2.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b5_3
+t: radio
+i: {center} b5_3.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b5_4
+t: radio
+i: {center} b5_4.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b5_5
+t: radio
+i: {center} b5_5.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b5_6
+t: radio
+i: {center} b5_6.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b6_0
+t: radio
+i: {center} b6_0.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b6_1
+t: radio
+i: {center} b6_1.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b6_2
+t: radio
+i: {center} b6_2.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b6_3
+t: radio
+i: {center} b6_3.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b6_4
+t: radio
+i: {center} b6_4.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b6_5
+t: radio
+i: {center} b6_5.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b6_6
+t: radio
+i: {center} b2_6.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b7_0
+t: radio
+i: {center} b7_0.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b7_1
+t: radio
+i: {center} b7_1.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b7_2
+t: radio
+i: {center} b7_2.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b7_3
+t: radio
+i: {center} b7_3.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b7_4
+t: radio
+i: {center} b7_4.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b7_5
+t: radio
+i: {center} b7_5.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b7_6
+t: radio
+i: {center} b7_6.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b9_0
+t: radio
+i: {center} b9_0.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b9_1
+t: radio
+i: {center} b9_1.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b9_2
+t: radio
+i: {center} b9_2.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b9_3
+t: radio
+i: {center} b9_3.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b9_4
+t: radio
+i: {center} b9_4.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b9_5
+t: radio
+i: {center} b9_5.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_b9_6
+t: radio
+i: {center} b9_6.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+
+random: end
+
+
+l: demo
+t: info
+q: Before you go, we would like to ask you a couple of quick demographic questions.
+
+page: begin
+
+l: Age
+t: textline
+q: What is your age?
+- {min = 18}
+
+
+l: Gender
+t: textline
+q: What is your gender identity?
+- 
+
+page: end
+
+l: GBB
+t: info
+q: Lastly, we would like to ask you a few of quick questions about your attitudes to gender identity.
+
+scale: agree
+- Disagree <br> 1
+- <br> 2
+- <br> 3
+- <br> 4
+- Agree <br> 5
+
+l: Gender_binary_beliefs
+q: How much do you agree with each of the following?
+t: scale agree
+- There are only two genders, male or female
+- All adults identify as either male or female
+- If you are either male or female, then you are that gender for all time
+- All males have a penis and females all have a vagina
+
+j: end
+
+l: mc_a1_0
+t: radio
+i: {center} a1_0.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a1_1
+t: radio
+i: {center} a1_1.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a1_2
+t: radio
+i: {center} a1_2.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a1_3
+t: radio
+i: {center} a1_3.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a1_4
+t: radio
+i: {center} a1_4.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a1_5
+t: radio
+i: {center} a1_5.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a1_6
+t: radio
+i: {center} a1_6.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a3_0
+t: radio
+i: {center} a3_0.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a3_1
+t: radio
+i: {center} a3_1.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a3_2
+t: radio
+i: {center} a3_2.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a3_3
+t: radio
+i: {center} a3_3.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a3_4
+t: radio
+i: {center} a3_4.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a3_5
+t: radio
+i: {center} a3_5.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a3_6
+t: radio
+i: {center} a3_6.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+
+l: mc_a4_0
+t: radio
+i: {center} a4_0.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a4_1
+t: radio
+i: {center} a4_1.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a4_2
+t: radio
+i: {center} a4_2.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a4_3
+t: radio
+i: {center} a4_3.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a4_4
+t: radio
+i: {center} a4_4.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a4_5
+t: radio
+i: {center} a4_5.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a4_6
+t: radio
+i: {center} a4_6.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a5_0
+t: radio
+i: {center} a5_0.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a5_1
+t: radio
+i: {center} a5_1.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a5_2
+t: radio
+i: {center} a5_2.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a5_3
+t: radio
+i: {center} a5_3.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a5_4
+t: radio
+i: {center} a5_4.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a5_5
+t: radio
+i: {center} a5_5.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a5_6
+t: radio
+i: {center} a5_6.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a8_0
+t: radio
+i: {center} a8_0.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a8_1
+t: radio
+i: {center} a8_1.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a8_2
+t: radio
+i: {center} a8_2.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a8_3
+t: radio
+i: {center} a8_3.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a8_4
+t: radio
+i: {center} a8_4.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a8_5
+t: radio
+i: {center} a8_5.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a8_6
+t: radio
+i: {center} a8_6.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a10_0
+t: radio
+i: {center} a10_0.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a10_1
+t: radio
+i: {center} a10_1.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a10_2
+t: radio
+i: {center} a10_2.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a10_3
+t: radio
+i: {center} a10_3.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a10_4
+t: radio
+i: {center} a10_4.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a10_5
+t: radio
+i: {center} a10_5.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other
+
+
+l: mc_a10_6
+t: radio
+i: {center} a10_6.png
+q: How would you gender categorize this person?
+- She/her
+- He/his
+- Other

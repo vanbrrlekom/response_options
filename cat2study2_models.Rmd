@@ -1,6 +1,9 @@
 ---
 title: "R Notebook"
 output: html_notebook
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
 
 Start by loading dependencies and the data
@@ -11,26 +14,83 @@ library(tidyr)
 library(dplyr)
 library(bayesplot)
 library(tidybayes)
+library(ggplot2)
 d  <- read_and_clean("data/cat2stduy1_data.csv") 
 ```
+
 ## Background
 
-So, the background of this study is there's a pretty big literature that looks at social categorization. This tends to assume that gender is binary and that asking people to categorize faces as "man" and "woman" is a consequence free action. 
+So, the background of this study is there's a pretty big literature that
+looks at social categorization. This tends to assume that gender is
+binary and that asking people to categorize faces as "man" and "woman"
+is a consequence free action.
 
-We thought that maybe it wasn't, and we were interested in whether various response options that situated gender as more binary also shaped people's perception of gender to be more binary. 
+We thought that maybe it wasn't, and we were interested in whether
+various response options that situated gender as more binary also shaped
+people's perception of gender to be more binary.
 
-So for the experiment, we produced morphed faces of different levels of femininity and masculinity. There were 18 continua, where gender varied in seven increments, for a total of 126 faces.
+So for the experiment, we produced morphed faces of different levels of
+femininity and masculinity. There were 18 continua, where gender varied
+in seven increments, for a total of 126 faces.
 
-There were five response options conditions:
-* binary categories - man/woman
-* multiple categories - man/woman/other/don't know
-* free text - a free text box
-* binary dimension - woman ---- man on a slider
-* multiple dimensions - woman / man on separate sliders.
+There were five response options conditions: \* binary categories -
+man/woman \* multiple categories - man/woman/other/don't know \* free
+text - a free text box \* binary dimension - woman ---- man on a slider
+\* multiple dimensions - woman / man on separate sliders.
+
+## Visualizing the data
+
+First I just want to get a sense of what the distribution of responses
+looks like. The following graph just shows the raw distribution of
+categorizations across the three "categorical" conditions. I.e. the
+conditions where participants respond with discrete categories. My first
+impression is that these all look quite similar.
+
+```{r Visualising categorical options}
+d %>%
+  filter(condition == "ft" | condition == "xb" | condition == "mc") %>% 
+  group_by(masc, race, condition) %>% 
+  mutate(categorization = recode(categorization,  #yes, this is pretty horrendous code, I haven't had a chance to sit down and clean it up yet.
+                                 "1" = "f", "F" = "f", "kvinna" = "f", "female" = "f", "female " = "f", "Female"= "f", "Fenale"= "f", "women" = "f", "woman " = "f", "femLE" = "f", "FEmale" = "f", "Femalw" = "f", "Fwmalw" = "f", "Female " = "f", "woman" = "f", "Woman" = "f", "feMale" = "f", "fermale" = "f", "wman" = "f", "Femae" = "f",
+                                 "2" = "m", "man" = "m","Male " = "m", "make" = "m", "Male"= "m", "male" = "m", "man " = "m",  "male " = "m", "guy" = "m", "boy" = "m", "Make" = "m", "M"  = "m", "Man" = "m", "Bottom half male; above nose female., Would have to say Male" = "m", " male" = "m", "male  " = "m", "ale" = "m", "nmale" = "m", "MALE"= "m", "nale"= "m", " Male" = "m",
+                                 "3" = "o", "Nonbinary" = "o", "Non Binary " = "o", "Unsure" = "o", "Non binary " = "o", "good" = "o", "Neutral" = "o", "neutral" = "o", "nonbinary" = "o", "bigender" = "o", "hen" = "o", "don't know"  = "o", "Bottom half male, nose upwards female" = "o",
+                                 "4" = "unknown", ),
+         condition = recode(condition, "ft" = "Free text", "xb" = "Binary Categories", "mc" = "Multiple Categories"))%>% 
+  count(categorization) %>% 
+  ggplot(aes(x=masc, y=n, fill=categorization)) +
+  geom_bar(stat="identity", position = "fill") + 
+  ggtitle("Gender Categorizations by Participants")+
+  theme_minimal()+ 
+  facet_wrap(~condition)
+```
+
+Second, I did the same thing for the "dimensional" conditions, i.e. the
+conditions where participants respond using a dimensional slider. This
+image again shows the mean ratings at every level of masculinity at
+multiple dimensions (md) and single dimension (sd). I reverse-coded the
+femininity rating to make the two more comparable. Again, just a visual
+inspection of the curves suggest they are *quite* similar.
+
+```{r}
+d %>% 
+  filter(condition == "md" | condition == "sd") %>% 
+  mutate(categorization = as.numeric(categorization) %>% ifelse(scale == "f", 101-., .),
+         scale = recode(scale, "1" = "single", "f" = "multiple: f", "m" = "multiple: m")) %>% 
+  group_by(masc, scale, condition) %>% 
+  summarise(mean_rating = mean(categorization)) %>% 
+  ggplot(aes(x=masc, y=mean_rating, group = scale)) +
+  geom_line(aes(color = scale))+
+  geom_point(aes(color = scale))+
+  theme_minimal()+
+  facet_wrap(~condition)
+```
 
 ## Binomial models
 
-I start by looking at the first three conditions. Because these are all to some extent categorical. This is questionable at best, but I recoded the data so that I have the outcome based on the answer "woman" = 1, anything else = 0.
+I start by looking at the first three conditions. The same ones I called
+categorical in the earlier section. This is questionable at best, but I
+recoded the data so that I have the outcome based on the answer "woman"
+= 1, anything else = 0.
 
 ```{r message=FALSE, warning=FALSE, include=FALSE}
 #Well, fist, first I wrangle data
@@ -43,7 +103,11 @@ tmp <- d %>%
   mutate(f_cat = ifelse(categorization == "1", 1, 0))
 ```
 
-Having made thsi questionable choice, first I fitted a binomial logistic model with fixed effect of condition and facial masculinity and varying intercepts for faces, varying intercepts for subjects and varying intercepts for masculinity (i.e. allowing the effect of masculinity to vary for each subject).
+Having made this questionable choice, first I fitted a binomial logistic
+model with fixed effect of condition and facial masculinity and varying
+intercepts for faces, varying intercepts for subjects and varying
+intercepts for masculinity (i.e. allowing the effect of masculinity to
+vary for each subject).
 
 $$
 \begin{aligned}
@@ -61,8 +125,7 @@ $$
 \sigma_{\gamma_{pronoun}}&\sim \mathrm{HalfCauchy}(3) \\
 \textbf{R} &\sim \mathrm{LKJcorr}(2) \\
 \end{aligned}
-$$
-Here's the code for the model fit. Wow! That's some code all right!
+$$ Here's the code for the model fit. Wow! That's some code all right!
 
 ```{r}
 fit_binary_index <- brm(f_cat ~ 0 + condition + masc:condition + (1 +masc|id) + (1|face), family = bernoulli(link = 'logit'), 
@@ -82,21 +145,40 @@ fit_binary_index <- brm(f_cat ~ 0 + condition + masc:condition + (1 +masc|id) + 
           )
 ```
 
-Cool, so we fit this data and what do we find? If we just start by getting a summary. Well, sort of a expected, the conditions don't look very different from each other. Also, because I didn't center the masculinity factor, the intercept isn't super interpretabl, at least not by me. The slopes seem clearly very similar though. But my stats guru McElreath always cautions against making too much of tables so we're also going to plot the data.
+Cool, so we fit this data and what do we find? If we just start by
+getting a summary. Well, sort of as expected, the conditions don't look
+very different from each other. Also, because I didn't center the
+masculinity factor, the intercept isn't super interpretable, at least
+not by me. The slopes seem clearly very similar though. But my stats
+guru McElreath always cautions against making too much of tables so
+we're also going to plot the data.
 
 ```{r}
 summary(fit_binary_index)
 ```
-Plotting the data shows us a couple of things. First, it makes clear that something a little weird is going on with the free text condition. In the first of these figures, we have the main effect of condition, with the y axis showing the expected proportion of faces categorized as women (0.5 meaning, well, half). So, the fact that the free text condition, the estimate is at 0.4, suggests the distribution a slight male bias. I don't think this bias is obvious when I was just looking at the raw data. So maybe it's a bug?
 
-The second image shows the curves, and this confirms what the table told us, that they were quite similar. There is maybe a differenc if you squint, but the credible intervals overlap by a margin.
+Plotting the data shows us a couple of things. First, it makes clear
+that something a little weird is going on with the free text condition.
+In the first of these figures, we have the main effect of condition,
+with the y axis showing the expected proportion of faces categorized as
+women (0.5 meaning, well, half). So, the fact that the free text
+condition, the estimate is at 0.4, suggests the distribution a slight
+male bias. I don't think this bias is obvious when I was just looking at
+the raw data. So maybe it's a bug?
+
+The second image shows the curves, and this confirms what the table told
+us, that they were quite similar. There is maybe a differenc if you
+squint, but the credible intervals overlap by a margin.
 
 ```{r}
 
 conditional_effects(fit_binary_index)
 ```
 
- We can directly find the values for the differences in the slopes though using the built-in `hypothesis`function in brms. These suggest that there's fairly strong evidence in favor of these curves all being the same. Okay!
+We can directly find the values for the differences in the slopes though
+using the built-in `hypothesis`function in brms. These suggest that
+there's fairly strong evidence in favor of these curves all being the
+same. Okay!
 
 ```{r}
 hypothesis(fit_binary_index, "conditionft:masc= conditionxb:masc" )
@@ -106,7 +188,10 @@ hypothesis(fit_binary_index, "conditionmc:masc= conditionxb:masc" )
 
 ## Gaussian models
 
-
+The next step would be to look at the last two conditions. The visual
+inspection suggest they are very similar, but can we model that. This is
+where I'm a little bit uncertain about the best approach, and where
+talking to a curve-modelling expect would be useul.
 
 ```{r}
 #Wrangle data
@@ -152,7 +237,44 @@ fit_dimensional_stair_factor <-
 conditional_effects(fit_dimensional_stair_factor)
 ```
 
-just writing out the model
+```{r}
 
-a + (b-a)/(1+e^(c-x)/d
+tmp <- tmp %>% 
+  mutate(masc_c = masc - mean(masc),
+         gbb = rowMeans(select(., Gender_binary_beliefs.1: Gender_binary_beliefs.4))) %>%
+  mutate(gbb_c = gbb - mean(gbb, na.rm = TRUE))
 
+fit_binary_gbb_int <- brm(f_cat ~ 0 + condition + condition: gbb_c + masc:condition + (1 +masc|id) + (1|face), family = bernoulli(link = 'logit'), 
+          prior = c(prior(normal(0,3), class = "b", coef = "conditionmc"),
+                    prior(normal(0,3), class ="b", coef= "conditionmc:masc"),
+                    prior(normal(0,3), class = "b", coef = "conditionxb"),
+                    prior(normal(0,3), class = "b", coef = "conditionxb:masc"),
+                    prior(normal(0,3), class = "b", coef = "conditionft"),
+                    prior(normal(0,3), class ="b", coef= "conditionft:masc"),
+                    prior(cauchy(0,3), class = "sd")
+                    ),
+          data = tmp,
+          iter = 4000, warmup = 1000,
+          chains = 4,
+          cores = 4,
+          sample_prior = TRUE,
+          file = "models/fit_binary_gbb_int"
+          )
+```
+
+```{r}
+tmp <- tmp %>% 
+  mutate(masc_c = masc - mean(masc))
+
+fit_binary_gbb_int_three <- brm(f_cat ~ 0 + condition*gbb_c*masc_c  + (1 +masc|id) + (1|face), family = bernoulli(link = 'logit'), 
+          prior = c (prior(normal(0,3), class ="b"),
+                    prior(cauchy(0,3), class = "sd")
+                    ),
+          data = tmp,
+          iter = 4000, warmup = 1000,
+          chains = 4,
+          cores = 4,
+          sample_prior = TRUE,
+          file = "models/fit_binary_gbb_int_three"
+          )
+```
