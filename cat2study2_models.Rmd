@@ -178,7 +178,7 @@ conditional_effects(fit_binary_index)
 We can directly find the values for the differences in the slopes though
 using the built-in `hypothesis`function in brms. These suggest that
 there's fairly strong evidence in favor of these curves all being the
-same. Okay!
+same. Okay! Good to know.
 
 ```{r}
 hypothesis(fit_binary_index, "conditionft:masc= conditionxb:masc" )
@@ -191,33 +191,19 @@ hypothesis(fit_binary_index, "conditionmc:masc= conditionxb:masc" )
 The next step would be to look at the last two conditions. The visual
 inspection suggest they are very similar, but can we model that. This is
 where I'm a little bit uncertain about the best approach, and where
-talking to a curve-modelling expect would be useul.
+talking to a curve-modelling expert would be useful. One thing that
+somebody I talked to suggested was to skip all the non-linear curve
+nonsense and just factorize all the points on the masc scale. The
+following just calculates a unique intercept at each level of
+masculinity and condition.
 
 ```{r}
 #Wrangle data
 tmp <- d %>% 
   filter(condition == "sd" | condition == "md") %>% 
   mutate(f_rating = as.numeric(categorization) %>%  ifelse(scale == "f", ., 100- .),
-         scale_new = ifelse(scale == "f" | scale =="m", scale, "sd"))
-
-
-#Experimenting with fitting a bayesian model to the scale data
-fit_dimensional_stair <- brm(f_rating ~ masc:scale_new + (1 + masc|id) + (1|face), family = gaussian(link = 'identity'), 
-          prior = c(prior(normal(0,1.5), class = "b"),
-                    prior(normal(50,20), class = "Intercept")),
-          data = tmp,
-          iter = 4000, warmup = 1000,
-          cores = 4,
-          sample_prior = TRUE, #necessary to analyse bayes factor
-          file = "models/fit_dimensional_stair")
-
-summary(fit_dimensional_stair)
-
-# the "dumb" way to do it is just to calculate intercepts at each level masculinity and condition, and 
-#check how similar they are.
-
-tmp <- tmp %>% 
-  mutate(masc = as.factor(masc)) 
+         scale_new = ifelse(scale == "f" | scale =="m", scale, "sd"),
+         masc = as.factor(masc)) 
 
 get_prior(formula = (f_rating ~ 1 + masc:condition + (1 + masc|id) + (1|face)), family = gaussian(link = 'identity'), data = tmp)
 
