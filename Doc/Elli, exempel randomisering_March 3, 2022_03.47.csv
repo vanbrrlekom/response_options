@@ -1,0 +1,1542 @@
+StartDate,EndDate,Status,IPAddress,Progress,Duration (in seconds),Finished,RecordedDate,ResponseId,RecipientLastName,RecipientFirstName,RecipientEmail,ExternalReference,LocationLatitude,LocationLongitude,DistributionChannel,UserLanguage,Q166,Q168,Q170,mdf_1_00_9,mdm_2_00_9,mdf_1_100_9,mdm_2_100_9,mdf_1_17_9,mdf_1_83_9,md_2_17_9,mdf_1_34_9,mdm_2_83_9,mdm_2_34_9,mdf_1_67_9,mdm_2_67_9,mdf_1_50_9,mdf_2_50_9,sd_1_00_9,sd_2_00_9,sd_1_100_9,sd_2_100_9,sd_1_17_9,sd_2_17_9,sd_1_83_9,sd_2_83_9,sd_1_34_9,sd_2_34_9,1sd_2_67_9,sd_3_67_9,sd_2_50_9,sd_3_50_9,ft_1_00,ft_1_17,ft_2_17,ft_1_34,ft_2_34,ft_1_50,ft_2_50,ft_1_83,ft_2_83,ft_1_67,ft_2_67,ft_1_100,ft_3_100,xb_1_00,xb_2_0,xb_1_100,xb_2_100,xb_1_17,xb_2_17,xb_1_83,xb_2_83,xb_1_34,xb_2_34,xb_1_67,xb_1_50,xb_3_67,xb_2_50,mc_1_00,MC_1_100,mc_2_00,mc_2_100,mc_1_17,mc_1_83,mc_2_17,mc_2_83,mc_3_67,mc_1_34,mc_2_34,mc_2_67,"!mc_1_50",mc_3_50,masc,fem,script1,script 2,Create New Field or Choose From Dropdown...,OI,Q,W,M,MC1,MC2,SDA1,SDA2,MDA1,MDA2,condition
+Start Date,End Date,Response Type,IP Address,Progress,Duration (in seconds),Finished,Recorded Date,Response ID,Recipient Last Name,Recipient First Name,Recipient Email,External Data Reference,Location Latitude,Location Longitude,Distribution Channel,User Language,"Welcome to a study about gender categorization
+
+ 
+
+We estimate that the total amount of time to complete the study is approximately 5 minutes.
+
+ 
+
+The corresponding author is Elli van Berlekom, a PhD canidate at Stockholm University. For further inquiries, please email the following adress: elli.vanberlekom@psychology.su.se.
+Any data you input will be saved and may be used for research, but your response will be completely anonymous.",How old are you?,What is your gender identity?,"[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - 9","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - [Field-W]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}","x[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - x${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}","x[Field-OI]: 
+
+  
+
+ 
+
+ 
+
+[Field-Q] - x${e://Field/OI}: 
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - 9","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - [Field-W]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}","[Field-OI]: 
+
+  
+
+ 
+
+ 
+
+[Field-Q] - ${e://Field/OI}: 
+
+  
+
+ 
+
+ 
+
+${e://Field/Q}","[Field-OI]: 
+
+  
+
+ 
+
+ 
+
+[Field-Q] - 9","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+
+  
+
+ 
+
+ 
+
+[Field-Q]","[Field-OI]: 
+
+  
+
+ 
+
+ 
+
+[Field-Q]",masc,fem,script1,script 2,Create New Field or Choose From Dropdown...,OI,Q,W,M,MC1,MC2,SDA1,SDA2,MDA1,MDA2,condition
+"{""ImportId"":""startDate"",""timeZone"":""America/Denver""}","{""ImportId"":""endDate"",""timeZone"":""America/Denver""}","{""ImportId"":""status""}","{""ImportId"":""ipAddress""}","{""ImportId"":""progress""}","{""ImportId"":""duration""}","{""ImportId"":""finished""}","{""ImportId"":""recordedDate"",""timeZone"":""America/Denver""}","{""ImportId"":""_recordId""}","{""ImportId"":""recipientLastName""}","{""ImportId"":""recipientFirstName""}","{""ImportId"":""recipientEmail""}","{""ImportId"":""externalDataReference""}","{""ImportId"":""locationLatitude""}","{""ImportId"":""locationLongitude""}","{""ImportId"":""distributionChannel""}","{""ImportId"":""userLanguage""}","{""ImportId"":""QID218""}","{""ImportId"":""QID220_TEXT""}","{""ImportId"":""QID222_TEXT""}","{""ImportId"":""QID196_9""}","{""ImportId"":""QID197_9""}","{""ImportId"":""QID199_9""}","{""ImportId"":""QID200_9""}","{""ImportId"":""QID202_9""}","{""ImportId"":""QID205_9""}","{""ImportId"":""QID203_9""}","{""ImportId"":""QID208_9""}","{""ImportId"":""QID206_9""}","{""ImportId"":""QID209_9""}","{""ImportId"":""QID211_9""}","{""ImportId"":""QID212_9""}","{""ImportId"":""QID214_9""}","{""ImportId"":""QID215_9""}","{""ImportId"":""QID91_9""}","{""ImportId"":""QID93_9""}","{""ImportId"":""QID92_9""}","{""ImportId"":""QID94_9""}","{""ImportId"":""QID97_9""}","{""ImportId"":""QID99_9""}","{""ImportId"":""QID98_9""}","{""ImportId"":""QID100_9""}","{""ImportId"":""QID104_9""}","{""ImportId"":""QID105_9""}","{""ImportId"":""QID106_9""}","{""ImportId"":""QID103_9""}","{""ImportId"":""QID110_9""}","{""ImportId"":""QID111_9""}","{""ImportId"":""QID175_TEXT""}","{""ImportId"":""QID181_TEXT""}","{""ImportId"":""QID182_TEXT""}","{""ImportId"":""QID187_TEXT""}","{""ImportId"":""QID188_TEXT""}","{""ImportId"":""QID193_TEXT""}","{""ImportId"":""QID194_TEXT""}","{""ImportId"":""QID184_TEXT""}","{""ImportId"":""QID185_TEXT""}","{""ImportId"":""QID190_TEXT""}","{""ImportId"":""QID191_TEXT""}","{""ImportId"":""QID178_TEXT""}","{""ImportId"":""QID180_TEXT""}","{""ImportId"":""QID77""}","{""ImportId"":""QID78""}","{""ImportId"":""QID90""}","{""ImportId"":""QID88""}","{""ImportId"":""QID74""}","{""ImportId"":""QID75""}","{""ImportId"":""QID87""}","{""ImportId"":""QID223""}","{""ImportId"":""QID84""}","{""ImportId"":""QID72""}","{""ImportId"":""QID82""}","{""ImportId"":""QID64""}","{""ImportId"":""QID71""}","{""ImportId"":""QID67""}","{""ImportId"":""QID112""}","{""ImportId"":""QID113""}","{""ImportId"":""QID114""}","{""ImportId"":""QID115""}","{""ImportId"":""QID118""}","{""ImportId"":""QID119""}","{""ImportId"":""QID120""}","{""ImportId"":""QID121""}","{""ImportId"":""QID124""}","{""ImportId"":""QID125""}","{""ImportId"":""QID126""}","{""ImportId"":""QID127""}","{""ImportId"":""QID130""}","{""ImportId"":""QID131""}","{""ImportId"":""masc""}","{""ImportId"":""fem""}","{""ImportId"":""script1""}","{""ImportId"":""script 2""}","{""ImportId"":""Create New Field or Choose From Dropdown...""}","{""ImportId"":""OI""}","{""ImportId"":""Q""}","{""ImportId"":""W""}","{""ImportId"":""M""}","{""ImportId"":""MC1""}","{""ImportId"":""MC2""}","{""ImportId"":""SDA1""}","{""ImportId"":""SDA2""}","{""ImportId"":""MDA1""}","{""ImportId"":""MDA2""}","{""ImportId"":""condition""}"
+2022-03-03 03:45:44,2022-03-03 03:45:44,Survey Test,,100,0,True,2022-03-03 03:45:44,R_bdeeZXffr6kRQdo,,,,,59.4416961669921875,18.0637054443359375,test,,Please confirm that you have read the above and consent to participate in the study,63,Ab tempor ligula faucibus. Ante ultricies auctor. Fermentum metus eros! Fermentum.,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,${e://Field/W},${e://Field/M},${e://Field/W},${e://Field/M},${e://Field/W},${e://Field/M},${e://Field/M},${e://Field/W},${e://Field/W},${e://Field/W},${e://Field/M},${e://Field/W},${e://Field/M},${e://Field/W},,,,,,,,,,,,,,,"competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure","affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Now fem
+ fem = ""affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm"";
+    fem = fem.split("","");
+    r2 = Math.floor(Math.random() * fem.length);
+ 
+   // Store the selected named and remove it from the list
+    property4 = fem[r1].trim();
+    fem.splice(r2, 1);
+ 
+   // Store the selected named and remove it from the list
+    r2 = Math.floor(Math.random() * fem.length);
+ property5 = fem[r2].trim();
+    fem.splice(r2, 1);
+ 
+ // Store the selected named and remove it from the list
+     r2 = Math.floor(Math.random() * fem.length);  
+ property6 = fem[r2].trim();
+    fem.splice(r2, 1);
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 + "", "" + property4 + "", "" + property5 + "", "" + property6  
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;",,Please imagine a person with the following traits,<b>How wold you gender categorize this person?<b>,Woman,Man,Other,I don't know,Clearly a woman,Clearly a man,Not a woman,Not a man,xb
+2022-03-03 03:45:44,2022-03-03 03:45:45,Survey Test,,100,1,True,2022-03-03 03:45:45,R_d6TPS9X5wr24aAC,,,,,59.4416961669921875,18.0637054443359375,test,,Please confirm that you have read the above and consent to participate in the study,65,Tortor elit tortor nunc dapibus felis consequat vulputate tellus velit? Convallis porttitor elementum fringilla vivamus.,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,${e://Field/MC2},${e://Field/MC2},${e://Field/MC2},${e://Field/W},${e://Field/M},${e://Field/MC2},${e://Field/W},${e://Field/M},${e://Field/MC2},${e://Field/W},${e://Field/MC1},${e://Field/M},${e://Field/M},${e://Field/M},"competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure","affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Now fem
+ fem = ""affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm"";
+    fem = fem.split("","");
+    r2 = Math.floor(Math.random() * fem.length);
+ 
+   // Store the selected named and remove it from the list
+    property4 = fem[r1].trim();
+    fem.splice(r2, 1);
+ 
+   // Store the selected named and remove it from the list
+    r2 = Math.floor(Math.random() * fem.length);
+ property5 = fem[r2].trim();
+    fem.splice(r2, 1);
+ 
+ // Store the selected named and remove it from the list
+     r2 = Math.floor(Math.random() * fem.length);  
+ property6 = fem[r2].trim();
+    fem.splice(r2, 1);
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 + "", "" + property4 + "", "" + property5 + "", "" + property6  
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;",,Please imagine a person with the following traits,<b>How wold you gender categorize this person?<b>,Woman,Man,Other,I don't know,Clearly a woman,Clearly a man,Not a woman,Not a man,mc
+2022-03-03 03:45:45,2022-03-03 03:45:45,Survey Test,,100,0,True,2022-03-03 03:45:45,R_9RkgjFhT37CT9Fc,,,,,59.4416961669921875,18.0637054443359375,test,,Please confirm that you have read the above and consent to participate in the study,97,Primis laoreet quis platea accumsan tortor amet ultricies mauris metus suspendisse suscipit facilisis porta urna.,,,,,,,,,,,,,,,63,33,53,89,65,95,15,54,39,92,86,66,89,13,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure","affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Now fem
+ fem = ""affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm"";
+    fem = fem.split("","");
+    r2 = Math.floor(Math.random() * fem.length);
+ 
+   // Store the selected named and remove it from the list
+    property4 = fem[r1].trim();
+    fem.splice(r2, 1);
+ 
+   // Store the selected named and remove it from the list
+    r2 = Math.floor(Math.random() * fem.length);
+ property5 = fem[r2].trim();
+    fem.splice(r2, 1);
+ 
+ // Store the selected named and remove it from the list
+     r2 = Math.floor(Math.random() * fem.length);  
+ property6 = fem[r2].trim();
+    fem.splice(r2, 1);
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 + "", "" + property4 + "", "" + property5 + "", "" + property6  
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;",,Please imagine a person with the following traits,<b>How wold you gender categorize this person?<b>,Woman,Man,Other,I don't know,Clearly a woman,Clearly a man,Not a woman,Not a man,sd
+2022-03-03 03:45:45,2022-03-03 03:45:45,Survey Test,,100,0,True,2022-03-03 03:45:45,R_ddmiXreFLTsXPcG,,,,,59.4416961669921875,18.0637054443359375,test,,Please confirm that you have read the above and consent to participate in the study,32,"Sodales? Luctus! Pellentesque dolorem egestas. Urna tempus, gravida cras ridiculus egestas etiam euismod imperdiet! Dapibus.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,${e://Field/W},${e://Field/M},${e://Field/M},${e://Field/M},${e://Field/W},${e://Field/M},${e://Field/M},${e://Field/W},${e://Field/M},${e://Field/W},${e://Field/M},${e://Field/W},${e://Field/M},${e://Field/M},,,,,,,,,,,,,,,"competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure","affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Now fem
+ fem = ""affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm"";
+    fem = fem.split("","");
+    r2 = Math.floor(Math.random() * fem.length);
+ 
+   // Store the selected named and remove it from the list
+    property4 = fem[r1].trim();
+    fem.splice(r2, 1);
+ 
+   // Store the selected named and remove it from the list
+    r2 = Math.floor(Math.random() * fem.length);
+ property5 = fem[r2].trim();
+    fem.splice(r2, 1);
+ 
+ // Store the selected named and remove it from the list
+     r2 = Math.floor(Math.random() * fem.length);  
+ property6 = fem[r2].trim();
+    fem.splice(r2, 1);
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 + "", "" + property4 + "", "" + property5 + "", "" + property6  
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;",,Please imagine a person with the following traits,<b>How wold you gender categorize this person?<b>,Woman,Man,Other,I don't know,Clearly a woman,Clearly a man,Not a woman,Not a man,xb
+2022-03-03 03:45:45,2022-03-03 03:45:46,Survey Test,,100,1,True,2022-03-03 03:45:46,R_4UiBzbJxyTeKpBY,,,,,59.4416961669921875,18.0637054443359375,test,,Please confirm that you have read the above and consent to participate in the study,33,Amet suspendisse platea vestibulum vestibulum scelerisque lorem risus pharetra ipsum.,88,63,45,67,46,29,56,29,97,3,66,31,65,32,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure","affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Now fem
+ fem = ""affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm"";
+    fem = fem.split("","");
+    r2 = Math.floor(Math.random() * fem.length);
+ 
+   // Store the selected named and remove it from the list
+    property4 = fem[r1].trim();
+    fem.splice(r2, 1);
+ 
+   // Store the selected named and remove it from the list
+    r2 = Math.floor(Math.random() * fem.length);
+ property5 = fem[r2].trim();
+    fem.splice(r2, 1);
+ 
+ // Store the selected named and remove it from the list
+     r2 = Math.floor(Math.random() * fem.length);  
+ property6 = fem[r2].trim();
+    fem.splice(r2, 1);
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 + "", "" + property4 + "", "" + property5 + "", "" + property6  
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;",,Please imagine a person with the following traits,<b>How wold you gender categorize this person?<b>,Woman,Man,Other,I don't know,Clearly a woman,Clearly a man,Not a woman,Not a man,md
+2022-03-03 03:45:53,2022-03-03 03:45:53,Survey Test,,100,0,True,2022-03-03 03:45:53,R_8dCCVgeogixsFU2,,,,,59.4416961669921875,18.0637054443359375,test,,Please confirm that you have read the above and consent to participate in the study,2,Vulputate malesuada egestas accumsan egestas accumsan nonummy vehicula pede pede.,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,${e://Field/W},${e://Field/M},${e://Field/W},${e://Field/M},${e://Field/W},${e://Field/M},${e://Field/M},${e://Field/W},${e://Field/M},${e://Field/M},${e://Field/W},${e://Field/M},${e://Field/W},${e://Field/W},,,,,,,,,,,,,,,"competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure","affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Now fem
+ fem = ""affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm"";
+    fem = fem.split("","");
+    r2 = Math.floor(Math.random() * fem.length);
+ 
+   // Store the selected named and remove it from the list
+    property4 = fem[r1].trim();
+    fem.splice(r2, 1);
+ 
+   // Store the selected named and remove it from the list
+    r2 = Math.floor(Math.random() * fem.length);
+ property5 = fem[r2].trim();
+    fem.splice(r2, 1);
+ 
+ // Store the selected named and remove it from the list
+     r2 = Math.floor(Math.random() * fem.length);  
+ property6 = fem[r2].trim();
+    fem.splice(r2, 1);
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 + "", "" + property4 + "", "" + property5 + "", "" + property6  
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;",,Please imagine a person with the following traits,<b>How wold you gender categorize this person?<b>,Woman,Man,Other,I don't know,Clearly a woman,Clearly a man,Not a woman,Not a man,xb
+2022-03-03 03:45:53,2022-03-03 03:45:53,Survey Test,,100,0,True,2022-03-03 03:45:53,R_ewy6Lokcfzj5c2i,,,,,59.4416961669921875,18.0637054443359375,test,,Please confirm that you have read the above and consent to participate in the study,64,Per auctor mi. Vestibulum! Fringilla posuere sem pellentesque ligula blandit. Aenean.,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Ullamcorper! Tortor. Bibendum? Fermentum. A? Eget volutpat turpis. Tellus metus justo eleifend tempor tellus.,Nec vel pellentesque non cras orci turpis quis! At enim rutrum porttitor ac. Vitae tempora.,"Proin porttitor vivamus malesuada imperdiet sodales pharetra, dolor aliquet fringilla massa wisi tempor.",Phasellus turpis vitae erat viverra euismod ultrices quis eleifend. Consectetuer.,Convallis accumsan etiam pellentesque! Consectetuer ipsum sodales quam elementum posuere velit.,Primis nunc vulputate odio tincidunt eleifend lectus dolorem lorem tempor.,"Sollicitudin mi integer aliquam. Nibh duis molestie. Et potenti tincidunt, dapibus. Rhoncus.","Risus phasellus in at, ipsum posuere, pharetra? Viverra odio leo nunc, quam arcu ligula.",Vitae pretium viverra tellus sollicitudin commodo nullam duis pretium justo euismod. Aliquet id potenti.,"Turpis justo interdum consectetuer facilisis? Dapibus donec lectus pharetra nunc, mattis.",Ac erat laoreet ut ullamcorper cursus in blandit ullamcorper arcu nulla venenatis dui.,Suspendisse dictumst pede. Velit enim nec ut? Fermentum felis dolor sagittis mi aliquam auctor primis.,"Platea. Morbi rutrum vehicula rutrum sollicitudin porta. Fermentum suspendisse, ultrices? Ipsum phasellus a elit.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,"competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure","affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Now fem
+ fem = ""affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm"";
+    fem = fem.split("","");
+    r2 = Math.floor(Math.random() * fem.length);
+ 
+   // Store the selected named and remove it from the list
+    property4 = fem[r1].trim();
+    fem.splice(r2, 1);
+ 
+   // Store the selected named and remove it from the list
+    r2 = Math.floor(Math.random() * fem.length);
+ property5 = fem[r2].trim();
+    fem.splice(r2, 1);
+ 
+ // Store the selected named and remove it from the list
+     r2 = Math.floor(Math.random() * fem.length);  
+ property6 = fem[r2].trim();
+    fem.splice(r2, 1);
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 + "", "" + property4 + "", "" + property5 + "", "" + property6  
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;",,Please imagine a person with the following traits,<b>How wold you gender categorize this person?<b>,Woman,Man,Other,I don't know,Clearly a woman,Clearly a man,Not a woman,Not a man,ft
+2022-03-03 03:45:53,2022-03-03 03:45:54,Survey Test,,100,1,True,2022-03-03 03:45:54,R_0CJ9BntDLAigUES,,,,,59.4416961669921875,18.0637054443359375,test,,Please confirm that you have read the above and consent to participate in the study,75,"Neque. Rhoncus nunc sollicitudin, consectetuer massa massa? Sagittis non aliquam consequat. Ullamcorper pharetra tellus.",,,,,,,,,,,,,,,57,53,82,30,53,32,69,57,64,11,0,24,54,72,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,"competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure","affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Now fem
+ fem = ""affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm"";
+    fem = fem.split("","");
+    r2 = Math.floor(Math.random() * fem.length);
+ 
+   // Store the selected named and remove it from the list
+    property4 = fem[r1].trim();
+    fem.splice(r2, 1);
+ 
+   // Store the selected named and remove it from the list
+    r2 = Math.floor(Math.random() * fem.length);
+ property5 = fem[r2].trim();
+    fem.splice(r2, 1);
+ 
+ // Store the selected named and remove it from the list
+     r2 = Math.floor(Math.random() * fem.length);  
+ property6 = fem[r2].trim();
+    fem.splice(r2, 1);
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 + "", "" + property4 + "", "" + property5 + "", "" + property6  
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;",,Please imagine a person with the following traits,<b>How wold you gender categorize this person?<b>,Woman,Man,Other,I don't know,Clearly a woman,Clearly a man,Not a woman,Not a man,sd
+2022-03-03 03:45:54,2022-03-03 03:45:54,Survey Test,,100,0,True,2022-03-03 03:45:54,R_6Rstz8Hnrq46x6u,,,,,59.4416961669921875,18.0637054443359375,test,,Please confirm that you have read the above and consent to participate in the study,95,Nonummy. Duis turpis per! Augue erat morbi iaculis malesuada ligula ac lorem.,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Ipsum platea commodo augue viverra! Turpis a dictumst sollicitudin auctor faucibus.,In a quis? Natoque. Auctor pharetra gravida? Enim eget scelerisque est.,"Ridiculus dapibus, vitae! Erat cras lorem nulla consequat nibh eu. Curabitur tellus luctus.",Integer diam pellentesque vestibulum ridiculus eget phasellus dui nunc ante.,Nibh curabitur vitae cursus? Euismod vestibulum lectus vulputate consectetuer auctor dolor. Nullam primis placerat curabitur.,Porttitor? A pellentesque tempus accumsan et et vel? Culpa faucibus.,"Lectus etiam egestas! Sem nullam dolor, convallis. Tellus leo mattis mauris nunc pede ultrices.",Sagittis ipsum mi commodo a consequat accumsan lorem lorem leo. Facilisis augue nonummy dignissim massa.,Malesuada vitae malesuada ridiculus. Enim dictumst malesuada justo arcu per neque.,Montes facilisis ac bibendum. Gravida phasellus per porta dictumst nec sodales nullam.,Turpis ligula risus dignissim porttitor enim consectetuer morbi. Metus. Dignissim odio et per commodo.,"Facilisi proin molestie amet, bibendum gravida nibh tincidunt ac tempora vestibulum porta wisi.","Porttitor vel! Montes. Fermentum, sagittis suscipit interdum commodo tempus magnis nec diam.",,,,,,,,,,,,,,,,,,,,,,,,,,,,,"competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure","affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Now fem
+ fem = ""affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm"";
+    fem = fem.split("","");
+    r2 = Math.floor(Math.random() * fem.length);
+ 
+   // Store the selected named and remove it from the list
+    property4 = fem[r1].trim();
+    fem.splice(r2, 1);
+ 
+   // Store the selected named and remove it from the list
+    r2 = Math.floor(Math.random() * fem.length);
+ property5 = fem[r2].trim();
+    fem.splice(r2, 1);
+ 
+ // Store the selected named and remove it from the list
+     r2 = Math.floor(Math.random() * fem.length);  
+ property6 = fem[r2].trim();
+    fem.splice(r2, 1);
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 + "", "" + property4 + "", "" + property5 + "", "" + property6  
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;",,Please imagine a person with the following traits,<b>How wold you gender categorize this person?<b>,Woman,Man,Other,I don't know,Clearly a woman,Clearly a man,Not a woman,Not a man,ft
+2022-03-03 03:45:54,2022-03-03 03:45:54,Survey Test,,100,0,True,2022-03-03 03:45:54,R_b884c7FDagogyHQ,,,,,59.4416961669921875,18.0637054443359375,test,,Please confirm that you have read the above and consent to participate in the study,34,Purus potenti donec. Gravida viverra! Quis eget commodo consequat tempus.,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,${e://Field/MC2},${e://Field/MC2},${e://Field/W},${e://Field/MC2},${e://Field/W},${e://Field/MC2},${e://Field/MC1},${e://Field/W},${e://Field/MC1},${e://Field/M},${e://Field/MC1},${e://Field/W},${e://Field/M},${e://Field/M},"competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure","affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Now fem
+ fem = ""affectionate, sympathetic, gentle, sensitive, supportive, kind, nurturing, warm"";
+    fem = fem.split("","");
+    r2 = Math.floor(Math.random() * fem.length);
+ 
+   // Store the selected named and remove it from the list
+    property4 = fem[r1].trim();
+    fem.splice(r2, 1);
+ 
+   // Store the selected named and remove it from the list
+    r2 = Math.floor(Math.random() * fem.length);
+ property5 = fem[r2].trim();
+    fem.splice(r2, 1);
+ 
+ // Store the selected named and remove it from the list
+     r2 = Math.floor(Math.random() * fem.length);  
+ property6 = fem[r2].trim();
+    fem.splice(r2, 1);
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 + "", "" + property4 + "", "" + property5 + "", "" + property6  
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;","// This is for two fields, you can add as my fields as you require using the same format
+    // Just make sure you give different variable names
+    msc = ""competitive, daring, aggressive, courageous, dominant, unexcitable, stands up under pressure"";
+    msc = msc.split("","");
+    r1 = Math.floor(Math.random() * msc.length);
+
+    // Store the selected named and remove it from the list
+    property1 = msc[r1].trim();
+    msc.splice(r1, 1);
+
+    // Regenerate Random number for the second name, otherwise you'll always get the same combination
+    r1 = Math.floor(Math.random() * msc.length);
+    property2 = msc[r1].trim();
+ msc.splice(r1, 1);
+ 
+ // Regenerate Random number for the third name
+ r1 = Math.floor(Math.random() * msc.length);
+    property3 = msc[r1].trim();
+ msc.splice(r1, 1);
+
+
+
+    // Build the sentence to be used. Everything ""inside quotes"" is static
+    sentence = property1 + "", "" + property2 + "", "" + property3 
+ 
+    // Insert this sentence into the question
+    document.querySelector(""#mysentence"").innerText = sentence;",,Please imagine a person with the following traits,<b>How wold you gender categorize this person?<b>,Woman,Man,Other,I don't know,Clearly a woman,Clearly a man,Not a woman,Not a man,mc

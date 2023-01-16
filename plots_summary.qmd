@@ -13,14 +13,14 @@ library(tidybayes)
 library(ggplot2)
 ```
 
-## Quarto
+## What's this?
 
-This is the analyses for the pronoun pilot. See my pm for why I did this analysis. 
+This is the analyses for the pronoun pilot. See my pm for why I did this analysis. This is data for a pilot where 20 people rated 32 faces on the basis of which pronoun they would use to refer to the person with that particular face. This study was carried out on an english-speaking samples so the options were they/them, she/her and he/him.
+
+Each person looked at 32 faces, both black and white.
 
 
-You can add options to executable code like this
-
-```{r}
+```{r warning =FALSE, message = FALSE}
  d <-  read.csv("data/cat2_pronounpilot.csv") %>% 
     mutate(across(!starts_with("Gender"), as.character))
 
@@ -38,12 +38,13 @@ d <-  read.csv("data/cat2_pronounpilot.csv") %>%
     separate(face, c("condition", "face", "morph", "scale")) %>% 
     mutate(race = substr(face, 1,1),
            masc = recode(morph, "0" = "0", "1" = "16.67", "2"= "33.33","3" = "50",
-                         "4" = "66.67", "5" ="83.33", "6" =  "100")) %>% 
+                         "4" = "66.67", "5" ="83.33", "6" =  "100"),
+           categorization = recode(categorization, "2" = "3. he/him", "1" = "1. she/her", "3" = "2. they/them" )) %>% 
     mutate(masc = as.numeric(masc)) %>% 
     mutate(masc = ifelse(race != "w", masc, 100 - masc))
 ```
 
-Okay, so we've got the data, let's plot it ouuuut! So! It looks like people are more likely to use hen than they are to categorize the person as... other or I don't know. Interesting! 
+Okay, so we've got the data, let's plot it ouuuut! Some takeaways: more people used they/them than would categorize another person the categories "other" and "I don't know" in the previous study. Looking at the distribution of picks, it also looks like there is still a categorical perception pattern. This becomes even more clear when we look at the responses filtered by participants.
 
 ```{r}
 d %>% 
@@ -54,7 +55,7 @@ d %>%
   theme_minimal()
 ```
 
-Let's look at what happens if we break it down to the individuald level.
+If we look at the individual-level responses, it's pretty clear that most poeple have a hard cut-off point where they change their score. Note that one person consistently used thety/them for everyon, potentially inflating that count.
 
 ```{r}
 d %>% 
@@ -66,4 +67,16 @@ d %>%
   theme_minimal()
 ```
 
+I separated the scores by race, a little bit dubious because of the low number of faces, but there doesn't seem to be a huge difference between black & white faces.
 
+```{r}
+d %>% 
+  group_by(masc, race) %>% 
+  count(categorization) %>% 
+  ggplot(aes(x=masc, y=n, fill=categorization)) +
+  geom_bar(stat="identity", position = "fill")+
+  facet_wrap(~race)+
+  theme_minimal()
+```
+
+Where does that leave us? So, in the previous PM
