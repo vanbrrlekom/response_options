@@ -1,8 +1,10 @@
 ---
 title: "R Notebook"
-output: html_notebook
-editor_options: 
-  markdown: 
+output:
+  pdf_document: default
+  html_notebook: default
+editor_options:
+  markdown:
     wrap: 72
 ---
 
@@ -243,7 +245,7 @@ kable(
   align = c("l", "c", "c", "c"),
   caption = "Table 2. \nBayes tests of the difference between slopes in three experimental conditions"
   ) %>% 
-  kable_classic(full_width = T) %>% 
+  kable_classic(full_width = F) %>% 
   footnote(
     general_title = "Note.",
     general = "CI-L = Lower credible interval, CI-U = Upper credible interval",
