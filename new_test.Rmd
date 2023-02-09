@@ -429,9 +429,11 @@ kable(
 
 ```
 
-If we start by looking at which model is the best at predicting the data, it's clear that only the morph only model really does a good job at predicting the outcomes. What does that mean? It means that morph level is the only variable that's really useful for predicting the outcome. Adding condition
 
-Just to give a sense of what the data actually look like, I'm also going to put up a figure for the interaction between condition and morph level.
+If we start by looking at which model is the best at predicting the data, it's clear that only the morph only model is the bast at predicting the outcome. Adding the interaction actually *decreased* prediction compared to the null model. This would be impossible with R2, which only looks at data within the sample. The risk with R2 is that you get what is known as overfitting, which is a model that is very good at predicting the pattern within the sample, but then fails outside the sample. It seems like the interaction model suffers from this problem. 
+
+Just to give a sense of what the data actually look like, I'm also going to put up a figure for the interaction between condition and morph level. This may not be good practice, but don't tell anyone.
+
 
 ```{r}
 conditional_effects(interaction)
