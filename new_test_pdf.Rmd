@@ -1,14 +1,20 @@
 ---
-title: "Response Options - further tests"
-format:
-  html:
-    code-fold: true
-    toc: true
-    toc-depth: 2
-    code-summary: "Show the code"
-    anchor-sections: false
-theme: flatly
+title: "Response opts further test"
+output:
+  pdf_document:
+    toc: yes
+  html_document:
+    code_folding: hide
+    toc: yes
+    toc_float: yes
+    theme: spacelab
+date: "2023-01-31"
 ---
+
+```{r include = FALSE}
+knitr::opts_chunk$set(echo=FALSE)
+```
+### Intro
 
 We produced morphed faces of different levels of femininity and masculinity. There were 18 continua, where gender varied in seven increments, for a total of 126 faces.
 
@@ -38,9 +44,9 @@ d  <- read_and_clean("data/cat2stduy1_data.csv") %>%
   mutate(fem = 100-masc) 
 ```
 
-### Do people use the beyond-binary options?
+### Do people use the beyond-binary options? {.tabset}
 
-The way I went about testing that is by comparing the amount of beyond-binary (i.e. "other" and "I don't know" responses) across the free text and multiple categories conditions. Here's snippet of the data for some context:
+The way I went about testing that is by comparing the amount of beyond-binary (i.e. "other" and "I don't know" responses) across the free text and multiple categories conditions. Here's snippet of the data for some context. As you can see, I've translated the variable "categorization" into one called bbcat based on whether or not the answer is "o" or not. 
 
 ```{r message=FALSE, warning=FALSE, }
 #Well, fist, first I wrangle data
@@ -55,9 +61,7 @@ tmp <- d %>%
 tmp %>% select(categorization, condition, fem, bbcat) %>% head()
 ```
 
-::: {.panel-tabset}
-
-###### Simple explanation
+#### Simple explanation
 
 So how do we actually test the question "do people use the non-binary option when they have them"? We can construct several models which gets increasingly more complicated and compare how well they predict the data.
 
@@ -67,63 +71,12 @@ In short, the idea is simple. We make three models:
 -   m1: main effects model, with the predictors "morph level" and response option condition
 -   m2: interaction model, which is the the same as m1, with an additional interaction effect
 
-Then we see which model best explains the data using leave-one-out cross validation. (if you want to go into the weeds on the models and what the models actually consist of, click the "complex model tabs")
-
-###### Complex models
-
-::: {.panel-tabset}
 
 
 
-So we start with a null model, m~0~, which just has an intercept, and includes neither morph level or condition. For reference, it looks like this, but feel free to let your eyes glaze over it. (but in case your curious, the model includes random effects for subjects and faces, but nothing else)
-
-$$
-\begin{aligned}
-\text{beyond-binary}_{i} &\sim \mathrm{Binomial}(1,p) &  (1) \\
-\text{logit}(p_i)&= \alpha_{subject[i]} +\alpha_{face[i]}\\
-\alpha_{face} & \sim \mathrm{Normal(0, \sigma_{subject})}\\
-\alpha_{subject} &\sim \mathrm{Normal}(0, \sigma_{subject}) \\
-\sigma_{face} &\sim \mathrm{HalfCauchy}(3) \\
-\sigma_{subject} &\sim \mathrm{HalfCauchy}(3) \\
-\end{aligned}
-$$
-
-Then m~1~ adds fixed effect of condition and morph level. We can think about this as basically testing just the main effect of both condition (written out as $\gamma_{cid}$) and morph level ($\beta_1Morph_{i}$), but not the interaction (which we'll get to later). $cid$ is short for condition id, which means that this model calculates separate values for each condition, as opposed to a dummy variable, which would calculate the value (intercept) for one condition and then the difference of another condition. Here we just get values for each condition, and if we want to know the difference, we have to calculate it ourselves.
-
-To add another level of complexity, we can make a second model m~1~ which includes the effects of both response option condition and morph level.
-
-$$
-\begin{aligned}
-\text{beyond-binary}_{i} &\sim \mathrm{Binomial}(1,p) & (2) \\
-\text{logit}(p_i)&= \gamma_{cid[i]}+ \alpha_{subject[i]} + \beta_{[1]}Morph_{i}+ \alpha_{face[i]}\\
-\gamma_{cid} &\sim \mathrm{Normal}(0,3)\\
-\alpha_{subject} &\sim \mathrm{Normal}(0, \sigma_{subject}) \\
-\beta_{1} & \sim \mathrm{Normal}(0,3)\\
-\sigma_{face} &\sim \mathrm{HalfCauchy}(3) \\
-\alpha_{subject} &\sim \mathrm{HalfCauchy}(3) \\
-\sigma_{\gamma_{pronoun}}&\sim \mathrm{HalfCauchy}(3) \\
-\textbf{R} &\sim \mathrm{LKJcorr}(2) \\
-\end{aligned}
-$$
-
-Lastly, m~2~ includes the full interaction effect. Note that all we've really done is changed $\beta$ by also adding the $cid$ subscript. What that means is that we're calculating a unique effect of morph level for each condition. Again, the model doesn't include an *explicit* interaction term (which, in standard notation, be the difference between the a reference condition and another condition), but we can calculate it later. And we will, don't worry!
-
-$$
-\begin{aligned}
-\text{beyond-binary}_{i} &\sim \mathrm{Binomial}(1,p) & (3) \\
-\text{logit}(p_i)&= \gamma_{cid[i]}+ \alpha_{subject[i]} + \beta_{cid[i]}Morph+ \alpha_{face[i]}\\
-\gamma_{cid} &\sim \mathrm{Normal}(0,3),\: \text{for}\: cid =\text{ft, mc}\\
-\alpha_{subject} &\sim \mathrm{Normal}(0, \sigma_{subject}) \\
-\beta_{cid} & \sim \mathrm{Normal}(0,3),\: \text{for}\: cid =\text{ft, mc}\\
-\sigma_{face} &\sim \mathrm{HalfCauchy}(3) \\
-\sigma_{subject} &\sim \mathrm{HalfCauchy}(3) \\
-\sigma_{\gamma_{pronoun}}&\sim \mathrm{HalfCauchy}(3) \\
-\textbf{R} &\sim \mathrm{LKJcorr}(2) \\
-\end{aligned}
-$$
 
 ```{r,  message = FALSE}
-m0 <- brm(bbcat ~ 1  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
+null <- brm(bbcat ~ 1  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
           prior = c(prior(normal(-3,3), class = "Intercept"),
                     
                     #prior(normal(0,3), class ="b", coef= "conditionmc:fem"),
@@ -140,7 +93,7 @@ m0 <- brm(bbcat ~ 1  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'
           )
 
 
-m1 <- brm(bbcat ~ 0 + condition + fem  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
+main_effect <- brm(bbcat ~ 0 + condition + fem  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
           prior = c(prior(normal(0,3), class = "b", coef = "conditionmc"),
                     
                     #prior(normal(0,3), class ="b", coef= "conditionmc:fem"),
@@ -156,7 +109,7 @@ m1 <- brm(bbcat ~ 0 + condition + fem  + (1 |id) + (1|face:fem), family = bernou
           file = "models/fit_binary_stair_bb_fem"
           )
 
-m2 <- brm(f_cat ~ 0 + condition:fem  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
+interaction <- brm(f_cat ~ 0 + condition:fem  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
          prior = c(prior(normal(-7,5), class = "b"),
                    prior(cauchy(0,3), class = "sd")),
           data = tmp,
@@ -168,17 +121,17 @@ m2 <- brm(f_cat ~ 0 + condition:fem  + (1 |id) + (1|face:fem), family = bernoull
           )
 
 ```
-:::
 
-#### Main effecs
 
-Having fit all of these models I then compare them to see which best predicts the data. We do this using a method call leave-one-out cross validation. This tells us which of our five models best predict the data on "new" or out of sample data points? If I can get the machine to work, this should show up in table 1
+### Results
+
+Having fit all of these models I then compare them to see which best predicts the data. We do this using a method call leave-one-out cross validation. This tells us which of our five models best predict the data on "new" or out of sample data points? If I can get the machine to work, this should show up in table 1.
 
 ```{r, warning= FALSE, message = FALSE}
 library(loo)
-#loo1 <- loo(m0) %>% saveRDS("loo1.rds")
-#loo2 <- loo(m1, mc_cores =4) %>% saveRDS("loo2.rds")
-#loo3 <- loo(m2, mc_cores =4) %>% saveRDS("loo3.rds")
+loo1 <- loo(null) %>% saveRDS("loo1.rds")
+loo2 <- loo(main_effects, mc_cores =4) %>% saveRDS("loo2.rds")
+loo3 <- loo(interaction, mc_cores =4) %>% saveRDS("loo3.rds")
 
 loo1 <- readRDS("loo1.rds")
 loo2 <- readRDS("loo2.rds")
@@ -221,22 +174,25 @@ conditional_effects(m2)
 
 ```{r,  message =FALSE, error=FALSE}
 h0 <- hypothesis(m2,
-                 "(conditionft:fem16.67 + conditionft:fem33.33 + conditionft:fem0 + conditionft:fem50 + conditionft:fem66.67 + conditionft:fem83.33)/6 =
-                 (conditionmc:fem16.67 + conditionmc:fem33.33 + conditionmc:fem0 + conditionmc:fem50 + conditionmc:fem66.67 + conditionmc:fem83.33)/6 ") 
+                 "(conditionft:fem16.67 + conditionft:fem33.33 + conditionft:fem0 + conditionft:fem50 + conditionft:fem66.67 + conditionft:fem83.33 +  conditionft:fem100)/7 =
+                 (conditionmc:fem16.67 + conditionmc:fem33.33 + conditionmc:fem0 + conditionmc:fem50 + conditionmc:fem66.67 + conditionmc:fem83.33 + conditionmc:fem100)/7 ") 
 
 h1 <- hypothesis(m2, "conditionft:fem50=conditionmc:fem50") 
-h2 <- hypothesis(m2, "(conditionft:fem0 + conditionft:fem100)/2 =(conditionmc:fem0 + conditionmc:fem100)/2") 
-```
+h2 <- hypothesis(m2, "(conditionft:fem0 + conditionft:fem100)/2 =(conditionmc:fem0 + conditionmc:fem100)/2")
+#h0 <- hypothesis(m2,
+  #               "(conditionft:fem16.67 + conditionft:fem33.33 + conditionft:fem0 + conditionft:fem50 + conditionft:fem66.67 + conditionft:fem83.33 +  conditionft:fem100)/7 =
+      #           (conditionmc:fem16.67 + conditionmc:fem33.33 + conditionmc:fem0 + conditionmc:fem50 + conditionmc:fem66.67 + conditionmc:fem83.33 + conditionmc:fem100)/7 ") 
 
-I'm going to give these hypothesis some arbitrary numbers.
+
+```
 
 First, if we just look at the number of beyond-binary categorizations.
 
-1.  Do particpants make beyond-binary categorizations in the multiple categories condition compared to the free text condition (h0)? It seems they do (Estimate = `r h0$hypothesis[2] %>% round(2)`, CI =`r h0$hypothesis[4]%>% round(2)` - `r h0$hypothesis[5] %>% round(2)`, BF~10~= `r round(1/h0$hypothesis[6] , 2) `).
+H1.  Do particpants make beyond-binary categorizations in the multiple categories condition compared to the free text condition? It seems they do (Estimate = `r h0$hypothesis$Estimate %>% round(2)`, CI =[`r h0$hypothesis$CI.Lower%>% round(2)`], [`r h0$hypothesis$CI.Upper %>% round(2)`], BF~10~= `r round(1/h0$hypothesis$Evid.Ratio , 2) `).
 
-2.  If we focus on the 50/50 faces, do we still see an effect? It seems like we do (Estimate = `r h1$hypothesis[2] %>% round(2)`, CI =`r h1$hypothesis[4] %>% round(2)` - `r h1$hypothesis[5] %>% round(2)`, BF~10~=  `r round(1/h1$hypothesis[6],2)`).
+H2.  If we focus on the 50/50 faces, do we still see an effect? It seems like we do (Estimate = `r h1$hypothesis$Estimate %>% round(2)`, CI =[`r h1$hypothesis$CI.Lower %>% round(2)`], [`r h1$hypothesis$CI.Upper %>% round(2)`], BF~10~=  `r round(1/h1$hypothesis$Evid.Ratio,2)`).
 
-3.  And if we focus on the faces at the end of the spectrum (i.e. 0 and 100 faces)? Here the evidence is only inconclusive (Estimate = `r h2$hypothesis[2] %>% round(2)`, CI =`r h2$hypothesis[4] %>% round(2)` - `r h2$hypothesis[5] %>% round(2)`, BF~10~=  `r round(1/h2$hypothesis[6],2 )`). What does this mean? Let's discuss
+H3.  And if we focus on the faces at the end of the spectrum (i.e. 0 and 100 faces)? Here the evidence is only inconclusive (Estimate = `r h2$hypothesis$Estimate %>% round(2)`, CI = [`r h2$hypothesis$CI.Lower %>% round(2)`] - [`r h2$hypothesis$CI.Upper %>% round(2)`], BF~10~=  `r round(1/h2$hypothesis$Evid.Ratio,2 )`). What does this mean? Well, there is an overall difference between the two conditions, and it is concentrated at the 50/50 faces
 
 ### How does this effect the relative distribution of m/f scores
 
@@ -379,3 +335,11 @@ Just to give a sense of what the data actually look like, I'm also going to put 
 conditional_effects(interaction)
 ```
 In this figure, we can see that the probability of any person answering "woman" on any face depends mostly on that face's femininity. We can see that for 50/50 faces, this probability is veery slightly higher in the mc condition, but the results from model comparison and the fact that the confidence intervals overlap so widely make me think that this difference is pretty small.
+
+```{r}
+summary(interaction)
+hypothesis(interaction, "conditionft:fem50 = conditionxb:fem50")
+
+hypothesis(interaction, "conditionft:fem50 = conditionft:fem50")
+```
+
