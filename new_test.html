@@ -156,11 +156,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>binary dimension - woman ——- man on a slider</li>
 <li>multiple dimensions - woman / man on separate sliders.</li>
 </ol>
-<p>I’ve divided this into two experiments: experiment 1 which includes the binary options, multiple categories and the freetext options. Below I just show the raw distributions of scores in each condition</p>
+<p>I’ve divided this into two experiments: experiment 1 which compares the binary options, multiple categories and the freetext options. Experiment 2, which compare the binary dimensions and the multiple dimensions.</p>
 <div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true" href="">Experiment 1</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false" href="">Experiment 2</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-3" role="tab" aria-controls="tabset-4-3" aria-selected="false" href="">Pronoun Pilot</a></li></ul>
 <div class="tab-content">
 <div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<p>Maybe I’ve gone a little mad with putting things under tabs, or maybe it actually makes the page easier to navigate? Either way, here you can just switch back and forth between the descriptive statistics and the inferential statistics. Easy? Maybe!</p>
 <div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Descriptive statistics</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Inferential statistics</a></li></ul>
 <div class="tab-content">
@@ -420,8 +421,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </details>
 </div>
 <p>I ran three tests to test what you might call subhypotheses. These are all described below.</p>
-<p>H1. Do particpants make beyond-binary categorizations in the multiple categories condition compared to the free text condition? It seems they do (Estimate = -4.11, CI =[-6.77], [-1.56], BF<sub>10</sub>= 61).</p>
-<p>H2. If we focus on the 50/50 faces, do we still see an effect? It seems like we do (Estimate = -4.14, CI =[-7.43], [-1.4], BF<sub>10</sub>= 17.28).</p>
+<p>H1. Do particpants make beyond-binary categorizations in the multiple categories condition compared to the free text condition? It seems they do (Estimate = -4.11, CI =[-6.77], [-1.56], BF<sub>10</sub>= 61.06).</p>
+<p>H2. If we focus on the 50/50 faces, do we still see an effect? It seems like we do (Estimate = -4.14, CI =[-7.43], [-1.4], BF<sub>10</sub>= 16.73).</p>
 <p>H3. And if we focus on the faces at the end of the spectrum (i.e.&nbsp;0 and 100 faces)? Here the evidence is only inconclusive (Estimate = -2.6, CI = [-7.96] - [2.49], BF<sub>10</sub>= 0.84). What does this mean? Well, there is an overall difference between the two conditions, and it is concentrated at the 50/50 faces</p>
 </section>
 </section>
@@ -641,11 +642,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">Descriptive statistics</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">Inferential statistics</a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<p>Again, these is just the raw distribution of scores.</p>
 <div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>`summarise()` has grouped output by 'fem', 'scale'. You can override using the
-`.groups` argument.</code></pre>
-</div>
 <div class="cell-output-display">
 <p><img src="results_draft_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -656,28 +654,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Wrangle data</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span> </span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(condition <span class="sc">==</span> <span class="st">"sd"</span> <span class="sc">|</span> condition <span class="sc">==</span> <span class="st">"md"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">f_rating =</span> <span class="fu">as.numeric</span>(categorization) <span class="sc">%&gt;%</span>  <span class="fu">ifelse</span>(scale <span class="sc">==</span> <span class="st">"f"</span>, ., <span class="dv">100</span><span class="sc">-</span> .),</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">scale_new =</span> <span class="fu">ifelse</span>(scale <span class="sc">==</span> <span class="st">"f"</span> <span class="sc">|</span> scale <span class="sc">==</span><span class="st">"m"</span>, scale, <span class="st">"sd"</span>),</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">fem =</span> <span class="fu">as.factor</span>(fem)) </span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>fit_dimensional <span class="ot">&lt;-</span> </span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">brm</span>(f_rating <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> fem<span class="sc">:</span>condition <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">+</span> masc<span class="sc">|</span>id) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>face), <span class="at">family =</span> <span class="fu">gaussian</span>(<span class="at">link =</span> <span class="st">'identity'</span>), </span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>          <span class="at">prior =</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">50</span>,<span class="dv">50</span>), <span class="at">class =</span> <span class="st">"b"</span>),</span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>                    <span class="co">#prior(normal(50,50), class = "Intercept"),</span></span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">exponential</span>(<span class="dv">1</span>), <span class="at">class =</span> <span class="st">"sd"</span>),</span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">lkj</span>(<span class="dv">1</span>), <span class="at">class =</span> <span class="st">"cor"</span>),</span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">exponential</span>(<span class="dv">1</span>), <span class="at">class =</span> sigma)),</span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>          <span class="at">data =</span> tmp,</span>
-<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>          <span class="at">iter =</span> <span class="dv">4000</span>, <span class="at">warmup =</span> <span class="dv">1000</span>,</span>
-<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>          <span class="at">cores =</span> <span class="dv">4</span>,</span>
-<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>          <span class="at">sample_prior =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">"models/fit_dimensional_stair_factor.3"</span>)</span>
-<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a><span class="fu">conditional_effects</span>(fit_dimensional)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Wrangle data</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span> </span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(condition <span class="sc">==</span> <span class="st">"sd"</span> <span class="sc">|</span> condition <span class="sc">==</span> <span class="st">"md"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">f_rating =</span> <span class="fu">as.numeric</span>(categorization) <span class="sc">%&gt;%</span>  <span class="fu">ifelse</span>(scale <span class="sc">==</span> <span class="st">"f"</span>, ., <span class="dv">100</span><span class="sc">-</span> .),</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">scale_new =</span> <span class="fu">ifelse</span>(scale <span class="sc">==</span> <span class="st">"f"</span> <span class="sc">|</span> scale <span class="sc">==</span><span class="st">"m"</span>, scale, <span class="st">"sd"</span>),</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">fem =</span> <span class="fu">as.factor</span>(fem)) </span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>fit_dimensional <span class="ot">&lt;-</span> </span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">brm</span>(f_rating <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> fem<span class="sc">:</span>condition <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">+</span> masc<span class="sc">|</span>id) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>face), <span class="at">family =</span> <span class="fu">gaussian</span>(<span class="at">link =</span> <span class="st">'identity'</span>), </span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>          <span class="at">prior =</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">50</span>,<span class="dv">50</span>), <span class="at">class =</span> <span class="st">"b"</span>),</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>                    <span class="co">#prior(normal(50,50), class = "Intercept"),</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">exponential</span>(<span class="dv">1</span>), <span class="at">class =</span> <span class="st">"sd"</span>),</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">lkj</span>(<span class="dv">1</span>), <span class="at">class =</span> <span class="st">"cor"</span>),</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">exponential</span>(<span class="dv">1</span>), <span class="at">class =</span> sigma)),</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>          <span class="at">data =</span> tmp,</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>          <span class="at">iter =</span> <span class="dv">4000</span>, <span class="at">warmup =</span> <span class="dv">1000</span>,</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>          <span class="at">cores =</span> <span class="dv">4</span>,</span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>          <span class="at">sample_prior =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">"models/fit_dimensional_stair_factor.3"</span>)</span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a><span class="fu">conditional_effects</span>(fit_dimensional)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -689,9 +687,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># carrying out the hypothesis test</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>h_dim_33 <span class="ot">&lt;-</span> <span class="fu">hypothesis</span>(fit_dimensional, <span class="st">"fem33.33:conditionmd= fem33.33:conditionsd"</span> )</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>h_dim_67 <span class="ot">&lt;-</span> <span class="fu">hypothesis</span>(fit_dimensional, <span class="st">"fem66.67:conditionmd= fem66.67:conditionsd"</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># carrying out the hypothesis test</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>h_dim_33 <span class="ot">&lt;-</span> <span class="fu">hypothesis</span>(fit_dimensional, <span class="st">"fem33.33:conditionmd= fem33.33:conditionsd"</span> )</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>h_dim_67 <span class="ot">&lt;-</span> <span class="fu">hypothesis</span>(fit_dimensional, <span class="st">"fem66.67:conditionmd= fem66.67:conditionsd"</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>We can test this, comparing the ratings of sd and md faces at 33.33 and 66.67 directly, again using Bayes factors.</p>
@@ -729,16 +727,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>d <span class="sc">%&gt;%</span> </span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(masc, race) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(categorization) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>masc, <span class="at">y=</span>n, <span class="at">fill=</span><span class="fu">factor</span>(categorization, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"he/him"</span>, <span class="st">"they/them"</span>, <span class="st">"she/her"</span>)))) <span class="sc">+</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"fill"</span>)<span class="sc">+</span></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">17</span>, <span class="dv">33</span>, <span class="dv">50</span>, <span class="dv">66</span>, <span class="dv">83</span>, <span class="dv">100</span>)) <span class="sc">+</span></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Proportion </span><span class="sc">\"</span><span class="st">woman</span><span class="sc">\"</span><span class="st"> responses"</span> ) <span class="sc">+</span></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Proportion female face in the morph"</span>) <span class="sc">+</span></span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_discrete</span>(<span class="at">name =</span> <span class="st">"Response"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>d <span class="sc">%&gt;%</span> </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(masc, race) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(categorization) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>masc, <span class="at">y=</span>n, <span class="at">fill=</span><span class="fu">factor</span>(categorization, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"he/him"</span>, <span class="st">"they/them"</span>, <span class="st">"she/her"</span>)))) <span class="sc">+</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"fill"</span>)<span class="sc">+</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">17</span>, <span class="dv">33</span>, <span class="dv">50</span>, <span class="dv">66</span>, <span class="dv">83</span>, <span class="dv">100</span>)) <span class="sc">+</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Proportion </span><span class="sc">\"</span><span class="st">woman</span><span class="sc">\"</span><span class="st"> responses"</span> ) <span class="sc">+</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Proportion female face in the morph"</span>) <span class="sc">+</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_discrete</span>(<span class="at">name =</span> <span class="st">"Response"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: Removed 5 rows containing missing values (`position_stack()`).</code></pre>

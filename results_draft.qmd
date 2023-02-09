@@ -47,15 +47,15 @@ There were five response options conditions:
 4.  binary dimension - woman ------- man on a slider
 5.  multiple dimensions - woman / man on separate sliders.
 
-I've divided this into two experiments: experiment 1 which includes the binary options, multiple categories and the freetext options. Below I just show the raw distributions of scores in each condition
+I've divided this into two experiments: experiment 1 which compares the binary options, multiple categories and the freetext options. Experiment 2, which compare the binary dimensions and the multiple dimensions. 
 
 ::: {.panel-tabset}
 
 ## Experiment 1
 
-::: {.panel-tabset}
-
 Maybe I've gone a little mad with putting things under tabs, or maybe it actually makes the page easier to navigate? Either way, here you can just switch back and forth between the descriptive statistics and the inferential statistics. Easy? Maybe!
+
+::: {.panel-tabset}
 
 ### Descriptive statistics
 
@@ -464,7 +464,9 @@ These tabs are pretty asymmetrical in how helpful they are... Maybe the best way
 
 ### Descriptive statistics
 
-```{r echo = FALSE}
+Again, these is just the raw distribution of scores. 
+
+```{r echo = FALSE, message = FALSE}
 d %>% 
   filter(condition == "md" | condition == "sd") %>% 
   mutate(categorization = as.numeric(categorization) %>% ifelse(scale == "m" | condition == "sd", 100-., .),
