@@ -68,7 +68,10 @@ d %>%
   geom_bar(stat="identity", position = "fill") + 
   ggtitle("Gender Categorizations by Participants")+
   theme_minimal()+ 
-  facet_wrap(~condition)
+  facet_wrap(~condition) + 
+  scale_x_continuous(breaks =c(0, 17, 33, 50, 66, 83, 100)) +
+  ylab("Proportion \"woman\" responses" ) +
+  xlab("Proportion female face in the morph")
 ```
 
 Second, I did the same thing for the "dimensional" conditions, i.e. the

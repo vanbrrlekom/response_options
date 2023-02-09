@@ -1,8 +1,6 @@
 ---
-title: "Response opts further test"
+title: "Response Options - further tests"
 output:
-  pdf_document:
-    toc: yes
   html_document:
     code_folding: hide
     toc: yes
@@ -129,9 +127,9 @@ Having fit all of these models I then compare them to see which best predicts th
 
 ```{r, warning= FALSE, message = FALSE}
 library(loo)
-loo1 <- loo(null) %>% saveRDS("loo1.rds")
-loo2 <- loo(main_effects, mc_cores =4) %>% saveRDS("loo2.rds")
-loo3 <- loo(interaction, mc_cores =4) %>% saveRDS("loo3.rds")
+#loo1 <- loo(null) %>% saveRDS("loo1.rds")
+#loo2 <- loo(main_effect, mc_cores =4) %>% saveRDS("loo2.rds")
+#loo3 <- loo(interaction, mc_cores =4) %>% saveRDS("loo3.rds")
 
 loo1 <- readRDS("loo1.rds")
 loo2 <- readRDS("loo2.rds")
@@ -162,23 +160,25 @@ kable(
     ) 
 ```
 
-Table 1. suggests that the interaction models was the best at predicting data, suggesting that the interaction between condition and morph is an important determinant of the outcome. However, the comparatively large standard errors suggests that this effect is only inconclusively supported by the data.
+The key pieces of information in this table are the `LOO` values and the `LOO diff`values. Lower LOO values indicate that the model makes better predictions. The `LOO diff` is simply stating the LOO score of each model subtracted from the low score of the most predictive model. The `LOO diff` of the best model, the interaction model is 0 because that score would be subtracted from itself. 
+
+How I interpret Table 1. is that the interaction models was the best at predicting data. In other words, this suggests that the interaction between condition and morph is an important determinant of the outcome. However, the standard errors of the difference are of a similar size to the 
 
 #### Pairwise comparisons
 
 I'm going to forge ahead anyway, and do what we might think of as contrast analyses, focusing on m~3~ only. Here we have several specific questions that we want answered. First, is it really the case that people generally make more beyond-binary categorizations in the mc condition? And secondly, is this effect concentrated at 50/50 morph level. First, let's take a look at the data visualised.
 
 ```{r,  message =FALSE, error=FALSE}
-conditional_effects(m2)
+conditional_effects(interaction)
 ```
 
 ```{r,  message =FALSE, error=FALSE}
-h0 <- hypothesis(m2,
+h0 <- hypothesis(interaction,
                  "(conditionft:fem16.67 + conditionft:fem33.33 + conditionft:fem0 + conditionft:fem50 + conditionft:fem66.67 + conditionft:fem83.33 +  conditionft:fem100)/7 =
                  (conditionmc:fem16.67 + conditionmc:fem33.33 + conditionmc:fem0 + conditionmc:fem50 + conditionmc:fem66.67 + conditionmc:fem83.33 + conditionmc:fem100)/7 ") 
 
-h1 <- hypothesis(m2, "conditionft:fem50=conditionmc:fem50") 
-h2 <- hypothesis(m2, "(conditionft:fem0 + conditionft:fem100)/2 =(conditionmc:fem0 + conditionmc:fem100)/2")
+h1 <- hypothesis(interaction, "conditionft:fem50=conditionmc:fem50") 
+h2 <- hypothesis(interaction, "(conditionft:fem0 + conditionft:fem100)/2 =(conditionmc:fem0 + conditionmc:fem100)/2")
 #h0 <- hypothesis(m2,
   #               "(conditionft:fem16.67 + conditionft:fem33.33 + conditionft:fem0 + conditionft:fem50 + conditionft:fem66.67 + conditionft:fem83.33 +  conditionft:fem100)/7 =
       #           (conditionmc:fem16.67 + conditionmc:fem33.33 + conditionmc:fem0 + conditionmc:fem50 + conditionmc:fem66.67 + conditionmc:fem83.33 + conditionmc:fem100)/7 ") 
@@ -327,19 +327,22 @@ kable(
 
 ```
 
-If we start by looking at which model is the best at predicting the data, it's clear that only the morph only model really does a good job at predicting the outcomes. What does that mean? It means that morph level is the only variable that's really useful for predicting the outcome. Adding condition
+If we start by looking at which model is the best at predicting the data, it's clear that only the morph only model is the bast at predicting the outcome. Adding the interaction actually *decreased* prediction compared to the null model. This would be impossible with R2, which only looks at data within the sample. The risk with R2 is that you get what is known as overfitting, which is a model that is very good at predicting the pattern within the sample, but then fails outside the sample. It seems like the interaction model suffers from this problem. 
 
-Just to give a sense of what the data actually look like, I'm also going to put up a figure for the interaction between condition and morph level.
+Just to give a sense of what the data actually look like, I'm also going to put up a figure for the interaction between condition and morph level. This may not be good practice, but don't tell anyone.
 
 ```{r}
 conditional_effects(interaction)
 ```
 In this figure, we can see that the probability of any person answering "woman" on any face depends mostly on that face's femininity. We can see that for 50/50 faces, this probability is veery slightly higher in the mc condition, but the results from model comparison and the fact that the confidence intervals overlap so widely make me think that this difference is pretty small.
 
+Again, I'm out on thin ice, but just to confirm my hunch, I carried out a bayes factor on the difference between the free text and the multiple categories condition. 
+
 ```{r}
 summary(interaction)
-hypothesis(interaction, "conditionft:fem50 = conditionxb:fem50")
-
-hypothesis(interaction, "conditionft:fem50 = conditionft:fem50")
+h0 <- hypothesis(interaction, "conditionft:fem50 = conditionmc:fem50")
 ```
+
+The evidence were slightly in favor of there being no difference between the two conditions (Estimate = `r h0$hypothesis$Estimate %>% round(2)`, CI =[`r h0$hypothesis$CI.Lower%>% round(2)`], [`r h0$hypothesis$CI.Upper %>% round(2)`], BF~10~= `r round(1/h0$hypothesis$Evid.Ratio , 2) `).
+
 

@@ -1,18 +1,26 @@
 ---
 title: "Response opts further test"
 output:
-  pdf_document:
-    toc: yes
   html_document:
     code_folding: hide
     toc: yes
     toc_float: yes
-    theme: spacelab
-date: "2023-01-31"
+    theme: flatly
 ---
 
-```{r include = FALSE}
-knitr::opts_chunk$set(echo=FALSE)
+
+```{r  message=FALSE, warning=FALSE}
+#Start by loading dependencies and the data
+
+library(brms)
+library(tidyr)
+library(dplyr)
+library(bayesplot)
+library(tidybayes)
+library(ggplot2)
+source("src/functions.r")
+d  <- read_and_clean("data/cat2stduy1_data.csv") %>% 
+  mutate(fem = 100-masc) 
 ```
 ### Intro
 
@@ -30,23 +38,35 @@ At the previous meeting, we decided that i would look at answering the question 
 
 The way I've gone about doing that is by primarily comparing option the results from the multiple categories (option2) and freetext conditions (option 3).
 
-```{r  message=FALSE, warning=FALSE}
-#Start by loading dependencies and the data
+As a reminder, this is the raw distrubition of categorizations of the first three conditions
 
-library(brms)
-library(tidyr)
-library(dplyr)
-library(bayesplot)
-library(tidybayes)
-library(ggplot2)
-source("src/functions.r")
-d  <- read_and_clean("data/cat2stduy1_data.csv") %>% 
-  mutate(fem = 100-masc) 
+```{r Visualising categorical options 2, echo=FALSE, message=FALSE, warning=FALSE}
+d %>%
+  filter(condition == "ft" | condition == "xb" | condition == "mc") %>% 
+  group_by(fem, race, condition) %>% 
+  mutate(categorization = recode(categorization,  #yes, this is pretty horrendous code, I haven't had a chance to sit down and clean it up yet.
+                                 "1" = "f", "F" = "f", "kvinna" = "f", "female" = "f", "female " = "f", "Female"= "f", "Fenale"= "f", "women" = "f", "woman " = "f", "femLE" = "f", "FEmale" = "f", "Femalw" = "f", "Fwmalw" = "f", "Female " = "f", "woman" = "f", "Woman" = "f", "feMale" = "f", "fermale" = "f", "wman" = "f", "Femae" = "f",
+                                 "2" = "m", "man" = "m","Male " = "m", "make" = "m", "Male"= "m", "male" = "m", "man " = "m",  "male " = "m", "guy" = "m", "boy" = "m", "Make" = "m", "M"  = "m", "Man" = "m", "Bottom half male; above nose female., Would have to say Male" = "m", " male" = "m", "male  " = "m", "ale" = "m", "nmale" = "m", "MALE"= "m", "nale"= "m", " Male" = "m",
+                                 "3" = "o", "Nonbinary" = "o", "Non Binary " = "o", "Unsure" = "o", "Non binary " = "o", "good" = "o", "Neutral" = "o", "neutral" = "o", "nonbinary" = "o", "bigender" = "o", "hen" = "o", "don't know"  = "o", "Bottom half male, nose upwards female" = "o",
+                                 "4" = "unknown", ),
+         condition = recode(condition, "ft" = "Free text", "xb" = "Binary Categories", "mc" = "Multiple Categories"))%>% 
+  count(categorization) %>% 
+  ggplot(aes(x=fem, y=n, fill=factor(categorization, levels = c("m", "o", "unknown", "f")))) +
+  geom_bar(stat="identity", position = "fill") + 
+  ggtitle("Gender Categorizations by Participants")+
+  theme_minimal()+ 
+  facet_wrap(~condition) + 
+  scale_x_continuous(breaks =c(0, 17, 33, 50, 66, 83, 100)) +
+  ylab("Proportion \"woman\" responses" ) +
+  xlab("Proportion female face in the morph") +
+  scale_fill_discrete(name = "Response")
 ```
+
+
 
 ### Do people use the beyond-binary options? {.tabset}
 
-The way I went about testing that is by comparing the amount of beyond-binary (i.e. "other" and "I don't know" responses) across the free text and multiple categories conditions. Here's snippet of the data for some context:
+The way I went about testing that is by comparing the amount of beyond-binary (i.e. "other" and "I don't know" responses) across the free text and multiple categories conditions. Here's snippet of the data for some context. As you can see, I've translated the variable "categorization" into one called bbcat based on whether or not the answer is "o" or not. 
 
 ```{r message=FALSE, warning=FALSE, }
 #Well, fist, first I wrangle data
@@ -71,9 +91,9 @@ In short, the idea is simple. We make three models:
 -   m1: main effects model, with the predictors "morph level" and response option condition
 -   m2: interaction model, which is the the same as m1, with an additional interaction effect
 
-Then we see which model best explains the data using leave-one-out cross validation. (if you want to go into the weeds on the models and what the models actually consist of, click the "complex model tabs")
 
-#### Complex models 
+#### Complex explanation
+
 
 So we start with a null model, m~0~, which just has an intercept, and includes neither morph level or condition. For reference, it looks like this, but feel free to let your eyes glaze over it. (but in case your curious, the model includes random effects for subjects and faces, but nothing else)
 
@@ -122,8 +142,9 @@ $$
 \end{aligned}
 $$
 
+
 ```{r,  message = FALSE}
-m0 <- brm(bbcat ~ 1  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
+null <- brm(bbcat ~ 1  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
           prior = c(prior(normal(-3,3), class = "Intercept"),
                     
                     #prior(normal(0,3), class ="b", coef= "conditionmc:fem"),
@@ -140,7 +161,7 @@ m0 <- brm(bbcat ~ 1  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'
           )
 
 
-m1 <- brm(bbcat ~ 0 + condition + fem  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
+main_effect <- brm(bbcat ~ 0 + condition + fem  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
           prior = c(prior(normal(0,3), class = "b", coef = "conditionmc"),
                     
                     #prior(normal(0,3), class ="b", coef= "conditionmc:fem"),
@@ -156,7 +177,7 @@ m1 <- brm(bbcat ~ 0 + condition + fem  + (1 |id) + (1|face:fem), family = bernou
           file = "models/fit_binary_stair_bb_fem"
           )
 
-m2 <- brm(f_cat ~ 0 + condition:fem  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
+interaction <- brm(f_cat ~ 0 + condition:fem  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
          prior = c(prior(normal(-7,5), class = "b"),
                    prior(cauchy(0,3), class = "sd")),
           data = tmp,
@@ -172,13 +193,13 @@ m2 <- brm(f_cat ~ 0 + condition:fem  + (1 |id) + (1|face:fem), family = bernoull
 
 ### Results
 
-Having fit all of these models I then compare them to see which best predicts the data. We do this using a method call leave-one-out cross validation. This tells us which of our five models best predict the data on "new" or out of sample data points? If I can get the machine to work, this should show up in table 1
+Having fit all of these models I then compare them to see which best predicts the data. We do this using a method call leave-one-out cross validation. This tells us which of our five models best predict the data on "new" or out of sample data points? If I can get the machine to work, this should show up in table 1.
 
 ```{r, warning= FALSE, message = FALSE}
 library(loo)
-#loo1 <- loo(m0) %>% saveRDS("loo1.rds")
-#loo2 <- loo(m1, mc_cores =4) %>% saveRDS("loo2.rds")
-#loo3 <- loo(m2, mc_cores =4) %>% saveRDS("loo3.rds")
+#loo1 <- loo(null) %>% saveRDS("loo1.rds")
+#loo2 <- loo(main_effect, mc_cores =4) %>% saveRDS("loo2.rds")
+#loo3 <- loo(interaction, mc_cores =4) %>% saveRDS("loo3.rds")
 
 loo1 <- readRDS("loo1.rds")
 loo2 <- readRDS("loo2.rds")
@@ -209,23 +230,27 @@ kable(
     ) 
 ```
 
-Table 1. suggests that the interaction models was the best at predicting data, suggesting that the interaction between condition and morph is an important determinant of the outcome. However, the comparatively large standard errors suggests that this effect is only inconclusively supported by the data.
+The key pieces of information in this table are the `LOO` values and the `LOO diff`values. Lower LOO values indicate that the model makes better predictions. The `LOO diff` is simply stating the LOO score of each model subtracted from the low score of the most predictive model. The `LOO diff` of the best model, the interaction model is 0 because that score would be subtracted from itself. 
+
+How I interpret Table 1. is that the interaction models was the best at predicting data. In other words, this suggests that the interaction between condition and morph is an important determinant of the outcome. However, the standard errors of the difference are of a similar size to the actual difference. This suggests that the weight of the evidence in favor of the interaction model and the main effects model is about the same.
 
 #### Pairwise comparisons
 
-I'm going to forge ahead anyway, and do what we might think of as contrast analyses, focusing on m~3~ only. Here we have several specific questions that we want answered. First, is it really the case that people generally make more beyond-binary categorizations in the mc condition? And secondly, is this effect concentrated at 50/50 morph level. First, let's take a look at the data visualised.
+I'm going to forge ahead anyway, and do what we might think of as contrast analyses, focusing on the interaction only. Here we have several specific questions that we want answered. First, is it really the case that people generally make more beyond-binary categorizations in the mc condition? And secondly, is this effect concentrated at 50/50 morph level. First, let's take a look at the data visualised.
 
 ```{r,  message =FALSE, error=FALSE}
-conditional_effects(m2)
+conditional_effects(interaction) 
 ```
 
+The y axis is a little unhelpfully labeled, bbcat stands for beyond-binary categorization. Basically, this figure illustrates how common beyond-binary categorizations are in the free text condition compared to the multiple categories condition. Which we already knew from figure 1. But it's nice to get it confirmed. Now let's do some statistical tests of these differences.
+
 ```{r,  message =FALSE, error=FALSE}
-h0 <- hypothesis(m2,
+h0 <- hypothesis(interaction,
                  "(conditionft:fem16.67 + conditionft:fem33.33 + conditionft:fem0 + conditionft:fem50 + conditionft:fem66.67 + conditionft:fem83.33 +  conditionft:fem100)/7 =
                  (conditionmc:fem16.67 + conditionmc:fem33.33 + conditionmc:fem0 + conditionmc:fem50 + conditionmc:fem66.67 + conditionmc:fem83.33 + conditionmc:fem100)/7 ") 
 
-h1 <- hypothesis(m2, "conditionft:fem50=conditionmc:fem50") 
-h2 <- hypothesis(m2, "(conditionft:fem0 + conditionft:fem100)/2 =(conditionmc:fem0 + conditionmc:fem100)/2")
+h1 <- hypothesis(interaction, "conditionft:fem50=conditionmc:fem50") 
+h2 <- hypothesis(interaction, "(conditionft:fem0 + conditionft:fem100)/2 =(conditionmc:fem0 + conditionmc:fem100)/2")
 #h0 <- hypothesis(m2,
   #               "(conditionft:fem16.67 + conditionft:fem33.33 + conditionft:fem0 + conditionft:fem50 + conditionft:fem66.67 + conditionft:fem83.33 +  conditionft:fem100)/7 =
       #           (conditionmc:fem16.67 + conditionmc:fem33.33 + conditionmc:fem0 + conditionmc:fem50 + conditionmc:fem66.67 + conditionmc:fem83.33 + conditionmc:fem100)/7 ") 
@@ -233,7 +258,7 @@ h2 <- hypothesis(m2, "(conditionft:fem0 + conditionft:fem100)/2 =(conditionmc:fe
 
 ```
 
-First, if we just look at the number of beyond-binary categorizations.
+I ran three tests to test what you might call subhypotheses. These are all described below. 
 
 H1.  Do particpants make beyond-binary categorizations in the multiple categories condition compared to the free text condition? It seems they do (Estimate = `r h0$hypothesis$Estimate %>% round(2)`, CI =[`r h0$hypothesis$CI.Lower%>% round(2)`], [`r h0$hypothesis$CI.Upper %>% round(2)`], BF~10~= `r round(1/h0$hypothesis$Evid.Ratio , 2) `).
 
@@ -243,9 +268,31 @@ H3.  And if we focus on the faces at the end of the spectrum (i.e. 0 and 100 fac
 
 ### How does this effect the relative distribution of m/f scores
 
-Great, let's move on to the step 2 that we talked about. So having answered the questions of "do people actually use the extra response options" with a resounding "probably, but not so much", I'm going to move on to the second question: is it the case that the answers shift the distribution of m/f scores? What I mean is, are people replacing their ratings of "man" with ratings of "non-binary" for example. If that were to be the case, then we would expect the relative distribution of "man" scores to be somewhat lower in the multiple categories condition
+Great, let's move on to the step 2 that we talked about. So having answered the questions of "do people actually use the extra response options" with a resounding "probably, but not so much", I'm going to move on to the second question: is it the case that the answers shift the distribution of m/f scores? What I mean is, are people replacing their ratings of "man" with ratings of "non-binary" for example. If we look at the same figure from earlier, it seems pretty clear that participants are mostly replacing their "man" categorizations with beyond binary categorizations. 
 
-Spoilers, it seems maybe not. Anyway, the first thing I did was make a version of the data where all the beyond-binary responses were taken out. Sort of the opposite of what I did last. I named the relevant variable f_cat because naming things is hard.
+```{r Visualising categorical options, echo=FALSE, message=FALSE, warning=FALSE}
+d %>%
+  filter(condition == "ft" | condition == "xb" | condition == "mc") %>% 
+  group_by(fem, race, condition) %>% 
+  mutate(categorization = recode(categorization,  #yes, this is pretty horrendous code, I haven't had a chance to sit down and clean it up yet.
+                                 "1" = "f", "F" = "f", "kvinna" = "f", "female" = "f", "female " = "f", "Female"= "f", "Fenale"= "f", "women" = "f", "woman " = "f", "femLE" = "f", "FEmale" = "f", "Femalw" = "f", "Fwmalw" = "f", "Female " = "f", "woman" = "f", "Woman" = "f", "feMale" = "f", "fermale" = "f", "wman" = "f", "Femae" = "f",
+                                 "2" = "m", "man" = "m","Male " = "m", "make" = "m", "Male"= "m", "male" = "m", "man " = "m",  "male " = "m", "guy" = "m", "boy" = "m", "Make" = "m", "M"  = "m", "Man" = "m", "Bottom half male; above nose female., Would have to say Male" = "m", " male" = "m", "male  " = "m", "ale" = "m", "nmale" = "m", "MALE"= "m", "nale"= "m", " Male" = "m",
+                                 "3" = "o", "Nonbinary" = "o", "Non Binary " = "o", "Unsure" = "o", "Non binary " = "o", "good" = "o", "Neutral" = "o", "neutral" = "o", "nonbinary" = "o", "bigender" = "o", "hen" = "o", "don't know"  = "o", "Bottom half male, nose upwards female" = "o",
+                                 "4" = "unknown", ),
+         condition = recode(condition, "ft" = "Free text", "xb" = "Binary Categories", "mc" = "Multiple Categories"))%>% 
+  count(categorization) %>% 
+  ggplot(aes(x=fem, y=n, fill=factor(categorization, levels = c("m", "o", "unknown", "f")))) +
+  geom_bar(stat="identity", position = "fill") + 
+  ggtitle("Gender Categorizations by Participants")+
+  theme_minimal()+ 
+  facet_wrap(~condition) + 
+  scale_x_continuous(breaks =c(0, 17, 33, 50, 66, 83, 100)) +
+  ylab("Proportion \"woman\" responses" ) +
+  xlab("Proportion female face in the morph") +
+  scale_fill_discrete(name = "Response")
+```
+
+To run some stats on this, he first thing I did was make a version of the data where all the beyond-binary responses were taken out. Sort of the opposite of what I did last. I named the relevant variable f_cat because naming things is hard. So this new dataset includes only responses of "woman" and "man". Below you can see a snippet of what that looks like. 
 
 ```{r, message=FALSE}
 tmp <- d %>% 
@@ -262,7 +309,15 @@ tmp <- d %>%
 head(tmp[,c("condition", "categorization", "f_cat")])
 ```
 
-I'm tired, your tired, so I'm going to move through this a little more quickly than the previous stuff. But basically, I went through the same steps as for the previous dataset, note that now I included the binary category condition this time.
+Next I went through the same steps as for the previous dataset, but just a little more complex. I created the following models.
+
+- Null. This includes no predictors.
+- Condition only. This only includes just the response option condition.
+- Morph only. This includes only the morph level.
+- Main effects. This includes both conditions, but not the interaction
+- Interaction. This is the full interaction model. 
+
+Why divide it up this way? At this point, mostly for exploratory reasons. I'm curious if one of the conditiosn does a lot better or worse. 
 
 ```{r}
 Null <- brm(f_cat ~ 1  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
@@ -282,7 +337,7 @@ Null <- brm(f_cat ~ 1  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logi
           )
 
 
-condition_only <- brm(f_cat ~ 0 + condition  + (1 |id) + (1|face), family = bernoulli(link = 'logit'), 
+condition_only <- brm(f_cat ~ 0 + condition  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
           prior = c(prior(normal(0,3), class = "b"),
                     prior(cauchy(0,1), class = "sd")),
           data = tmp,
@@ -290,10 +345,10 @@ condition_only <- brm(f_cat ~ 0 + condition  + (1 |id) + (1|face), family = bern
           chains = 4,
           cores = 4,
           sample_prior = TRUE,
-          file = "models/condition_only"
+          file = "models/condition_only.2"
           )
 
-main_effects <- brm(f_cat ~ 0 + condition + fem  + (1 |id) + (1|face), family = bernoulli(link = 'logit'), 
+main_effects <- brm(f_cat ~ 0 + condition + fem  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
           prior = c(prior(normal(0,3), class = "b"),
                     prior(cauchy(0,3), class = "sd")),
           data = tmp,
@@ -301,10 +356,10 @@ main_effects <- brm(f_cat ~ 0 + condition + fem  + (1 |id) + (1|face), family = 
           chains = 4,
           cores = 4,
           sample_prior = TRUE,
-          file = "models/mainfx"
+          file = "models/mainfx.2"
           )
 
-interaction <- brm(f_cat ~ 0 + condition:fem  + (1 |id) + (1|face), family = bernoulli(link = 'logit'), 
+interaction <- brm(f_cat ~ 0 + condition:fem  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
          prior = c(prior(normal(0,3), class = "b"),
                    prior(cauchy(0,3), class = "sd")),
           data = tmp,
@@ -312,7 +367,7 @@ interaction <- brm(f_cat ~ 0 + condition:fem  + (1 |id) + (1|face), family = ber
           chains = 4,
           cores = 4,
           sample_prior = TRUE,
-          file = "models/fit_mf_int"
+          file = "models/fit_mf_int.2"
           )
 
 morph_only <- brm(f_cat ~ 1 + fem  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
@@ -324,13 +379,13 @@ morph_only <- brm(f_cat ~ 1 + fem  + (1 |id) + (1|face:fem), family = bernoulli(
           chains = 4,
           cores = 4,
           sample_prior = TRUE,
-          file = "models/fit_g_fem"
+          file = "models/fit_g_fem.2"
           )
 
 
 ```
 
-We're going to do the same thing again, we're going to start buy looking at whether the interaction model does better than the simple effects model, and then we're going to look at the actual effects within the model. Buuut. It doesn't seem lik it does much here. I'm going to show all that in table 2
+With these models in hand, we're going to do the same thing again, we're going to start buy looking at whether the interaction model does better than the simple effects model, and then we're going to look at the actual effects within the model. 
 
 ```{r, message= FALSE, include = FALSE}
 #loo_b1 <- loo(morph_only, mc_cores = 4) %>% saveRDS("loo_b1.rds")
@@ -381,12 +436,18 @@ Just to give a sense of what the data actually look like, I'm also going to put 
 ```{r}
 conditional_effects(interaction)
 ```
-In this figure, we can see that the probability of any person answering "woman" on any face depends mostly on that face's femininity. We can see that for 50/50 faces, this probability is veery slightly higher in the mc condition, but the results from model comparison and the fact that the confidence intervals overlap so widely make me think that this difference is pretty small.
+
+In this figure, we can see that the probability of any person answering "woman" on any face depends mostly on that face's femininity. We can see that for 50/50 faces, this probability is veery slightly higher in the mc condition, but the results from model comparison and the fact that the confidence intervals overlap so widely make me think that this difference is pretty small. 
+
+Again, I'm out on thin ice, but just to confirm my hunch, I carried out a bayes factor on the difference between the free text and the multiple categories condition. 
 
 ```{r}
 summary(interaction)
-hypothesis(interaction, "conditionft:fem50 = conditionxb:fem50")
-
-hypothesis(interaction, "conditionft:fem50 = conditionft:fem50")
+h0 <- hypothesis(interaction, "conditionft:fem50 = conditionmc:fem50")
 ```
+
+The evidence were slightly in favor of there being no difference between the two conditions (Estimate = `r h0$hypothesis$Estimate %>% round(2)`, CI =[`r h0$hypothesis$CI.Lower%>% round(2)`], [`r h0$hypothesis$CI.Upper %>% round(2)`], BF~10~= `r round(1/h0$hypothesis$Evid.Ratio , 2) `).
+
+
+
 
