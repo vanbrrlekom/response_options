@@ -442,7 +442,6 @@ In this figure, we can see that the probability of any person answering "woman" 
 Again, I'm out on thin ice, but just to confirm my hunch, I carried out a bayes factor on the difference between the free text and the multiple categories condition. 
 
 ```{r}
-summary(interaction)
 h0 <- hypothesis(interaction, "conditionft:fem50 = conditionmc:fem50")
 ```
 

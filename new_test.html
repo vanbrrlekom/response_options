@@ -2170,13 +2170,13 @@ h2 &lt;- hypothesis(interaction, &quot;(conditionft:fem0 + conditionft:fem100)/2
 are all described below.</p>
 <p>H1. Do particpants make beyond-binary categorizations in the multiple
 categories condition compared to the free text condition? It seems they
-do (Estimate = -4.11, CI =[-6.77], [-1.56], BF<sub>10</sub>= 60.45).</p>
+do (Estimate = -4.11, CI =[-6.77], [-1.56], BF<sub>10</sub>= 59.58).</p>
 <p>H2. If we focus on the 50/50 faces, do we still see an effect? It
 seems like we do (Estimate = -4.14, CI =[-7.43], [-1.4],
-BF<sub>10</sub>= 16.94).</p>
+BF<sub>10</sub>= 16.85).</p>
 <p>H3. And if we focus on the faces at the end of the spectrum (i.e. 0
 and 100 faces)? Here the evidence is only inconclusive (Estimate = -2.6,
-CI = [-7.96] - [2.49], BF<sub>10</sub>= 0.83). What does this mean?
+CI = [-7.96] - [2.49], BF<sub>10</sub>= 0.84). What does this mean?
 Well, there is an overall difference between the two conditions, and it
 is concentrated at the 50/50 faces</p>
 </div>
@@ -2457,76 +2457,10 @@ that this difference is pretty small.</p>
 <p>Again, I’m out on thin ice, but just to confirm my hunch, I carried
 out a bayes factor on the difference between the free text and the
 multiple categories condition.</p>
-<pre class="r"><code>summary(interaction)</code></pre>
-<pre><code>##  Family: bernoulli 
-##   Links: mu = logit 
-## Formula: f_cat ~ 0 + condition:fem + (1 | id) + (1 | face:fem) 
-##    Data: tmp (Number of observations: 8368) 
-##   Draws: 4 chains, each with iter = 6000; warmup = 2000; thin = 1;
-##          total post-warmup draws = 16000
-## 
-## Group-Level Effects: 
-## ~face:fem (Number of levels: 126) 
-##               Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-## sd(Intercept)     1.50      0.16     1.22     1.84 1.00     2782     5715
-## 
-## ~id (Number of levels: 68) 
-##               Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
-## sd(Intercept)     1.07      0.12     0.86     1.32 1.00     3517     7065
-## 
-## Population-Level Effects: 
-##                      Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS
-## conditionft:fem0        -7.65      1.29   -10.57    -5.50 1.00    10766
-## conditionmc:fem0        -6.45      0.95    -8.46    -4.76 1.00     9963
-## conditionxb:fem0        -6.86      0.94    -8.88    -5.21 1.00     8849
-## conditionft:fem16.67    -5.69      0.69    -7.12    -4.39 1.00     5681
-## conditionmc:fem16.67    -5.42      0.69    -6.84    -4.16 1.00     5395
-## conditionxb:fem16.67    -6.55      0.80    -8.24    -5.08 1.00     7204
-## conditionft:fem33.33    -3.31      0.48    -4.27    -2.37 1.00     2160
-## conditionmc:fem33.33    -2.56      0.47    -3.50    -1.66 1.00     2007
-## conditionxb:fem33.33    -3.26      0.46    -4.18    -2.36 1.00     2134
-## conditionft:fem50       -0.10      0.44    -0.97     0.75 1.00     1293
-## conditionmc:fem50        0.39      0.44    -0.49     1.25 1.00     1355
-## conditionxb:fem50        0.12      0.43    -0.73     0.94 1.00     1421
-## conditionft:fem66.67     2.92      0.46     2.02     3.82 1.00     2173
-## conditionmc:fem66.67     3.91      0.52     2.89     4.95 1.00     2417
-## conditionxb:fem66.67     3.21      0.46     2.32     4.12 1.00     2311
-## conditionft:fem83.33     4.63      0.56     3.55     5.76 1.00     3651
-## conditionmc:fem83.33     5.47      0.68     4.21     6.86 1.00     4793
-## conditionxb:fem83.33     5.15      0.56     4.09     6.29 1.00     4238
-## conditionft:fem100       5.29      0.64     4.09     6.59 1.00     5321
-## conditionmc:fem100       5.55      0.73     4.20     7.06 1.00     5961
-## conditionxb:fem100       6.10      0.71     4.77     7.58 1.00     6270
-##                      Tail_ESS
-## conditionft:fem0         8562
-## conditionmc:fem0        11045
-## conditionxb:fem0         9458
-## conditionft:fem16.67    10001
-## conditionmc:fem16.67     8550
-## conditionxb:fem16.67    10224
-## conditionft:fem33.33     4014
-## conditionmc:fem33.33     3943
-## conditionxb:fem33.33     4234
-## conditionft:fem50        2867
-## conditionmc:fem50        2967
-## conditionxb:fem50        2749
-## conditionft:fem66.67     4367
-## conditionmc:fem66.67     5413
-## conditionxb:fem66.67     4463
-## conditionft:fem83.33     6674
-## conditionmc:fem83.33     9174
-## conditionxb:fem83.33     8227
-## conditionft:fem100       8526
-## conditionmc:fem100       9253
-## conditionxb:fem100       9067
-## 
-## Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
-## and Tail_ESS are effective sample size measures, and Rhat is the potential
-## scale reduction factor on split chains (at convergence, Rhat = 1).</code></pre>
 <pre class="r"><code>h0 &lt;- hypothesis(interaction, &quot;conditionft:fem50 = conditionmc:fem50&quot;)</code></pre>
 <p>The evidence were slightly in favor of there being no difference
 between the two conditions (Estimate = -0.49, CI =[-1.23], [0.25],
-BF<sub>10</sub>= 0.21).</p>
+BF<sub>10</sub>= 0.22).</p>
 </div>
 
 
