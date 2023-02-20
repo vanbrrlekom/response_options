@@ -69,7 +69,7 @@ d %>%
                                  "1" = "f", "F" = "f", "kvinna" = "f", "female" = "f", "female " = "f", "Female"= "f", "Fenale"= "f", "women" = "f", "woman " = "f", "femLE" = "f", "FEmale" = "f", "Femalw" = "f", "Fwmalw" = "f", "Female " = "f", "woman" = "f", "Woman" = "f", "feMale" = "f", "fermale" = "f", "wman" = "f", "Femae" = "f",
                                  "2" = "m", "man" = "m","Male " = "m", "make" = "m", "Male"= "m", "male" = "m", "man " = "m",  "male " = "m", "guy" = "m", "boy" = "m", "Make" = "m", "M"  = "m", "Man" = "m", "Bottom half male; above nose female., Would have to say Male" = "m", " male" = "m", "male  " = "m", "ale" = "m", "nmale" = "m", "MALE"= "m", "nale"= "m", " Male" = "m",
                                  "3" = "o", "Nonbinary" = "o", "Non Binary " = "o", "Unsure" = "o", "Non binary " = "o", "good" = "o", "Neutral" = "o", "neutral" = "o", "nonbinary" = "o", "bigender" = "o", "hen" = "o", "don't know"  = "o", "Bottom half male, nose upwards female" = "o",
-                                 "4" = "unknown", ),
+                                 "4" = "unknown" ),
          condition = recode(condition, "ft" = "Free text", "xb" = "Binary Categories", "mc" = "Multiple Categories"))%>% 
   count(categorization) %>% 
   ggplot(aes(x=fem, y=n, fill=factor(categorization, levels = c("m", "o", "unknown", "f")))) +
@@ -78,7 +78,7 @@ d %>%
   theme_minimal()+ 
   facet_wrap(~condition) + 
   scale_x_continuous(breaks =c(0, 17, 33, 50, 66, 83, 100)) +
-  ylab("Proportion \"woman\" responses" ) +
+  ylab("Proportion of responses" ) +
   xlab("Proportion female face in the morph") +
   scale_fill_discrete(name = "Response")
 ```
@@ -106,13 +106,17 @@ tmp %>% select(categorization, condition, fem, bbcat) %>% head()
 
 ##### Simple explanation
 
-So how do we actually test the question "do people use the non-binary option when they have them"? We can construct several models which gets increasingly more complicated and compare how well they predict the data.
+So how do we actually test the question "do people use the non-binary option when they have them"? We can construct several models which gets increasingly more complicated and compare how well they predict the data. All models were based on multilevel models with random intercepts for participants and faces.
 
 In short, the idea is simple. We make three models:
 
--   m0: a null model with no predictors
--   m1: main effects model, with the predictors "morph level" and response option condition
--   m2: interaction model, which is the the same as m1, with an additional interaction effect
+-   m0: a null model with no additional predictors.
+
+-   m1: main effects model, with the predictors "morph level" and response option condition.
+
+-   m2: interaction model, which is the the same as m1, with an additional interaction effect.
+
+These models were tested using Leave One Out 
 
 
 ##### Complex explanation
@@ -215,7 +219,7 @@ interaction <- brm(f_cat ~ 0 + condition:fem  + (1 |id) + (1|face:fem), family =
 ```
 :::
 
-#### Results
+#### Results 
 
 Having fit all of these models I then compare them to see which best predicts the data. We do this using a method call leave-one-out cross validation. This tells us which of our five models best predict the data on "new" or out of sample data points? If I can get the machine to work, this should show up in table 1.
 
@@ -667,5 +671,68 @@ d %>%
   xlab("Proportion female face in the morph") +
   scale_fill_discrete(name = "Response")
 ```
+
+## Testing gbb
+
+So, what I could also look at is the impact of gender binary beliefs.
+
+```{r}
+
+d <- d %>%
+  mutate( 
+    gbb_m = rowMeans(.[9:12]) %>% standardize()
+  
+)
+
+# just looking at the means, is there an effect of condition on gbb? No? Seems not!
+d %>% 
+  group_by(condition) %>% 
+  summarise(mean_gbb = mean(gbb_m, na.rm = TRUE),
+            sd_gbb = sd(gbb_m, na.rm = TRUE))
+
+## trying to get it so that data frame just has one score for each person
+
+tmp <- d %>% group_by(id, condition) %>% 
+  summarise(gbb = mean(gbb_m))
+
+
+fit_gbb <- 
+  brm(gbb ~ 0 + condition  , family = gaussian(link = 'identity'), 
+          prior = c(
+                    prior(normal(0,1), class = "b"),
+                    prior(cauchy(0,1), class = "sigma")),
+                    #prior(lkj(1), class = "cor"),
+             #       prior(cauchy(0,1), class = sigma)),
+          data = tmp,
+          iter = 4000, warmup = 1000,
+          cores = 4,
+          sample_prior = TRUE,
+          file = "models/fit_gbb.4")
+
+
+#Well, fist, first I wrangle data
+tmp <- d %>% 
+  filter(condition == "mc" | condition == "ft") %>% 
+  mutate(categorization = recode(categorization, 
+                                 "F" = "f", "kvinna" = "f", "female" = "f", "female " = "f", "Female"= "f", "Fenale"= "f", "women" = "f", "woman " = "f", "femLE" = "f", "FEmale" = "f", "Femalw" = "f", "Fwmalw" = "f", "Female " = "f", "woman" = "f", "Woman" = "f", "feMale" = "f", "fermale" = "f", "wman" = "f", "Femae" = "f",
+                                 "man" = "m","Male " = "m", "make" = "m", "Male"= "m", "male" = "m", "man " = "m",  "male " = "m", "guy" = "m", "boy" = "m", "Make" = "m", "M"  = "m", "Man" = "m", "Bottom half male; above nose female., Would have to say Male" = "m", " male" = "m", "male  " = "m", "ale" = "m", "nmale" = "m", "MALE"= "m", "nale"= "m", " Male" = "m",
+                                 "Nonbinary" = "o", "Non Binary " = "o", "Unsure" = "o", "Non binary " = "o", "good" = "o", "Neutral" = "o", "neutral" = "o", "nonbinary" = "o", "bigender" = "o", "hen" = "o", "don't know"  = "o", "Bottom half male, nose upwards female" = "o" )) %>% 
+  mutate(bbcat = ifelse(categorization == "o"|categorization == "4", 1, 0),
+         fem = as.factor(fem))
+
+
+condition <- brm(f_cat ~ 0 + condition:gbb_m  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
+         prior = c(prior(normal(0,3), class = "b"),
+                   prior(cauchy(0,3), class = "sd")),
+          data = tmp,
+          iter = 6000, warmup = 2000,
+          chains = 4,
+          cores = 4,
+          sample_prior = TRUE,
+          file = "models/fit_binary_stair_bb_fem_int_prior2"
+          )
+
+```
+
 
 :::

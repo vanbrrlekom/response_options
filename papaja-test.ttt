@@ -1,0 +1,48 @@
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+
+\caption{\label{tab:loo}Relative predictive power of models describing the outcome on the categorization task}
+\centering
+\begin{threeparttable}
+\begin{tabular}[t]{lcccc}
+\toprule
+  & LOO diff & St. Error diff & LOO & St. Error LOO\\
+\midrule
+Interaction & 0.00 & 0.00 & -234.17 & 23.23\\
+Main Effect & -2.46 & 2.71 & -236.63 & 23.07\\
+Null & -18.83 & 6.02 & -253.00 & 24.51\\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}[para]
+\item \textit{Note.}
+\item LOO diff refers to the difference in loo between the model and the most predictive model. The first row describes the most predictive model, which is why the difference is 0
+\end{tablenotes}
+\end{threeparttable}
+\end{table*}
+\efloatseparator
+ 
+\begin{table*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+
+\caption{\label{tab:rq2-table}Relative predictive power of models describing the outcome on the categorization task}
+\centering
+\begin{threeparttable}
+\begin{tabular}[t]{llccc}
+\toprule
+  & LOO difference & St. Error diff & LOO & St. Error LOO\\
+\midrule
+morph\_only & 0.00 & 0.00 & -1343.71 & 43.17\\
+main\_effects & -1.85 & 0.86 & -1345.56 & 43.17\\
+condition\_only & -4.98 & 5.26 & -1348.69 & 44.49\\
+Null & -5.36 & 4.88 & -1349.07 & 44.12\\
+interaction & -6.69 & 3.02 & -1350.40 & 43.48\\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}[para]
+\item \textit{Note.}
+\item LOO diff refers to the difference in loo between the model and the most predictive model. The first row describes the most predictive model, which is why the difference is 0
+\end{tablenotes}
+\end{threeparttable}
+\end{table*}

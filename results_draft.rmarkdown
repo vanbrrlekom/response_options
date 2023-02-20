@@ -1,15 +1,16 @@
 ---
-title: "Response opts further test"
-output:
-  html_document:
-    code_folding: hide
-    toc: yes
-    toc_float: yes
+title: "Analyses"
+format: 
+  html:
+    code-fold: true
     theme: flatly
+comments: 
+  hypothesis: true
+      
+editor: visual
 ---
 
-
-```{r  message=FALSE, warning=FALSE}
+```{r  message=FALSE, warning=FALSE, }
 #Start by loading dependencies and the data
 
 library(brms)
@@ -22,9 +23,22 @@ source("src/functions.r")
 d  <- read_and_clean("data/cat2stduy1_data.csv") %>% 
   mutate(fem = 100-masc) 
 ```
-### Intro
 
-We produced morphed faces of different levels of femininity and masculinity. There were 18 continua, where gender varied in seven increments, for a total of 126 faces.
+
+## Background
+
+So, the background of this study is there's a pretty big literature that
+looks at social categorization. This tends to assume that gender is
+binary and that asking people to categorize faces as "man" and "woman"
+is a consequence free action.
+
+We thought that maybe it wasn't, and we were interested in whether
+various response options that situated gender as more binary also shaped
+people's perception of gender to be more binary.
+
+So for the experiment, we produced morphed faces of different levels of
+femininity and masculinity. There were 18 continua, where gender varied
+in seven increments, for a total of 126 faces.
 
 There were five response options conditions:
 
@@ -34,11 +48,20 @@ There were five response options conditions:
 4.  binary dimension - woman ------- man on a slider
 5.  multiple dimensions - woman / man on separate sliders.
 
-At the previous meeting, we decided that i would look at answering the question "do people use non-binary options when they have them?"
+I've divided this into two experiments: experiment 1 which compares the binary options, multiple categories and the freetext options. Experiment 2, which compare the binary dimensions and the multiple dimensions. 
 
-The way I've gone about doing that is by primarily comparing option the results from the multiple categories (option2) and freetext conditions (option 3).
+::: {.panel-tabset}
 
-As a reminder, this is the raw distrubition of categorizations of the first three conditions
+## Experiment 1
+
+Maybe I've gone a little mad with putting things under tabs, or maybe it actually makes the page easier to navigate? Either way, here you can just switch back and forth between the descriptive statistics and the inferential statistics. Easy? Maybe!
+
+::: {.panel-tabset}
+
+### Descriptive statistics
+
+So this figure just shows in total how many of each type of categorization the participants made.
+
 
 ```{r Visualising categorical options 2, echo=FALSE, message=FALSE, warning=FALSE}
 d %>%
@@ -57,16 +80,18 @@ d %>%
   theme_minimal()+ 
   facet_wrap(~condition) + 
   scale_x_continuous(breaks =c(0, 17, 33, 50, 66, 83, 100)) +
-  ylab("Proportion \"woman\" responses" ) +
+  ylab("Proportion of responses" ) +
   xlab("Proportion female face in the morph") +
   scale_fill_discrete(name = "Response")
 ```
 
 
+### Inferential statistics
 
-### Do people use the beyond-binary options? {.tabset}
+#### Do people use the beyond-binary options? 
 
 The way I went about testing that is by comparing the amount of beyond-binary (i.e. "other" and "I don't know" responses) across the free text and multiple categories conditions. Here's snippet of the data for some context. As you can see, I've translated the variable "categorization" into one called bbcat based on whether or not the answer is "o" or not. 
+
 
 ```{r message=FALSE, warning=FALSE, }
 #Well, fist, first I wrangle data
@@ -81,18 +106,25 @@ tmp <- d %>%
 tmp %>% select(categorization, condition, fem, bbcat) %>% head()
 ```
 
-#### Simple explanation
 
-So how do we actually test the question "do people use the non-binary option when they have them"? We can construct several models which gets increasingly more complicated and compare how well they predict the data.
+::: {.panel-tabset}
+
+##### Simple explanation
+
+So how do we actually test the question "do people use the non-binary option when they have them"? We can construct several models which gets increasingly more complicated and compare how well they predict the data. All models were based on multilevel models with random intercepts for participants and faces.
 
 In short, the idea is simple. We make three models:
 
--   m0: a null model with no predictors
--   m1: main effects model, with the predictors "morph level" and response option condition
--   m2: interaction model, which is the the same as m1, with an additional interaction effect
+-   m0: a null model with no additional predictors.
+
+-   m1: main effects model, with the predictors "morph level" and response option condition.
+
+-   m2: interaction model, which is the the same as m1, with an additional interaction effect.
+
+These models were tested using Leave One Out 
 
 
-#### Complex explanation
+##### Complex explanation
 
 
 So we start with a null model, m~0~, which just has an intercept, and includes neither morph level or condition. For reference, it looks like this, but feel free to let your eyes glaze over it. (but in case your curious, the model includes random effects for subjects and faces, but nothing else)
@@ -143,6 +175,8 @@ $$
 $$
 
 
+
+
 ```{r,  message = FALSE}
 null <- brm(bbcat ~ 1  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
           prior = c(prior(normal(-3,3), class = "Intercept"),
@@ -190,10 +224,12 @@ interaction <- brm(f_cat ~ 0 + condition:fem  + (1 |id) + (1|face:fem), family =
 
 ```
 
+:::
 
-### Results
+#### Results 
 
 Having fit all of these models I then compare them to see which best predicts the data. We do this using a method call leave-one-out cross validation. This tells us which of our five models best predict the data on "new" or out of sample data points? If I can get the machine to work, this should show up in table 1.
+
 
 ```{r, warning= FALSE, message = FALSE}
 library(loo)
@@ -230,19 +266,23 @@ kable(
     ) 
 ```
 
+
 The key pieces of information in this table are the `LOO` values and the `LOO diff`values. Lower LOO values indicate that the model makes better predictions. The `LOO diff` is simply stating the LOO score of each model subtracted from the low score of the most predictive model. The `LOO diff` of the best model, the interaction model is 0 because that score would be subtracted from itself. 
 
 How I interpret Table 1. is that the interaction models was the best at predicting data. In other words, this suggests that the interaction between condition and morph is an important determinant of the outcome. However, the standard errors of the difference are of a similar size to the actual difference. This suggests that the weight of the evidence in favor of the interaction model and the main effects model is about the same.
 
-#### Pairwise comparisons
+##### Pairwise comparisons
 
 I'm going to forge ahead anyway, and do what we might think of as contrast analyses, focusing on the interaction only. Here we have several specific questions that we want answered. First, is it really the case that people generally make more beyond-binary categorizations in the mc condition? And secondly, is this effect concentrated at 50/50 morph level. First, let's take a look at the data visualised.
+
 
 ```{r,  message =FALSE, error=FALSE}
 conditional_effects(interaction) 
 ```
 
+
 The y axis is a little unhelpfully labeled, bbcat stands for beyond-binary categorization. Basically, this figure illustrates how common beyond-binary categorizations are in the free text condition compared to the multiple categories condition. Which we already knew from figure 1. But it's nice to get it confirmed. Now let's do some statistical tests of these differences.
+
 
 ```{r,  message =FALSE, error=FALSE}
 h0 <- hypothesis(interaction,
@@ -258,6 +298,7 @@ h2 <- hypothesis(interaction, "(conditionft:fem0 + conditionft:fem100)/2 =(condi
 
 ```
 
+
 I ran three tests to test what you might call subhypotheses. These are all described below. 
 
 H1.  Do particpants make beyond-binary categorizations in the multiple categories condition compared to the free text condition? It seems they do (Estimate = `r h0$hypothesis$Estimate %>% round(2)`, CI =[`r h0$hypothesis$CI.Lower%>% round(2)`], [`r h0$hypothesis$CI.Upper %>% round(2)`], BF~10~= `r round(1/h0$hypothesis$Evid.Ratio , 2) `).
@@ -266,33 +307,12 @@ H2.  If we focus on the 50/50 faces, do we still see an effect? It seems like we
 
 H3.  And if we focus on the faces at the end of the spectrum (i.e. 0 and 100 faces)? Here the evidence is only inconclusive (Estimate = `r h2$hypothesis$Estimate %>% round(2)`, CI = [`r h2$hypothesis$CI.Lower %>% round(2)`] - [`r h2$hypothesis$CI.Upper %>% round(2)`], BF~10~=  `r round(1/h2$hypothesis$Evid.Ratio,2 )`). What does this mean? Well, there is an overall difference between the two conditions, and it is concentrated at the 50/50 faces
 
-### How does this effect the relative distribution of m/f scores
+#### How does this effect the relative distribution of m/f scores
 
-Great, let's move on to the step 2 that we talked about. So having answered the questions of "do people actually use the extra response options" with a resounding "probably, but not so much", I'm going to move on to the second question: is it the case that the answers shift the distribution of m/f scores? What I mean is, are people replacing their ratings of "man" with ratings of "non-binary" for example. If we look at the same figure from earlier, it seems pretty clear that participants are mostly replacing their "man" categorizations with beyond binary categorizations. 
+Great, let's move on to the step 2 that we talked about. So having answered the questions of "do people actually use the extra response options" with a resounding "probably, but not so much", I'm going to move on to the second question: is it the case that the answers shift the distribution of m/f scores? What I mean is, are people replacing their ratings of "man" with ratings of "non-binary" for example. If you go back and look at the descriptive tab, it certainly *looks* like beyond-binary categorizations are mostly crowding out the man categorizations.
 
-```{r Visualising categorical options, echo=FALSE, message=FALSE, warning=FALSE}
-d %>%
-  filter(condition == "ft" | condition == "xb" | condition == "mc") %>% 
-  group_by(fem, race, condition) %>% 
-  mutate(categorization = recode(categorization,  #yes, this is pretty horrendous code, I haven't had a chance to sit down and clean it up yet.
-                                 "1" = "f", "F" = "f", "kvinna" = "f", "female" = "f", "female " = "f", "Female"= "f", "Fenale"= "f", "women" = "f", "woman " = "f", "femLE" = "f", "FEmale" = "f", "Femalw" = "f", "Fwmalw" = "f", "Female " = "f", "woman" = "f", "Woman" = "f", "feMale" = "f", "fermale" = "f", "wman" = "f", "Femae" = "f",
-                                 "2" = "m", "man" = "m","Male " = "m", "make" = "m", "Male"= "m", "male" = "m", "man " = "m",  "male " = "m", "guy" = "m", "boy" = "m", "Make" = "m", "M"  = "m", "Man" = "m", "Bottom half male; above nose female., Would have to say Male" = "m", " male" = "m", "male  " = "m", "ale" = "m", "nmale" = "m", "MALE"= "m", "nale"= "m", " Male" = "m",
-                                 "3" = "o", "Nonbinary" = "o", "Non Binary " = "o", "Unsure" = "o", "Non binary " = "o", "good" = "o", "Neutral" = "o", "neutral" = "o", "nonbinary" = "o", "bigender" = "o", "hen" = "o", "don't know"  = "o", "Bottom half male, nose upwards female" = "o",
-                                 "4" = "unknown", ),
-         condition = recode(condition, "ft" = "Free text", "xb" = "Binary Categories", "mc" = "Multiple Categories"))%>% 
-  count(categorization) %>% 
-  ggplot(aes(x=fem, y=n, fill=factor(categorization, levels = c("m", "o", "unknown", "f")))) +
-  geom_bar(stat="identity", position = "fill") + 
-  ggtitle("Gender Categorizations by Participants")+
-  theme_minimal()+ 
-  facet_wrap(~condition) + 
-  scale_x_continuous(breaks =c(0, 17, 33, 50, 66, 83, 100)) +
-  ylab("Proportion \"woman\" responses" ) +
-  xlab("Proportion female face in the morph") +
-  scale_fill_discrete(name = "Response")
-```
+To run some stats on this, the first thing I did was make a version of the data where all the beyond-binary responses were taken out. Sort of the opposite of what I did last. I named the relevant variable f_cat because naming things is hard. So this new dataset includes only responses of "woman" and "man". Below you can see a snippet of what that looks like. 
 
-To run some stats on this, he first thing I did was make a version of the data where all the beyond-binary responses were taken out. Sort of the opposite of what I did last. I named the relevant variable f_cat because naming things is hard. So this new dataset includes only responses of "woman" and "man". Below you can see a snippet of what that looks like. 
 
 ```{r, message=FALSE}
 tmp <- d %>% 
@@ -309,6 +329,7 @@ tmp <- d %>%
 head(tmp[,c("condition", "categorization", "f_cat")])
 ```
 
+
 Next I went through the same steps as for the previous dataset, but just a little more complex. I created the following models.
 
 - Null. This includes no predictors.
@@ -318,6 +339,7 @@ Next I went through the same steps as for the previous dataset, but just a littl
 - Interaction. This is the full interaction model. 
 
 Why divide it up this way? At this point, mostly for exploratory reasons. I'm curious if one of the conditiosn does a lot better or worse. 
+
 
 ```{r}
 Null <- brm(f_cat ~ 1  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
@@ -385,7 +407,9 @@ morph_only <- brm(f_cat ~ 1 + fem  + (1 |id) + (1|face:fem), family = bernoulli(
 
 ```
 
+
 With these models in hand, we're going to do the same thing again, we're going to start buy looking at whether the interaction model does better than the simple effects model, and then we're going to look at the actual effects within the model. 
+
 
 ```{r, message= FALSE, include = FALSE}
 #loo_b1 <- loo(morph_only, mc_cores = 4) %>% saveRDS("loo_b1.rds")
@@ -430,25 +454,319 @@ kable(
 ```
 
 
+
 If we start by looking at which model is the best at predicting the data, it's clear that only the morph only model is the bast at predicting the outcome. Adding the interaction actually *decreased* prediction compared to the null model. This would be impossible with R2, which only looks at data within the sample. The risk with R2 is that you get what is known as overfitting, which is a model that is very good at predicting the pattern within the sample, but then fails outside the sample. It seems like the interaction model suffers from this problem. 
 
 Just to give a sense of what the data actually look like, I'm also going to put up a figure for the interaction between condition and morph level. This may not be good practice, but don't tell anyone.
+
 
 
 ```{r}
 conditional_effects(interaction)
 ```
 
+
 In this figure, we can see that the probability of any person answering "woman" on any face depends mostly on that face's femininity. We can see that for 50/50 faces, this probability is veery slightly higher in the mc condition, but the results from model comparison and the fact that the confidence intervals overlap so widely make me think that this difference is pretty small. 
 
 Again, I'm out on thin ice, but just to confirm my hunch, I carried out a bayes factor on the difference between the free text and the multiple categories condition. 
+
 
 ```{r}
 h0 <- hypothesis(interaction, "conditionft:fem50 = conditionmc:fem50")
 ```
 
+
 The evidence were slightly in favor of there being no difference between the two conditions (Estimate = `r h0$hypothesis$Estimate %>% round(2)`, CI =[`r h0$hypothesis$CI.Lower%>% round(2)`], [`r h0$hypothesis$CI.Upper %>% round(2)`], BF~10~= `r round(1/h0$hypothesis$Evid.Ratio , 2) `).
 
 
 
+:::
+
+
+## Experiment 2
+
+::: {.panel-tabset}
+
+These tabs are pretty asymmetrical in how helpful they are... Maybe the best way would just be to put it all in the same tab. Well, I know that next time. 
+
+### Descriptive statistics
+
+Again, these is just the raw distribution of scores. 
+
+
+```{r echo = FALSE, message = FALSE}
+d %>% 
+  filter(condition == "md" | condition == "sd") %>% 
+  mutate(categorization = as.numeric(categorization) %>% ifelse(scale == "m" | condition == "sd", 100-., .),
+         scale = recode(scale, "1" = "single", "f" = "multiple: f", "m" = "multiple: m\n (reverse)"),
+         condition = recode(condition, "sd" = "Single Dimension", "md" = "Multiple Dimensions")) %>% 
+  group_by(fem, scale, condition) %>% 
+  summarise(mean_rating = mean(categorization)) %>% 
+  ggplot(aes(x=fem, y=mean_rating, group = scale)) +
+  geom_line(aes(color = scale))+
+  geom_point(aes(color = scale))+
+  theme_minimal()+
+  facet_wrap(~condition) +
+  scale_x_continuous(breaks =c(0, 17, 33, 50, 67, 83, 100)) +
+  ylab("Mean \"woman\" rating" ) +
+  xlab("Proportion female face in the morph")
+```
+
+
+### Inferential statistics
+
+For the plot below, I've reverse coded the man ratings to create one
+aggregate multiple dimensions (i.e. "md") scale. So the plot essentially
+shows how the average rating of femininity at each level of morph. For
+both conditions, again, the pattern of responses is suggestive of
+categorical perception. What am I basing this on? The critical levels
+are the 33.33 and 66.67. The rated levels of femininity (or reverse
+coded masculinity) are lower and higher respectively, suggesting that participant percieve more femininity than "there is" in the faces,which is to say, categorical perception.
+
+
+```{r, fig.cap= "Mean rating of woman across the md and sd condition"}
+#Wrangle data
+tmp <- d %>% 
+  filter(condition == "sd" | condition == "md") %>% 
+  mutate(f_rating = as.numeric(categorization) %>%  ifelse(scale == "f", ., 100- .),
+         scale_new = ifelse(scale == "f" | scale =="m", scale, "sd"),
+         fem = as.factor(fem)) 
+
+
+fit_dimensional <- 
+  brm(f_rating ~ 0 + fem:condition + (1 + masc|id) + (1|face), family = gaussian(link = 'identity'), 
+          prior = c(prior(normal(50,50), class = "b"),
+                    #prior(normal(50,50), class = "Intercept"),
+                    prior(exponential(1), class = "sd"),
+                    prior(lkj(1), class = "cor"),
+                    prior(exponential(1), class = sigma)),
+          data = tmp,
+          iter = 4000, warmup = 1000,
+          cores = 4,
+          sample_prior = TRUE,
+          file = "models/fit_dimensional_stair_factor.3")
+
+conditional_effects(fit_dimensional)
+
+# carrying out the hypothesis test
+h_dim_33 <- hypothesis(fit_dimensional, "fem33.33:conditionmd= fem33.33:conditionsd" )
+h_dim_67 <- hypothesis(fit_dimensional, "fem66.67:conditionmd= fem66.67:conditionsd" )
+```
+
+
+We can test this, comparing the ratings of sd and md faces at 33.33 and 66.67 directly, again using Bayes factors. 
+
+At 33.33 the evidence strongly suggest that the two conditions are the same
+(Estimate = `r h_dim_33 $hypothesis$Estimate %>% round(2)`, CI =[`r h_dim_33 $hypothesis$CI.Lower%>% round(2)`], [`r h_dim_33 $hypothesis$CI.Upper %>% round(2)`], BF~10~= `r round(1/h_dim_33 $hypothesis$Evid.Ratio , 2) `)
+
+This is also the case at 66.67 
+(Estimate = `r h_dim_67$hypothesis$Estimate %>% round(2)`, CI =[`r h_dim_67$hypothesis$CI.Lower%>% round(2)`], [`r h_dim_67$hypothesis$CI.Upper %>% round(2)`], BF~10~= `r round(1/h_dim_67$hypothesis$Evid.Ratio , 2) `)
+
+:::
+
+## Pronoun Pilot
+
+Okay, so why might we want to look at pronouns as an outcome? The upside
+of looking at pronouns are that they would be a more practically
+relevant outcome. Asking someone "which pronoun would you use to
+describe this person?" would get us a little closer to how they would
+treat a person in real life. What a lot of non-binary people are
+advocating for is this kind of habit, where most people refrain from
+using gendered pronouns without knowing them. Another upside of looking
+at pronouns would be that it would tie this study more neatly together
+with the other papers, as pronouns would be a more clearly occurring
+theme.
+
+What are some downsides, or at least some challenges? There is a
+comparability problem. Is a condition where participants categorize
+using pronouns really the same as when participants are applying
+categories. This gets at the broader question of is a pronoun a
+category. And the difficulty is that it's kind of not. It's just a way
+to refer to someone. On the other hand, it is the case that using a
+pronoun is an indicator of having put someone into a category, and maybe
+more importantly, non-binary pronouns are specifically a way to not use
+place someone in a category. There's also the issue if we're talking
+about pronouns as an outcome, can we even talk about categorical
+perception? I mean, if people are using the pronoun she, is that based
+on them perceiving the person as a woman? It gets a little bit muddy
+there. So pronouns are related to categorization, are perhaps indicative
+of categorization, but can't be said to be a direct measure of
+categorization. Is that a problem? Maybe! It might mean that that
+directly comparing a pronoun condition to the ones above is misleading.
+
+Another potential issue is that using pronouns would take us a couple of
+steps away from the original research question. Again, the original
+research question is how do various types of response options affect
+categorical perception. The sort of implicit in this question is that
+the response options are ones used by researchers in experiments. I
+don't think it ever happens to be the case that researchers in
+categorization studies are giving people the option to use certain
+pronouns. Fair enough, so we say that this study is about categorization
+on a broader, more naturalistic level. Okay, but even this, this type of
+design is a little awkward. It isn't very naturalistic for someone to
+pick a set of pronouns from a list. So a potential pronoun condition
+would sort of awkwardly straddle a middle ground of not being very
+similar to anything done by practicing researchers but also not being a
+very naturalistic situation.
+
+### Implications of pronouns
+
+Okay, so given these strengths and challenges, where does that leave us?
+Does this suggest that we need to give up? Well, let's think about.
+First of all, something that I've noted is that we already have two
+types of outcomes: categorical and dimensional. I've already basically
+written them up here as two separate experiments. And if we already have
+an article with two experiments, why not add a third? So if we're in the
+mindset of a third experiment, then that creates a little bit of space
+for the pronoun experiment, however, it looks, to be a little different.
+
+Adding a pronoun condition might mean having to broaden the research
+question. Rather than "specific response options" affecting "categorical
+perception", it could be something like "gender framing" affecting
+"binary treatment of gender" where binary treatment of gender is defined
+as categorical perception in experiment 1, 2 and 3 and maybe also just
+"beyond-binary responses" in experiment 3 (wow, return of a classic!)
+
+So what could an additional experiment actually look like? One way is to
+compare a pronoun condition to the free-text condition (as in **a** in
+the picture below). When people spontaneously name gender categories,
+they think about of gender as something binary, but when people give
+pronouns, it might somehow be filtered through social interactions and
+they'd maybe be more open to going beyond the binary. That would be an
+interesting finding! Then the outcome of interest would be something
+more along the lines of "how often do you categorize beyond the binary"?
+
+Another option would be to double down on pronouns, and compare two
+different conditions using pronouns (as in **b**). For example one
+condition where participants choose pronouns based on forced choice and
+another where participants select pronouns based on free text. This
+would get us a little bit closer to the original research question of
+how the way that options are presented affects the outcome. This kind of
+setup has the advantage of being more comparable.
+
+![showing two possible experiments](./pix/2paradigms.png)
+
+### A quick pilot
+
+To explore whether this idea is even viable, I made a quick pilot where
+20 people rated 32 faces on the basis of which pronoun they would use to
+refer to the person with that particular face. This study was carried
+out on an english-speaking samples so the options were they/them,
+she/her and he/him.
+
+Each person looked at 32 faces, both black and white.
+
+
+```{r warning =FALSE, message = FALSE, echo = FALSE}
+ d <-  read.csv("data/cat2_pronounpilot.csv") %>% 
+    mutate(across(!starts_with("Gender"), as.character))
+
+d <-  read.csv("data/cat2_pronounpilot.csv") %>% 
+    mutate(across(!starts_with("Gender"), as.character)) %>% 
+    mutate(id = 1:nrow(.)) %>% 
+    #arrange(condition.1) %>% 
+    pivot_longer(
+      cols = !c(id, Age, starts_with("Gender"), starts_with("choose"), contains("assign"), starts_with("Prolific"), starts_with("TIME")),
+      names_to = "face",
+      values_to = "categorization") %>% 
+    #separate(face, c("condition", "face", "morph", "scale")) %>% 
+   select(id, face, categorization, Age, Gender, starts_with("Gender")) %>% 
+   filter(!categorization == "") %>%   
+    separate(face, c("condition", "face", "morph", "scale")) %>% 
+    mutate(race = substr(face, 1,1),
+           masc = recode(morph, "0" = "0", "1" = "16.67", "2"= "33.33","3" = "50",
+                         "4" = "66.67", "5" ="83.33", "6" =  "100"),
+           categorization = recode(categorization, "2" = "he/him", "1" = "she/her", "3" = "they/them" )) %>% 
+    mutate(masc = as.numeric(masc)) %>% 
+    mutate(masc = ifelse(race != "w", masc, 100 - masc))
+```
+
+
+So, having collected the data, I'm going to plot it similarly to how I did with the other experiments. Some takeaways: more
+people used they/them than would categorize another person the
+categories "other" and "I don't know" in the previous study. Looking at
+the distribution of picks, it also looks like there is still a
+categorical perception pattern. ´
+
+
+```{r}
+d %>% 
+  group_by(masc, race) %>% 
+  count(categorization) %>% 
+  ggplot(aes(x=masc, y=n, fill=factor(categorization, levels = c("he/him", "they/them", "she/her")))) +
+  geom_bar(stat="identity", position = "fill")+
+  theme_minimal()+
+  scale_x_continuous(breaks =c(0, 17, 33, 50, 66, 83, 100)) +
+  ylab("Proportion \"woman\" responses" ) +
+  xlab("Proportion female face in the morph") +
+  scale_fill_discrete(name = "Response")
+```
+
+
+## Testing gbb
+
+So, what I could also look at is the impact of gender binary beliefs.
+
+
+```{r}
+
+d <- d %>%
+  mutate( 
+    gbb_m = rowMeans(.[9:12]) %>% standardize()
+  
+)
+
+# just looking at the means, is there an effect of condition on gbb? No? Seems not!
+d %>% 
+  group_by(condition) %>% 
+  summarise(mean_gbb = mean(gbb_m, na.rm = TRUE),
+            sd_gbb = sd(gbb_m, na.rm = TRUE))
+
+## trying to get it so that data frame just has one score for each person
+
+tmp <- d %>% group_by(id, condition) %>% 
+  summarise(gbb = mean(gbb_m))
+
+
+fit_gbb <- 
+  brm(gbb ~ 0 + condition  , family = gaussian(link = 'identity'), 
+          prior = c(
+                    prior(normal(0,1), class = "b"),
+                    prior(cauchy(0,1), class = "sigma")),
+                    #prior(lkj(1), class = "cor"),
+             #       prior(cauchy(0,1), class = sigma)),
+          data = tmp,
+          iter = 4000, warmup = 1000,
+          cores = 4,
+          sample_prior = TRUE,
+          file = "models/fit_gbb.4")
+
+
+#Well, fist, first I wrangle data
+tmp <- d %>% 
+  filter(condition == "mc" | condition == "ft") %>% 
+  mutate(categorization = recode(categorization, 
+                                 "F" = "f", "kvinna" = "f", "female" = "f", "female " = "f", "Female"= "f", "Fenale"= "f", "women" = "f", "woman " = "f", "femLE" = "f", "FEmale" = "f", "Femalw" = "f", "Fwmalw" = "f", "Female " = "f", "woman" = "f", "Woman" = "f", "feMale" = "f", "fermale" = "f", "wman" = "f", "Femae" = "f",
+                                 "man" = "m","Male " = "m", "make" = "m", "Male"= "m", "male" = "m", "man " = "m",  "male " = "m", "guy" = "m", "boy" = "m", "Make" = "m", "M"  = "m", "Man" = "m", "Bottom half male; above nose female., Would have to say Male" = "m", " male" = "m", "male  " = "m", "ale" = "m", "nmale" = "m", "MALE"= "m", "nale"= "m", " Male" = "m",
+                                 "Nonbinary" = "o", "Non Binary " = "o", "Unsure" = "o", "Non binary " = "o", "good" = "o", "Neutral" = "o", "neutral" = "o", "nonbinary" = "o", "bigender" = "o", "hen" = "o", "don't know"  = "o", "Bottom half male, nose upwards female" = "o" )) %>% 
+  mutate(bbcat = ifelse(categorization == "o"|categorization == "4", 1, 0),
+         fem = as.factor(fem))
+
+
+condition <- brm(f_cat ~ 0 + condition:gbb_m  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
+         prior = c(prior(normal(0,3), class = "b"),
+                   prior(cauchy(0,3), class = "sd")),
+          data = tmp,
+          iter = 6000, warmup = 2000,
+          chains = 4,
+          cores = 4,
+          sample_prior = TRUE,
+          file = "models/fit_binary_stair_bb_fem_int_prior2"
+          )
+
+```
+
+
+
+:::
 
