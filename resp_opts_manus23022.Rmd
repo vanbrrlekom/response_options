@@ -27,7 +27,7 @@ affiliation:
 authornote: |
   Add complete departmental affiliations for each author here. Each new line herein must be indented, like this line.
 
-  Data & scripts are available at osf link
+  Data & scripts are available at osf link. The authors declare no conflict of interest.
 
 abstract: |
   I'm using a premade template & leaving some of their guidlines in place to help me. 
@@ -78,7 +78,7 @@ header-includes:
 
 csl               : "`r system.file('rmd', 'apa7.csl', package = 'papaja')`"
 documentclass     : "apa7"
-output            : papaja::apa6_word
+output            : papaja::apa6_pdf
 always_allow_html: true
 ---
 
@@ -103,17 +103,13 @@ set.seed(42)
 knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
 ```
 
-The experience of transgender and gender diverse (TGD) individuals suggests that sex/gender  is a fluid category which can vary along a wide spectrum. In contrast, social categorization and face perception research often treats gender as a binary consisting of women and men (for example Webster et al., 2004).  This is problematic because it indirectly delegitimizes TGD individuals’ experiences. Additionally, it may restrict participants’ answer, similar to how ratings of age along an old/young binary would restrict and distort ratings of age variation (see Westbrook & Saperstein, 2015; Lindqvist et al., 2019). Furthermore, it may distort answers by communicating ideas about gender.  In this study, we aimed to investigate how various gender categorization paradigms influence participants’ categorizations of faces. 
+In this study, we aimed to investigate the effects of gender categorization paradigms on participants' categorizations of faces. Previous research has often treated gender as a binary consisting of women and men (for example Webster et al., 2004), despite evidence suggesting that sex/gender is a fluid category that can vary along a wide spectrum (Hyde et al., 2019). This practice has several potential negative consequences, such as indirectly delegitimizing the experiences of transgender and gender diverse (TGD) individuals and restricting the variation in participants' answers. To address these concerns, we presented participants with several alternative categorization options and report the findings in this article.
 
-A cursory glance at the literature on gender categorization reveals that the vast majority explicitly or implicitly suggest to participants that gender consists of the categories woman and man only. The most common method to measure gender categorization is a force-choice task, where participants are presented with a face and the choices are “female” and “male” (see for example, Cloutier et al., 2005; Campanella et al., 2001; Webster et al., 2004; Zhao & Bentin, 2008). A slightly different task asks participants to rate the faces on gender as a quality, rather than a category, often with “feminine” and “masculine” as endpoints on a single scale (e.g. D’Ascenzo et al., 2015; others). Overall, despite some variations, this is a literature where gender is frequently is presented as a binary.
+The traditional binary approach to gender in psychology is being challenged by a growing awareness of the suitability of alternatives for participants to indicate their own gender identity. Although the widespread use of such alternatives is fairly new, alternative approaches to gender classification have a deep history in psychology. For example, Bem (1974) developed scales to measure femininity and masculinity as separate traits, finding that many individuals exhibit a mixture of feminine and masculine traits. More recently, Joel and colleagues (2014) not only asked participants which gender category they identified with, but also whether they had ever experienced a different gender identity. They found that approximately 30% of respondents had experienced an alternative gender identity at some point in their lives. Additionally, several guides have been developed that recommend the use of open textboxes or multiple options when asking participants to indicate their gender. When participants are given such textboxes, they frequently used them. Thes studies suggest not only that alternatives are possible, but also that participants will use them when they have the chance, and potentially, the possibilities around gender change. 
 
-Presenting gender as a binary communicates to participants that the researchers do not view non-binary genders as legitimate. For TGD individuals, this may contribute to a wider pattern of cisgenderism, the ideology that discards people’s own conception of their gender identity. Researchers may raise the objection that binary response options may be the most suitable for the research question or the planned statistical analyses. This may be the case, but it should be weighed against the real harm that is being done by these options.   
+In contrast, the literature on gender categorization often treats gender as a binary category. Gender categorization is a cognitive process that occurs when individuals perceive others (ref). Researchers in this field have explored the speed and automaticity of gender perception in faces, as well as which facial features are associated with specific gender categories, such as women and men (ref). Generally, the findings indicate that gender is rapidly and automatically categorized, with facial features such as skin smoothness, jawline, and hair length used to determine gender identity. However, these studies typically do not address the complex nature of gender or consider alternative response options (ref).
 
-Furthermore, it is worth questioning whether a binary forced choice is ever the most appropriate method to measure gender categorization. This position seems to be premised on the assumption that there is some fundamental basis to gender, a truth which can be distorted. According to this view, binary is the neutral way to measure sex/gender categorization and anything else is the result of agenda-driven or political motivations. If gender is instead viewed as a social construct, which arise as a result of repeated discourse, this suggests that there is no neutral way to measure gender categorization. Rather, there are multiple alternatives which come with their own limitations and restrictions or suggestions. 
-
-Indeed, gender can be measured in many different ways, with drastically varying results. For example, Bem (1974) constructed scales to measure femininity and masculinity as separate personality traits. She found that many people had a mixture of feminine and masculine traits.  In another example, when Joel and colleagues (2014) asked ostensibly cisgender participants whether they ever experienced shifts in their gender identity, a sizable group had. Lastly, and Westbrook and Sperstein (2015) showed that there are many potential ways participants answer questions about their gender identities, including rating femininity and masculinity on separate dimensions. When offered these separate sliders, participants generally offered a high degree of androgyny. These results, which primarily regard people’s self-categorization and not categorization of others, nevertheless suggest that when people are given the options to categorize gender beyond the binary, they frequently use them. 
-
-Additionally, gender binaries can be created or enhanced through statistical practices. For example, Hyde and colleagues (2018) concluded that the statistical practice of examining mean differences between women and men exaggerates the difference and downplay gender similarities.  Hester and colleagues (2020), showed both that perceived differences between the faces of men and women were pronounced when only means were examined, and when gender was measured as consisting of a single dimension with femininity and masculinity at opposing ends. These studies show that when experiments are constructed to take diversity of gender into account, the results often reveal a diversity of gender. This primarily suggests that studies which only measure binary gender are unnecessarily and artificially restrictive. **I added this paragraph earlier, but I'm not sure if it's actually relevant** 
+Instead, gender categorization is most often measured through a forced-choice task in which participants are forced to indicate either "female" or "male" when presented with a face (see, for example, Cloutier et al., 2005; Campanella et al., 2001; Webster et al., 2004; Zhao & Bentin, 2008). A slightly different approach asks participants to rate faces on a gender scale as a quality, often using "feminine" and "masculine" as endpoints on a single scale (e.g., D'Ascenzo et al., 2015; others). Despite some variations, the literature overwhelmingly presents gender as a binary in studies of gender categorization. Research that presents gender as a binary influence and sustain gender as a binary concept, and in fact communicate to participants that non-binary genders are not legitimate.
 
 If binary response options have this problem, it is worth conceptualizing what are some possible alternatives. One easy solution is the inclusion of a third third gender option, such as "other" or "non-binary". This has the benefit of acknowledging the existence of TGD individuals, which is something that many TGD inviduals have expressed they would like to see (Richards, 2021). However, solely adding a third alternative is not enough. It also indirectly implies that TGD people are androgynous, which is not always the case (ref). What TGD individuals and activists have championed is instead a general caution about gender categorization given that TGD people can present in a wide variety of ways, not all of which are androgynous (ref). Therefore, in a categorization task, it would be preferable to have the option of expressing a sense of uncertainty, possibly through an "I don't know" alternative. Although psychometricians discourage the inclusion of "I don't know" responses on the basis that it discourages participants from taking a stance (Kosnick et al., 2010) from a TGD perspective on gender categorization, this is precisely the outcome which is desirable. Lastly, a way to skirt all of these issues is to allow participants complete freedom to categorize however they choose, using open-ended text entry. *to do: include a sentence bridging to the research questions* 
 
@@ -164,7 +160,15 @@ Gender binary beliefs (GBB) were measured with an adapted versoin of the Gender 
 
 ### Procedure
 
-Participants were seated in a quiet room and carried out the experiment on a computer. Each trial consisted of a face accompanied by the question "How would you gender categorize this person?". Each person completed a total of 126 trials. Following  Participants were randomly allocated into one of the three response options conditions: binary categories, multiple categories and free text. In the binary categories condition, the only option to respond was "woman" and "man". In the multiple categories condition, this was expanded to include the options "other" and "I don't know". Lastly, the free text condition consisted of an open text box. Participants completed all faces in turn, then filled out answered the gender binary beliefs scale. 
+Participants were seated in a quiet room and carried out the experiment on a computer. Each trial consisted of a face accompanied by the question "How would you gender categorize this person?". Each person completed a total of 126 trials. Following  Participants were randomly allocated into one of the three response options conditions: binary categories, multiple categories and free text. In the binary categories condition, the only option to respond was "woman" and "man". In the multiple categories condition, this was expanded to include the options "other" and "I don't know". Lastly, the free text condition consisted of an open text box. Participants completed all faces in turn, then filled out the gender binary beliefs scale. 
+
+### Data analysis
+
+We used `r cite_r("r-references.bib")`. The data were handled both descriptively and fit to Bayesian mixed-effects models. To answer each research question, we used a two-step approach which began with a model comparison approach followed by Bayes factor tests of specific contrasts. In all cases, the models included varying intercepts for both participants trials.  
+
+#### RQ1
+To further test the strength of the evidence, the data from the Free Text and Multiple Categories conditions were fit to a series of statistical models. For full model specification (including priors) and diagnostics, see the supplementary material. All models were Bayesian mixed effects models with varying intercepts for participants and varying slopes for trials. 
+
 
 # Results
 
@@ -202,7 +206,7 @@ d %>%
  
 ```
 
-To further test the strength of the evidence, the data from the Free Text and Multiple Categories conditions were fit to a series of statistical models. For full model specification (including priors) and diagnostics, see the supplementary material. All models were Bayesian mixed effects models with varying intercepts for participants and varying slopes for trials. 
+
 
 The first model was the Null model which included no additional predictors. The second was the Main Effects model which included unique intercepts for each pronoun condition and an overall effect of morph level. Lastly, the Interaction model included unique intercepts as well as unique slopes of morph level for each condition. For a detailed discussion of why this specification is preferred over the traditional dummy-variable approach, see McElreath (2020), but in short it ensures that the priors for each condition are the same, which is necessary for calculating Bayes Factors. 
 
@@ -432,7 +436,7 @@ Based on the pattern in Figure\ \@ref(fig:descriptives) we did specifically test
 
 ## Discussion
 
-To be filled with cogent points. 
+The results from experiment 1 suggest that some participants do use the beyond-binary options when they have them, however only when these are explicitly spelled out. When participants are implicitly able to enter whatever they like, most still fell back on using woman/man. Furthermore, the results suggests that overall, even when participants used the beyond-binary options, this did not systematically affect their overall pattern of responses in terms of woman and man categorizations.
 
 # Experiment 2
 
@@ -555,7 +559,11 @@ Based on the results of LOO-CV, we continued with the Interaction model. We carr
 
 # Discussion
 
+Experiment 2 was designed to test whether response options which did not present women and men as opposing categories changed participants categorical perception. Overall, the results indicated that in terms of categorical perception, the two conditions were very similar, suggesting that the binary view of language is very strong and that participants do not change their view of gender depending on 
+
 # Overall discussion
+
+Overall, some important findings emerged from this experiment. First, there was strong evidence that participants will use beyond-binary actions to categorize faces, if given the options. It is also clear that providing these options do not change the overall distributions of scores 
 
 \newpage
 
@@ -563,3 +571,7 @@ Based on the results of LOO-CV, we continued with the Interaction model. We carr
 
 ::: {#refs custom-style="Bibliography"}
 :::
+
+
+
+
