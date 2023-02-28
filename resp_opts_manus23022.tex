@@ -155,7 +155,7 @@
     {}{\InnerPatchFailed}%
   }
 {}{\PatchFailed}
-\keywords{keywords\newline\indent Word count: X}
+\keywords{keywords\newline\indent Word count: 2869}
 \DeclareDelayedFloatFlavor{ThreePartTable}{table}
 \DeclareDelayedFloatFlavor{lltable}{table}
 \DeclareDelayedFloatFlavor*{longtable}{table}
@@ -243,10 +243,10 @@ Instead, gender categorization is most often measured through a forced-choice ta
 
 The use of binary gender measures presents significant problems in accurately reflecting the complexity of gender. Such measures reinforce the notion of gender as a binary concept, thereby invalidating non-binary genders. This not only misrepresents the reality of gender but also perpetuates discriminatory attitudes towards non-binary individuals. Consequently, it is imperative to consider alternative measures that acknowledge and respect the diversity of gender identities.
 
-\hypertarget{overview-of-planned-studies}{%
-\subsection{Overview of planned studies}\label{overview-of-planned-studies}}
+\hypertarget{overview-of-the-present-research}{%
+\subsection{Overview of the present research}\label{overview-of-the-present-research}}
 
-Based on the problems with binary measurement, we planned two studies to demonstrate alternatives to binary measurment of gender categorization and to investigate how such alternative impact participants results. The purpose of bothg experiment was to answer the following three research quetions.
+Based on the problems with binary measurement, we conducted two experiments to demonstrate alternatives to binary measurement of gender categorization and to investigate how such alternative impact participants results. The purpose of bothg experiment was to answer the following three research quetions.
 
 \emph{Research question 1}: Do people use beyond-binary options when they have them?
 
@@ -257,7 +257,9 @@ Based on the problems with binary measurement, we planned two studies to demonst
 \hypertarget{experiment-1}{%
 \section{Experiment 1}\label{experiment-1}}
 
-The purpose of study 1 was to test research questions 1 and 2. Therefore, the
+The purpose of study 1 was to test research questions 1 and 2. Consequently, experiment 1 focused on manipulating various ways to let particpants catgorize faces beyond the binary of women and me. The specific alternatives were based on common practices for self-identification of gender. To avoid suggesting that gender only consist of women and men, these studies recommend includding a third option. Because gender is not always apparent from someone's face, such a task should also include an ``I don't know option''. The inclusion of such options is sometimes discouraged because it makes participants not taking a stance, however, when it comes to gender, not taking a stance is a legitimate strategy.
+
+A paragraph about free text maybe.
 
 \hypertarget{method}{%
 \subsection{Method}\label{method}}
@@ -265,47 +267,54 @@ The purpose of study 1 was to test research questions 1 and 2. Therefore, the
 \hypertarget{participants}{%
 \subsubsection{Participants}\label{participants}}
 
-Participants (\emph{N} = 68) were speakers recruited through advertising online and on the university campus (\emph{M}\textsubscript{age}= 37.67, \emph{SD}\textsubscript{age} = 14.56, Range = 20 - 69). All participants were informed that participation was voluntary. In term of gender, the participants were 35 women, 32 men and 1 who did not indicate gender. Written consent was obtained from all participants.
+Participants (\emph{N} = 68) were recruited through advertising online and on the university campus (\emph{M}\textsubscript{age}= 37.67, \emph{SD}\textsubscript{age} = 14.56, Range = 20 - 69). All participants were informed that participation was voluntary. In term of gender, the participants were 35 women, 32 men and 1 who did not indicate gender. All participants provided written informed consent and were informed that participation was voluntary.
 
-\hypertarget{material}{%
-\subsubsection{Material}\label{material}}
+\hypertarget{stimuli}{%
+\subsubsection{Stimuli}\label{stimuli}}
 
 Faces were produced using faces from the London Face Database (deBruine) and the Chicago Face Database (ref) morphed with on Webmorph (ref). For Black, Asian and White faces, the six most feminine faces of women and the six most masculine faces of men were selected, using the codebook provided by the researchers. The faces were matched, so that the most feminine face were morphed with the most masculine face and so on. The morphs were made in 7 steps, from completely feminine to completely masculine. Because there were 18 pairs morphed in 7 steps, the total number of faces was 126.
 
 \hypertarget{measures}{%
 \subsection{Measures}\label{measures}}
 
-Gender binary beliefs (GBB) were measured with an adapted versoin of the Gender Binary Beliefs scale by Tee \& Hegarty (2014). The scale measured the extent to which participants endorsed items such as ``\emph{placeholder}'' and \emph{placeholder}
+The primary outcome was responses to the categorizatio task. For analysis purposes, these were aggregated in the following ways:
 
 \emph{Beyond-binary responses} represented the categories where participants made a response that were not woman or man. This was a dichotomous variable that was calculated from the categorization data by combining the responses of ``I don't know'' and ``non-binary''. These beyond-binary responses were coded as 1 and binary responses as 0.
+
+\emph{Binary response} represented only the responses that were either woman (coded as 1) or man (coded as 0). All other responses were removed from this dataset.
 
 \hypertarget{procedure}{%
 \subsubsection{Procedure}\label{procedure}}
 
-Participants were seated in a quiet room and carried out the experiment on a computer. Each trial consisted of a face accompanied by the question ``How would you gender categorize this person?''. Each person completed a total of 126 trials. Following Participants were randomly allocated into one of the three response options conditions: binary categories, multiple categories and free text. In the binary categories condition, the only option to respond was ``woman'' and ``man''. In the multiple categories condition, this was expanded to include the options ``other'' and ``I don't know''. Lastly, the free text condition consisted of an open text box. Participants completed all faces in turn, then filled out the gender binary beliefs scale.
+Participants completed the experiment on a computer in a quiet room. Each trial consisted of a face accompanied by the question ``How would you gender categorize this person?''. Each person completed a total of 126 trials. Participants were randomly allocated into one of the three response options conditions: binary categories, multiple categories and free text. In the binary categories condition, the only option to respond was ``woman'' and ``man''. In the multiple categories condition, this was expanded to include the options ``other'' and ``I don't know''. Lastly, the free text condition consisted of an open text box.
 
 \hypertarget{data-analysis}{%
 \subsubsection{Data analysis}\label{data-analysis}}
 
-We used R (Version 4.2.2; R Core Team, 2022) and the R-packages \emph{bayesplot} (Version 1.10.0; Gabry et al., 2019), \emph{brms} (Version 2.18.0; Bürkner, 2017, 2018, 2021), \emph{dplyr} (Version 1.0.10; Wickham et al., 2022), \emph{gcookbook} (Version 2.0; Chang, 2018), \emph{ggplot2} (Version 3.4.0; Wickham, 2016), \emph{papaja} (Version 0.1.1; Aust \& Barth, 2022), \emph{Rcpp} (Eddelbuettel \& Balamuta, 2018; Version 1.0.9; Eddelbuettel \& François, 2011), \emph{tidybayes} (Version 3.0.2; Kay, 2022), \emph{tidyr} (Version 1.2.1; Wickham \& Girlich, 2022), and \emph{tinylabels} (Version 0.2.3; Barth, 2022). The data were handled both descriptively and fit to Bayesian mixed-effects models. To answer each research question, we used a two-step approach which began with a model comparison approach followed by Bayes factor tests of specific contrasts. In all cases, the models included varying intercepts for both participants trials.
+We used R (Version 4.2.2; R Core Team, 2022) and the R-packages \emph{bayesplot} (Version 1.10.0; Gabry et al., 2019), \emph{brms} (Version 2.18.0; Bürkner, 2017, 2018, 2021), \emph{dplyr} (Version 1.0.10; Wickham et al., 2022), \emph{gcookbook} (Version 2.0; Chang, 2018), \emph{ggplot2} (Version 3.4.0; Wickham, 2016), \emph{papaja} (Version 0.1.1; Aust \& Barth, 2022), \emph{Rcpp} (Eddelbuettel \& Balamuta, 2018; Version 1.0.9; Eddelbuettel \& François, 2011), \emph{tidybayes} (Version 3.0.2; Kay, 2022), \emph{tidyr} (Version 1.2.1; Wickham \& Girlich, 2022), and \emph{tinylabels} (Version 0.2.3; Barth, 2022). Descriptive statistics were used to summarize the data, and Bayesian mixed-effects models were used to test the research questions. For all models, we included varying intercepts for both participants and trials. To answer each research question, we used a two-step approach which began with a model comparison approach followed by Bayes factor tests of specific contrasts. In all cases, the models included varying intercepts for both participants trials.
 
-\hypertarget{rq1}{%
-\paragraph{RQ1}\label{rq1}}
+\hypertarget{research-question-1-the-use-of-categories-beyond-the-binary}{%
+\paragraph{Research question 1: The use of categories beyond the binary}\label{research-question-1-the-use-of-categories-beyond-the-binary}}
 
-In research question one, we investigated whether XXX
+In research question one, we investigated whether participants categorized faces beyond the binary when given the chance. This could manifest as either a main effect of condition or an interaction between condition and morph level if categorizations beyond the binary were limited to only the most androgynous faces. For this analyses, the Binary categories condition was excluded, as that condition preculded the possibility of categorizing beyond the binary. The specific questions then, were ``do people categorize faces beyond the binary?'', ``does this effect depend on condition?'' and ``are ambiguous faces more likely to be categorized beyond the binary?''. These questions correspond to main effects of response option condition, facial morph level and an interaction between the two.
 
-To further test the strength of the evidence, the data from the Free Text and Multiple Categories conditions were fit to a series of statistical models. For full model specification (including priors) and diagnostics, see the supplementary material. All models were Bayesian mixed effects models with varying intercepts for participants and varying slopes for trials.
+Accordingly, the modelling strategy involved a null model with no additional predictors, a Main effects model and an Interaction model For full model specification (including priors) and diagnostics, see the supplementary material. These model were then compared in terms of predictive power on out-of-sample data points, estimated using Leave-one-out cross validation (LOO-CV). This represents an indirect test of the research questions, and can be viewed as an imperfect analogy to checking whether there is a ``significant'' interaction in a classical F-test.
 
-\hypertarget{rq2}{%
-\paragraph{RQ2}\label{rq2}}
+As a more direct test, we also calculated the Bayes Factor for the specific contrasts suggested by these questions. In other words, we compared the overall probability of making categorizations beyond the binary in the Free text condition and the Multiple categories conditions. Additionally,
+we compared the prevalence of categorization beyond the binar specifically of the most androgynous faces. The Bayes factors were compared the null hypothesis that the contrast was equal to 0 and calculated using the Savage-Dickey Density Ratio.
 
-In research question two, we investigated whether XXX
+\hypertarget{research-question-2-the-distribution-of-binary-responses}{%
+\paragraph{Research question 2: The distribution of binary responses}\label{research-question-2-the-distribution-of-binary-responses}}
+
+In research question two, we investigated whether the distribution of binary responses was different depending on response option condition. This could manifest as a main effect of condition if there was an overall skew in the results or as an interaction between condition and morph level, in case that the skew was isolated to just one level of morph (for example at the middle).
+
+Similar to RQ1, this data was tested using with Bayesian mixed models fitted to the data. This included an initial model comparison approach, with Null model, and Main Effects model and an Interaction Model. If the model comparsion did not preculde the Intearction model, we tested the contrast of the overall distribution as well as isolated to whichever morph level, a visual inspection of the data suggeted was the most strongly skewed.
 
 \hypertarget{results}{%
 \section{Results}\label{results}}
 
-\hypertarget{rq1-do-people-use-non-binary-options-when-they-have-them}{%
-\subsection{RQ1: Do people use non-binary options when they have them?}\label{rq1-do-people-use-non-binary-options-when-they-have-them}}
+\hypertarget{research-question-1-the-use-of-categories-beyond-the-binary-1}{%
+\subsection{Research question 1: The use of categories beyond the binary}\label{research-question-1-the-use-of-categories-beyond-the-binary-1}}
 
 The raw distribution of categorizations is presented in Figure~\ref{fig:descriptives}.
 
@@ -317,8 +326,8 @@ The raw distribution of categorizations is presented in Figure~\ref{fig:descript
 \caption{\label{fig:descriptives}Gender Categorizations by Participants}
 \end{figure}
 
-As described in the methods, to investigating RQ1 we fit a Null Model, a Main Effects Model and and interaction model to the data. The results of model comparison are presented in Table~\ref{tab:loo}.
-Table~\ref{tab:loo} suggests that the Interaction model is the most predictive, but the absolute differnce between the Interaction model and the Main effects model is small and more importantly, the difference is small in relation to the standard error of the difference. This suggests that the data is inconclusive about which model is most suitable, but both are superior to the Null model. As model comparison did not conclusively discount the Interaction model, we continued by testing specific, relevant contrasts.
+As described in the methods, to investigating RQ1 we fit a Null Model, a Main Effects Model and an interaction model to the data. The results of model comparison are presented in Table~\ref{tab:loo}.
+Table~\ref{tab:loo} suggests that the Interaction model is the most predictive, but the absolute differnce between the Interaction model and the Main effects model is small and more importantly, the difference is small in relation to the standard error of the difference. This suggests that the data is inconclusive about which model is most suitable, but both are superior to the Null model. As model comparison did not conclusively preclude the Interaction model, we continued by testing specific, relevant contrasts using the Interaction model (see the Supplementary material for specific contrast weights).
 
 \begin{table}
 
@@ -341,15 +350,13 @@ Null & -18.83 & 6.02 & -253.00 & 24.51\\
 \end{threeparttable}
 \end{table}
 
-Table~\ref{tab:loo} suggests that the Interaction model is the most predictive, but the absolute differnce between the Interaction model and the Main effects model is small and more importantly, the difference is small in relation to the standard error of the difference. This suggests that the data is inconclusive about which model is most suitable. However, to test the specific question raised in the research question 1, we still carried on with the Interaction model.
-
 \begin{figure}
 \centering
 \includegraphics{resp_opts_manus23022_files/figure-latex/exp-one-inf-1.pdf}
 \caption{\label{fig:exp-one-inf}Proportion of beyond-binary responses in the Mulitple categoreies and Free Text conditions}
 \end{figure}
 
-The estimates of the modelling are visualized in Figure~\ref{fig:exp-one-inf}. This again suggests that Three specific contrasts were tested with Bayes Factors calculated using the Savage-Dickey Density Ratio (ref). First, whether participants overall made more beyond-binary categorizations in the multiple categories condition than in the free text condition. The evidence suggests fairly convincingly that this is the case (Estimate = 0.02, CI ={[}0.00{]}, {[}0.18{]}, BF\textsubscript{10}= 97.67). Additionally, based on the curve in Figure~\ref{fig:exp-one-inf}, we explored whether the evidence supported this diference at morph level 50. The evidence was in favor of this differnce (Estimate = 0.02, CI ={[}0.00{]}, {[}0.20{]}, BF\textsubscript{10}= 17). Lastly, we tested the difference using quadratic weights, though here the difference was inconclusive (Estimate = 0.45, CI = {[}0.31{]} - {[}0.61{]}, BF\textsubscript{10}= 0.53). \emph{I'm not sure how to interpret this last finding}.
+Model parameters are visualized in Figure~\ref{fig:exp-one-inf}. First, whether participants overall made more beyond-binary categorizations in the multiple categories condition than in the free text condition. The evidence suggests fairly convincingly that this is the case (OR = 0.02, CI ={[}0.00, 0.21{]}, BF\textsubscript{10}= 97.67). Additionally, based on the curve in Figure~\ref{fig:exp-one-inf}, we explored whether the evidence supported this difference at morph level 50. The evidence was in favor of this difference (OR = 0.02, CI ={[}0.00, 0.26{]}, BF\textsubscript{10}= 17). Lastly, we tested the difference using quadratic weights, though here the difference was inconclusive (OR = 0.82, CI = {[}0.44,1.58{]}, BF\textsubscript{10}= 0.53). \emph{I'm not sure how to interpret this last finding}.
 
 Overall, though, the evidence suggests at least somewhat strongly that when participants have the option of using beyond-binary response options, they use them.
 
@@ -379,9 +386,9 @@ interaction & -6.69 & 3.02 & -1350.40 & 43.48\\
 \end{threeparttable}
 \end{table}
 
-Based on the shape of Figure~\ref{fig:descriptives} it appears that ``man'' categorizations that are being crowded out by the beyond-binary options. To test whether this was actually the case, we carried out statistical analyses similar to the previous section, again using a mixed-effects model with random intercepts for participants and faces. To explore RQ2, we created three models, a Null model, a Main Effects model and an Interaction model. Similarly, these were then compared using LOO-CV. The results of this are presented in Table~\ref{tab:rq2-table}. This suggests that Interaction model is not the most predictive model, in fact it is the worst. Though, here again, we note that the standard error is quite high, suggesting the proper interpetation is rather that each model is roughly equally as predictive.
+To test this research question, we first carried out model comparison. The results of this are presented in Table~\ref{tab:rq2-table}. Although the Interaction model was the worst in terms of LOO-CV, the standard errors were quite large relative to the difference. For completeness we therefore carried out the contrast analyses using the Interaction model.
 
-Based on the pattern in Figure~\ref{fig:descriptives} we did specifically test the contrast between the multiple categories condition and the other two conditions. The evidence were slightly in favor of there being no difference between the multiple categories and the free text conditions (Estimate = -0.49, CI ={[}-1.23{]}, {[}0.25{]}, BF\textsubscript{01}= 4.79) and moderately in favor of no difference between multiople categories and binary categories conditions (Estimate = -0.27, CI ={[}-0.99{]}, {[}0.45{]}, BF\textsubscript{01}= 9.08)
+Based on the pattern in Figure~\ref{fig:descriptives}, the contrast that was chosen was at morph level 50. The evidence were slightly in favor of there being no difference between the multiple categories and the free text conditions (Estimate = 0.61, CI ={[}0.29, 1.28{]}, BF\textsubscript{01}= 4.79) and moderately in favor of no difference between multiple categories and binary categories conditions (Estimate = 0.76, CI ={[}0.37, 1.57{]}, BF\textsubscript{01}= 9.08)
 
 \hypertarget{discussion}{%
 \subsection{Discussion}\label{discussion}}
@@ -394,7 +401,9 @@ The results from experiment 1 suggest that some participants do use the beyond-b
 \hypertarget{overview}{%
 \subsection{Overview}\label{overview}}
 
-The purpose of experiment 2 was primarily to test categorical perception. If categorical perception occurs, we would expect that scores of femininity to be lower than the percentage of femininity in the faces. Furthermore, if response options change perceptions of gender as a category, we would expect there to be less categorical perception in the multiple categories option.
+The purpose of experiment 2 was primarily to test the extent to which response options that do not frame women and men as two opposites reducerd categorical perception. To that end, we once again borrowed from the literature on self-categorization, this time using Bem's (1978) method of measuring gender on two separate scales.
+
+If categorical perception occurs, we would expect that scores of femininity to be lower than the percentage of femininity in the faces. Furthermore, if response options change perceptions of gender as a category, we would expect there to be less categorical perception in the multiple categories option.
 
 \hypertarget{method-1}{%
 \subsection{Method}\label{method-1}}
@@ -402,12 +411,20 @@ The purpose of experiment 2 was primarily to test categorical perception. If cat
 \hypertarget{participants-1}{%
 \subsubsection{Participants}\label{participants-1}}
 
-Participants (\emph{N} = 49) were speakers recruited through advertising online and on the university campus (\emph{M}\textsubscript{age}= 36.67, \emph{SD}\textsubscript{age} = 12.54). All participants were informed that participation was voluntary. In term of gender X women and Y men participated The participants were randomly allocated to conditions.
+Participants (\emph{N} = 49) were recruited through advertising online and on the university campus (\emph{M}\textsubscript{age}= 36.67, \emph{SD}\textsubscript{age} = 12.54). All participants were informed that participation was voluntary. In term of gender X women and Y men participated The participants were randomly allocated to conditions.
 
 \hypertarget{stimuli-procedure}{%
 \subsection{Stimuli \& Procedure}\label{stimuli-procedure}}
 
-The stimuli and procedure for experiment 2 were identical to experiment 1. Experiment 2 differed only the response options conditions. For experiment 2, there response option conditions consisted of single dimension, which ranged from ``woman'' to ``man'' and ``multiple dimension'' which ranged from ``not woman'' to ``woman'' and ``not man'' to ``man''. For the multiple dimensions condition, participants rated the same faces according to both scales, but on separate trials.
+The stimuli and procedure for experiment 2 were identical to experiment 1. Experiment 2 differed only the response options conditions. For experiment 2, there response option conditions consisted of single dimension, which ranged from ``woman'' to ``man'' and ``multiple dimension'' which ranged from ``not woman'' to ``woman'' and ``not man'' to ``man''. For the multiple dimensions condition, participants rated the same faces according to both scales, but on separate trials. Although Bem (1978) used scales of femininity and masculinity, the present anchors were chosen based on evidence that people categorize those two scales differently depending on whether the categorize the faces as a woman or man.
+
+\hypertarget{data-analysis-1}{%
+\subsection{Data analysis}\label{data-analysis-1}}
+
+\hypertarget{research-question-3-now-this-distinction-feels-like-it-makes-a-lot-less-sense}{%
+\subsubsection{Research question 3 (Now this distinction feels like it makes a lot less sense\ldots)}\label{research-question-3-now-this-distinction-feels-like-it-makes-a-lot-less-sense}}
+
+In research question three, we investigated whether participants displayed less categorical perception in the multiple dimensions condition compared to the single dimension condition. This could manifest as an interaction where mean ratings of faces are more extreme at both 33.37 morph level and 66.66 morph level. In other words, if categorial perception is reduced, we would expect to see an interaction depending on condition and morph level, but not a main effect. As research question 3 was less exploratory than 1 and 2, we simply fit an intearction model, a bayesian mixed-effects model with morph level and condition as fixed effects and participants and faces as varying intercepts (See supplemental material for full model specification). Using Savage-Dickey density ratios, we calculated the Bayes Factors for the contrasts between single dimension condition and multiple dimension at morph level 33.37 and 66.66 only.
 
 \hypertarget{results-1}{%
 \section{Results}\label{results-1}}
@@ -420,27 +437,42 @@ The mean ratings in both conditions are presented in Figure~\ref{fig:descriptive
 \caption{\label{fig:descriptives-two}Mean ratings of faces in Single dimension and multiple dimensions}
 \end{figure}
 
-As a further test of the research question, we also fitted the data to a Bayesian mixed effects model, with participants and faces modeled as random intercepts. Additionally, the morph levels were entered as categorical predictors, rather than as continuous variables. Similar to study 1, the initial approach consisted of several models which were compared against each other using LOO-CV. Again, the models were a Null model, with no additional predictors, a Main Effects model with main effects of morph level and condition, but no interaction, and a Interaction model (for complete model specification, see the Supplementary material.)
-
 \begin{figure}
 \centering
 \includegraphics{resp_opts_manus23022_files/figure-latex/exp-two-inf-1.pdf}
 \caption{\label{fig:exp-two-inf}Mean gender ratings in Single Dimension and Multiple Dimensions conditions}
 \end{figure}
 
-Based on the results of LOO-CV, we continued with the Interaction model. We carried out two comparisions. The first was a quadratic contrasts \emph{which I have still to carry out}. Because the critical levels where we might expect to see a differ, we also compared the mean rating at 33.33 morph and at 66.67 morph. At 33.33 the evidence strongly suggested that the two conditions are the same
-(Estimate = 0.28, CI ={[}-3.91{]}, {[}4.51{]}, BF\textsubscript{01}= 31.57). This was also the case at 66.67
-(Estimate = 2.29, CI ={[}-2.03{]}, {[}6.57{]}, BF\textsubscript{01}= 19.17). Overall, both conditions showed fairly strong tendencies toward categorical perception and they did not differ in this regard.
+We compared the mean rating at 33.33 morph and at 66.67 morph for both conditions. At 33.33 the evidence strongly suggested that the two conditions were the same
+(Estimate = 0.28, CI ={[}-3.91, 4.51{]}, BF\textsubscript{01}= 31.57). This was also the case at 66.67
+(Estimate = 2.29, CI ={[}-2.03, 6.57{]}, BF\textsubscript{01}= 19.17). Overall, both conditions showed fairly strong tendencies toward categorical perception and they did not differ in this regard.
 
 \hypertarget{discussion-1}{%
 \section{Discussion}\label{discussion-1}}
 
-Experiment 2 was designed to test whether response options which did not present women and men as opposing categories changed participants categorical perception. Overall, the results indicated that in terms of categorical perception, the two conditions were very similar, suggesting that the binary view of language is very strong and that participants do not change their view of gender depending on
+Experiment 2 was designed to test whether response options which did not present women and men as opposing categories changed participants categorical perception. The results indicated that in terms of categorical perception, the two conditions were very similar, suggesting that the binary view of language is very strong and that participants do not change their view of gender depending on
 
 \hypertarget{overall-discussion}{%
 \section{Overall discussion}\label{overall-discussion}}
 
-Overall, some important findings emerged from this experiment. First, there was strong evidence that participants will use beyond-binary actions to categorize faces, if given the options. It is also clear that providing these options do not change the overall distributions of scores
+Overall, some important findings emerged from this experiment. First, there was strong evidence that participants will use beyond-binary actions to categorize faces, if given the options. It is also clear that providing these options do not change the overall distributions of scores.
+
+Overall, this experiment yielded important findings regarding the use of non-binary response options in gender categorization. Specifically, the results provide strong evidence that participants will use beyond-binary options to categorize faces when such options are provided. Additionally, reponse options that pose men and women as not in opposition does not change participants ratings of their gender.
+
+These findings are consistent with previous research, such as the work of Saperstein and Westbrook, which has highlighted the importance of including more options in measures of self-categorization. However, it is also important to note that the provision of non-binary options did not appear to significantly alter participants' perception of gender. This is a crucial point, as it indicates that including non-binary options in gender categorization measures can be done without compromising the study's ability to accurately assess participants' responses.
+
+It is worth noting that this study only examined participants' stated categorizations, and it is possible that they may have made other categorizations internally that were not reflected in their responses. However, it is important to recognize that a purely behavioral study such as this cannot fully capture the neurological processes underlying gender perception, which may require more sophisticated techniques.
+
+Based on these findings, we recommend that researchers carefully consider their goals when designing studies on gender categorization. For most studies, the inclusion of non-binary response options is a viable and ethical option that has the added benefit of avoiding micro-aggressions against transgender and non-binary participants. Ultimately, by taking a thoughtful and inclusive approach to gender categorization measures, researchers can improve the accuracy and validity of their results while respecting the diversity of human experiences.
+
+\hypertarget{conclusion}{%
+\paragraph{Conclusion}\label{conclusion}}
+
+In conclusion, this experiment tested how the inclusion of response options which did not pose men and women as the only opposite gender affecte participants outcomes, in two studies.
+
+\begin{verbatim}
+Conclusion: End the discussion section with a brief summary of the study's main contributions and the overall conclusions that can be drawn from the results.
+\end{verbatim}
 
 \newpage
 
