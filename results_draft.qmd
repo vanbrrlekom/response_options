@@ -520,7 +520,62 @@ fit_dimensional <-
           sample_prior = TRUE,
           file = "models/fit_dimensional_stair_factor.3")
 
-conditional_effects(fit_dimensional)
+fit_dimensional_2 <- 
+   brm(f_rating ~ 1 + condition*fem + (1 + masc|id) + (1|face), family = gaussian(link = 'identity'), 
+          prior = c(prior(normal(0,50), class = "b"),
+                    prior(normal(50,50), class = "Intercept"),
+                    prior(exponential(1), class = "sd"),
+                    prior(lkj(1), class = "cor"),
+                    prior(exponential(1), class = sigma)),
+          data = tmp,
+          iter = 4000, warmup = 1000,
+          cores = 4,
+          sample_prior = TRUE,
+          file = "models/fit_dimensional_stair_factor4")
+
+fit_dimensional_mfx <- 
+   brm(f_rating ~ 1 + condition + fen (1 + masc|id) + (1|face), family = gaussian(link = 'identity'), 
+          prior = c(prior(normal(0,50), class = "b"),
+                    prior(normal(50,50), class = "Intercept"),
+                    prior(exponential(1), class = "sd"),
+                    prior(lkj(1), class = "cor"),
+                    prior(exponential(1), class = sigma)),
+          data = tmp,
+          iter = 4000, warmup = 1000,
+          cores = 4,
+          sample_prior = TRUE,
+          file = "models/fit_dimensional_mfx")
+
+fit_dimensional_null <- 
+  brm(f_rating ~ 1+ (1 + masc|id) + (1|face), family = gaussian(link = 'identity'), 
+          prior = c(#prior(normal(50,50), class = "b"),
+                    #prior(normal(50,50), class = "Intercept"),
+                    prior(exponential(1), class = "sd"),
+                    prior(lkj(1), class = "cor"),
+                    prior(exponential(1), class = sigma)),
+          data = tmp,
+          iter = 4000, warmup = 1000,
+          cores = 4,
+          sample_prior = TRUE,
+          file = "models/fit_dimensional_null1")
+
+
+
+aconditional_effects(fit_dimensional)
+
+## testing the interaction with gbb
+fit_dimensional <- 
+  brm(f_rating ~ 0 + fem:condition: + (1 + masc|id) + (1|face), family = gaussian(link = 'identity'), 
+          prior = c(prior(normal(50,50), class = "b"),
+                    #prior(normal(50,50), class = "Intercept"),
+                    prior(exponential(1), class = "sd"),
+                    prior(lkj(1), class = "cor"),
+                    prior(exponential(1), class = sigma)),
+          data = tmp,
+          iter = 4000, warmup = 1000,
+          cores = 4,
+          sample_prior = TRUE,
+          file = "models/fit_dimensional_stair_factor.3")
 
 # carrying out the hypothesis test
 h_dim_33 <- hypothesis(fit_dimensional, "fem33.33:conditionmd= fem33.33:conditionsd" )
@@ -721,7 +776,7 @@ tmp <- d %>%
          fem = as.factor(fem))
 
 
-condition <- brm(f_cat ~ 0 + condition:gbb_m  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
+binary_gbb <- brm(bbcat ~ 1 + condition*gbb_m*  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
          prior = c(prior(normal(0,3), class = "b"),
                    prior(cauchy(0,3), class = "sd")),
           data = tmp,
@@ -729,7 +784,18 @@ condition <- brm(f_cat ~ 0 + condition:gbb_m  + (1 |id) + (1|face:fem), family =
           chains = 4,
           cores = 4,
           sample_prior = TRUE,
-          file = "models/fit_binary_stair_bb_fem_int_prior2"
+          file = "models/fit_binary_gbb.1"
+          )
+
+binary_gbb_morph <- brm(bbcat ~ 1 + condition*gbb_m* fem + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
+         prior = c(prior(normal(0,3), class = "b"),
+                   prior(cauchy(0,3), class = "sd")),
+          data = tmp,
+          iter = 6000, warmup = 2000,
+          chains = 4,
+          cores = 4,
+          sample_prior = TRUE,
+          file = "models/fit_binary_gbb_morph"
           )
 
 ```
