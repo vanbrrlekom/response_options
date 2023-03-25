@@ -207,13 +207,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Simple explanation</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Complex explanation</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>So how do we actually test the question “do people use the non-binary option when they have them”? We can construct several models which gets increasingly more complicated and compare how well they predict the data.</p>
+<p>So how do we actually test the question “do people use the non-binary option when they have them”? We can construct several models which gets increasingly more complicated and compare how well they predict the data. All models were based on multilevel models with random intercepts for participants and faces.</p>
 <p>In short, the idea is simple. We make three models:</p>
 <ul>
-<li>m0: a null model with no predictors</li>
-<li>m1: main effects model, with the predictors “morph level” and response option condition</li>
-<li>m2: interaction model, which is the the same as m1, with an additional interaction effect</li>
+<li><p>m0: a null model with no additional predictors.</p></li>
+<li><p>m1: main effects model, with the predictors “morph level” and response option condition.</p></li>
+<li><p>m2: interaction model, which is the the same as m1, with an additional interaction effect.</p></li>
 </ul>
+<p>These models were tested using Leave One Out</p>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <p>So we start with a null model, m<sub>0</sub>, which just has an intercept, and includes neither morph level or condition. For reference, it looks like this, but feel free to let your eyes glaze over it. (but in case your curious, the model includes random effects for subjects and faces, but nothing else)</p>
@@ -421,9 +422,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </details>
 </div>
 <p>I ran three tests to test what you might call subhypotheses. These are all described below.</p>
-<p>H1. Do particpants make beyond-binary categorizations in the multiple categories condition compared to the free text condition? It seems they do (Estimate = -4.11, CI =[-6.77], [-1.56], BF<sub>10</sub>= 61.06).</p>
-<p>H2. If we focus on the 50/50 faces, do we still see an effect? It seems like we do (Estimate = -4.14, CI =[-7.43], [-1.4], BF<sub>10</sub>= 16.73).</p>
-<p>H3. And if we focus on the faces at the end of the spectrum (i.e.&nbsp;0 and 100 faces)? Here the evidence is only inconclusive (Estimate = -2.6, CI = [-7.96] - [2.49], BF<sub>10</sub>= 0.84). What does this mean? Well, there is an overall difference between the two conditions, and it is concentrated at the 50/50 faces</p>
+<p>H1. Do particpants make beyond-binary categorizations in the multiple categories condition compared to the free text condition? It seems they do (Estimate = -4.11, CI =[-6.77], [-1.56], BF<sub>10</sub>= 60.99).</p>
+<p>H2. If we focus on the 50/50 faces, do we still see an effect? It seems like we do (Estimate = -4.14, CI =[-7.43], [-1.4], BF<sub>10</sub>= 16.83).</p>
+<p>H3. And if we focus on the faces at the end of the spectrum (i.e.&nbsp;0 and 100 faces)? Here the evidence is only inconclusive (Estimate = -2.6, CI = [-7.96] - [2.49], BF<sub>10</sub>= 0.83). What does this mean? Well, there is an overall difference between the two conditions, and it is concentrated at the 50/50 faces</p>
 </section>
 </section>
 <section id="how-does-this-effect-the-relative-distribution-of-mf-scores" class="level4">
@@ -650,6 +651,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<p>Below is the model fit to the data in study 2. This is again, contains varying intercepts for subjects, but also varying slopes for subjects as well as varying intercepts for faces. The the theoretically relevant part of the model is that it calculates a unique intercept for each condition, as well as unique slopes for the effect of morph level as well.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\text{Gender rating}_{i} &amp;\sim \mathrm{Normal}(\mu, \sigma) &amp; (3) \\
+\ \mu_i &amp;= \gamma_{cid[i]}+ \alpha_{subject[i]} + \beta_{cid[i]}Morph+ \alpha_{face[i]} + \gamma_{cid[i],subject[i]}\\
+\gamma_{cid} &amp;\sim \mathrm{Normal}(50,50),\: \text{for}\: cid =\text{sd, md}\\
+\alpha_{subject} &amp;\sim \mathrm{Normal}(0, \sigma_{subject}) \\
+\beta_{cid} &amp; \sim \mathrm{Normal}(0,10),\: \text{for}\: cid =\text{sd, md}\\
+\begin{bmatrix}
+\gamma_{sd}\\\gamma_{md} \\
+\end{bmatrix}
+&amp;\sim \mathrm{MVNormal}\Bigg(\begin{bmatrix} 0 \\0
+\end{bmatrix}, \Sigma _{face}\Bigg) \\
+\Sigma_{subject} &amp; =\textbf{S}_{\gamma}\textbf{R}_{\gamma}\textbf{S}_{\gamma}  \\
+\sigma_{face} &amp;\sim \mathrm{exponential}(1) \\
+\sigma_{subject} &amp;\sim \mathrm{exponential}(1) \\
+\sigma_{cid}&amp;\sim \mathrm{exponential}(1) \\
+\textbf{R} &amp;\sim \mathrm{LKJcorr}(1) \\
+\end{aligned}
+\]</span></p>
 <p>For the plot below, I’ve reverse coded the man ratings to create one aggregate multiple dimensions (i.e.&nbsp;“md”) scale. So the plot essentially shows how the average rating of femininity at each level of morph. For both conditions, again, the pattern of responses is suggestive of categorical perception. What am I basing this on? The critical levels are the 33.33 and 66.67. The rated levels of femininity (or reverse coded masculinity) are lower and higher respectively, suggesting that participant percieve more femininity than “there is” in the faces,which is to say, categorical perception.</p>
 <div class="cell">
 <details>
@@ -663,7 +684,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>fit_dimensional <span class="ot">&lt;-</span> </span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">brm</span>(f_rating <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> fem<span class="sc">:</span>condition <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">+</span> masc<span class="sc">|</span>id) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>face), <span class="at">family =</span> <span class="fu">gaussian</span>(<span class="at">link =</span> <span class="st">'identity'</span>), </span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">brm</span>(f_rating <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> fem<span class="sc">:</span>condition <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">+</span> fem<span class="sc">|</span>id) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>face), <span class="at">family =</span> <span class="fu">gaussian</span>(<span class="at">link =</span> <span class="st">'identity'</span>), </span>
 <span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>          <span class="at">prior =</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">50</span>,<span class="dv">50</span>), <span class="at">class =</span> <span class="st">"b"</span>),</span>
 <span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>                    <span class="co">#prior(normal(50,50), class = "Intercept"),</span></span>
 <span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">exponential</span>(<span class="dv">1</span>), <span class="at">class =</span> <span class="st">"sd"</span>),</span>
@@ -675,7 +696,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>          <span class="at">sample_prior =</span> <span class="cn">TRUE</span>,</span>
 <span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">"models/fit_dimensional_stair_factor.3"</span>)</span>
 <span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a><span class="fu">conditional_effects</span>(fit_dimensional)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>fit_dimensional_2 <span class="ot">&lt;-</span> </span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>   <span class="fu">brm</span>(f_rating <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> condition<span class="sc">*</span>fem <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">+</span> masc<span class="sc">|</span>id) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>face), <span class="at">family =</span> <span class="fu">gaussian</span>(<span class="at">link =</span> <span class="st">'identity'</span>), </span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>          <span class="at">prior =</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>,<span class="dv">50</span>), <span class="at">class =</span> <span class="st">"b"</span>),</span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">50</span>,<span class="dv">50</span>), <span class="at">class =</span> <span class="st">"Intercept"</span>),</span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">exponential</span>(<span class="dv">1</span>), <span class="at">class =</span> <span class="st">"sd"</span>),</span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">lkj</span>(<span class="dv">1</span>), <span class="at">class =</span> <span class="st">"cor"</span>),</span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">exponential</span>(<span class="dv">1</span>), <span class="at">class =</span> sigma)),</span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>          <span class="at">data =</span> tmp,</span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a>          <span class="at">iter =</span> <span class="dv">4000</span>, <span class="at">warmup =</span> <span class="dv">1000</span>,</span>
+<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a>          <span class="at">cores =</span> <span class="dv">4</span>,</span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>          <span class="at">sample_prior =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">"models/fit_dimensional_stair_factor4"</span>)</span>
+<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-37"><a href="#cb15-37" aria-hidden="true" tabindex="-1"></a>fit_dimensional_null <span class="ot">&lt;-</span> </span>
+<span id="cb15-38"><a href="#cb15-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">brm</span>(f_rating <span class="sc">~</span> <span class="dv">1</span><span class="sc">+</span> (<span class="dv">1</span> <span class="sc">+</span> masc<span class="sc">|</span>id) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>face), <span class="at">family =</span> <span class="fu">gaussian</span>(<span class="at">link =</span> <span class="st">'identity'</span>), </span>
+<span id="cb15-39"><a href="#cb15-39" aria-hidden="true" tabindex="-1"></a>          <span class="at">prior =</span> <span class="fu">c</span>(<span class="co">#prior(normal(50,50), class = "b"),</span></span>
+<span id="cb15-40"><a href="#cb15-40" aria-hidden="true" tabindex="-1"></a>                    <span class="co">#prior(normal(50,50), class = "Intercept"),</span></span>
+<span id="cb15-41"><a href="#cb15-41" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">exponential</span>(<span class="dv">1</span>), <span class="at">class =</span> <span class="st">"sd"</span>),</span>
+<span id="cb15-42"><a href="#cb15-42" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">lkj</span>(<span class="dv">1</span>), <span class="at">class =</span> <span class="st">"cor"</span>),</span>
+<span id="cb15-43"><a href="#cb15-43" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">exponential</span>(<span class="dv">1</span>), <span class="at">class =</span> sigma)),</span>
+<span id="cb15-44"><a href="#cb15-44" aria-hidden="true" tabindex="-1"></a>          <span class="at">data =</span> tmp,</span>
+<span id="cb15-45"><a href="#cb15-45" aria-hidden="true" tabindex="-1"></a>          <span class="at">iter =</span> <span class="dv">4000</span>, <span class="at">warmup =</span> <span class="dv">1000</span>,</span>
+<span id="cb15-46"><a href="#cb15-46" aria-hidden="true" tabindex="-1"></a>          <span class="at">cores =</span> <span class="dv">4</span>,</span>
+<span id="cb15-47"><a href="#cb15-47" aria-hidden="true" tabindex="-1"></a>          <span class="at">sample_prior =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb15-48"><a href="#cb15-48" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">"models/fit_dimensional_null1"</span>)</span>
+<span id="cb15-49"><a href="#cb15-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-50"><a href="#cb15-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-51"><a href="#cb15-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-52"><a href="#cb15-52" aria-hidden="true" tabindex="-1"></a><span class="fu">conditional_effects</span>(fit_dimensional)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -687,9 +738,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># carrying out the hypothesis test</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>h_dim_33 <span class="ot">&lt;-</span> <span class="fu">hypothesis</span>(fit_dimensional, <span class="st">"fem33.33:conditionmd= fem33.33:conditionsd"</span> )</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>h_dim_67 <span class="ot">&lt;-</span> <span class="fu">hypothesis</span>(fit_dimensional, <span class="st">"fem66.67:conditionmd= fem66.67:conditionsd"</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="do">## testing the interaction with gbb</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>fit_dimensional <span class="ot">&lt;-</span> </span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">brm</span>(f_rating <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> fem<span class="sc">:</span>condition<span class="sc">:</span> <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">+</span> masc<span class="sc">|</span>id) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>face), <span class="at">family =</span> <span class="fu">gaussian</span>(<span class="at">link =</span> <span class="st">'identity'</span>), </span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">prior =</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">50</span>,<span class="dv">50</span>), <span class="at">class =</span> <span class="st">"b"</span>),</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>                    <span class="co">#prior(normal(50,50), class = "Intercept"),</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">exponential</span>(<span class="dv">1</span>), <span class="at">class =</span> <span class="st">"sd"</span>),</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">lkj</span>(<span class="dv">1</span>), <span class="at">class =</span> <span class="st">"cor"</span>),</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">exponential</span>(<span class="dv">1</span>), <span class="at">class =</span> sigma)),</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>          <span class="at">data =</span> tmp,</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>          <span class="at">iter =</span> <span class="dv">4000</span>, <span class="at">warmup =</span> <span class="dv">1000</span>,</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>          <span class="at">cores =</span> <span class="dv">4</span>,</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>          <span class="at">sample_prior =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">"models/fit_dimensional_stair_factor.3"</span>)</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="co"># carrying out the hypothesis test</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>h_dim_33 <span class="ot">&lt;-</span> <span class="fu">hypothesis</span>(fit_dimensional, <span class="st">"fem33.33:conditionmd= fem33.33:conditionsd"</span> )</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>h_dim_67 <span class="ot">&lt;-</span> <span class="fu">hypothesis</span>(fit_dimensional, <span class="st">"fem66.67:conditionmd= fem66.67:conditionsd"</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>We can test this, comparing the ratings of sd and md faces at 33.33 and 66.67 directly, again using Bayes factors.</p>
