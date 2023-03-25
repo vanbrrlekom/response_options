@@ -89,8 +89,7 @@ library(brms)
 library(tidyverse)
 source("src/functions.r")
 d  <- read_and_clean("data/cat2stduy1_data.csv") %>% 
-  mutate(fem = 50-masc) 
-getwd()
+  mutate(fem = 100-masc) 
 
 ```
 
@@ -104,7 +103,7 @@ Accuracy is key when measuring constructs in psychological research. One area wh
 
 Although researchers have begun offering participants more flexible options to define their own gender [@lindqvist_what_2020; @saperstein_categorical_2021], such as additional categories or free text responses, studies still predominantly use binary gender options when categorizing participants. Understanding of how response options affect gender categorization remains limited. Therefore, the current study aims to test how non-binary alternatives affect gender categorization.
 
-A pioneering approach to conceptualizing gender was the BSRI which challenged the dichotomous and binary conceptualizations of gender [@bem_measurement_nodate]. The BSRI measured femininity and masculinity as separate traits, finding that many individuals exhibit a mixture of feminine and masculine traits. The BSRI has mostly been used to measure self-reports of gender as a trait. More recently, several guides have been developed that recommend the use of open free text options or multiple options (e.g., woman, man, other, non-binary). when asking participants to indicate their gender (see for example Lindqvist et al., 2020). Although this practice is still far from the norm, it is becoming increasingly commonplace for researchers to measure gender of participants in this open-ended way [@carleton_assessing_2022; @cronin_younger_2022; @dagostino_organizational_2022; @gottgens_impact_2022]
+A pioneering approach to conceptualizing gender was the BSRI which challenged the dichotomous and binary conceptualizations of gender [@bem_measurement_1974]. The BSRI measured femininity and masculinity as separate traits, finding that many individuals exhibit a mixture of feminine and masculine traits. The BSRI has mostly been used to measure self-reports of gender as a trait. More recently, several guides have been developed that recommend the use of open free text options or multiple options (e.g., woman, man, other, non-binary). when asking participants to indicate their gender (see for example Lindqvist et al., 2020). Although this practice is still far from the norm, it is becoming increasingly commonplace for researchers to measure gender of participants in this open-ended way [@carleton_assessing_2022; @cronin_younger_2022; @dagostino_organizational_2022; @gottgens_impact_2022]
 
 In contrast, the research on how people perceive and categorize the gender of others still almost exclusively treats gender as a binary category. Researchers in this field have explored the speed and automaticity of gender perception in faces, as well as which facial features are associated with specific gender categories, such as women and men [e.g. @mogilski_relative_2018] . Generally, the findings have been used to argue that gender is rapidly and automatically categorized [@habibi_spontaneous_2012; @jung_automaticity_2019], with facial features such as skin smoothness, jawline, and hair length used to determine gender identity. Lastly, studies in this field have indicated that people perceive faces categorically [@campanella_categorical_2001]. In other words, that faces, even when manipulated to vary on a continuum from feminine to masculine were still perceived as belonging to the categories women or man. However, these studies typically do reflect the diverse nature of gender or consider alternative response options.
 
@@ -123,6 +122,7 @@ Study 1 was based on common practices for self-identification of gender. One com
 ## Participants
 
 ```{r}
+# Get subjects information
 subs <- d %>%
   filter(condition == "ft" | condition == "xb" | condition == "mc") %>% 
   mutate(age = as.numeric(Age.1),
@@ -180,10 +180,11 @@ Similar to RQ1, this data was tested by fitting  Bayesian mixed models to the da
 The raw distribution of gender categorizations made by participants is presented in Figure\ \@ref(fig:descriptives).
 
 ```{r descriptives, fig.cap= "Gender Categorizations by Participants"}
-library(ggplot2)
+
+# make figure 1
 d %>%
-  mutate(fem = fem + 50) %>% 
-  filter(condition == "ft" | condition == "xb" | condition == "mc") %>% 
+  mutate(fem = fem ) %>% 
+  filter(condition == "ft" | condition == "xb" | condition == "mc") %>% #select correct conditions
   group_by(fem, race, condition) %>% 
   mutate(categorization = recode(categorization,  #yes, this is pretty horrendous code, I haven't had a chance to sit down and clean it up yet.
                                  "1" = "Woman", "Woman" = "Woman", "wman" = "Woman", "woman" = "Woman", "female" = "Woman", "Female " = "Woman", "Female"= "Woman", "Fenale"= "Woman", "women" = "Woman", "woman " = "Woman", "femLE" = "Woman", "FEmale" = "Woman", "Femalw" = "Woman", "Fwmalw" = "Woman", "Female " = "Woman", "woman" = "Woman", "Woman" = "Woman", "feMale" = "Woman", "fermale" = "Woman", "wman" = "Woman", "Femae" = "Woman", "f" = "Woman", "F"= "Woman", "female " = "Woman",
@@ -199,7 +200,7 @@ d %>%
   facet_wrap(~condition) + 
   scale_x_continuous(breaks =c(0, 17, 33, 50, 66, 83, 100)) +
   ylab("Proportion of responses" ) +
-  xlab("Proportion female face in the morph") +
+  xlab("Facial Femininity") +
   #scale_fill_discrete(name = "Response") +
   #scale_fill_viridis_d(name = "Response")
   scale_fill_grey( name = "Response")+
@@ -209,12 +210,21 @@ d %>%
 ```
 
 ```{r, modelfit}
+#create dataframe with only free text and multiple categories conditions 
+#Well, fist, first I wrangle data
+tmp <- d %>% 
+  filter(condition == "mc" | condition == "ft") %>% 
+  mutate(categorization = recode(categorization, 
+                                 "F" = "f", "kvinna" = "f", "female" = "f", "female " = "f", "Female"= "f", "Fenale"= "f", "women" = "f", "woman " = "f", "femLE" = "f", "FEmale" = "f", "Femalw" = "f", "Fwmalw" = "f", "Female " = "f", "woman" = "f", "Woman" = "f", "feMale" = "f", "fermale" = "f", "wman" = "f", "Femae" = "f",
+                                 "man" = "m","Male " = "m", "make" = "m", "Male"= "m", "male" = "m", "man " = "m",  "male " = "m", "guy" = "m", "boy" = "m", "Make" = "m", "M"  = "m", "Man" = "m", "Bottom half male; above nose female., Would have to say Male" = "m", " male" = "m", "male  " = "m", "ale" = "m", "nmale" = "m", "MALE"= "m", "nale"= "m", " Male" = "m",
+                                 "Nonbinary" = "o", "Non Binary " = "o", "Unsure" = "o", "Non binary " = "o", "good" = "o", "Neutral" = "o", "neutral" = "o", "nonbinary" = "o", "bigender" = "o", "hen" = "o", "don't know"  = "o", "Bottom half male, nose upwards female" = "o" )) %>% 
+  mutate(bbcat = ifelse(categorization == "o"|categorization == "4", 1, 0),
+         fem = as.factor(fem))
+
+#Fit models using brms.
+#Can be run with premade file to save time. To reproduce in full, comment out the "file" argument
 Null <- brm(bbcat ~ 1  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
-          prior = c(prior(normal(-3,3), class = "Intercept"),
-                    
-                    #prior(normal(0,3), class ="b", coef= "conditionmc:fem"),
-                    #prior(normal(0,3), class = "b", coef = "conditionft")
-                    #prior(normal(0,3), class ="b", coef= "conditionft:fem")
+          prior = c(prior(normal(0,3), class = "Intercept"), # weakly regularizing priors
                     prior(cauchy(0,3), class = "sd")
                     ),
           data = tmp,
@@ -225,13 +235,10 @@ Null <- brm(bbcat ~ 1  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logi
           file = "models/binary_null"
           )
 
-
+#Fitting the main effects model
 Main_Effect <- brm(bbcat ~ 0 + condition + fem  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
-          prior = c(prior(normal(0,3), class = "b", coef = "conditionmc"),
-                    
-                    #prior(normal(0,3), class ="b", coef= "conditionmc:fem"),
+          prior = c(prior(normal(0,3), class = "b", coef = "conditionmc"), #again, weakly regularizing priors
                     prior(normal(0,3), class = "b", coef = "conditionft"),
-                    #prior(normal(0,3), class ="b", coef= "conditionft:fem")
                     prior(cauchy(0,3), class = "sd")
                     ),
           data = tmp,
@@ -242,35 +249,40 @@ Main_Effect <- brm(bbcat ~ 0 + condition + fem  + (1 |id) + (1|face:fem), family
           file = "models/binary_mfx"
           )
 
+#fitting the interaction model
 Interaction <- brm(bbcat ~ 0 + condition:fem  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
-         prior = c(prior(normal(-7,5), class = "b"),
+         prior = c(prior(normal(-3,3), class = "b"),
                    prior(cauchy(0,3), class = "sd")),
           data = tmp,
           iter = 6000, warmup = 2000,
           chains = 4,
           cores = 4,
           sample_prior = TRUE,
-          file = "models/binary_int"
+          file = "models/binary_int.5"
           )
 
 ```
 
 ```{r, loo}
 library(loo)
+# running to reproduce the analyses, uncomment the next three lines
 #loo1 <- loo(null) %>% saveRDS("loo1.rds")
 #loo2 <- loo(main_effect, mc_cores =4) %>% saveRDS("loo2.rds")
 #loo3 <- loo(interaction, mc_cores =4) %>% saveRDS("loo3.rds")
 
+#otherwise lood loo from file
 loo1 <- readRDS("models/loo1.rds")
 loo2 <- readRDS("models/loo2.rds")
 loo3 <- readRDS("models/Loo3.rds")
 
+#prepare to turn into apa tables
 loo_table <- loo_compare(loo1, loo2, loo3)  
 row.names(loo_table) = c("Interaction", "Main Effect", "Null")
 
 library(knitr)
 library(kableExtra)
 
+#make nice apa tables
 kable(
   loo_table[,1:4] %>% round(2),
   booktabs = "TRUE",
@@ -293,33 +305,36 @@ Table\ \@ref(tab:loo) suggests that the Interaction model is the most predictive
  
 
 ```{r exp-one-inf, fig.cap= "Proportion of beyond-binary responses in the Multiple Categories and Free Text conditions"}
-# Use brms 
+# Use brms to sample from the posterior
 c_eff <- conditional_effects(Interaction) 
 
+#turn into useful dataframe
 df <-   as.data.frame(c_eff[["condition:fem"]])
 
+#Visualise model-based estimates
 ggplot(df,aes(x = fem, y=estimate__, group=condition))+
   geom_point(aes(color=condition), position = position_dodge(0.4))+
   geom_errorbar(aes(ymin=lower__, ymax=upper__, color = condition), position = position_dodge(0.4), width = 0.3) + 
-  scale_color_grey(name = "Condition",
+  scale_color_brewer(name = "Condition",
                    labels = c("Free text", "Multiple Conditions"))+
   ylab("Proportion of responses" ) +
-  xlab("Proportion female face in the morph")+
+  xlab("Facial femininity")+
   theme_apa()
   
 ```
 
 ```{r, calculating for tests, message =FALSE, error=FALSE}
+
+#Testing the hypothesis using BRMS built in hypothesis function, which uses the savage-dickey density ratio. h0 compares the avearage in the multiple comoparisions condition to the average in the free text condition.
 h0 <- hypothesis(Interaction,
                  "(conditionmc:fem16.67 + conditionmc:fem33.33 + conditionmc:fem0 + conditionmc:fem50 + conditionmc:fem66.67 + conditionmc:fem83.33 + conditionmc:fem100)/7 = (conditionft:fem16.67 + conditionft:fem33.33 + conditionft:fem0 + conditionft:fem50 + conditionft:fem66.67 + conditionft:fem83.33 +  conditionft:fem100)/7
                  ") 
-
+#Testing the hypothesis using BRMS built in hypothesis function, which uses the savage-dickey density ratio. h1 compares the average in the multiple comparisons condition at facial femininity = 50 to free text at facial femininity = 50
 h1 <- hypothesis(Interaction, "conditionmc:fem50=conditionft:fem50") 
+
+#h2 assigns quadratic weights to both conditions. 
 h2 <- hypothesis(Interaction, "(conditionmc:fem16.67*0 + conditionmc:fem33.33 *3 + conditionmc:fem0*(-5) + conditionmc:fem50*4 + conditionmc:fem66.67 *3 + conditionmc:fem83.33*0 + conditionmc:fem100*(-5))/84 = (conditionft:fem0*(-5) +conditionft:fem16.67 *0 + conditionft:fem33.33 *3  + conditionft:fem50 * 4 + conditionft:fem66.67 *3 + conditionft:fem83.33 *0+  conditionft:fem100 * (-5))/84 
                   ")
-
-h_ft <- hypothesis(Interaction,
-                 "(conditionft:fem16.67 + conditionft:fem33.33 + conditionft:fem0 + conditionft:fem50 + conditionft:fem66.67 + conditionft:fem83.33 +  conditionft:fem100)/7 = 0")
 
 
 ```
@@ -331,7 +346,7 @@ Overall the evidence suggests at least somewhat strongly that when participants 
 Subsequently, we tested whether the inclusion of non-binary response options skewed the distribution of categorization of faces as women and men. For this analysis, therefore, we tested the outcome variable *binary categorization*, excluding "other" "I don't know" and any other respones in the free text.
 
 ```{r, rq2-modelling, message=FALSE}
-#Futher cleaning up the data
+#remove the beyond binary responses
 tmp <- d %>% 
   filter(condition == "mc"| condition == "xb"|condition == "ft" )%>% 
   mutate(categorization = recode(categorization, 
@@ -343,14 +358,10 @@ tmp <- d %>%
          fem = as.factor(fem)) %>% 
   mutate(f_cat =as.numeric( f_cat == "f"))
 
-#Modelling
+#Start fitting the null model
 Null <- brm(f_cat ~ 1  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
           prior = c(prior(normal(0,3), class = "Intercept"),
                     prior(exponential(2), class = "sd")
-                    
-                    #prior(normal(0,3), class ="b", coef= "conditionmc:fem"),
-                    #prior(normal(0,3), class = "b", coef = "conditionft")
-                    #prior(normal(0,3), class ="b", coef= "conditionft:fem")
                     ),
           data = tmp,
           iter = 6000, warmup = 2000,
@@ -361,7 +372,7 @@ Null <- brm(f_cat ~ 1  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logi
           )
 
 
-
+#Main effects model
 main_effects <- brm(f_cat ~ 0 + condition + fem  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
           prior = c(prior(normal(0,3), class = "b"),
                     prior(cauchy(0,3), class = "sd")),
@@ -373,6 +384,7 @@ main_effects <- brm(f_cat ~ 0 + condition + fem  + (1 |id) + (1|face:fem), famil
           file = "models/mainfx.2"
           )
 
+#Lastly the interaction model
 interaction <- brm(f_cat ~ 0 + condition:fem  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
          prior = c(prior(normal(0,3), class = "b"),
                    prior(cauchy(0,3), class = "sd")),
@@ -387,31 +399,30 @@ interaction <- brm(f_cat ~ 0 + condition:fem  + (1 |id) + (1|face:fem), family =
 ```
 
 ```{r, rq2-table, fig.cap= "Proportion of beyond-binary responses in the Multiple Categories and Free Text conditions"}
-#loo_b1 <- loo(Null, mc_cores = 4) %>% saveRDS("loo_b2.rds")
-#loo_b3 <- loo(condition_only, mc_cores = 4) %>% saveRDS("loo_b3.rds")
-#loo_b4 <- loo(main_effects, mc_cores = 4) %>% saveRDS("loo_b4.rds")
-#loo_b5 <- loo(interaction, mc_cores = 4) %>% saveRDS("loo_b5.rds")
 
+#Same as before
+#loo_b1 <- loo(Null, mc_cores = 4) %>% saveRDS("loo_b1.rds")
+#loo_b2 <- loo(main_effects, mc_cores = 4) %>% saveRDS("loo_b2.rds")
+#loo_b3 <- loo(interaction, mc_cores = 4) %>% saveRDS("loo_b3rds")
+
+#again, loading loo from file
 loo_b1 <- readRDS("models/loo_b1.rds")
 loo_b2 <- readRDS("models/loo_b2.rds")
 loo_b3 <- readRDS("models/loo_b3.rds")
-loo_b4 <- readRDS("models/loo_b4.rds")
-loo_b5 <- readRDS("models/loo_b5.rds")
 
-
-
-
-loo_table2 <- loo_compare(loo_b2, loo_b5, loo_b4)
+#this is prepare to make into Apa style table
+loo_table2 <- loo_compare(loo_b1, loo_b2, loo_b3)
 
 row.names(loo_table2) = c( "Main Effect", "Null", "Interaction")
 
 
 library(knitr)
 library(kableExtra)
+
+#Make apa style table
 kable(
   loo_table2[,1:4] %>% round(2),
   booktabs = "TRUE",
-  #format = "latex",
   col.names = c("LOO difference", "St. Error diff", "LOO", "St. Error LOO"),
   #row.names = c("Free text", "Multiple categories", "Binary categories"),
   align = c("l", "c", "c", "c"),
@@ -428,6 +439,8 @@ kable(
 ```
 
 ```{r hypos 2}
+
+#Test contrasts
 h0 <- hypothesis(interaction, "conditionft:fem50 = conditionmc:fem50")
 h1 <- hypothesis(interaction, "conditionxb:fem50 = conditionmc:fem50")
 
@@ -471,11 +484,14 @@ Research question 3 asked whether whether participants would view faces less cat
 The mean ratings in both conditions are presented in Figure\ \@ref(fig:descriptives-two). 
 
 ```{r descriptives-two, fig.cap= "Mean ratings of faces in Single dimension and multiple dimensions"}
+#Visualise means using ggplot
 d %>% 
   filter(condition == "md" | condition == "sd") %>% 
-  mutate(categorization = as.numeric(categorization) %>% ifelse(scale == "m" | condition == "sd", 100-., .),
+  mutate(fem = fem+50,
+         categorization = as.numeric(categorization) %>% ifelse(scale == "m" | condition == "sd", 100-., .),
          scale = recode(scale, "1" = "Woman - Man", "f" = "Not Woman - Woman", "m" = "Not Man - Man"),
          condition = recode(condition, "sd" = "Single Dimension", "md" = "Multiple Dimensions")) %>% 
+  mutate (categorization = categorization  +50)%>% 
   group_by(fem, scale, condition) %>% 
   summarise(mean_rating = mean(categorization)) %>% 
   ggplot(aes(x=fem, y=mean_rating, group = scale)) +
@@ -486,13 +502,16 @@ d %>%
   scale_x_continuous(breaks =c(0, 17, 33, 50, 67, 83, 100)) +
   ylab("Mean \"woman\" rating" ) +
   xlab("Proportion female face in the morph") +
-  scale_color_grey(name = "Condition")+
+  scale_color_brewer(name = "Condition")+
   theme_apa() 
+
+
+
   
 ```
 
 ```{r, fig.cap= "Mean rating of woman across the md and sd condition"}
-#Wrangle data
+#Wrangle data again
 tmp <- d %>% 
   filter(condition == "sd" | condition == "md") %>% 
   mutate(f_rating = as.numeric(categorization) %>%  ifelse(scale == "f", ., 100- .),
@@ -500,7 +519,7 @@ tmp <- d %>%
          fem = as.factor(fem)) 
 
 
-fit_dimensional <- 
+fit_dimensional_interaction <- 
   brm(f_rating ~ 0 + fem:condition + (1 + masc|id) + (1|face), family = gaussian(link = 'identity'), 
           prior = c(prior(normal(50,50), class = "b"),
                     #prior(normal(50,50), class = "Intercept"),
@@ -513,41 +532,18 @@ fit_dimensional <-
           sample_prior = TRUE,
           file = "models/fit_dimensional_stair_factor.3")
 
-fit_dimensional_2 <- 
-   brm(f_rating ~ 1 + condition*fem + (1 + masc|id) + (1|face), family = gaussian(link = 'identity'), 
-          prior = c(prior(normal(0,50), class = "b"),
-                    prior(normal(50,50), class = "Intercept"),
-                    prior(exponential(1), class = "sd"),
-                    prior(lkj(1), class = "cor"),
-                    prior(exponential(1), class = sigma)),
-          data = tmp,
-          iter = 4000, warmup = 1000,
-          cores = 4,
-          sample_prior = TRUE,
-          file = "models/fit_dimensional_stair_factor4")
 
 
-fit_dimensional_null <- 
-  brm(f_rating ~ 1+ (1 + masc|id) + (1|face), family = gaussian(link = 'identity'), 
-          prior = c(#prior(normal(50,50), class = "b"),
-                    #prior(normal(50,50), class = "Intercept"),
-                    prior(exponential(1), class = "sd"),
-                    prior(lkj(1), class = "cor"),
-                    prior(exponential(1), class = sigma)),
-          data = tmp,
-          iter = 4000, warmup = 1000,
-          cores = 4,
-          sample_prior = TRUE,
-          file = "models/fit_dimensional_null1")
+
 
 # carrying out the hypothesis test
-h_dim_33 <- hypothesis(fit_dimensional, "fem33.33:conditionmd= fem33.33:conditionsd" )
-h_dim_67 <- hypothesis(fit_dimensional, "fem66.67:conditionmd= fem66.67:conditionsd" )
+h_dim_33 <- hypothesis(fit_dimensional_interaction, "fem33.33:conditionmd= fem33.33:conditionsd" )
+h_dim_67 <- hypothesis(fit_dimensional_interaction, "fem66.67:conditionmd= fem66.67:conditionsd" )
 ```
 
 ```{r exp-two-inf, fig.cap= "Mean gender ratings in Single Dimension and Multiple Dimensions conditions"}
-# Use brms 
-c_eff <- conditional_effects(fit_dimensional) 
+# Use brms to sample from posterior
+c_eff <- conditional_effects(fit_dimensional_interaction) 
 
 df <- as.data.frame(c_eff[["fem:condition"]])
 

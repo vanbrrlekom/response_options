@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Response Options - further tests</title>
+<title>Analyses</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -86,34 +86,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </style>
 
 
-<script src="Main_effect_test_files/libs/clipboard/clipboard.min.js"></script>
-<script src="Main_effect_test_files/libs/quarto-html/quarto.js"></script>
-<script src="Main_effect_test_files/libs/quarto-html/popper.min.js"></script>
-<script src="Main_effect_test_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="Main_effect_test_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="Main_effect_test_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="Main_effect_test_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="Main_effect_test_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="Main_effect_test_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="results_draft_files/libs/clipboard/clipboard.min.js"></script>
+<script src="results_draft_files/libs/quarto-html/quarto.js"></script>
+<script src="results_draft_files/libs/quarto-html/popper.min.js"></script>
+<script src="results_draft_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="results_draft_files/libs/quarto-html/anchor.min.js"></script>
+<link href="results_draft_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="results_draft_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="results_draft_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="results_draft_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="results_draft_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script async="" src="https://hypothes.is/embed.js"></script>
 
-<script src="Main_effect_test_files/libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="Main_effect_test_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="results_draft_files/libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="results_draft_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
-<body>
+<body class="fullcontent">
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-  
-</div>
+
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Response Options - further tests</h1>
+<h1 class="title">Analyses</h1>
 </div>
 
 
@@ -127,18 +127,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<p>We produced morphed faces of different levels of femininity and masculinity. There were 18 continua, where gender varied in seven increments, for a total of 126 faces.</p>
-<p>There were five response options conditions:</p>
-<ol type="1">
-<li>binary categories - man/woman</li>
-<li>multiple categories - man/woman/other/don’t know</li>
-<li>Freetext - a free text box</li>
-<li>binary dimension - woman ——- man on a slider</li>
-<li>multiple dimensions - woman / man on separate sliders.</li>
-</ol>
-<p>At the previous meeting, we decided that i would look at answering the question “do people use non-binary options when they have them?”</p>
-<p>The way I’ve gone about doing that is by primarily comparing option the results from the multiple categories (option2) and freetext conditions (option 3).</p>
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Start by loading dependencies and the data</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
@@ -150,11 +141,45 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"src/functions.r"</span>)</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>d  <span class="ot">&lt;-</span> <span class="fu">read_and_clean</span>(<span class="st">"data/cat2stduy1_data.csv"</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">fem =</span> <span class="dv">100</span><span class="sc">-</span>masc) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
-<section id="do-people-use-the-beyond-binary-options" class="level3">
-<h3 data-anchor-id="do-people-use-the-beyond-binary-options">Do people use the beyond-binary options?</h3>
-<p>The way I went about testing that is by comparing the amount of beyond-binary (i.e.&nbsp;“other” and “I don’t know” responses) across the free text and multiple categories conditions. Here’s snippet of the data for some context:</p>
+<section id="background" class="level2">
+<h2 class="anchored" data-anchor-id="background">Background</h2>
+<p>So, the background of this study is there’s a pretty big literature that looks at social categorization. This tends to assume that gender is binary and that asking people to categorize faces as “man” and “woman” is a consequence free action.</p>
+<p>We thought that maybe it wasn’t, and we were interested in whether various response options that situated gender as more binary also shaped people’s perception of gender to be more binary.</p>
+<p>So for the experiment, we produced morphed faces of different levels of femininity and masculinity. There were 18 continua, where gender varied in seven increments, for a total of 126 faces.</p>
+<p>There were five response options conditions:</p>
+<ol type="1">
+<li>binary categories - man/woman</li>
+<li>multiple categories - man/woman/other/don’t know</li>
+<li>Freetext - a free text box</li>
+<li>binary dimension - woman ——- man on a slider</li>
+<li>multiple dimensions - woman / man on separate sliders.</li>
+</ol>
+<p>I’ve divided this into two experiments: experiment 1 which compares the binary options, multiple categories and the freetext options. Experiment 2, which compare the binary dimensions and the multiple dimensions.</p>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true" href="">Experiment 1</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false" href="">Experiment 2</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-3" role="tab" aria-controls="tabset-4-3" aria-selected="false" href="">Pronoun Pilot</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<p>Maybe I’ve gone a little mad with putting things under tabs, or maybe it actually makes the page easier to navigate? Either way, here you can just switch back and forth between the descriptive statistics and the inferential statistics. Easy? Maybe!</p>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Descriptive statistics</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Inferential statistics</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<p>So this figure just shows in total how many of each type of categorization the participants made.</p>
 <div class="cell">
+<div class="cell-output-display">
+<p><img src="results_draft_files/figure-html/Visualising%20categorical%20options%202-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<section id="do-people-use-the-beyond-binary-options" class="level4">
+<h4 class="anchored" data-anchor-id="do-people-use-the-beyond-binary-options">Do people use the beyond-binary options?</h4>
+<p>The way I went about testing that is by comparing the amount of beyond-binary (i.e.&nbsp;“other” and “I don’t know” responses) across the free text and multiple categories conditions. Here’s snippet of the data for some context. As you can see, I’ve translated the variable “categorization” into one called bbcat based on whether or not the answer is “o” or not.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Well, fist, first I wrangle data</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span> </span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(condition <span class="sc">==</span> <span class="st">"mc"</span> <span class="sc">|</span> condition <span class="sc">==</span> <span class="st">"ft"</span>) <span class="sc">%&gt;%</span> </span>
@@ -165,6 +190,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">bbcat =</span> <span class="fu">ifelse</span>(categorization <span class="sc">==</span> <span class="st">"o"</span><span class="sc">|</span>categorization <span class="sc">==</span> <span class="st">"4"</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>         <span class="at">fem =</span> <span class="fu">as.factor</span>(fem))</span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>tmp <span class="sc">%&gt;%</span> <span class="fu">select</span>(categorization, condition, fem, bbcat) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 4
   categorization condition fem   bbcat
@@ -178,17 +204,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Simple explanation</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Complex models</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Simple explanation</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Complex explanation</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>So how do we actually test the question “do people use the non-binary option when they have them”? We can construct several models which gets increasingly more complicated and compare how well they predict the data.</p>
+<p>So how do we actually test the question “do people use the non-binary option when they have them”? We can construct several models which gets increasingly more complicated and compare how well they predict the data. All models were based on multilevel models with random intercepts for participants and faces.</p>
 <p>In short, the idea is simple. We make three models:</p>
 <ul>
-<li>m0: a null model with no predictors</li>
-<li>m1: main effects model, with the predictors “morph level” and response option condition</li>
-<li>m2: interaction model, which is the the same as m1, with an additional interaction effect</li>
+<li><p>m0: a null model with no additional predictors.</p></li>
+<li><p>m1: main effects model, with the predictors “morph level” and response option condition.</p></li>
+<li><p>m2: interaction model, which is the the same as m1, with an additional interaction effect.</p></li>
 </ul>
-<p>Then we see which model best explains the data using leave-one-out cross validation. (if you want to go into the weeds on the models and what the models actually consist of, click the “complex model tabs”)</p>
+<p>These models were tested using Leave One Out</p>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <p>So we start with a null model, m<sub>0</sub>, which just has an intercept, and includes neither morph level or condition. For reference, it looks like this, but feel free to let your eyes glaze over it. (but in case your curious, the model includes random effects for subjects and faces, but nothing else)</p>
@@ -232,7 +258,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 \end{aligned}
 \]</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>m0 <span class="ot">&lt;-</span> <span class="fu">brm</span>(bbcat <span class="sc">~</span> <span class="dv">1</span>  <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span>id) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>face<span class="sc">:</span>fem), <span class="at">family =</span> <span class="fu">bernoulli</span>(<span class="at">link =</span> <span class="st">'logit'</span>), </span>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>null <span class="ot">&lt;-</span> <span class="fu">brm</span>(bbcat <span class="sc">~</span> <span class="dv">1</span>  <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span>id) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>face<span class="sc">:</span>fem), <span class="at">family =</span> <span class="fu">bernoulli</span>(<span class="at">link =</span> <span class="st">'logit'</span>), </span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">prior =</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="sc">-</span><span class="dv">3</span>,<span class="dv">3</span>), <span class="at">class =</span> <span class="st">"Intercept"</span>),</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                    </span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>                    <span class="co">#prior(normal(0,3), class ="b", coef= "conditionmc:fem"),</span></span>
@@ -249,7 +277,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>          )</span>
 <span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">brm</span>(bbcat <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> condition <span class="sc">+</span> fem  <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span>id) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>face<span class="sc">:</span>fem), <span class="at">family =</span> <span class="fu">bernoulli</span>(<span class="at">link =</span> <span class="st">'logit'</span>), </span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>main_effect <span class="ot">&lt;-</span> <span class="fu">brm</span>(bbcat <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> condition <span class="sc">+</span> fem  <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span>id) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>face<span class="sc">:</span>fem), <span class="at">family =</span> <span class="fu">bernoulli</span>(<span class="at">link =</span> <span class="st">'logit'</span>), </span>
 <span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>          <span class="at">prior =</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>,<span class="dv">3</span>), <span class="at">class =</span> <span class="st">"b"</span>, <span class="at">coef =</span> <span class="st">"conditionmc"</span>),</span>
 <span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>                    </span>
 <span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>                    <span class="co">#prior(normal(0,3), class ="b", coef= "conditionmc:fem"),</span></span>
@@ -265,7 +293,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">"models/fit_binary_stair_bb_fem"</span></span>
 <span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>          )</span>
 <span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>m2 <span class="ot">&lt;-</span> <span class="fu">brm</span>(f_cat <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> condition<span class="sc">:</span>fem  <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span>id) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>face<span class="sc">:</span>fem), <span class="at">family =</span> <span class="fu">bernoulli</span>(<span class="at">link =</span> <span class="st">'logit'</span>), </span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>interaction <span class="ot">&lt;-</span> <span class="fu">brm</span>(f_cat <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> condition<span class="sc">:</span>fem  <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span>id) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>face<span class="sc">:</span>fem), <span class="at">family =</span> <span class="fu">bernoulli</span>(<span class="at">link =</span> <span class="st">'logit'</span>), </span>
 <span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>         <span class="at">prior =</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="sc">-</span><span class="dv">7</span>,<span class="dv">5</span>), <span class="at">class =</span> <span class="st">"b"</span>),</span>
 <span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">prior</span>(<span class="fu">cauchy</span>(<span class="dv">0</span>,<span class="dv">3</span>), <span class="at">class =</span> <span class="st">"sd"</span>)),</span>
 <span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>          <span class="at">data =</span> tmp,</span>
@@ -275,26 +303,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>          <span class="at">sample_prior =</span> <span class="cn">TRUE</span>,</span>
 <span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">"models/fit_binary_stair_bb_fem_int_prior2"</span></span>
 <span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>          )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </div>
 </div>
 </div>
-<section id="main-effecs" class="level4">
-<h4 data-anchor-id="main-effecs">Main effecs</h4>
-<p>Having fit all of these models I then compare them to see which best predicts the data. We do this using a method call leave-one-out cross validation. This tells us which of our five models best predict the data on “new” or out of sample data points? If I can get the machine to work, this should show up in table 1</p>
+</section>
+<section id="results" class="level4">
+<h4 class="anchored" data-anchor-id="results">Results</h4>
+<p>Having fit all of these models I then compare them to see which best predicts the data. We do this using a method call leave-one-out cross validation. This tells us which of our five models best predict the data on “new” or out of sample data points? If I can get the machine to work, this should show up in table 1.</p>
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(loo)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#loo1 &lt;- loo(m0) %&gt;% saveRDS("loo1.rds")</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#loo2 &lt;- loo(m1, mc_cores =4) %&gt;% saveRDS("loo2.rds")</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#loo3 &lt;- loo(m2, mc_cores =4) %&gt;% saveRDS("loo3.rds")</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#loo1 &lt;- loo(null) %&gt;% saveRDS("loo1.rds")</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#loo2 &lt;- loo(main_effect, mc_cores =4) %&gt;% saveRDS("loo2.rds")</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#loo3 &lt;- loo(interaction, mc_cores =4) %&gt;% saveRDS("loo3.rds")</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>loo1 <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"loo1.rds"</span>)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>loo2 <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"loo2.rds"</span>)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>loo3 <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"Loo3.rds"</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>loo1 <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"models/loo1.rds"</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>loo2 <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"models/loo2.rds"</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>loo3 <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"models/Loo3.rds"</span>)</span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>loo_table <span class="ot">&lt;-</span> <span class="fu">loo_compare</span>(loo1, loo2, loo3)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -314,6 +349,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">threeparttable =</span> <span class="cn">TRUE</span>,</span>
 <span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">footnote_as_chunk =</span> <span class="cn">TRUE</span></span>
 <span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 
 <table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
@@ -329,21 +365,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:left;"> m2 </td>
+   <td style="text-align:left;"> interaction </td>
    <td style="text-align:left;"> 0.00 </td>
    <td style="text-align:center;"> 0.00 </td>
    <td style="text-align:center;"> -234.17 </td>
    <td style="text-align:center;"> 23.23 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> m1 </td>
+   <td style="text-align:left;"> main_effect </td>
    <td style="text-align:left;"> -2.46 </td>
    <td style="text-align:center;"> 2.71 </td>
    <td style="text-align:center;"> -236.63 </td>
    <td style="text-align:center;"> 23.07 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> m0 </td>
+   <td style="text-align:left;"> null </td>
    <td style="text-align:left;"> -18.83 </td>
    <td style="text-align:center;"> 6.02 </td>
    <td style="text-align:center;"> -253.00 </td>
@@ -356,39 +392,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </div>
 </div>
-<p>Table 1. suggests that the interaction models was the best at predicting data, suggesting that the interaction between condition and morph is an important determinant of the outcome. However, the comparatively large standard errors suggests that this effect is only inconclusively supported by the data.</p>
-</section>
-<section id="pairwise-comparisons" class="level4">
-<h4 data-anchor-id="pairwise-comparisons">Pairwise comparisons</h4>
-<p>I’m going to forge ahead anyway, and do what we might think of as contrast analyses, focusing on m<sub>3</sub> only. Here we have several specific questions that we want answered. First, is it really the case that people generally make more beyond-binary categorizations in the mc condition? And secondly, is this effect concentrated at 50/50 morph level. First, let’s take a look at the data visualised.</p>
+<p>The key pieces of information in this table are the <code>LOO</code> values and the <code>LOO diff</code>values. Lower LOO values indicate that the model makes better predictions. The <code>LOO diff</code> is simply stating the LOO score of each model subtracted from the low score of the most predictive model. The <code>LOO diff</code> of the best model, the interaction model is 0 because that score would be subtracted from itself.</p>
+<p>How I interpret Table 1. is that the interaction models was the best at predicting data. In other words, this suggests that the interaction between condition and morph is an important determinant of the outcome. However, the standard errors of the difference are of a similar size to the actual difference. This suggests that the weight of the evidence in favor of the interaction model and the main effects model is about the same.</p>
+<section id="pairwise-comparisons" class="level5">
+<h5 class="anchored" data-anchor-id="pairwise-comparisons">Pairwise comparisons</h5>
+<p>I’m going to forge ahead anyway, and do what we might think of as contrast analyses, focusing on the interaction only. Here we have several specific questions that we want answered. First, is it really the case that people generally make more beyond-binary categorizations in the mc condition? And secondly, is this effect concentrated at 50/50 morph level. First, let’s take a look at the data visualised.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">conditional_effects</span>(m2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">conditional_effects</span>(interaction) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
-<p><img src="Main_effect_test_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
+<p><img src="results_draft_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
+<p>The y axis is a little unhelpfully labeled, bbcat stands for beyond-binary categorization. Basically, this figure illustrates how common beyond-binary categorizations are in the free text condition compared to the multiple categories condition. Which we already knew from figure 1. But it’s nice to get it confirmed. Now let’s do some statistical tests of these differences.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>h0 <span class="ot">&lt;-</span> <span class="fu">hypothesis</span>(m2,</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"(conditionft:fem16.67 + conditionft:fem33.33 + conditionft:fem0 + conditionft:fem50 + conditionft:fem66.67 + conditionft:fem83.33)/6 =</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="st">                 (conditionmc:fem16.67 + conditionmc:fem33.33 + conditionmc:fem0 + conditionmc:fem50 + conditionmc:fem66.67 + conditionmc:fem83.33)/6 "</span>) </span>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>h0 <span class="ot">&lt;-</span> <span class="fu">hypothesis</span>(interaction,</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"(conditionft:fem16.67 + conditionft:fem33.33 + conditionft:fem0 + conditionft:fem50 + conditionft:fem66.67 + conditionft:fem83.33 +  conditionft:fem100)/7 =</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="st">                 (conditionmc:fem16.67 + conditionmc:fem33.33 + conditionmc:fem0 + conditionmc:fem50 + conditionmc:fem66.67 + conditionmc:fem83.33 + conditionmc:fem100)/7 "</span>) </span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>h1 <span class="ot">&lt;-</span> <span class="fu">hypothesis</span>(m2, <span class="st">"conditionft:fem50=conditionmc:fem50"</span>) </span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>h2 <span class="ot">&lt;-</span> <span class="fu">hypothesis</span>(m2, <span class="st">"(conditionft:fem0 + conditionft:fem100)/2 =(conditionmc:fem0 + conditionmc:fem100)/2"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>h1 <span class="ot">&lt;-</span> <span class="fu">hypothesis</span>(interaction, <span class="st">"conditionft:fem50=conditionmc:fem50"</span>) </span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>h2 <span class="ot">&lt;-</span> <span class="fu">hypothesis</span>(interaction, <span class="st">"(conditionft:fem0 + conditionft:fem100)/2 =(conditionmc:fem0 + conditionmc:fem100)/2"</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">#h0 &lt;- hypothesis(m2,</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="co">#               "(conditionft:fem16.67 + conditionft:fem33.33 + conditionft:fem0 + conditionft:fem50 + conditionft:fem66.67 + conditionft:fem83.33 +  conditionft:fem100)/7 =</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>      <span class="co">#           (conditionmc:fem16.67 + conditionmc:fem33.33 + conditionmc:fem0 + conditionmc:fem50 + conditionmc:fem66.67 + conditionmc:fem83.33 + conditionmc:fem100)/7 ") </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
-<p>I’m going to give these hypothesis some arbitrary numbers.</p>
-<p>First, if we just look at the number of beyond-binary categorizations.</p>
-<ol type="1">
-<li><p>Do particpants make beyond-binary categorizations in the multiple categories condition compared to the free text condition (h0)? It seems they do (Estimate = -3.93, CI =-6.76 - -1.28, BF<sub>10</sub>= 38.68).</p></li>
-<li><p>If we focus on the 50/50 faces, do we still see an effect? It seems like we do (Estimate = -4.14, CI =-7.43 - -1.4, BF<sub>10</sub>= 16.66).</p></li>
-<li><p>And if we focus on the faces at the end of the spectrum (i.e.&nbsp;0 and 100 faces)? Here the evidence is only inconclusive (Estimate = -2.6, CI =-7.96 - 2.49, BF<sub>10</sub>= 0.84). What does this mean? Let’s discuss</p></li>
-</ol>
+<p>I ran three tests to test what you might call subhypotheses. These are all described below.</p>
+<p>H1. Do particpants make beyond-binary categorizations in the multiple categories condition compared to the free text condition? It seems they do (Estimate = -4.11, CI =[-6.77], [-1.56], BF<sub>10</sub>= 60.99).</p>
+<p>H2. If we focus on the 50/50 faces, do we still see an effect? It seems like we do (Estimate = -4.14, CI =[-7.43], [-1.4], BF<sub>10</sub>= 16.83).</p>
+<p>H3. And if we focus on the faces at the end of the spectrum (i.e.&nbsp;0 and 100 faces)? Here the evidence is only inconclusive (Estimate = -2.6, CI = [-7.96] - [2.49], BF<sub>10</sub>= 0.83). What does this mean? Well, there is an overall difference between the two conditions, and it is concentrated at the 50/50 faces</p>
 </section>
 </section>
-<section id="how-does-this-effect-the-relative-distribution-of-mf-scores" class="level3">
-<h3 data-anchor-id="how-does-this-effect-the-relative-distribution-of-mf-scores">How does this effect the relative distribution of m/f scores</h3>
-<p>Great, let’s move on to the step 2 that we talked about. So having answered the questions of “do people actually use the extra response options” with a resounding “probably, but not so much”, I’m going to move on to the second question: is it the case that the answers shift the distribution of m/f scores? What I mean is, are people replacing their ratings of “man” with ratings of “non-binary” for example. If that were to be the case, then we would expect the relative distribution of “man” scores to be somewhat lower in the multiple categories condition</p>
-<p>Spoilers, it seems maybe not. Anyway, the first thing I did was make a version of the data where all the beyond-binary responses were taken out. Sort of the opposite of what I did last. I named the relevant variable f_cat because naming things is hard.</p>
+<section id="how-does-this-effect-the-relative-distribution-of-mf-scores" class="level4">
+<h4 class="anchored" data-anchor-id="how-does-this-effect-the-relative-distribution-of-mf-scores">How does this effect the relative distribution of m/f scores</h4>
+<p>Great, let’s move on to the step 2 that we talked about. So having answered the questions of “do people actually use the extra response options” with a resounding “probably, but not so much”, I’m going to move on to the second question: is it the case that the answers shift the distribution of m/f scores? What I mean is, are people replacing their ratings of “man” with ratings of “non-binary” for example. If you go back and look at the descriptive tab, it certainly <em>looks</em> like beyond-binary categorizations are mostly crowding out the man categorizations.</p>
+<p>To run some stats on this, the first thing I did was make a version of the data where all the beyond-binary responses were taken out. Sort of the opposite of what I did last. I named the relevant variable f_cat because naming things is hard. So this new dataset includes only responses of “woman” and “man”. Below you can see a snippet of what that looks like.</p>
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span> </span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(condition <span class="sc">==</span> <span class="st">"mc"</span><span class="sc">|</span> condition <span class="sc">==</span> <span class="st">"xb"</span><span class="sc">|</span>condition <span class="sc">==</span> <span class="st">"ft"</span> )<span class="sc">%&gt;%</span> </span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">categorization =</span> <span class="fu">recode</span>(categorization, </span>
@@ -401,6 +446,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">f_cat =</span><span class="fu">as.numeric</span>( f_cat <span class="sc">==</span> <span class="st">"f"</span>))</span>
 <span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(tmp[,<span class="fu">c</span>(<span class="st">"condition"</span>, <span class="st">"categorization"</span>, <span class="st">"f_cat"</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 3
   condition categorization f_cat
@@ -413,8 +459,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 6 ft        f                  1</code></pre>
 </div>
 </div>
-<p>I’m tired, your tired, so I’m going to move through this a little more quickly than the previous stuff. But basically, I went through the same steps as for the previous dataset, note that now I included the binary category condition this time.</p>
+<p>Next I went through the same steps as for the previous dataset, but just a little more complex. I created the following models.</p>
+<ul>
+<li>Null. This includes no predictors.</li>
+<li>Condition only. This only includes just the response option condition.</li>
+<li>Morph only. This includes only the morph level.</li>
+<li>Main effects. This includes both conditions, but not the interaction</li>
+<li>Interaction. This is the full interaction model.</li>
+</ul>
+<p>Why divide it up this way? At this point, mostly for exploratory reasons. I’m curious if one of the conditiosn does a lot better or worse.</p>
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>Null <span class="ot">&lt;-</span> <span class="fu">brm</span>(f_cat <span class="sc">~</span> <span class="dv">1</span>  <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span>id) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>face<span class="sc">:</span>fem), <span class="at">family =</span> <span class="fu">bernoulli</span>(<span class="at">link =</span> <span class="st">'logit'</span>), </span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>          <span class="at">prior =</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>,<span class="dv">3</span>), <span class="at">class =</span> <span class="st">"Intercept"</span>),</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">exponential</span>(<span class="dv">2</span>), <span class="at">class =</span> <span class="st">"sd"</span>)</span>
@@ -432,7 +488,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>          )</span>
 <span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>condition_only <span class="ot">&lt;-</span> <span class="fu">brm</span>(f_cat <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> condition  <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span>id) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>face), <span class="at">family =</span> <span class="fu">bernoulli</span>(<span class="at">link =</span> <span class="st">'logit'</span>), </span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>condition_only <span class="ot">&lt;-</span> <span class="fu">brm</span>(f_cat <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> condition  <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span>id) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>face<span class="sc">:</span>fem), <span class="at">family =</span> <span class="fu">bernoulli</span>(<span class="at">link =</span> <span class="st">'logit'</span>), </span>
 <span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>          <span class="at">prior =</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>,<span class="dv">3</span>), <span class="at">class =</span> <span class="st">"b"</span>),</span>
 <span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">cauchy</span>(<span class="dv">0</span>,<span class="dv">1</span>), <span class="at">class =</span> <span class="st">"sd"</span>)),</span>
 <span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>          <span class="at">data =</span> tmp,</span>
@@ -440,10 +496,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>          <span class="at">chains =</span> <span class="dv">4</span>,</span>
 <span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>          <span class="at">cores =</span> <span class="dv">4</span>,</span>
 <span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>          <span class="at">sample_prior =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">"models/condition_only"</span></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">"models/condition_only.2"</span></span>
 <span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>          )</span>
 <span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>main_effects <span class="ot">&lt;-</span> <span class="fu">brm</span>(f_cat <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> condition <span class="sc">+</span> fem  <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span>id) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>face), <span class="at">family =</span> <span class="fu">bernoulli</span>(<span class="at">link =</span> <span class="st">'logit'</span>), </span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>main_effects <span class="ot">&lt;-</span> <span class="fu">brm</span>(f_cat <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> condition <span class="sc">+</span> fem  <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span>id) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>face<span class="sc">:</span>fem), <span class="at">family =</span> <span class="fu">bernoulli</span>(<span class="at">link =</span> <span class="st">'logit'</span>), </span>
 <span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>          <span class="at">prior =</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>,<span class="dv">3</span>), <span class="at">class =</span> <span class="st">"b"</span>),</span>
 <span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">cauchy</span>(<span class="dv">0</span>,<span class="dv">3</span>), <span class="at">class =</span> <span class="st">"sd"</span>)),</span>
 <span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>          <span class="at">data =</span> tmp,</span>
@@ -451,10 +507,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>          <span class="at">chains =</span> <span class="dv">4</span>,</span>
 <span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>          <span class="at">cores =</span> <span class="dv">4</span>,</span>
 <span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a>          <span class="at">sample_prior =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">"models/mainfx"</span></span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">"models/mainfx.2"</span></span>
 <span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>          )</span>
 <span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>interaction <span class="ot">&lt;-</span> <span class="fu">brm</span>(f_cat <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> condition<span class="sc">:</span>fem  <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span>id) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>face), <span class="at">family =</span> <span class="fu">bernoulli</span>(<span class="at">link =</span> <span class="st">'logit'</span>), </span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>interaction <span class="ot">&lt;-</span> <span class="fu">brm</span>(f_cat <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> condition<span class="sc">:</span>fem  <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span>id) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>face<span class="sc">:</span>fem), <span class="at">family =</span> <span class="fu">bernoulli</span>(<span class="at">link =</span> <span class="st">'logit'</span>), </span>
 <span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a>         <span class="at">prior =</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>,<span class="dv">3</span>), <span class="at">class =</span> <span class="st">"b"</span>),</span>
 <span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">prior</span>(<span class="fu">cauchy</span>(<span class="dv">0</span>,<span class="dv">3</span>), <span class="at">class =</span> <span class="st">"sd"</span>)),</span>
 <span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a>          <span class="at">data =</span> tmp,</span>
@@ -462,7 +518,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a>          <span class="at">chains =</span> <span class="dv">4</span>,</span>
 <span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a>          <span class="at">cores =</span> <span class="dv">4</span>,</span>
 <span id="cb11-47"><a href="#cb11-47" aria-hidden="true" tabindex="-1"></a>          <span class="at">sample_prior =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb11-48"><a href="#cb11-48" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">"models/fit_mf_int"</span></span>
+<span id="cb11-48"><a href="#cb11-48" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">"models/fit_mf_int.2"</span></span>
 <span id="cb11-49"><a href="#cb11-49" aria-hidden="true" tabindex="-1"></a>          )</span>
 <span id="cb11-50"><a href="#cb11-50" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-51"><a href="#cb11-51" aria-hidden="true" tabindex="-1"></a>morph_only <span class="ot">&lt;-</span> <span class="fu">brm</span>(f_cat <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> fem  <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span>id) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>face<span class="sc">:</span>fem), <span class="at">family =</span> <span class="fu">bernoulli</span>(<span class="at">link =</span> <span class="st">'logit'</span>), </span>
@@ -474,11 +530,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb11-57"><a href="#cb11-57" aria-hidden="true" tabindex="-1"></a>          <span class="at">chains =</span> <span class="dv">4</span>,</span>
 <span id="cb11-58"><a href="#cb11-58" aria-hidden="true" tabindex="-1"></a>          <span class="at">cores =</span> <span class="dv">4</span>,</span>
 <span id="cb11-59"><a href="#cb11-59" aria-hidden="true" tabindex="-1"></a>          <span class="at">sample_prior =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb11-60"><a href="#cb11-60" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">"models/fit_g_fem"</span></span>
+<span id="cb11-60"><a href="#cb11-60" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">"models/fit_g_fem.2"</span></span>
 <span id="cb11-61"><a href="#cb11-61" aria-hidden="true" tabindex="-1"></a>          )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
-<p>We’re going to do the same thing again, we’re going to start buy looking at whether the interaction model does better than the simple effects model, and then we’re going to look at the actual effects within the model. Buuut. It doesn’t seem lik it does much here. I’m going to show all that in table 2</p>
+<p>With these models in hand, we’re going to do the same thing again, we’re going to start buy looking at whether the interaction model does better than the simple effects model, and then we’re going to look at the actual effects within the model.</p>
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(kableExtra)</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(</span>
@@ -497,6 +556,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">threeparttable =</span> <span class="cn">TRUE</span>,</span>
 <span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">footnote_as_chunk =</span> <span class="cn">TRUE</span></span>
 <span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 
 <table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
@@ -515,36 +575,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
    <td style="text-align:left;"> morph_only </td>
    <td style="text-align:left;"> 0.00 </td>
    <td style="text-align:center;"> 0.00 </td>
-   <td style="text-align:center;"> -1343.72 </td>
-   <td style="text-align:center;"> 43.10 </td>
+   <td style="text-align:center;"> -1343.71 </td>
+   <td style="text-align:center;"> 43.17 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> main_effects </td>
+   <td style="text-align:left;"> -1.85 </td>
+   <td style="text-align:center;"> 0.86 </td>
+   <td style="text-align:center;"> -1345.56 </td>
+   <td style="text-align:center;"> 43.17 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> condition_only </td>
+   <td style="text-align:left;"> -4.98 </td>
+   <td style="text-align:center;"> 5.26 </td>
+   <td style="text-align:center;"> -1348.69 </td>
+   <td style="text-align:center;"> 44.49 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Null </td>
-   <td style="text-align:left;"> -5.35 </td>
-   <td style="text-align:center;"> 4.92 </td>
+   <td style="text-align:left;"> -5.36 </td>
+   <td style="text-align:center;"> 4.88 </td>
    <td style="text-align:center;"> -1349.07 </td>
    <td style="text-align:center;"> 44.12 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> main_effects </td>
-   <td style="text-align:left;"> -37.60 </td>
-   <td style="text-align:center;"> 11.96 </td>
-   <td style="text-align:center;"> -1381.31 </td>
-   <td style="text-align:center;"> 44.77 </td>
-  </tr>
-  <tr>
    <td style="text-align:left;"> interaction </td>
-   <td style="text-align:left;"> -42.10 </td>
-   <td style="text-align:center;"> 12.09 </td>
-   <td style="text-align:center;"> -1385.81 </td>
-   <td style="text-align:center;"> 45.14 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> condition_only </td>
-   <td style="text-align:left;"> -4398.47 </td>
-   <td style="text-align:center;"> 44.23 </td>
-   <td style="text-align:center;"> -5742.19 </td>
-   <td style="text-align:center;"> 11.18 </td>
+   <td style="text-align:left;"> -6.69 </td>
+   <td style="text-align:center;"> 3.02 </td>
+   <td style="text-align:center;"> -1350.40 </td>
+   <td style="text-align:center;"> 43.48 </td>
   </tr>
 </tbody>
 <tfoot><tr><td style="padding: 0; " colspan="100%">
@@ -553,15 +613,207 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </div>
 </div>
-<p>If we start by looking at which model is the best at predicting the data, it’s clear that only the morph only model really does a good job at predicting the outcomes. What does that mean? It means that morph level is the only variable that’s really useful for predicting the outcome. Adding condition</p>
-<p>Just to give a sense of what the data actually look like, I’m also going to put up a figure for the interaction between condition and morph level.</p>
+<p>If we start by looking at which model is the best at predicting the data, it’s clear that only the morph only model is the bast at predicting the outcome. Adding the interaction actually <em>decreased</em> prediction compared to the null model. This would be impossible with R2, which only looks at data within the sample. The risk with R2 is that you get what is known as overfitting, which is a model that is very good at predicting the pattern within the sample, but then fails outside the sample. It seems like the interaction model suffers from this problem.</p>
+<p>Just to give a sense of what the data actually look like, I’m also going to put up a figure for the interaction between condition and morph level. This may not be good practice, but don’t tell anyone.</p>
 <div class="cell">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">conditional_effects</span>(interaction)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
-<p><img src="Main_effect_test_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
+<p><img src="results_draft_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>In this figure, we can see that the probability of any person answering “woman” on any face depends mostly on that face’s femininity. We can see that for 50/50 faces, this probability is veery slightly higher in the mc condition, but the results from model comparison and the fact that the confidence intervals overlap so widely make me think that this difference is pretty small.</p>
+<p>Again, I’m out on thin ice, but just to confirm my hunch, I carried out a bayes factor on the difference between the free text and the multiple categories condition.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>h0 <span class="ot">&lt;-</span> <span class="fu">hypothesis</span>(interaction, <span class="st">"conditionft:fem50 = conditionmc:fem50"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>The evidence were slightly in favor of there being no difference between the two conditions (Estimate = -0.49, CI =[-1.23], [0.25], BF<sub>10</sub>= 0.21).</p>
+</section>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">Descriptive statistics</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">Inferential statistics</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<p>Again, these is just the raw distribution of scores.</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="results_draft_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<p>Below is the model fit to the data in study 2. This is again, contains varying intercepts for subjects, but also varying slopes for subjects as well as varying intercepts for faces. The the theoretically relevant part of the model is that it calculates a unique intercept for each condition, as well as unique slopes for the effect of morph level as well.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\text{Gender rating}_{i} &amp;\sim \mathrm{Normal}(\mu, \sigma) &amp; (3) \\
+\ \mu_i &amp;= \gamma_{cid[i]}+ \alpha_{subject[i]} + \beta_{cid[i]}Morph+ \alpha_{face[i]} + \gamma_{cid[i],subject[i]}\\
+\gamma_{cid} &amp;\sim \mathrm{Normal}(50,50),\: \text{for}\: cid =\text{sd, md}\\
+\alpha_{subject} &amp;\sim \mathrm{Normal}(0, \sigma_{subject}) \\
+\beta_{cid} &amp; \sim \mathrm{Normal}(0,10),\: \text{for}\: cid =\text{sd, md}\\
+\begin{bmatrix}
+\gamma_{sd}\\\gamma_{md} \\
+\end{bmatrix}
+&amp;\sim \mathrm{MVNormal}\Bigg(\begin{bmatrix} 0 \\0
+\end{bmatrix}, \Sigma _{face}\Bigg) \\
+\Sigma_{subject} &amp; =\textbf{S}_{\gamma}\textbf{R}_{\gamma}\textbf{S}_{\gamma}  \\
+\sigma_{face} &amp;\sim \mathrm{exponential}(1) \\
+\sigma_{subject} &amp;\sim \mathrm{exponential}(1) \\
+\sigma_{cid}&amp;\sim \mathrm{exponential}(1) \\
+\textbf{R} &amp;\sim \mathrm{LKJcorr}(1) \\
+\end{aligned}
+\]</span></p>
+<p>For the plot below, I’ve reverse coded the man ratings to create one aggregate multiple dimensions (i.e.&nbsp;“md”) scale. So the plot essentially shows how the average rating of femininity at each level of morph. For both conditions, again, the pattern of responses is suggestive of categorical perception. What am I basing this on? The critical levels are the 33.33 and 66.67. The rated levels of femininity (or reverse coded masculinity) are lower and higher respectively, suggesting that participant percieve more femininity than “there is” in the faces,which is to say, categorical perception.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Wrangle data</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span> </span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(condition <span class="sc">==</span> <span class="st">"sd"</span> <span class="sc">|</span> condition <span class="sc">==</span> <span class="st">"md"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">f_rating =</span> <span class="fu">as.numeric</span>(categorization) <span class="sc">%&gt;%</span>  <span class="fu">ifelse</span>(scale <span class="sc">==</span> <span class="st">"f"</span>, ., <span class="dv">100</span><span class="sc">-</span> .),</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">scale_new =</span> <span class="fu">ifelse</span>(scale <span class="sc">==</span> <span class="st">"f"</span> <span class="sc">|</span> scale <span class="sc">==</span><span class="st">"m"</span>, scale, <span class="st">"sd"</span>),</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">fem =</span> <span class="fu">as.factor</span>(fem)) </span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>fit_dimensional <span class="ot">&lt;-</span> </span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">brm</span>(f_rating <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> fem<span class="sc">:</span>condition <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">+</span> fem<span class="sc">|</span>id) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>face), <span class="at">family =</span> <span class="fu">gaussian</span>(<span class="at">link =</span> <span class="st">'identity'</span>), </span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>          <span class="at">prior =</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">50</span>,<span class="dv">50</span>), <span class="at">class =</span> <span class="st">"b"</span>),</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>                    <span class="co">#prior(normal(50,50), class = "Intercept"),</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">exponential</span>(<span class="dv">1</span>), <span class="at">class =</span> <span class="st">"sd"</span>),</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">lkj</span>(<span class="dv">1</span>), <span class="at">class =</span> <span class="st">"cor"</span>),</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">exponential</span>(<span class="dv">1</span>), <span class="at">class =</span> sigma)),</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>          <span class="at">data =</span> tmp,</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>          <span class="at">iter =</span> <span class="dv">4000</span>, <span class="at">warmup =</span> <span class="dv">1000</span>,</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a>          <span class="at">cores =</span> <span class="dv">4</span>,</span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>          <span class="at">sample_prior =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">"models/fit_dimensional_stair_factor.3"</span>)</span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>fit_dimensional_2 <span class="ot">&lt;-</span> </span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>   <span class="fu">brm</span>(f_rating <span class="sc">~</span> <span class="dv">1</span> <span class="sc">+</span> condition<span class="sc">*</span>fem <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">+</span> masc<span class="sc">|</span>id) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>face), <span class="at">family =</span> <span class="fu">gaussian</span>(<span class="at">link =</span> <span class="st">'identity'</span>), </span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>          <span class="at">prior =</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>,<span class="dv">50</span>), <span class="at">class =</span> <span class="st">"b"</span>),</span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">50</span>,<span class="dv">50</span>), <span class="at">class =</span> <span class="st">"Intercept"</span>),</span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">exponential</span>(<span class="dv">1</span>), <span class="at">class =</span> <span class="st">"sd"</span>),</span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">lkj</span>(<span class="dv">1</span>), <span class="at">class =</span> <span class="st">"cor"</span>),</span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">exponential</span>(<span class="dv">1</span>), <span class="at">class =</span> sigma)),</span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a>          <span class="at">data =</span> tmp,</span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a>          <span class="at">iter =</span> <span class="dv">4000</span>, <span class="at">warmup =</span> <span class="dv">1000</span>,</span>
+<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a>          <span class="at">cores =</span> <span class="dv">4</span>,</span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>          <span class="at">sample_prior =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">"models/fit_dimensional_stair_factor4"</span>)</span>
+<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-37"><a href="#cb15-37" aria-hidden="true" tabindex="-1"></a>fit_dimensional_null <span class="ot">&lt;-</span> </span>
+<span id="cb15-38"><a href="#cb15-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">brm</span>(f_rating <span class="sc">~</span> <span class="dv">1</span><span class="sc">+</span> (<span class="dv">1</span> <span class="sc">+</span> masc<span class="sc">|</span>id) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>face), <span class="at">family =</span> <span class="fu">gaussian</span>(<span class="at">link =</span> <span class="st">'identity'</span>), </span>
+<span id="cb15-39"><a href="#cb15-39" aria-hidden="true" tabindex="-1"></a>          <span class="at">prior =</span> <span class="fu">c</span>(<span class="co">#prior(normal(50,50), class = "b"),</span></span>
+<span id="cb15-40"><a href="#cb15-40" aria-hidden="true" tabindex="-1"></a>                    <span class="co">#prior(normal(50,50), class = "Intercept"),</span></span>
+<span id="cb15-41"><a href="#cb15-41" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">exponential</span>(<span class="dv">1</span>), <span class="at">class =</span> <span class="st">"sd"</span>),</span>
+<span id="cb15-42"><a href="#cb15-42" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">lkj</span>(<span class="dv">1</span>), <span class="at">class =</span> <span class="st">"cor"</span>),</span>
+<span id="cb15-43"><a href="#cb15-43" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">exponential</span>(<span class="dv">1</span>), <span class="at">class =</span> sigma)),</span>
+<span id="cb15-44"><a href="#cb15-44" aria-hidden="true" tabindex="-1"></a>          <span class="at">data =</span> tmp,</span>
+<span id="cb15-45"><a href="#cb15-45" aria-hidden="true" tabindex="-1"></a>          <span class="at">iter =</span> <span class="dv">4000</span>, <span class="at">warmup =</span> <span class="dv">1000</span>,</span>
+<span id="cb15-46"><a href="#cb15-46" aria-hidden="true" tabindex="-1"></a>          <span class="at">cores =</span> <span class="dv">4</span>,</span>
+<span id="cb15-47"><a href="#cb15-47" aria-hidden="true" tabindex="-1"></a>          <span class="at">sample_prior =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb15-48"><a href="#cb15-48" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">"models/fit_dimensional_null1"</span>)</span>
+<span id="cb15-49"><a href="#cb15-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-50"><a href="#cb15-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-51"><a href="#cb15-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-52"><a href="#cb15-52" aria-hidden="true" tabindex="-1"></a><span class="fu">conditional_effects</span>(fit_dimensional)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="results_draft_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Mean rating of woman across the md and sd condition</figcaption><p></p>
+</figure>
+</div>
+</div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="do">## testing the interaction with gbb</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>fit_dimensional <span class="ot">&lt;-</span> </span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">brm</span>(f_rating <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> fem<span class="sc">:</span>condition<span class="sc">:</span> <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">+</span> masc<span class="sc">|</span>id) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>face), <span class="at">family =</span> <span class="fu">gaussian</span>(<span class="at">link =</span> <span class="st">'identity'</span>), </span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">prior =</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">50</span>,<span class="dv">50</span>), <span class="at">class =</span> <span class="st">"b"</span>),</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>                    <span class="co">#prior(normal(50,50), class = "Intercept"),</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">exponential</span>(<span class="dv">1</span>), <span class="at">class =</span> <span class="st">"sd"</span>),</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">lkj</span>(<span class="dv">1</span>), <span class="at">class =</span> <span class="st">"cor"</span>),</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">exponential</span>(<span class="dv">1</span>), <span class="at">class =</span> sigma)),</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>          <span class="at">data =</span> tmp,</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>          <span class="at">iter =</span> <span class="dv">4000</span>, <span class="at">warmup =</span> <span class="dv">1000</span>,</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>          <span class="at">cores =</span> <span class="dv">4</span>,</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>          <span class="at">sample_prior =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">"models/fit_dimensional_stair_factor.3"</span>)</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="co"># carrying out the hypothesis test</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>h_dim_33 <span class="ot">&lt;-</span> <span class="fu">hypothesis</span>(fit_dimensional, <span class="st">"fem33.33:conditionmd= fem33.33:conditionsd"</span> )</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>h_dim_67 <span class="ot">&lt;-</span> <span class="fu">hypothesis</span>(fit_dimensional, <span class="st">"fem66.67:conditionmd= fem66.67:conditionsd"</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>We can test this, comparing the ratings of sd and md faces at 33.33 and 66.67 directly, again using Bayes factors.</p>
+<p>At 33.33 the evidence strongly suggest that the two conditions are the same (Estimate = 0.28, CI =[-3.91], [4.51], BF<sub>10</sub>= 0.03)</p>
+<p>This is also the case at 66.67 (Estimate = 2.29, CI =[-2.03], [6.57], BF<sub>10</sub>= 0.05)</p>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-4-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-3-tab">
+<p>Okay, so why might we want to look at pronouns as an outcome? The upside of looking at pronouns are that they would be a more practically relevant outcome. Asking someone “which pronoun would you use to describe this person?” would get us a little closer to how they would treat a person in real life. What a lot of non-binary people are advocating for is this kind of habit, where most people refrain from using gendered pronouns without knowing them. Another upside of looking at pronouns would be that it would tie this study more neatly together with the other papers, as pronouns would be a more clearly occurring theme.</p>
+<p>What are some downsides, or at least some challenges? There is a comparability problem. Is a condition where participants categorize using pronouns really the same as when participants are applying categories. This gets at the broader question of is a pronoun a category. And the difficulty is that it’s kind of not. It’s just a way to refer to someone. On the other hand, it is the case that using a pronoun is an indicator of having put someone into a category, and maybe more importantly, non-binary pronouns are specifically a way to not use place someone in a category. There’s also the issue if we’re talking about pronouns as an outcome, can we even talk about categorical perception? I mean, if people are using the pronoun she, is that based on them perceiving the person as a woman? It gets a little bit muddy there. So pronouns are related to categorization, are perhaps indicative of categorization, but can’t be said to be a direct measure of categorization. Is that a problem? Maybe! It might mean that that directly comparing a pronoun condition to the ones above is misleading.</p>
+<p>Another potential issue is that using pronouns would take us a couple of steps away from the original research question. Again, the original research question is how do various types of response options affect categorical perception. The sort of implicit in this question is that the response options are ones used by researchers in experiments. I don’t think it ever happens to be the case that researchers in categorization studies are giving people the option to use certain pronouns. Fair enough, so we say that this study is about categorization on a broader, more naturalistic level. Okay, but even this, this type of design is a little awkward. It isn’t very naturalistic for someone to pick a set of pronouns from a list. So a potential pronoun condition would sort of awkwardly straddle a middle ground of not being very similar to anything done by practicing researchers but also not being a very naturalistic situation.</p>
+<section id="implications-of-pronouns" class="level3">
+<h3 class="anchored" data-anchor-id="implications-of-pronouns">Implications of pronouns</h3>
+<p>Okay, so given these strengths and challenges, where does that leave us? Does this suggest that we need to give up? Well, let’s think about. First of all, something that I’ve noted is that we already have two types of outcomes: categorical and dimensional. I’ve already basically written them up here as two separate experiments. And if we already have an article with two experiments, why not add a third? So if we’re in the mindset of a third experiment, then that creates a little bit of space for the pronoun experiment, however, it looks, to be a little different.</p>
+<p>Adding a pronoun condition might mean having to broaden the research question. Rather than “specific response options” affecting “categorical perception”, it could be something like “gender framing” affecting “binary treatment of gender” where binary treatment of gender is defined as categorical perception in experiment 1, 2 and 3 and maybe also just “beyond-binary responses” in experiment 3 (wow, return of a classic!)</p>
+<p>So what could an additional experiment actually look like? One way is to compare a pronoun condition to the free-text condition (as in <strong>a</strong> in the picture below). When people spontaneously name gender categories, they think about of gender as something binary, but when people give pronouns, it might somehow be filtered through social interactions and they’d maybe be more open to going beyond the binary. That would be an interesting finding! Then the outcome of interest would be something more along the lines of “how often do you categorize beyond the binary”?</p>
+<p>Another option would be to double down on pronouns, and compare two different conditions using pronouns (as in <strong>b</strong>). For example one condition where participants choose pronouns based on forced choice and another where participants select pronouns based on free text. This would get us a little bit closer to the original research question of how the way that options are presented affects the outcome. This kind of setup has the advantage of being more comparable.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./pix/2paradigms.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">showing two possible experiments</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="a-quick-pilot" class="level3">
+<h3 class="anchored" data-anchor-id="a-quick-pilot">A quick pilot</h3>
+<p>To explore whether this idea is even viable, I made a quick pilot where 20 people rated 32 faces on the basis of which pronoun they would use to refer to the person with that particular face. This study was carried out on an english-speaking samples so the options were they/them, she/her and he/him.</p>
+<p>Each person looked at 32 faces, both black and white.</p>
+<div class="cell">
+
+</div>
+<p>So, having collected the data, I’m going to plot it similarly to how I did with the other experiments. Some takeaways: more people used they/them than would categorize another person the categories “other” and “I don’t know” in the previous study. Looking at the distribution of picks, it also looks like there is still a categorical perception pattern. ´</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>d <span class="sc">%&gt;%</span> </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(masc, race) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(categorization) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>masc, <span class="at">y=</span>n, <span class="at">fill=</span><span class="fu">factor</span>(categorization, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"he/him"</span>, <span class="st">"they/them"</span>, <span class="st">"she/her"</span>)))) <span class="sc">+</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"fill"</span>)<span class="sc">+</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">17</span>, <span class="dv">33</span>, <span class="dv">50</span>, <span class="dv">66</span>, <span class="dv">83</span>, <span class="dv">100</span>)) <span class="sc">+</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Proportion </span><span class="sc">\"</span><span class="st">woman</span><span class="sc">\"</span><span class="st"> responses"</span> ) <span class="sc">+</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Proportion female face in the morph"</span>) <span class="sc">+</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_discrete</span>(<span class="at">name =</span> <span class="st">"Response"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 5 rows containing missing values (`position_stack()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="results_draft_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
 </section>
 
 </main>
@@ -586,6 +838,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const clipboard = new window.ClipboardJS('.code-copy-button', {
     target: function(trigger) {
       return trigger.previousElementSibling;
