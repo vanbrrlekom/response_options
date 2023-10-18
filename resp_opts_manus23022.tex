@@ -5,16 +5,19 @@
 \documentclass[
   man]{apa7}
 \usepackage{amsmath,amssymb}
-\usepackage{lmodern}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -155,7 +158,7 @@
     {}{\InnerPatchFailed}%
   }
 {}{\PatchFailed}
-\keywords{Gender diversity, Gender categorization, Transgender, Measurement\newline\indent Word count: 3557}
+\keywords{Gender diversity, Gender categorization, Transgender, Measurement\newline\indent Word count: 3969}
 \DeclareDelayedFloatFlavor{ThreePartTable}{table}
 \DeclareDelayedFloatFlavor{lltable}{table}
 \DeclareDelayedFloatFlavor*{longtable}{table}
@@ -180,7 +183,7 @@
 \fi
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same} % disable monospaced font for URLs
+\urlstyle{same}
 \hypersetup{
   pdftitle={Inclusive Response Options Expand Gender Categorization But Do Not Reduce Categorical Perception of Gender},
   pdfauthor={Elli van Berlekom1, Stefan Wiens1, Anna Lindqvist2, \& Marie Gustavsson Sendén1},
@@ -209,7 +212,9 @@ Correspondence concerning this article should be addressed to Elli van Berlekom,
 \affiliation{\vspace{0.5cm}\textsuperscript{1} Stockholm University\\\textsuperscript{2} Lund University}
 
 \abstract{%
-Gender categorizations studies almost exclusively measure categorization by allowing participants to respond in terms of woman and men only. This does not capture the diversity of gender. This study (N = 120) investigated how more inclusive response options affected gender categorization in terms of options chosen and categorical perception. Participants were more likely to categorize gender beyond the binary when provided with explicit response options, such as ``non-binary'' and ``I don't know''. Additional responses did not affect categorical perception. The study highlights the importance of careful consideration of response options in gender categorization research.
+Gender categorization - the process through which gender categories are applied to others - is studied almost exclusively measure categorization by allowing participants to respond in terms of woman and men only. This does not capture the diversity of gender which is a problem because it may be inaccurate and it may be harmful to gender diverse individuals. This study (N = 120) investigated how more inclusive response options affected gender categorization in terms of options chosen and categorical perception. Participants were more likely to categorize gender beyond the binary when provided with explicit response options, such as ``non-binary'' and ``I don't know''. Additional responses did not affect categorical perception. The study highlights the importance of careful consideration of response options in gender categorization research.
+
+\emph{Problem statement can be made much clearer}
 }
 
 
@@ -227,9 +232,11 @@ In contrast, the research on how people perceive and categorize the gender of ot
 
 Instead, gender categorization is most often measured through a forced-choice task in which participants are forced to indicate either ``female'' or ``male'' when presented with a face (see for example Campanella et al., 2001; Cloutier et al., 2005; Webster et al., 2004; Zhao \& Bentin, 2008). A slightly different approach asks participants to rate faces on a gender gradation as a quality, often using ``feminine'' and ``masculine'' as endpoints on a single gradation (D'Ascenzo et al., 2014). Only in some rare cases are masculinity and femininity measured using different gradations for femininity and masculinity (e.g. Wittlin et al., 2018). Despite some variations therefore, the literature overwhelmingly presents gender as a binary in studies of gender categorization of others.
 
-There are several reasons researchers should be concerned about measuring gender categorization with binary options only. One is that it does not accurately reflect the diversity of gender (Hyde et al., 2018). Researchers who engage in this practice are perpetuating the harmful norm that gender is binary. Additionally, it may directly cause minority stress to TGD individuals, who are once again faced with a situation where they are not considered. There may also be two sources of measurement error stemming from binary response options. By creating a binary out a more varying dimension, researchers may be missing an important source of variation, similar to how measurement of age as only ``young'' or ``old'' would miss a large source of variation. Secondly, by reinforcing a binary gender worldview, researchers may actually be biasing participants towards that worldview, skewing the results.
+\emph{p.~5 mentions four ``reasons researchers should be concerned about measuring gender categorization with binary options only''. What is the difference between (1) and (2) (isn't the minority stress what makes the norm harmful?); and what is the difference between (3) and (4) (isn't the reduction in variation due to the skewing?)}
 
-Here we report two studies which attempted to address these two potential sources of error. Study 1 investigates whether people use response options beyond the binary when they are able (Research Question 1) and how this influences categorizations of women and men (Research Question 2). Study 2 investigates how binary measures bias outcomes, with a focus on the categorical perception of gender (Research Question 3).
+There are several reasons researchers should be concerned about measuring gender categorization with binary options only. One is that it does not accurately reflect the diversity of gender (Hyde et al., 2018). Researchers who engage in this practice are perpetuating the harmful norm that gender is binary. \emph{This furthers the idea of gender as binary, causing indirect harm}. \emph{In a more direct way, you are undermining participants} may directly cause minority stress to TGD individuals, who are once again faced with a situation where they are not considered. There may also be two sources of measurement error stemming from binary response options. By creating a binary out a more varying dimension, researchers may be missing an important source of variation, similar to how measurement of age as only ``young'' or ``old'' would miss a large source of variation. Secondly, by reinforcing a binary gender worldview, researchers may actually be biasing participants towards that worldview, skewing the results. \emph{can be clarified, skewing the results how?}
+
+Here we report two studies which attempted to address these two potential sources of error. Study 1 investigates whether people use response options beyond the binary when they are able (Research Question 1) and how this influences categorizations of women and men (Research Question 2). Study 2 investigates whether perception of gender is accentuated towards the extremes (Research Question 3), and whether with a focus on the categorical perception of gender (Research Question 3).
 
 \hypertarget{study-1}{%
 \section{Study 1}\label{study-1}}
@@ -277,6 +284,11 @@ We used R (Version 4.2.2; R Core Team, 2022) and the R-packages \emph{brms} (Ver
 \hypertarget{research-question-1-the-use-of-categories-beyond-the-binary}{%
 \subsubsection{Research question 1: The use of categories beyond the binary}\label{research-question-1-the-use-of-categories-beyond-the-binary}}
 
+\hypertarget{alternatively}{%
+\paragraph{alternatively}\label{alternatively}}
+
+Alternatively, we just looked at the individual level data and showed how likely each participant was to categorize a face as beyond the binary.
+
 In Research Question one, we investigated whether participants categorized faces beyond the binary when given the option to do so. This could manifest as either a main effect of condition or an interaction between condition and facial femininity if categorizations beyond the binary were limited to only the most androgynous faces. For this analyses, the Binary categories condition was excluded, as that condition precluded the possibility of categorizing beyond the binary. The specific questions then, were ``do people categorize faces beyond the binary?'', ``does this effect depend on condition?'' and ``are ambiguous faces more likely to be categorized beyond the binary?''. These questions correspond to main effects of response option condition, facial femininity and an interaction between the two.
 
 Accordingly, the models were fit to the outcome \emph{Beyond-binary categorizations} and comprised a Null model with no additional predictors, a Main effects model and an Interaction model For full model specification (including priors) and model diagnostics, see the supplementary material. These model were then compared in terms of predictive power on out-of-sample data points, estimated using Leave-one-out cross validation (LOO-CV). This represents an indirect test of the research questions, and can be viewed as an imperfect analogy to checking whether there is a ``significant'' overall interaction in a classical F-test.
@@ -323,7 +335,7 @@ Null & -18.83 & 6.02 & -253.00 & 24.51\\
 \end{threeparttable}
 \end{table}
 
-To investigate whether response options affected gender categorization we fit a Null Model, a Main Effects Model and an interaction model to the data. As stated, for these analyses, the Binary Categories condition was excluded, as participant did not have the option to categorize beyond the binary. The results of model comparison are presented in Table~\ref{tab:loo}.
+To investigate whether response options affected gender categorization we fit a Null Model, a Main Effects Model and an Interaction model to the data. As stated, for these analyses, the Binary Categories condition was excluded, as participant did not have the option to categorize beyond the binary. The results of model comparison are presented in Table~\ref{tab:loo}.
 Table~\ref{tab:loo} suggests that the Interaction model is the most predictive. However the absolute difference between the Interaction model and the Main effects model is small and importantly, the difference is small in relation to the standard error of the difference. This suggests that the data is inconclusive about which model is most suitable, although both are superior to the Null model. As model comparison did not conclusively preclude the Interaction model, we continued by testing specific, relevant contrasts using the Interaction model (see the Supplementary material for specific contrast weights).
 
 \begin{figure}
@@ -336,7 +348,7 @@ Model parameters are visualized in Figure~\ref{fig:exp-one-inf}. First, whether 
 
 Overall the evidence suggests at least somewhat strongly that when participants have the option of using beyond-binary response options, they use them.
 
-Subsequently, we tested whether the inclusion of non-binary response options skewed the distribution of categorization of faces as women and men. For this analysis, therefore, we tested the outcome variable \emph{binary categorization}, excluding ``other'' ``I don't know'' and any other respones in the free text.
+Subsequently, we tested whether the inclusion of non-binary response options skewed the distribution of categorization of faces as women and men. For this analysis, therefore, we tested the outcome variable \emph{binary categorization}, excluding ``other'' ``I don't know'' and any other responses in the free text condition.
 
 \begin{table}
 
@@ -366,12 +378,12 @@ Based on the pattern in Figure~\ref{fig:descriptives}, which seems to show that 
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}
 
-Eexperiment 1 indicated that participants categorize beyond the binary when response options include more options than women and men only. However, the free text option did not differ from the binary option. Thus, the written out choices seem to act as reminders to participants. Furthermore, categorization beyond the binary affected former man and women responses to similar degrees, meaning that the ratio of women and men were still about 50/50. This did not systematically affect their overall pattern of responses in terms of woman and man categorizations.
+Eexperiment 1 indicated that participants categorize beyond the binary when response options include more options than women and men only. However, the free text option did not differ from the binary option. Thus, the written out choices seem to act as reminders to participants. Furthermore, categorization beyond the binary affected former man and women responses to similar degrees, meaning that the ratio of women and men categorizations was still about 50/50. This did not systematically affect their overall pattern of responses in terms of woman and man categorizations.
 
 \hypertarget{study-2}{%
 \section{Study 2}\label{study-2}}
 
-Study 2 tested whether continuous scales that measure woman and men separately reduce categorical perception. To that end, we once again borrowed from the literature on self-categorization, this time using (Bem, 1974) method of measuring gender on two separate scales.
+Study 2 tested whether continuous scales that measure woman and men separately reduce categorical perception. To that end, we once again borrowed from the literature on self-categorization, this time using (Bem, 1974) method of measuring gender on two separate scales. First, we investigated whether there was a categorical perception effect. We investigated this by examining the individual level data.
 If categorical perception occurs, ratings of woman and man should be skewed near facial femininity = 50. In other words, a face with 33.33\% facial femininity would be rated as less woman than that. Therefore, we examined the differences between the two conditions at facial femininity = 33.33\% and 66.67\%,
 
 \hypertarget{method-1}{%
@@ -395,6 +407,11 @@ Research question 3 asked whether whether participants would view faces less cat
 \hypertarget{results-1}{%
 \section{Results}\label{results-1}}
 
+\hypertarget{research-question-3}{%
+\subsection{Research Question 3:}\label{research-question-3}}
+
+Most participants accentuated their ratings toward the poles ()
+
 The mean ratings in both conditions are presented in Figure~\ref{fig:descriptives-two}.
 
 \begin{figure}
@@ -402,6 +419,8 @@ The mean ratings in both conditions are presented in Figure~\ref{fig:descriptive
 \includegraphics{resp_opts_manus23022_files/figure-latex/descriptives-two-1.pdf}
 \caption{\label{fig:descriptives-two}Mean ratings of faces in Single dimension and multiple dimensions}
 \end{figure}
+
+\includegraphics{resp_opts_manus23022_files/figure-latex/unnamed-chunk-2-1.pdf}
 
 \begin{figure}
 \centering
@@ -537,6 +556,168 @@ Wittlin, N. M., Dovidio, J. F., LaFrance, M., \& Burke, S. E. (2018). About face
 Zhao, L., \& Bentin, S. (2008). Own- and other-race categorization of faces by race, gender, and age. \emph{Psychonomic Bulletin \& Review}, \emph{15}(6), 1093--1099. \url{https://doi.org/10.3758/PBR.15.6.1093}
 
 \end{CSLReferences}
+
+\hypertarget{looking-at-the-outcome-beyond-binary}{%
+\subsection{Looking at the outcome beyond-binary}\label{looking-at-the-outcome-beyond-binary}}
+
+First question: does GBB predict bbcategories? Maybe, but there's so few, it's hard to tell.
+
+But what if we add an interaction??
+
+\includegraphics{resp_opts_manus23022_files/figure-latex/unnamed-chunk-6-1.pdf} \includegraphics{resp_opts_manus23022_files/figure-latex/unnamed-chunk-6-2.pdf} \includegraphics{resp_opts_manus23022_files/figure-latex/unnamed-chunk-6-3.pdf}
+Might as well add here, what happens when we look at the outcome beyond-binary in the same way?
+
+\includegraphics{resp_opts_manus23022_files/figure-latex/unnamed-chunk-8-1.pdf}
+
+\hypertarget{looking-at-scale}{%
+\subsection{looking at scale}\label{looking-at-scale}}
+
+\includegraphics{resp_opts_manus23022_files/figure-latex/unnamed-chunk-9-1.pdf} \includegraphics{resp_opts_manus23022_files/figure-latex/unnamed-chunk-9-2.pdf} \includegraphics{resp_opts_manus23022_files/figure-latex/unnamed-chunk-9-3.pdf} \includegraphics{resp_opts_manus23022_files/figure-latex/unnamed-chunk-9-4.pdf} \includegraphics{resp_opts_manus23022_files/figure-latex/unnamed-chunk-9-5.pdf} \includegraphics{resp_opts_manus23022_files/figure-latex/unnamed-chunk-9-6.pdf}
+
+\hypertarget{looking-at-womenmen}{%
+\section{Looking at women/men}\label{looking-at-womenmen}}
+
+I can actually start with my old null model, just to see if some people are more likely to have a female or male bias. Seems like we have a farily even spread.
+
+\hypertarget{without-coefs-what-are-the-persona-and-item-parameters}{%
+\subsection{without coefs, what are the persona and item parameters?}\label{without-coefs-what-are-the-persona-and-item-parameters}}
+
+\begin{verbatim}
+## , , Intercept
+## 
+##        Estimate Est.Error        Q2.5       Q97.5
+## 2   -0.46260658 0.4133923 -1.26349506  0.35754937
+## 3    1.88374261 0.4203384  1.06664652  2.71819826
+## 4    0.66598778 0.4094409 -0.12881852  1.47418994
+## 5    0.65973158 0.4126958 -0.15949639  1.46937714
+## 6   -0.97128908 0.4061336 -1.76867440 -0.17838652
+## 7   -2.17880721 0.3890720 -2.94021464 -1.42929105
+## 8    0.51431933 0.4105251 -0.29093332  1.32048543
+## 10   0.51374907 0.4119964 -0.28924543  1.32750393
+## 11  -0.23961061 0.4056584 -1.02797784  0.54781094
+## 12  -0.35768054 0.4079292 -1.16011268  0.43556512
+## 16  -0.80517255 0.5149249 -1.80342752  0.22798499
+## 17  -0.39062261 0.4022398 -1.17338725  0.40051360
+## 18   0.96759158 0.4069248  0.17483127  1.77171828
+## 19  -1.65933392 0.3914564 -2.41537533 -0.88304620
+## 20   0.05719406 0.4093280 -0.74949709  0.86726562
+## 21   1.31148860 0.4436508  0.45475307  2.18488671
+## 22  -1.65853556 0.3912415 -2.42284727 -0.88708272
+## 23   0.36073705 0.4060926 -0.44056153  1.15130569
+## 25   1.09588526 0.4186894  0.28340524  1.91319850
+## 27  -0.68013747 0.4019914 -1.47083487  0.10633811
+## 28  -1.78952321 0.3931146 -2.56284153 -1.01348597
+## 30  -0.38716293 0.4002729 -1.17463268  0.40117289
+## 31   0.51322984 0.4112814 -0.28692456  1.32031585
+## 32   0.05964861 0.4069287 -0.73080866  0.85245457
+## 33   0.81238543 0.4085355  0.01031784  1.60149518
+## 36  -0.08975607 0.4113121 -0.90149187  0.70685170
+## 37  -0.09280225 0.4097750 -0.89399048  0.71462964
+## 42   0.20628200 0.4113918 -0.60299977  1.02395645
+## 44  -1.10924543 0.3980810 -1.89385343 -0.33033159
+## 45   0.35481703 0.4717914 -0.56152393  1.27529411
+## 46  -0.35857128 0.4259554 -1.19496564  0.48045855
+## 50  -1.19402354 0.3996745 -1.97607614 -0.40948009
+## 52   1.84114379 0.4276408  1.00385465  2.67822162
+## 56   0.21341585 0.4081007 -0.58797749  1.01218953
+## 59   0.26906368 0.4398340 -0.59481456  1.13937129
+## 60  -0.95943521 0.4004940 -1.74232076 -0.17238948
+## 61  -1.10564220 0.3918584 -1.87393475 -0.34206558
+## 62   1.42667019 0.4134485  0.62958304  2.24638036
+## 63  -0.68012673 0.4003950 -1.45688055  0.10568312
+## 64   1.58235471 0.4156129  0.78046624  2.40166839
+## 65  -1.91989480 0.3914770 -2.68433823 -1.16845019
+## 66  -1.11310821 0.3961394 -1.88161302 -0.32794363
+## 67   0.36098578 0.4067381 -0.44282473  1.15272315
+## 69  -1.10818194 0.3926128 -1.87832271 -0.33400927
+## 70  -0.53901441 0.4023748 -1.32008257  0.24786952
+## 71   0.97254244 0.4111236  0.16606947  1.78822868
+## 74   0.96590491 0.4134281  0.15686635  1.77469332
+## 75  -1.25102565 0.3968476 -2.02826418 -0.47767851
+## 77  -0.24052843 0.4059353 -1.04044211  0.55272484
+## 78  -0.53893936 0.4054527 -1.33592407  0.26166007
+## 80   0.96934664 0.4095185  0.15700528  1.76794271
+## 82   0.51350546 0.4137593 -0.27206425  1.32501753
+## 83  -0.96787762 0.3959874 -1.74561247 -0.19430504
+## 84   0.35497118 0.5487785 -0.72989950  1.43991495
+## 85  -0.82298000 0.3965480 -1.59838189 -0.04959863
+## 87   1.12428557 0.4139459  0.31189867  1.93382056
+## 88  -0.24326268 0.4059788 -1.04064182  0.55054197
+## 89  -0.84289342 0.4036445 -1.63069437 -0.04093306
+## 92   1.73272127 0.4201114  0.90865858  2.56722043
+## 93   1.27372476 0.4136536  0.46674169  2.08591956
+## 95  -0.65534599 0.5672909 -1.76969154  0.44633966
+## 97  -0.68139101 0.4040141 -1.47902288  0.09871391
+## 99   0.66700015 0.4213221 -0.15271788  1.48677147
+## 101  0.96856455 0.4485633  0.10374542  1.86194226
+## 104 -0.47102248 0.4113801 -1.28575853  0.33744331
+## 106  0.66129131 0.4114440 -0.14258415  1.47381371
+## 107  1.42455744 0.4157416  0.60840423  2.23685383
+## 109  1.12045806 0.4124214  0.32458270  1.93842824
+\end{verbatim}
+
+\includegraphics{resp_opts_manus23022_files/figure-latex/unnamed-chunk-10-1.pdf}
+
+And then see if this is correlated with Gener binary belief. It isn't!
+
+\begin{verbatim}
+## Warning: Removed 1 rows containing non-finite values (`stat_smooth()`).
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Removed 1 rows containing missing values (`geom_point()`).
+\end{verbatim}
+
+\includegraphics{resp_opts_manus23022_files/figure-latex/rq2-modelling 2-1.pdf}
+
+Okay, cool. But then we can also model each person's slope, their steepness. And that we can also see if it correlates to gbb
+
+Nice. Now let's start by extracting those parameters
+
+\includegraphics{resp_opts_manus23022_files/figure-latex/unnamed-chunk-12-1.pdf}
+
+Okay, cool. Now let's check it against gender binary beliefs. aaand there doesn't seem to be much there. Cool. I think I can let go of that. But maybe I should also present it. Yes, I should present it.
+
+\begin{verbatim}
+## Warning: Removed 1 rows containing non-finite values (`stat_smooth()`).
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Removed 1 rows containing missing values (`geom_point()`).
+\end{verbatim}
+
+\includegraphics{resp_opts_manus23022_files/figure-latex/unnamed-chunk-13-1.pdf}
+
+\hypertarget{but-should-i-add-it-as-a-a-predictor-here-too}{%
+\subsection{But should I add it as a a predictor here too?}\label{but-should-i-add-it-as-a-a-predictor-here-too}}
+
+\begin{verbatim}
+## Warning: Rows containing NAs were excluded from the model.
+\end{verbatim}
+
+\begin{verbatim}
+##                 prior     class      coef group resp dpar nlpar lb ub
+##                lkj(1)       cor                                      
+##                lkj(1)       cor              id                      
+##  student_t(3, 0, 2.5) Intercept                                      
+##  student_t(3, 0, 2.5)        sd                                  0   
+##  student_t(3, 0, 2.5)        sd              id                  0   
+##  student_t(3, 0, 2.5)        sd       fem    id                  0   
+##  student_t(3, 0, 2.5)        sd Intercept    id                  0   
+##        source
+##       default
+##  (vectorized)
+##       default
+##       default
+##  (vectorized)
+##  (vectorized)
+##  (vectorized)
+\end{verbatim}
+
+\hypertarget{plotting-individual-item}{%
+\subsection{plotting individual item}\label{plotting-individual-item}}
+
+let's start by drawing from the posterior
 
 
 \end{document}

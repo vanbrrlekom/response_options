@@ -70,19 +70,56 @@ d1  <- read.csv("data/cat2study1_pilot3_2.csv") %>%
     values_to = "categorization") %>% 
   select(face, pronoun, id,  categorization, Gender.1) 
 
+d2  <- read.csv("data/cat2study1_pilot5.csv") %>% 
+  mutate(id = nrow(d)+1:nrow(.)+1+nrow(d),
+         they = paste(they.1, they.2, they.3) %>% 
+           tolower() %>% 
+           strsplit(" ") %>% 
+           map(prounoun_check, they) %>% 
+           ifelse("they", ""),
+         he = paste(han.1, han.2, han.3) %>% 
+           tolower() %>% 
+           strsplit(" ") %>% 
+           map(prounoun_check, he) %>% 
+           ifelse("he", "")) %>% 
+  mutate(pronoun = paste(they, he) %>% 
+           na_if(" ")) %>% 
+  select(!Age.1) %>% 
+  pivot_longer(
+    cols = starts_with("a")|starts_with("b")|starts_with("w"),
+    names_to = "face",
+    values_to = "categorization") %>% 
+  select(face, pronoun, id,  categorization) 
+
+
+d3  <- read.csv("data/cat2_pronounpilot.csv") %>% 
+  mutate(id = nrow(d)+1:nrow(.)+1+nrow(d)) %>% 
+  #select(!Age.1) %>% 
+  pivot_longer(
+    cols = starts_with("mc"),
+    names_to = "face",
+    values_to = "categorization") %>% 
+  select(face, id,  categorization) 
 
 #overall, what categorizations do people use?
-d %>% group_by(pronoun, categorization) %>% 
+d2 %>% group_by(pronoun, categorization) %>% 
   count()
 
 
 #make a plot for all the faces
-d %>% group_by(face, categorization) %>% 
+d %>% select(face, categorization) %>% na.omit() %>% group_by(face, categorization) %>% 
   count() %>%
   ggplot(aes(x = face, y = n, fill = categorization)) +
   geom_bar(stat = "identity", position = "fill")
 
-#just asian faces
+
+
+d3 %>% select(face, categorization) %>% na.omit() %>% group_by(face, categorization) %>% 
+  count() %>%
+  ggplot(aes(x = face, y = n, fill = categorization)) +
+  geom_bar(stat = "identity", position = "fill")
+
+SS#just asian faces
 d %>%
   mutate(first_face = substr(face, 1,1)) %>% 
   #filter(first_face == "a") %>% 

@@ -1,0 +1,25 @@
+---
+title: "test"
+output: html_document
+date: "2023-03-25"
+---
+
+$$
+\begin{aligned}
+\text{Gender rating}_{i} &\sim \mathrm{Normal}(\mu, \sigma) & (3) \\
+\ \mu_i &= \gamma_{cid[i]}+ \alpha_{subject[i]} + \beta_{cid[i]}Morph+ \alpha_{face[i]} + \gamma_{cid[i],subject[i]}\\
+\gamma_{cid} &\sim \mathrm{Normal}(50,50),\: \text{for}\: cid =\text{sd, md}\\
+\alpha_{subject} &\sim \mathrm{Normal}(0, \sigma_{subject}) \\
+\beta_{cid} & \sim \mathrm{Normal}(0,10),\: \text{for}\: cid =\text{sd, md}\\
+\begin{bmatrix}
+\gamma_{sd}\\\gamma_{md} \\
+\end{bmatrix}
+&\sim \mathrm{MVNormal}\Bigg(\begin{bmatrix} 0 \\0
+\end{bmatrix}, \Sigma _{face}\Bigg) \\
+\Sigma_{subject} & =\textbf{S}_{\gamma}\textbf{R}_{\gamma}\textbf{S}_{\gamma}  \\
+\sigma_{face} &\sim \mathrm{exponential}(1) \\
+\sigma_{subject} &\sim \mathrm{exponential}(1) \\
+\sigma_{cid}&\sim \mathrm{exponential}(1) \\
+\textbf{R} &\sim \mathrm{LKJcorr}(1) \\
+\end{aligned}
+$$
