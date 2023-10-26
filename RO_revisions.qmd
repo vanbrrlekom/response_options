@@ -1,0 +1,668 @@
+---
+title: "Analyses"
+format: 
+  html:
+    code-fold: true
+    theme: flatly
+comments: 
+  hypothesis: true
+bibliography      : "r-references.bib"
+
+abstract: | 
+ *I haven't changed this in a while* Gender categorization - the process through which gender categories are applied to others - is studied almost exclusively measure categorization by allowing participants to respond in terms of woman and men only. This does not capture the diversity of gender which is a problem because it may be inaccurate and it may be harmful to gender diverse individuals. This study (N = 120) investigated how more inclusive response options affected gender categorization in terms of options chosen and categorical perception. Participants were more likely to categorize gender beyond the binary when provided with explicit response options, such as "non-binary" and "I don't know". Additional responses did not affect categorical perception. The study highlights the importance of careful consideration of response options in gender categorization research. 
+ 
+ *Problem statement can be made much clearer*
+
+editor: visual
+---
+
+```{r setup,warning = FALSE, message = FALSE}
+library("papaja")
+library(brms)
+library(tidyverse)
+citations <- r_refs("r-references.bib")
+
+library(brms)
+library(tidyverse)
+source("src/functions.r")
+d <-  read.csv("data/data.csv") %>% 
+    mutate(across(!starts_with("Gender"), as.character)) %>% 
+    mutate(id = 1:nrow(.)) %>% 
+    #arrange(condition.1) %>% 
+    pivot_longer(
+      cols = !c(id, Age_1, starts_with("Gender"), starts_with("choose"), contains("assign"), starts_with("Prolific"), starts_with("TIME")),
+      names_to = "face",
+      values_to = "categorization") %>% 
+    #separate(face, c("condition", "face", "morph", "scale")) %>% 
+   select(id, face, categorization, Age_1, Gender_1, starts_with("Gender")) %>% 
+   filter(!categorization == "") %>%   
+    separate(face, c("condition", "face", "morph", "scale")) %>% 
+    mutate(race = substr(face, 1,1),
+           masc = recode(morph, "0" = "0", "1" = "16.67", "2"= "33.33","3" = "50",
+                         "4" = "66.67", "5" ="83.33", "6" =  "100")) %>% 
+    mutate(masc = as.numeric(masc)) %>% 
+    mutate(masc = ifelse(race != "w", masc, 100 - masc)) %>% 
+  mutate(fem = 100 - masc) %>% 
+  filter(id !=125)
+  
+
+
+```
+
+```{r analysis-preferences}
+# Seed for random number generation
+set.seed(42)
+knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
+```
+
+Surveys and interviews of transgender and gender diverse (TGD) individuals suggest that many people experience gender as fluid, diffuse, and not bounded by the typical western binary of women and men [@richards_non-binary_2016, @hyde_future_2018]. In addition, TGD individuals experience invisibility due to the assumption that there are only two genders and that gender should be visible from someone’s face [@ansara_methodologies_2014]. It is important that research takes this lived reality into account when designing measures of gender categorization to avoid perpetuating such marginalization and invisibility.
+
+One of the earliest examples of an inclusive attempt to measure gender was the Bem Sex-Role Inventory (BSRI). The BSRI measured gender as a psychological trait and challenged the dichotomous and binary conceptualizations of gender by treating femininity and masculinity as separate constructs [@bem_measurement_1974]. When gender was measured this way, most people exhibited a mixture of feminine and masculine traits [@bem_measurement_1974]. The BSRI, despite its innovation, did not offer participants the opportunity to identify with genders beyond the traditional binary categories of women and men.
+
+More recently, a number of recommendations have been put forward to help researchers measure participants gender identity without excluding TGD people. For example, @saperstein_categorical_2021 suggested including a range of categories in addition to "woman" and "man". In addition, @lindqvist_what_2020 suggested including an open text entry where participants can fill in whatever they want. While this practice is not yet the standard, it is increasingly common among researchers to adopt these open-ended approaches to measure participant gender [e.g. @carleton_assessing_2022; @cronin_younger_2022; @dagostino_organizational_2022; @gottgens_impact_2022]
+
+However, it is important to note that the majority of recommendations primarily focus on research that measures participants' self-identified gender identity. This emphasis is understandable as gender identity is a commonly reported demographic variable. Still, self-identified gender identity is only one of many ways that gender can be a target of research. Another common avenue of research on gender is as a social outcome, specifically how people perceive and categorize the gender of others.  
+
+A brief survey of the research on how people perceive and categorize the gender of others still almost exclusively treats gender as a binary category. Researchers in this field have explored the speed and automaticity of gender perception in faces, as well as which facial features are associated with specific gender categories, such as women and men [e.g. @mogilski_relative_2018]. Generally, the findings have been used to argue that people categorize gender rapidly and automatically [@habibi_spontaneous_2012; @jung_automaticity_2019], with facial features such as skin smoothness, jawline, and hair length used to determine gender identity. Lastly, studies in this field have indicated that people perceive faces categorically [@campanella_categorical_2001]. In other words, that faces, even when manipulated to vary on a continuum from feminine to masculine were still perceived as belonging to the categories women or man. However, these studies typically do reflect the diverse nature of gender or consider alternative response options.
+
+Instead, gender categorization is most often measured through a forced-choice task in which participants are forced to indicate either "female" or "male" when presented with a face [see for example @campanella_categorical_2001; @cloutier_perceptual_2005; @webster_adaptation_2004; @zhao_own-_2008]. A slightly different approach asks participants to rate faces on a gender gradation as a quality, often using "feminine" and "masculine" as endpoints on a single gradation [@dascenzo_imagining_2014]. Only in some rare cases are masculinity and femininity measured using different gradations for femininity and masculinity [e.g. @wittlin_about_2018]. 
+
+There are several reasons why researchers may want to expand their research beyond this binary. First, as awareness of both the prevelance and marginalization of TGD individuals increases, how people categorize non-binary gender becomes a relevant topic for research in and of itself. Second, even researchers who are primarily interested in binary categorization have reason to consider inclusive response options. Measuring gender categorization using only the categories "woman" and "man" does not accurately reflect the diversity of gender as it is experienced by many people [@hyde_future_2018]. By creating a binary out a more varying dimension, researchers may be missing an important source of variation, similar to how measurement of age as only "young" or "old" would miss a large source of variation. Furthermore when researchers use a limited number of gender categories, this communicates indirectly that these are the only gender categories that exist (*ref*). While TGD participants have almost certainly come across this messsage in their daily lives, one more instance amounts to another microagression, which over time adds to a feeling of exclusion. Of course researchers who are only interested in categorization of men and women may be reluctant to include more options for fear of introducing noise or unpredictability to the data. It is therefore important to know how the inclusion of additional or inclusive response options affects categorization of women and men. 
+
+Here we report two studies which attempted to address these two potential sources of error. Study 1 investigates whether people use response options beyond the binary when they are able (Research Question 1) and how this influences categorizations of women and men (Research Question 2). Study 2 investigates whether perception of gender is accentuated towards the extremes (Research Question 3), and whether a binary measurement increases this accentuation toward the extreme (Research Question 4).
+
+# Study 1
+
+Study 1 adapted common ways to measure participants categorization of their own gender to other categorization research. One common recommendation is to include a third option gender option, such as "non-binary" or "other". Another common practice is to give people an open text box in which they may type in whatever they like [@lindqvist_what_2020; @saperstein_categorical_2021]. Therefore, Study 1 compared the standard binary response options to two alternatives: a third gender option (such as 'non-binary' or 'other') and an open text box for participants to type in their gender. An important difference between self-categorization and the categorization of others is that most people know their own gender, whereas the gender of others cannot always be known from appearance [@richards_non-binary_2016]. To account for this, we also gave participants the ability to state that gender was unknown.
+
+# Method
+
+## Participants
+
+```{r}
+# Get subjects information
+subs <- d %>%
+  filter(condition == "ft" | condition == "xb" | condition == "mc") %>% 
+  mutate(age = as.numeric(Age_1),
+         gender = substr(Gender_1, 1,1) ) %>% 
+  count(id, age, gender)
+
+```
+
+
+Swedish participants (*N* = `r length(subs$id)`)  were recruited through advertising online and on the university campus (*M*~age~= `r mean(subs$age, na.rm = TRUE)`,  *SD*~age~ = `r sd(subs$age, na.rm = TRUE)`, Range = `r min(subs$age, na.rm = TRUE)` - `r max(subs$age, na.rm = TRUE)`). Self-identified gender was measured using an open-ended text box as recommended by @lindqvist_what_2020; participants were 56 women, 47 men and 2 who did not indicate gender). All participants were informed that participation was voluntary, that they could withdraw from the study and that results do no include any identifying features. The study was approved by the Stockholm University Ethical Review board. All participants provided written informed consent.
+
+## Design
+
+The experiment used a between-participants design with three response options conditions. These were the
+*multiple categories*, *free text* and *binary categories*  conditions. The administering researcher was blind to participant condition and participants were randomly allocated into one of the three experimental conditions. 
+
+## Stimuli 
+
+For the gender categorization task, faces were produced using the London Face Database [@debruine_face_2017] and the  Chicago Face Database [@ma_chicago_2015] morphed with on Webmorph [@debruine_webmorph_2018]. For Black, Asian and White faces, the six most feminine faces of women and the six most masculine faces of men were selected, using the codebook provided by the researchers. The faces were matched, so that the most feminine faces in the database were morphed with the most masculine faces. The morphs were made in 7 steps, from completely feminine to completely masculine. For legibility, we refer to these faces in terms of facial femininity, acknowledging that this is a potential simplification for all the reasons outlined above. In other words, a face halfway on the morphing dimension contains 50% femininity. Because there were 18 pairs morphed in 7 steps, the total number of faces was 126.
+
+*include a picture*
+
+## Procedure
+
+Participants completed the experiment on a computer in a quiet room. Each trial consisted of a face accompanied by the question "How would you gender categorize this person?". Each person completed a total of 126 trials (i.e. they categorized every face in the stimuli set). Participants were randomly allocated into one of the three response options conditions: binary categories, multiple categories, and free text. In the binary categories condition, participants were only given the options to respond "woman" or "man". The multiple categories condition included the options “other” and “I don’t know” as well as woman or man. The free text condition consisted of an open text box.
+
+## Measures
+
+The primary outcome was responses to the categorization task. For analysis purposes, these were aggregated in the following ways:
+
+*Beyond-binary categorizations* represented the categories where participants did not categorize the face as woman or man. This was a dichotomous variable that was calculated from the categorization data by combining the responses of “I don’t know” and “other” in the multiple categories condition. In the free text condition, this included various variations of "other" and "non-binary". These beyond-binary responses were coded as 1 and binary responses as 0. 
+
+*Binary categorization* represented only the responses that were either woman (coded as 1) or man (coded as 0). All other responses were removed from this dataset.
+
+
+## Data analysis
+
+We used `r cite_r("r-references.bib", pkgs = c("brms", "tidyverse", "papaja"), withhold = FALSE)`. Additionally, much of the R code was adapted from @kurz_doing_2023 . Descriptive statistics were used to summarize the data, and Bayesian mixed-effects models were used to test the research questions,. In all models, facial femininity was included as a predictor. Additionally, all models included varying intercepts for both participants and trials and varying slopes for facial femininity. To answer each research question, we used a two-step approach which began with a model comparison approach followed by Bayes factor tests of specific contrasts.
+
+# Results
+
+## Categorization beyond the binary 
+
+First,investigated whether participants categorized faces beyond the binary when given the option to do so (Research Question 1). To do this, we plotted the distribution of caategorizations for each participant (see  Figure\ \@ref(fig:descriptives).) 
+
+```{r descriptives-prep, fig.cap= "Gender Categorizations by Participants"}
+# make figure 1
+ft <- d %>%
+  mutate(id = factor(id) ) %>% 
+  filter(condition == "ft") %>% #select correct conditions
+  group_by(fem, race, id) %>% 
+  mutate(categorization = recode(categorization,  #yes, this is pretty horrendous code, I haven't had a chance to sit down and clean it up yet.
+                                 "1" = "Woman", "Woman" = "Woman", "wman" = "Woman", "woman" = "Woman", "female" = "Woman", "Female " = "Woman", "Female"= "Woman", "Fenale"= "Woman", "women" = "Woman", "woman " = "Woman", "femLE" = "Woman", "FEmale" = "Woman", "Femalw" = "Woman", "Fwmalw" = "Woman", "Female " = "Woman", "woman" = "Woman", "Woman" = "Woman", "feMale" = "Woman", "fermale" = "Woman", "wman" = "Woman", "Femae" = "Woman", "f" = "Woman", "F"= "Woman", "female " = "Woman",
+                                 "2" = "Man", "man" = "Man","Male" = "Man", "male" = "Man", " Male" = "Man", "M" = "Man", "nmale" = "Man", "male " = "Man", "nale" = "Man", "ale" = "Man", "M" = "Man",  "m" = "Man", "MALE" = "Man",
+                                 "3" = "Other", "Nonbinary" = "Other", "Non Binary " = "Other", "Non binary " = "Other",  "nonbinary" = "Other", "Non binary" = "Other", "non binary" = "Other", "unisex" = "other", 
+                                 "4" = "Don't know" ),
+         condition = recode(condition, "ft" = "Free text", "xb" = "Binary Categories", "mc" = "Multiple Categories"))%>% 
+  filter(id != 124) %>% 
+  count(categorization) %>% 
+  filter(!is.na(categorization))%>% 
+  ggplot(aes(x=id, y=n, fill=factor(categorization, levels = c("Man", "Other", "Don't know", "Woman")))) +
+  geom_bar(stat="identity", position = "fill") + 
+ #ggtitle("Gender Categorizations by Participants")+
+  #scale_x_continuous(breaks =c(0, 17, 33, 50, 66, 83, 100)) +
+  ylab("Proportion of responses" ) +
+  xlab("id") +
+  #scale_fill_discrete(name = "Response") +
+  #scale_fill_viridis_d(name = "Response")
+  #scale_fill_grey( name = "Response")+
+  coord_flip()+
+  theme_minimal()+
+  theme(legend.position = "none")
+
+mc <- d %>%
+  mutate(id = factor(id)) %>% 
+  filter(condition == "mc") %>% #select correct conditions
+  group_by(fem, race,  id) %>% 
+  mutate(categorization = recode(categorization,  #yes, this is pretty horrendous code, I haven't had a chance to sit down and clean it up yet.
+                                 "1" = "Woman", "Woman" = "Woman", "wman" = "Woman", "woman" = "Woman", "female" = "Woman", "Female " = "Woman", "Female"= "Woman", "Fenale"= "Woman", "women" = "Woman", "woman " = "Woman", "femLE" = "Woman", "FEmale" = "Woman", "Femalw" = "Woman", "Fwmalw" = "Woman", "Female " = "Woman", "woman" = "Woman", "Woman" = "Woman", "feMale" = "Woman", "fermale" = "Woman", "wman" = "Woman", "Femae" = "Woman", "f" = "Woman", "F"= "Woman", "female " = "Woman",
+                                 "2" = "Man", "man" = "Man","Male" = "Man", "male" = "Man", " Male" = "Man", "M" = "Man", "nmale" = "Man", "male " = "Man", "nale" = "Man", "ale" = "Man", "M" = "Man",  "m" = "Man", "MALE" = "Man",
+                                 "3" = "Other", "Nonbinary" = "Other", "Non Binary " = "Other", "Non binary " = "Other",  "nonbinary" = "Other", 
+                                 "4" = "Don't know" ),
+         condition = recode(condition, "ft" = "Free text", "xb" = "Binary Categories", "mc" = "Multiple Categories"))%>% 
+  count(categorization) %>% 
+  filter(id != 125) %>% 
+  filter(!is.na(categorization))%>% 
+  ggplot(aes(x=id, y=n, fill=factor(categorization, levels = c("Man", "Other", "Don't know", "Woman")))) +
+  geom_bar(stat="identity", position = "fill") + 
+  #ggtitle("Gender Categorizations by Participants")+ 
+  #scale_x_continuous(breaks =c(0, 17, 33, 50, 66, 83, 100)) +
+  ylab("Proportion of responses" ) +
+  xlab("id") +
+  #scale_fill_discrete(name = "Response") +
+  #scale_fill_viridis_d(name = "Response")
+  #scale_fill_grey( name = "Response")+
+  coord_flip()+
+  theme_minimal()+
+  theme(legend.position = "none")
+
+
+xb <- d %>%
+  mutate(id = factor(id)) %>% 
+  filter(condition == "xb") %>% #select correct conditions
+  group_by(fem, race,  id) %>% 
+  mutate(categorization = recode(categorization,  #yes, this is pretty horrendous code, I haven't had a chance to sit down and clean it up yet.
+                                 "1" = "Woman", "Woman" = "Woman", "wman" = "Woman", "woman" = "Woman", "female" = "Woman", "Female " = "Woman", "Female"= "Woman", "Fenale"= "Woman", "women" = "Woman", "woman " = "Woman", "femLE" = "Woman", "FEmale" = "Woman", "Femalw" = "Woman", "Fwmalw" = "Woman", "Female " = "Woman", "woman" = "Woman", "Woman" = "Woman", "feMale" = "Woman", "fermale" = "Woman", "wman" = "Woman", "Femae" = "Woman", "f" = "Woman", "F"= "Woman", "female " = "Woman",
+                                 "2" = "Man", "man" = "Man","Male" = "Man", "male" = "Man", " Male" = "Man", "M" = "Man", "nmale" = "Man", "male " = "Man", "nale" = "Man", "ale" = "Man", "M" = "Man",  "m" = "Man", "MALE" = "Man",
+                                 "3" = "Other", "Nonbinary" = "Other", "Non Binary " = "Other", "Non binary " = "Other",  "nonbinary" = "Other", 
+                                 "4" = "Don't know" ),
+         condition = recode(condition, "ft" = "Free text", "xb" = "Binary Categories", "mc" = "Multiple Categories"))%>% 
+  count(categorization) %>% 
+  filter(!is.na(categorization))%>% 
+  ggplot(aes(x=id, y=n, fill=factor(categorization, levels = c("Man", "Other", "Don't know", "Woman")))) +
+  geom_bar(stat="identity", position = "fill") + 
+  #ggtitle("Gender Categorizations by Participants")+ 
+  #scale_x_continuous(breaks =c(0, 17, 33, 50, 66, 83, 100)) +
+  ylab("Proportion of responses" ) +
+  xlab("Id") +
+  #scale_fill_discrete(name = "Response") +
+  #scale_fill_viridis_d(name = "Response")
+  #scale_fill_grey( name = "Response")+
+  coord_flip()+
+  theme_minimal()+
+  theme(legend.position = "none")
+```
+
+Even when participants had the option to categorize face beyond the binary, most still categorized faces as women and men. In the free text condition, only one participant categorized a single face as other than woman and man. In the multiple categories condition, around half of participants categorized any face beyond the binary, but the incidence varied, with some categorizing very and others categorizing a good chunk.
+
+*I'm still working on this diagram, obviiously there are quite a few things one would like to fix, starting with the fact that there is no legend, no title, and th colors don't make sense. But looking past all that, what do you think a bout this type of figure to illustrate the individual level data?*
+
+```{r descriptives, fig.cap= "Gender Categorizations by Participants"}
+library(gridExtra)
+grid.arrange(xb, ft, mc, ncol = 3) 
+```
+
+
+
+```{r, modelfit}
+#create dataframe with only free text and multiple categories conditions 
+#Well, fist, first I wrangle data
+tmp <- d %>% 
+  filter(condition == "mc" | condition == "ft") %>% 
+  mutate(categorization = recode(categorization, 
+                                 "F" = "f", "kvinna" = "f", "female" = "f", "female " = "f", "Female"= "f", "Fenale"= "f", "women" = "f", "woman " = "f", "femLE" = "f", "FEmale" = "f", "Femalw" = "f", "Fwmalw" = "f", "Female " = "f", "woman" = "f", "Woman" = "f", "feMale" = "f", "fermale" = "f", "wman" = "f", "Femae" = "f",
+                                 "man" = "m","Male " = "m", "make" = "m", "Male"= "m", "male" = "m", "man " = "m",  "male " = "m", "guy" = "m", "boy" = "m", "Make" = "m", "M"  = "m", "Man" = "m", "Bottom half male; above nose female., Would have to say Male" = "m", " male" = "m", "male  " = "m", "ale" = "m", "nmale" = "m", "MALE"= "m", "nale"= "m", " Male" = "m",
+                                 "Nonbinary" = "o", "Non Binary " = "o", "Unsure" = "o", "Non binary " = "o", "good" = "o", "Neutral" = "o", "neutral" = "o", "nonbinary" = "o", "bigender" = "o", "hen" = "o", "don't know"  = "o", "Bottom half male, nose upwards female" = "o" )) %>% 
+  mutate(bbcat = ifelse(categorization == "o"|categorization == "4", 1, 0),
+         fem = as.factor(fem))
+
+#Fit models using brms.
+#Can be run with premade file to save time. To reproduce in full, comment out the "file" argument
+Null <- brm(bbcat ~ 1  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
+          prior = c(prior(normal(0,3), class = "Intercept"), # weakly regularizing priors
+                    prior(cauchy(0,3), class = "sd")
+                    ),
+          data = tmp,
+          iter = 6000, warmup = 2000,
+          chains = 4,
+          cores = 4,
+          sample_prior = TRUE,
+          file = "models/binary_null"
+          )
+
+#Fitting the main effects model
+Main_Effect <- brm(bbcat ~ 0 + condition + fem  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
+          prior = c(prior(normal(0,3), class = "b", coef = "conditionmc"), #again, weakly regularizing priors
+                    prior(normal(0,3), class = "b", coef = "conditionft"),
+                    prior(cauchy(0,3), class = "sd")
+                    ),
+          data = tmp,
+          iter = 4000, warmup = 1000,
+          chains = 4,
+          cores = 4,
+          sample_prior = TRUE,
+          file = "models/binary_mfx"
+          )
+
+#fitting the interaction model
+Interaction <- brm(bbcat ~ 0 + condition:fem  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
+         prior = c(prior(normal(-3,3), class = "b"),
+                   prior(cauchy(0,3), class = "sd")),
+          data = tmp,
+          iter = 6000, warmup = 2000,
+          chains = 4,
+          cores = 4,
+          sample_prior = TRUE,
+          file = "models/binary_int.5"
+          )
+
+```
+
+```{r, loo}
+library(loo)
+# running to reproduce the analyses, uncomment the next three lines
+#loo1 <- loo(null) %>% saveRDS("loo1.rds")
+#loo2 <- loo(main_effect, mc_cores =4) %>% saveRDS("loo2.rds")
+#loo3 <- loo(interaction, mc_cores =4) %>% saveRDS("loo3.rds")
+
+#otherwise lood loo from file
+loo1 <- readRDS("models/loo1.rds")
+loo2 <- readRDS("models/loo2.rds")
+loo3 <- readRDS("models/Loo3.rds")
+
+#prepare to turn into apa tables
+loo_table <- loo_compare(loo1, loo2, loo3)  
+row.names(loo_table) = c("Interaction", "Main Effect", "Null")
+
+library(knitr)
+library(kableExtra)
+
+#make nice apa tables
+kable(
+  loo_table[,1:4] %>% round(2),
+  booktabs = "TRUE",
+  format = "latex",
+  col.names = c("LOO diff", "St. Error diff", "LOO", "St. Error LOO"),
+  align = c("c", "c", "c", "c"),
+  caption = "Relative predictive power of models describing the outcome on the categorization task"
+  ) %>% 
+  kable_classic(full_width = F) %>% 
+  footnote(
+    general_title = "Note.",
+    general = "LOO diff refers to the difference in loo between the model and the most predictive model. The first row describes the most predictive model, which is why the difference is 0",
+    threeparttable = TRUE,
+    footnote_as_chunk = TRUE
+    ) 
+```
+
+Furthermore, we explored which faces were categorized beyond the binary. To do this, we restricted the dataset to participants who categorized faces beyond the binary, and fit a Bayesian mixed model to this data with random intercepts for participants and random slopes for facial femininity and a fixed effect of facial femininity. This suggested fairly clearly that androgynous faces were overwhelmingly likely to be categorizd beyond the binary *is this analysis convincing? Is this effect interesteing at all??*
+
+*I haven't made this table, but I put the following picture in for now* 
+
+```{r exp-one-inf, fig.cap= "Proportion of beyond-binary responses in the Multiple Categories and Free Text conditions"}
+# Use brms to sample from the posterior
+c_eff <- conditional_effects(Interaction) 
+
+#turn into useful dataframe
+df <-   as.data.frame(c_eff[["condition:fem"]])
+
+#Visualise model-based estimates
+ggplot(df,aes(x = fem, y=estimate__, group=condition))+
+  geom_point(aes(color=condition), position = position_dodge(0.4))+
+  geom_errorbar(aes(ymin=lower__, ymax=upper__, color = condition), position = position_dodge(0.4), width = 0.3) + 
+  scale_color_viridis_d(name = "Condition",
+                   labels = c("Free text", "Multiple Conditions"))+
+  ylab("Proportion of responses" ) +
+  xlab("Facial femininity")+
+  theme_apa()
+  
+```
+
+```{r, calculating for tests, message =FALSE, error=FALSE}
+
+#Testing the hypothesis using BRMS built in hypothesis function, which uses the savage-dickey density ratio. h0 compares the avearage in the multiple comoparisions condition to the average in the free text condition.
+h0 <- hypothesis(Interaction,
+                 "(conditionmc:fem16.67 + conditionmc:fem33.33 + conditionmc:fem0 + conditionmc:fem50 + conditionmc:fem66.67 + conditionmc:fem83.33 + conditionmc:fem100)/7 = (conditionft:fem16.67 + conditionft:fem33.33 + conditionft:fem0 + conditionft:fem50 + conditionft:fem66.67 + conditionft:fem83.33 +  conditionft:fem100)/7
+                 ") 
+#Testing the hypothesis using BRMS built in hypothesis function, which uses the savage-dickey density ratio. h1 compares the average in the multiple comparisons condition at facial femininity = 50 to free text at facial femininity = 50
+h1 <- hypothesis(Interaction, "conditionmc:fem50=conditionft:fem50") 
+
+#h2 assigns quadratic weights to both conditions. 
+h2 <- hypothesis(Interaction, "(conditionmc:fem16.67*0 + conditionmc:fem33.33 *3 + conditionmc:fem0*(-5) + conditionmc:fem50*4 + conditionmc:fem66.67 *3 + conditionmc:fem83.33*0 + conditionmc:fem100*(-5))/84 = (conditionft:fem0*(-5) +conditionft:fem16.67 *0 + conditionft:fem33.33 *3  + conditionft:fem50 * 4 + conditionft:fem66.67 *3 + conditionft:fem83.33 *0+  conditionft:fem100 * (-5))/84 
+                  ")
+
+
+```
+
+## Categorization of women and men
+
+Second, we investigated whether the distribution of *Binary responses* was affected by the inclusion of non-binary response options. In other words, did the inclusion drastically change categorizations of women and men? This could manifest as a main effect of condition as an interaction between condition and morph level.
+
+This was tested by fitting a Bayesian mixed effect model to the data. This included an initial model comparison approach, with Null model, and Main Effects model and an Interaction Model. In addition random intercepts for participants and random slopes for facial femininity, the model included a fixed effect of condition, and unique slopes of facial feminity for each condition. Table 1
+
+Subsequently, we tested whether the inclusion of non-binary response options skewed the distribution of categorization of faces as women and men. For this analysis, therefore, we tested the outcome variable *binary categorization*, excluding "other" "I don't know" and any other responses in the free text condition.
+
+```{r, rq2-modelling 3, message=FALSE}
+#remove the beyond binary responses
+tmp <- d %>% 
+  filter(condition == "mc"| condition == "xb"|condition == "ft" )%>% 
+  mutate(categorization = recode(categorization, 
+                                 "F" = "f", "kvinna" = "f", "female" = "f", "female " = "f", "Female"= "f", "Fenale"= "f", "women" = "f", "woman " = "f", "femLE" = "f", "FEmale" = "f", "Femalw" = "f", "Fwmalw" = "f", "Female " = "f", "woman" = "f", "Woman" = "f", "feMale" = "f", "fermale" = "f", "wman" = "f", "Femae" = "f",
+                                 "man" = "m","Male " = "m", "make" = "m", "Male"= "m", "male" = "m", "man " = "m",  "male " = "m", "guy" = "m", "boy" = "m", "Make" = "m", "M"  = "m", "Man" = "m", "Bottom half male; above nose female., Would have to say Male" = "m", " male" = "m", "male  " = "m", "ale" = "m", "nmale" = "m", "MALE"= "m", "nale"= "m", " Male" = "m",
+                                 "Nonbinary" = "o", "Non Binary " = "o", "Unsure" = "o", "Non binary " = "o", "good" = "o", "Neutral" = "o", "neutral" = "o", "nonbinary" = "o", "bigender" = "o", "hen" = "o", "don't know"  = "o", 
+                                 "1" = "f", "2" = "m")) %>% 
+  mutate(f_cat = ifelse(categorization == "f"|categorization == "m", categorization, NA)) %>% 
+  mutate(f_cat =as.numeric( f_cat == "f"))
+
+#Start fitting the null model
+Null <- brm(f_cat ~ 1  + (1 + fem |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
+          prior = c(prior(normal(0,3), class = "Intercept"),
+                    prior(exponential(2), class = "sd")
+                    ),
+          data = tmp,
+          iter = 6000, warmup = 2000,
+          chains = 4,
+          cores = 4,
+          sample_prior = TRUE,
+          file = "models/fit_mf_null.1"
+          )
+
+
+#Main effects model
+main_effects <- brm(f_cat ~ 0 + condition + fem  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
+          prior = c(prior(normal(0,3), class = "b"),
+                    prior(cauchy(0,3), class = "sd")),
+          data = tmp,
+          iter = 4000, warmup = 1000,
+          chains = 4,
+          cores = 4,
+          sample_prior = TRUE,
+          file = "models/mainfx.2"
+          )
+
+tmp$fem_s = tmp$fem - 50
+tmp$cond <- factor(tmp$condition, levels = c("xb", "ft", "mc"))
+#Lastly the interaction model
+interaction <- brm(f_cat ~ 0 + condition * condition:fem_s  + (1 + fem_s |id) + (1 + fem_s |face), family = bernoulli(link = 'logit'), 
+         prior = c(prior(normal(0,3), class = "b"),
+                   prior(cauchy(0,3), class = "sd")),
+          data = tmp,
+          iter = 6000, warmup = 2000,
+          chains = 4,
+          cores = 4,
+          sample_prior = TRUE,
+          file = "models/fit_mf_int.6"
+          )
+
+```
+
+```{r, rq2-table, fig.cap= "Proportion of beyond-binary responses in the Multiple Categories and Free Text conditions"}
+
+#Same as before
+#loo_b1 <- loo(Null, mc_cores = 4) %>% saveRDS("loo_b1.rds")
+#loo_b2 <- loo(main_effects, mc_cores = 4) %>% saveRDS("loo_b2.rds")
+#loo_b3 <- loo(interaction, mc_cores = 4) %>% saveRDS("loo_b3rds")
+
+#again, loading loo from file
+loo_b1 <- readRDS("models/loo_b1.rds")
+loo_b2 <- readRDS("models/loo_b2.rds")
+loo_b3 <- readRDS("models/loo_b3.rds")
+
+#this is prepare to make into Apa style table
+loo_table2 <- loo_compare(loo_b1, loo_b2, loo_b3)
+
+row.names(loo_table2) = c( "Main Effect", "Null", "Interaction")
+
+
+library(knitr)
+library(kableExtra)
+
+#Make apa style table
+kable(
+  loo_table2[,1:4] %>% round(2),
+  booktabs = "TRUE",
+  col.names = c("LOO difference", "St. Error diff", "LOO", "St. Error LOO"),
+  #row.names = c("Free text", "Multiple categories", "Binary categories"),
+  align = c("l", "c", "c", "c"),
+  caption = "Relative predictive power of models describing the outcome on the categorization task"
+  ) %>% 
+  kable_classic(full_width = F) %>% 
+  footnote(
+    general_title = "Note.",
+    general = "LOO diff refers to the difference in loo between the model and the most predictive model. The first row describes the most predictive model, which is why the difference is 0",
+    threeparttable = TRUE,
+    footnote_as_chunk = TRUE
+  )
+
+```
+
+```{r hypos 2}
+
+#Test contrasts
+h0 <- hypothesis(interaction, "conditionxb = conditionmc")
+h1 <- hypothesis(interaction, "conditionxb = conditionft")
+
+h2 <- hypothesis(interaction, "conditionxb:fem_s = conditionmc:fem_s")
+h3 <- hypothesis(interaction, "conditionxb:fem_s = conditionft:fem_s")
+
+
+```
+
+*maybe this is actually overkill?*
+We first carried out model comparison. The results of this are presented in Table\ \@ref(tab:rq2-table). Again, we compared a Null model, a Main Effects model and an Interaction model. Although the Interaction model was the worst in terms of LOO-CV, the standard errors were quite large relative to the difference, again suggesting that the model comparison was inconclusive and the existence of an interaction could not be excluded. For completeness we therefore carried out the contrast analyses using the Interaction model. 
+
+The output of the interaction model are displayed in Table\ \@ref(tab:interaction-table) . Because these are in the logit scale and not intuitively readable, they are also displayed in figure Figure\ \@ref(fig:interaction-figure).
+
+```{r interaction-table}
+summary(interaction)
+```
+
+```{r interaction-figure}
+conditional_effects(interaction)
+```
+
+In terms of overall likelihood to categorize women or men, the evidence were slightly in favor of there being no difference between the binary categories and the free text conditions in terms of  (OR = `r exp(h0$hypothesis$Estimate %>% round(2))`, CI =[`r exp(h0$hypothesis$CI.Lower%>% round(2))`, `r exp(h0$hypothesis$CI.Upper %>% round(2))`], BF~01~= `r round(h0$hypothesis$Evid.Ratio , 2) `) and moderately in favor of no difference between multiple categories and binary categories conditions (OR = `r exp(h1$hypothesis$Estimate %>% round(2))`, CI =[`r exp(h1$hypothesis$CI.Lower%>% round(2))`, `r exp(h1$hypothesis$CI.Upper %>% round(2))`], BF~01~= `r round(h1$hypothesis$Evid.Ratio , 2) `). In other words, neither the free text or the multiple categories condition changed the pattern of categorization of women and men.
+
+Additionally, the effect of facial femininity on woman categorization did not change because of condition, instead the evidence was overwhelmingly strong that the overall relationship was the same across all conditions.
+
+# Discussion
+
+Experiment 1 indicated that participants categorize beyond the binary when response options include more options than women and men only.  However, the free text option did not differ from the binary option. Thus, the written out choices seem to act as reminders to participants.  Furthermore,  categorization beyond the binary affected former man and women responses to similar degrees, meaning that the ratio of women and men categorizations was still about 50/50. This did not systematically affect their overall pattern of responses in terms of woman and man categorizations.
+
+
+# Study 2
+
+Study 2 investigates whether perception of gender is accentuated towards the extremes (Research Question 3), and whether a binary measurement increases this accentuation toward the extreme (Research Question 4).
+
+To that end, we once again borrowed from the literature on self-categorization, this time using [@bem_measurement_1974] method of measuring gender on two separate scales. First, we investigated whether there was a categorical perception effect. We investigated this by examining the individual level data. 
+
+If categorical perception occurs, ratings of woman and man should be skewed near facial femininity = 50. In other words, a face with 33.33% facial femininity would be rated as less woman than that. Therefore, we examined the differences between the two conditions at facial femininity = 33.33% and 66.67%,
+
+# Method
+
+### Participants
+
+```{r}
+# Get subjects information
+subs <- d %>%
+  filter(condition == "md" | condition == "sd" ) %>% 
+  mutate(age = as.numeric(Age_1),
+         gender = substr(Gender_1, 1,1) ) %>% 
+  count(id, age, gender)
+
+```
+
+Participants (*N* = 65)  were recruited through advertising online and on the university campus (*M*~age~= 36.67,  *SD*~age~ = 12.54).Self-identified gender was measured using an open-ended text box; 33 women and 32 men participated. Participants were monetarily compensated for their time. All participants were informed that participation was voluntary and gave written consent to participate in the study in accordance with ethical recommendations. The participants were randomly allocated to conditions. 
+
+## Stimuli & Procedure
+
+The stimuli and procedure for study 2 were identical to experiment 1 but included only two conditions. Study 2 differed only the response options conditions, such that response option conditions consisted of a single dimension, which ranged from “woman” to “man” and “multiple dimension” which ranged from “not woman” to “woman” and “not man” to “man”. For the multiple dimensions condition, participants rated the same faces according to both scales, but on separate trials. This differed from @bem_measurement_1974, who used scales of "femininity" and "masculinity". The present anchors were chosen because gender categorization was the focus of the present study.
+
+## Data analysis
+
+Research question 3 asked whether whether participants would view faces less categorically in when they categorized them using multiple dimensions (i.e. Not woman - Woman/Not man -Man) than when they used the single dimension (Woman-Man). We expected to see a difference between the two conditions at fecial feminiity = 33.33 and 66.67 as these were the closes to the midway point. In other words, if categorical perception is reduced, we would expect to see an interaction between  condition and facial femininity level, but not a main effect. To test this, we fit a single Bayesian mixed-effects model which calculated unique fixed intercepts at each intersection of facial femininity and condition as well as varying intercepts for participants and faces (See supplemental material for full model specification). Using Savage-Dickey density ratios, we calculated the Bayes Factors for the contrasts between single dimension condition and multiple dimension at Facial Femininity = 33.37 and 66.66. 
+
+# Results
+
+## Research Question 3: 
+
+First, we investigated whether particpants accentuated gender compared to the physical features of the faces. To answer this question, we visualized responses  in Figure\ \@ref(fig:descriptives-two)
+
+The mean ratings in both conditions are presented in Figure\ \@ref(fig:descriptives-two). If participants respond to the properties of faces, the lines should be linear. Instead, Figure\ \@ref(fig:descriptives-two) shows that most participants display a non-linear S-shape and this was indeed also the pattern of the means. However, the Figure\ \@ref(fig:descriptives-two) also suggests that there was a high degree of individual variation, and some participants were more accentuative than others in their ratings. 
+
+
+```{r descriptives-two, fig.cap= "Participant level and mean ratings of faces in Single dimension and multiple dimensions"}
+
+#Visualise means using ggplot
+sd <- d %>% 
+  filter(condition == "md" | condition == "sd") %>% 
+  mutate(fem = fem,
+         categorization = as.numeric(categorization) %>% ifelse(scale == "m" | condition == "sd", 100-., .),
+         scale = recode(scale, "1" = "Woman - Man", "f" = "Not Woman - Woman", "m" = "Not Man - Man"),
+         condition = recode(condition, "sd" = "Single Dimension", "md" = "Multiple Dimensions")) %>% 
+  mutate (categorization = categorization  )%>% 
+  group_by(fem, scale, condition) %>% 
+  summarise(mean_rating = mean(categorization))
+
+f <- d %>% 
+  filter(condition == "md" & scale == "f") %>% 
+  mutate(fem = fem,
+         categorization = as.numeric(categorization) %>% ifelse(scale == "m" | condition == "sd", 100-., .),
+         scale = recode(scale, "1" = "Woman - Man", "f" = "Not Woman - Woman", "m" = "Not Man - Man"),
+         condition = recode(condition, "sd" = "Single Dimension", "md" = "Multiple Dimensions")) %>% 
+  mutate (categorization = categorization  )%>% 
+  group_by(fem, scale, condition, id) %>% 
+  summarise(mean_rating = mean(categorization)) 
+
+m <- d %>% 
+  filter(condition == "md"& scale == "m" | condition == "sd") %>% 
+  mutate(fem = fem,
+         categorization = as.numeric(categorization) %>% ifelse(scale == "m" | condition == "sd", 100-., .),
+         scale = recode(scale, "1" = "Woman - Man", "f" = "Not Woman - Woman", "m" = "Not Man - Man"),
+         condition = recode(condition, "sd" = "Single Dimension", "md" = "Multiple Dimensions")) %>% 
+  mutate (categorization = categorization  )%>% 
+  group_by(fem, scale, condition, id) %>% 
+  summarise(mean_rating = mean(categorization)) 
+
+ggplot(data = sd, aes(x=fem, y=mean_rating, color = scale)) +
+  geom_line(aes(group = scale), linewidth = 1)+
+  geom_point(aes(group = scale))+
+  geom_point(data = f, 
+            aes(x=fem, y=mean_rating, group = id ), alpha = 0.1)+
+  geom_line(data = f, 
+            aes(x=fem, y=mean_rating, group = id ), alpha = 0.1)+
+  geom_point(data = m, 
+            aes(x=fem, y=mean_rating,  group = id),  alpha = 0.1 )+
+  geom_line(data = m, 
+            aes(x=fem, y=mean_rating,  group = id),  alpha = 0.1 )+
+  theme_minimal()+
+  facet_wrap(~condition) +
+  scale_x_continuous(breaks =c(0, 17, 33, 50, 67, 83, 100)) +
+  ylab("Mean \"woman\" rating" ) +
+  xlab("Proportion female face in the morph") +
+ # scale_color_brewer(name = "Condition")+
+  theme_apa() 
+
+
+
+
+```
+
+```{r, fig.cap= "Mean rating of woman across the md and sd condition"}
+#Wrangle data again
+tmp <- d %>% 
+  filter(condition == "sd" | condition == "md") %>% 
+  mutate(f_rating = as.numeric(categorization) %>%  ifelse(scale == "f", ., 100- .),
+         scale_new = ifelse(scale == "f" | scale =="m", scale, "sd"),
+         fem = as.factor(fem)) 
+
+
+fit_dimensional_interaction <- 
+  brm(f_rating ~ 0 + fem:condition + (1 + fem|id) + (1+fem|face), family = gaussian(link = 'identity'), 
+          prior = c(prior(normal(50,50), class = "b"),
+                    #prior(normal(50,50), class = "Intercept"),
+                    prior(exponential(1), class = "sd"),
+                    prior(lkj(1), class = "cor"),
+                    prior(exponential(1), class = sigma)),
+          data = tmp,
+          iter = 4000, warmup = 1000,
+          cores = 4,
+          sample_prior = TRUE,
+          file = "models/fit_dimensional_stair_factor.5")
+
+
+
+
+
+# carrying out the hypothesis test
+h_dim_33 <- hypothesis(fit_dimensional_interaction, "fem33.33:conditionmd= fem33.33:conditionsd" )
+h_dim_67 <- hypothesis(fit_dimensional_interaction, "fem66.67:conditionmd= fem66.67:conditionsd" )
+```
+
+## Research question 4
+
+Second, we tested whether this accentuation effect was stronger in the single dimension condition compared to the multiple dimensions condition. To do this, we modelled the data as bayesian mixed effects models, with each level of facial femininity as a factor. *We could also do nonlinear modelling, but I'm not very knowledgable about that* If perceptual gender is accentuated compared to physical gender, this effect should be strongest at the between-levels.
+
+```{r exp-two-inf, fig.cap= "Mean gender ratings in Single Dimension and Multiple Dimensions conditions"}
+# Use brms to sample from posterior
+c_eff <- conditional_effects(fit_dimensional_interaction) 
+
+df <- as.data.frame(c_eff[["fem:condition"]])
+
+ggplot(df,aes(x = fem, y=estimate__, group=condition))+
+  geom_line(aes(color=condition), position = position_dodge(0.4)) +
+  geom_point(aes(color=condition), position = position_dodge(0.4))+
+  geom_errorbar(aes(ymin=lower__, ymax=upper__, color = condition), position = position_dodge(0.4), width = 0.3) + 
+  scale_color_grey(name = "Condition",
+                   labels = c("Single Dimension", "Multiple Dimensions"))+
+  ylab("Mean rating" ) +
+  xlab("Proportion female face in the morph")+
+  theme_apa()
+  
+```
+
+Therefore, we compared the mean rating at facial femininity =  33.33 and 66.67 morph for both conditions. At facial femininity = 33.33 the evidence strongly suggested that the two conditions were the same
+(Estimate = `r h_dim_33 $hypothesis$Estimate %>% round(2)`, CI =[`r h_dim_33 $hypothesis$CI.Lower%>% round(2)`, `r h_dim_33 $hypothesis$CI.Upper %>% round(2)`], BF~01~= `r round(h_dim_33 $hypothesis$Evid.Ratio , 2) `). This was also the case at facial femininity = 66.67 
+(Estimate = `r h_dim_67$hypothesis$Estimate %>% round(2)`, CI =[`r h_dim_67$hypothesis$CI.Lower%>% round(2)`, `r h_dim_67$hypothesis$CI.Upper %>% round(2)`], BF~01~= `r round(h_dim_67$hypothesis$Evid.Ratio , 2) `). Overall, both conditions showed fairly strong tendencies toward accentuated gender perception and they did not differ in this regard. 
+
+# Discussion
+
+Study 2 showed that participants exhibited signs of accentuated gender perception when rating faces in terms of gender. Additionally, this did not depend on response option condition; response options which did not present women and men as opposing categories led to an equal amount of accentuated perception as response options that did. Indeed a highly binary view of gender was present and participants treated womanhood and manhood as opposites even the scale would allow them to be more flexible. 
+
+# General discussion
+
+In two experiments, we tested how response options in gender categorization of others influence binary gender categorization.  Specifically, the results suggested that participants only use beyond-binary options to categorize faces when such options are provided explicitly. Free text answers or continuous scales did not affect participants binary gender categorization. Additionally, response options which did not present women and men as opposing categories did not induce participant's perception of gender in faces to be less binary. 
+
+These findings are somewhat consistent with previous research, such as the work of @saperstein_categorical_2021 and @lindqvist_what_2020, which has shown that including flexible response options allow participants to better express themselves. Unlike the literature on self-categorization, increased freedom did not increase the gender diversity of participants' categorizations, rather explicit reminders seem to have the largest effect. When participants categorized women or men on continuous scales, the results differ from @bem_measurement_1974 who found that participants categorize their own femininity and masculinity independently of each other. Rather, when categorizing others, the participants in the present study seemed to treat women and men as opposites, even when the response options did not pose them as such. Both of these deviations from the previous literature likely stem from the substantial difference between indicating one's own gender and categorizing that of others.
+
+It is worth noting that this study only examined participants' stated categorizations, and it is possible that they may have made other categorizations internally that were not reflected in their responses. However, it is important to recognize that a purely behavioral study such as this cannot fully capture the neurological processes underlying gender perception, which may require more sophisticated techniques such as fMRI and EEG [@kloth_neural_2010; @stolier_neural_2017].
+
+In this study we aggregated responses that did not indicate woman or man. In the multiple response option condition, both “I don’t know” and “Non-binary” were included as a beyond binary categorization. We justified this on the basis that what we were interested in is any categorization beyond the binary. However, these two options are not the same. Furthermore, it is important to note that no matter how a person looks, it is impossible to know their binary or non-binary gender identity [@richards_non-binary_2016]. Therefore, if a person aims to be inclusive and not categorize in a binary way, then abstaining from categorizing, for examle by selecting "I don't know" is always the best option.
+
+In the introduction we raised the possibility that findings within gender categorization research may be biased from a sole reliance on binary response options. Based on the present results, this seems unlikely. Instead, it seems that the societal norm to treat gender as binary is the strongest determinant participants gender categorizations. Even so, we recommend researchers to carefully consider their measurements of gender categorization. Open text-boxes, forced choice-alternatives and dimensional scales are all viable alternatives. Even researchers who are primarily interested in binary categorizations should consider including beyond-binary alternatives, to avoid perpetuating the binary gender norm and to accurately represent the diversity of gender.
+
+#### Conclusion
+
+In two experiments we tested how different response alternatives affected gender categorizations. Participants were more likely to categorize faces beyond the binary when using a forced-choice paradigm including “non-binary” and “I don’t know” than when using a free text option, or slider scales. In comparison to self-identification questions where open ended responses are seen as the most inclusive alternative [@lindqvist_what_2020], categorization of others benefit from response options that explicitly reminds participants that not all people identify as women or men.
+
+
+\newpage
+
+# References
+
+::: {#refs custom-style="Bibliography"}
+:::

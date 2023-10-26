@@ -1,0 +1,22 @@
+version: 3.4.2
+server-time: 2022-11-16-14-44
+user_agent: mozilla/5.0 (macintosh; intel mac os x 10.15; rv:106.0) gecko/20100101 firefox/106.0
+screen_width: 0
+screen_height: 0
+html_width: 0
+html_height: 0
+user_time: 0
+T: 0
+l: psy_group
+stime: 2022-11-16-14-44
+t: set
+a: 5
+l: mc_cb1
+stime: 2022-11-16-14-44
+T: 875
+t: info
+l: prolific3
+stime: 2022-11-16-14-44
+T: 665
+t: textline
+a: 

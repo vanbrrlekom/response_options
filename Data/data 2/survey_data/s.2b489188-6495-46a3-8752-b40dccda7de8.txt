@@ -1,0 +1,25 @@
+version: 3.4.2
+server-time: 2022-08-29-18-36
+user_agent: mozilla/5.0 (x11; cros x86_64 14909.100.0) applewebkit/537.36 (khtml, like gecko) chrome/104.0.0.0 safari/537.36
+screen_width: 0
+screen_height: 0
+html_width: 0
+html_height: 0
+user_time: 0
+T: 0
+l: psy_group
+stime: 2022-08-29-18-36
+t: set
+a: 1
+l: condition
+stime: 2022-08-29-18-36
+t: set
+a: 3
+l: md_assign
+stime: 2022-08-29-18-36
+t: set
+a: 1
+l: counterbalance1
+stime: 2022-08-29-18-36
+T: 2549
+t: info

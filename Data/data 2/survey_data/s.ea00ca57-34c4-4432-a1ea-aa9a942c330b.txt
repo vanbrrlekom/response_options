@@ -1,0 +1,23 @@
+version: 3.4.4
+server-time: 2023-10-25-14-35
+client-time: 2023-09-25-14-35
+user_agent: mozilla/5.0 (macintosh; intel mac os x 10.15; rv:109.0) gecko/20100101 firefox/118.0
+screen_width: 1440
+screen_height: 900
+html_width: 1440
+html_height: 1120
+user_time: 2023-09-25-14-35
+T: 0
+l: condition
+stime: 2023-10-25-14-35
+t: set
+a: 1
+l: ft_cb1
+stime: 2023-10-25-14-35
+T: 1253
+t: info
+l: prolific4
+stime: 2023-10-25-14-35
+T: 916
+t: textline
+a: 

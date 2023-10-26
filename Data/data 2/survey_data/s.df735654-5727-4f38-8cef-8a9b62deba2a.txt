@@ -1,0 +1,46 @@
+version: 3.4.2
+server-time: 2023-03-16-13-56
+user_agent: mozilla/5.0 (macintosh; intel mac os x 10.15; rv:109.0) gecko/20100101 firefox/110.0
+screen_width: 0
+screen_height: 0
+html_width: 0
+html_height: 0
+user_time: 0
+T: 0
+l: psy_group
+stime: 2023-03-16-13-56
+t: set
+a: 4
+l: condition
+stime: 2023-03-16-13-56
+t: set
+a: 3
+l: ft_cb1
+stime: 2023-03-16-13-56
+T: 2144
+t: info
+l: prolific4
+stime: 2023-03-16-13-56
+T: 789
+t: textline
+a: 
+l: ft_a10_1
+stime: 2023-03-16-13-56
+T: 2456
+t: textline
+a: 
+l: ft_a8_5
+stime: 2023-03-16-13-56
+T: 1520
+t: textline
+a: 
+l: ft_b9_3
+stime: 2023-03-16-13-56
+T: 1277
+t: textline
+a: 
+l: ft_b5_0
+stime: 2023-03-16-13-56
+T: 1413
+t: textline
+a: 
