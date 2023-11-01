@@ -57,7 +57,7 @@ knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
 
 Surveys and interviews of transgender and gender diverse (TGD) individuals suggest that many people experience gender as fluid, diffuse, and not bounded by the typical western binary of women and men [@richards_non-binary_2016, @hyde_future_2018]. In addition, TGD individuals experience invisibility due to the assumption that there are only two genders and that gender should be visible from someone’s face [@ansara_methodologies_2014]. It is important that research takes this lived reality into account when designing measures of gender categorization to avoid perpetuating such marginalization and invisibility.
 
-One of the earliest examples of an inclusive attempt to measure gender was the Bem Sex-Role Inventory (BSRI). The BSRI measured gender as a psychological trait and challenged the dichotomous and binary conceptualizations of gender by treating femininity and masculinity as separate constructs [@bem_measurement_1974]. When gender was measured this way, most people exhibited a mixture of feminine and masculine traits [@bem_measurement_1974]. The BSRI, despite its innovation, did not offer participants the opportunity to identify with genders beyond the traditional binary categories of women and men.
+One of the earliest examples of an inclusive attempt to measure gender was the Bem Sex-Role Inventory (BSRI). The BSRI measured gender as a psychological trait and challenged the dichotomous and binary conceptualizations of gender by treating femininity and masculinity as separate constructs [@bem_measurement_1974]. When gender was measured with the BSRI, most people exhibited a mixture of feminine and masculine traits [@bem_measurement_1974]. The BSRI, despite its innovation, did not offer participants the opportunity to identify with genders beyond the traditional binary categories of women and men.
 
 More recently, a number of recommendations have been put forward to help researchers measure participants gender identity without excluding TGD people. For example, @saperstein_categorical_2021 suggested including a range of categories in addition to "woman" and "man". In addition, @lindqvist_what_2020 suggested including an open text entry where participants can fill in whatever they want. While this practice is not yet the standard, it is increasingly common among researchers to adopt these open-ended approaches to measure participant gender [e.g. @carleton_assessing_2022; @cronin_younger_2022; @dagostino_organizational_2022; @gottgens_impact_2022]
 
@@ -67,7 +67,7 @@ A brief survey of the research on how people perceive and categorize the gender 
 
 Instead, gender categorization is most often measured through a forced-choice task in which participants are forced to indicate either "female" or "male" when presented with a face [see for example @campanella_categorical_2001; @cloutier_perceptual_2005; @webster_adaptation_2004; @zhao_own-_2008]. A slightly different approach asks participants to rate faces on a gender gradation as a quality, often using "feminine" and "masculine" as endpoints on a single gradation [@dascenzo_imagining_2014]. Only in some rare cases are masculinity and femininity measured using different gradations for femininity and masculinity [e.g. @wittlin_about_2018]. 
 
-There are several reasons why researchers may want to expand their research beyond this binary. First, as awareness of both the prevelance and marginalization of TGD individuals increases, how people categorize non-binary gender becomes a relevant topic for research in and of itself. Second, even researchers who are primarily interested in binary categorization have reason to consider inclusive response options. Measuring gender categorization using only the categories "woman" and "man" does not accurately reflect the diversity of gender as it is experienced by many people [@hyde_future_2018]. By creating a binary out a more varying dimension, researchers may be missing an important source of variation, similar to how measurement of age as only "young" or "old" would miss a large source of variation. Furthermore when researchers use a limited number of gender categories, this communicates indirectly that these are the only gender categories that exist (*ref*). While TGD participants have almost certainly come across this messsage in their daily lives, one more instance amounts to another microagression, which over time adds to a feeling of exclusion. Of course researchers who are only interested in categorization of men and women may be reluctant to include more options for fear of introducing noise or unpredictability to the data. It is therefore important to know how the inclusion of additional or inclusive response options affects categorization of women and men. 
+There are several reasons why researchers may want to expand their research beyond this binary. First, as awareness of both the prevelance and marginalization of TGD individuals increases, how people categorize non-binary gender becomes a relevant topic for research in and of itself. Second, even researchers who are primarily interested in binary categorization have reason to consider inclusive response options. Measuring gender categorization using only the categories "woman" and "man" does not accurately reflect the diversity of gender as it is experienced by many people [@hyde_future_2018]. By creating a binary out a more varying dimension, researchers may be missing an important source of variation, similar to how measurement of age as only "young" or "old" would miss a large source of variation. Furthermore when researchers use a limited number of gender categories, this communicates indirectly that these are the only gender categories that exist (*ref*). While TGD participants have almost certainly come across this messsage in their daily lives, over time the accumulation of such small messages reinforcing the ender binary can lead to an overall feeling of exclusion. Of course researchers who are only interested in categorization of men and women may be reluctant to include more options for fear of introducing noise or unpredictability to the data. It is therefore important to know how the inclusion of additional or inclusive response options affects categorization of women and men. 
 
 Here we report two studies which attempted to address these two potential sources of error. Study 1 investigates whether people use response options beyond the binary when they are able (Research Question 1) and how this influences categorizations of women and men (Research Question 2). Study 2 investigates whether perception of gender is accentuated towards the extremes (Research Question 3), and whether a binary measurement increases this accentuation toward the extreme (Research Question 4).
 
@@ -105,7 +105,9 @@ For the gender categorization task, faces were produced using the London Face Da
 
 ## Procedure
 
-Participants completed the experiment on a computer in a quiet room. Each trial consisted of a face accompanied by the question "How would you gender categorize this person?". Each person completed a total of 126 trials (i.e. they categorized every face in the stimuli set). Participants were randomly allocated into one of the three response options conditions: binary categories, multiple categories, and free text. In the binary categories condition, participants were only given the options to respond "woman" or "man". The multiple categories condition included the options “other” and “I don’t know” as well as woman or man. The free text condition consisted of an open text box.
+Participants completed the experiment on a computer in a quiet room. Each trial consisted of a face accompanied by the question "How would you gender categorize this person?". Each person completed a total of 126 trials (i.e. they categorized every face in the stimuli set). Participants were randomly allocated into one of the three response options conditions: binary categories, multiple categories, and free text (see @fig-exp1-trial).. In the binary categories condition, participants were only given the options to respond "woman" or "man". The multiple categories condition included the options “other” and “I don’t know” as well as woman or man. The free text condition consisted of an open text box.
+
+![Sample trial from each of the three conditions](pix/exp1.png){#fig-exp1-trial}
 
 ## Measures
 
@@ -118,7 +120,7 @@ The primary outcome was responses to the categorization task. For analysis purpo
 
 ## Data analysis
 
-We used `r cite_r("r-references.bib", pkgs = c("brms", "tidyverse", "papaja"), withhold = FALSE)`. Additionally, much of the R code was adapted from @kurz_doing_2023 . Descriptive statistics were used to summarize the data, and Bayesian mixed-effects models were used to test the research questions,. In all models, facial femininity was included as a predictor. Additionally, all models included varying intercepts for both participants and trials and varying slopes for facial femininity. To answer each research question, we used a two-step approach which began with a model comparison approach followed by Bayes factor tests of specific contrasts.
+We used `r cite_r("r-references.bib", pkgs = c("brms", "tidyverse", "papaja"), withhold = FALSE)`. Additionally, much of the R code was adapted from @kurz_doing_2023 . Descriptive statistics were used to summarize the data, and Bayesian mixed-effects models were used to test research questions 2. In all models, facial femininity and condition were included as fixed effects. Additionally, all models included varying intercepts for both participants and trials and varying slopes for facial femininity. To answer each research question, we used a two-step approach which began with a model comparison approach followed by Bayes factor tests of specific contrasts.
 
 # Results
 
@@ -506,23 +508,23 @@ subs <- d %>%
 
 ```
 
-Participants (*N* = 65)  were recruited through advertising online and on the university campus (*M*~age~= 36.67,  *SD*~age~ = 12.54).Self-identified gender was measured using an open-ended text box; 33 women and 32 men participated. Participants were monetarily compensated for their time. All participants were informed that participation was voluntary and gave written consent to participate in the study in accordance with ethical recommendations. The participants were randomly allocated to conditions. 
+PaSwedish participants (*N* = `r length(subs$id)`)  were recruited through advertising online and on the university campus (*M*~age~= `r mean(subs$age, na.rm = TRUE)`,  *SD*~age~ = `r sd(subs$age, na.rm = TRUE)`, Range = `r min(subs$age, na.rm = TRUE)` - `r max(subs$age, na.rm = TRUE)`). Self-identified gender was measured using an open-ended text box; 31 women and 32 men and two participants who did not clerly indicate gender participated. Participants were monetarily compensated for their time. All participants were informed that participation was voluntary and gave written consent to participate in the study in accordance with ethical recommendations. The participants were randomly allocated to conditions. 
 
 ## Stimuli & Procedure
 
-The stimuli and procedure for study 2 were identical to experiment 1 but included only two conditions. Study 2 differed only the response options conditions, such that response option conditions consisted of a single dimension, which ranged from “woman” to “man” and “multiple dimension” which ranged from “not woman” to “woman” and “not man” to “man”. For the multiple dimensions condition, participants rated the same faces according to both scales, but on separate trials. This differed from @bem_measurement_1974, who used scales of "femininity" and "masculinity". The present anchors were chosen because gender categorization was the focus of the present study.
+The stimuli and procedure for study 2 were identical to experiment 1 but included only two conditions. In Study 2 response options conditions, such that response option conditions consisted of a single dimension, which ranged from “woman” to “man” and “multiple dimension” which ranged from “not woman” to “woman” and “not man” to “man” (see @fig-exp2-trial. For the multiple dimensions condition, participants rated the same faces according to both scales, but on separate trials. This differed from @bem_measurement_1974, who used scales of "femininity" and "masculinity". The present anchors were chosen because gender categorization was the focus of the present study.
+
+![Sample trial from each of the three conditions](pix/exp2.png){#fig-exp2-trial}
 
 ## Data analysis
 
-Research question 3 asked whether whether participants would view faces less categorically in when they categorized them using multiple dimensions (i.e. Not woman - Woman/Not man -Man) than when they used the single dimension (Woman-Man). We expected to see a difference between the two conditions at fecial feminiity = 33.33 and 66.67 as these were the closes to the midway point. In other words, if categorical perception is reduced, we would expect to see an interaction between  condition and facial femininity level, but not a main effect. To test this, we fit a single Bayesian mixed-effects model which calculated unique fixed intercepts at each intersection of facial femininity and condition as well as varying intercepts for participants and faces (See supplemental material for full model specification). Using Savage-Dickey density ratios, we calculated the Bayes Factors for the contrasts between single dimension condition and multiple dimension at Facial Femininity = 33.37 and 66.66. 
+Descriptive statistics were used to summarize the data to highlight, and Bayesian mixed-effects models were used to test research question 4. In all models, facial femininity and condition were included as fixed effects. Additionally, all models included varying intercepts for both participants and trials and varying slopes for facial femininity. The pattern of scores were clearly non-linear, meaning any linear model would probably be misspecified. Therefore, to reduce the complexity of the model, facial femininity was modelled as a factor with seven levels, corresponding to each of the seven morphing steps. Any accentuation effects should be strongest closest to the midpoint, therefore, we compared the two conditions at Facial Femininity = 33.37 and 66.66, reporting the credible intervals of the difference as wwell as the Savage-Dickey Bayes factors. 
 
 # Results
 
 ## Research Question 3: 
 
-First, we investigated whether particpants accentuated gender compared to the physical features of the faces. To answer this question, we visualized responses  in Figure\ \@ref(fig:descriptives-two)
-
-The mean ratings in both conditions are presented in Figure\ \@ref(fig:descriptives-two). If participants respond to the properties of faces, the lines should be linear. Instead, Figure\ \@ref(fig:descriptives-two) shows that most participants display a non-linear S-shape and this was indeed also the pattern of the means. However, the Figure\ \@ref(fig:descriptives-two) also suggests that there was a high degree of individual variation, and some participants were more accentuative than others in their ratings. 
+First, we investigated whether participants accentuated gender compared to the physical features of the faces. To answer this question, we visualized responses in Figure\ \@ref(fig:descriptives-two). If participants respond only to the physical properties of faces, the lines should be a straight diagonal. Instead, Figure\ \@ref(fig:descriptives-two) shows that most participants display a non-linear S-shape (see the light lines) and this was indeed also the pattern of the group means in both conditions (see the dark lines). However, the Figure\ \@ref(fig:descriptives-two) also suggests that there was a high degree of individual variation, and some participants were more accentuative than others in their ratings. 
 
 
 ```{r descriptives-two, fig.cap= "Participant level and mean ratings of faces in Single dimension and multiple dimensions"}
@@ -574,7 +576,7 @@ ggplot(data = sd, aes(x=fem, y=mean_rating, color = scale)) +
   scale_x_continuous(breaks =c(0, 17, 33, 50, 67, 83, 100)) +
   ylab("Mean \"woman\" rating" ) +
   xlab("Proportion female face in the morph") +
- # scale_color_brewer(name = "Condition")+
+  scale_color_viridis_d()+
   theme_apa() 
 
 
@@ -630,7 +632,7 @@ ggplot(df,aes(x = fem, y=estimate__, group=condition))+
   scale_color_grey(name = "Condition",
                    labels = c("Single Dimension", "Multiple Dimensions"))+
   ylab("Mean rating" ) +
-  xlab("Proportion female face in the morph")+
+  xlab("Facial femininity")+
   theme_apa()
   
 ```
