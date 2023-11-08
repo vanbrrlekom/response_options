@@ -469,7 +469,7 @@ d %>%
 
 ### Inferential statistics
 
-Below is the model fit to the data in study 2. This is again, contains varying intercepts for subjects, but also varying slopes for subjects as well as varying intercepts for faces. The the theoretically relevant part of the model is that it calculates a unique intercept for each condition, as well as unique slopes for the effect of morph level as well. 
+Below is the model fit to the data in study 2. This is again, contains varying intercepts for subjects, but also varying slopes for subjects as well as varying intercepts for faces. The the theoretically relevant part of the model is that it calculates a unique intercept for each condition, as well as unique slopes for the effect of morph level as well.
 
 $$
 \begin{aligned}
@@ -637,5 +637,4 @@ d %>%
   xlab("Proportion female face in the morph") +
   scale_fill_discrete(name = "Response")
 ```
-
 :::

@@ -78,6 +78,7 @@ header-includes:
 csl               : "`r system.file('rmd', 'apa7.csl', package = 'papaja')`"
 documentclass     : "apa7"
 codefold          : "True"
+comment           : "Hypothesis"
 
 ---
 
