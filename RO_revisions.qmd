@@ -89,7 +89,7 @@ subs <- d %>%
 
 ```
 
-Swedish participants (*N* = `r length(subs$id)`) were recruited through advertising online and on the university campus (*M*~age~= `r mean(subs$age, na.rm = TRUE)`, *SD*~age~ = `r sd(subs$age, na.rm = TRUE)`, Range = `r min(subs$age, na.rm = TRUE)` - `r max(subs$age, na.rm = TRUE)`). Self-identified gender was measured using an open-ended text box as recommended by @lindqvist_what_2020; participants were 56 women, 47 men and 2 who did not indicate gender). All participants were informed that participation was voluntary, that they could withdraw from the study and that results do no include any identifying features. The study was approved by the Stockholm University Ethical Review board. All participants provided written informed consent.
+Swedish participants (*N* = `r length(subs$id)`) were recruited through advertising online and on the university campus (*M*~age~= `r mean(subs$age, na.rm = TRUE) %>% round(2)`, *SD*~age~ = `r sd(subs$age, na.rm = TRUE) %>% round(2)`, Range = `r min(subs$age, na.rm = TRUE)` - `r max(subs$age, na.rm = TRUE)`). Self-identified gender was measured using an open-ended text box as recommended by @lindqvist_what_2020; participants were 56 women, 47 men and 2 who did not indicate gender). All participants were informed that participation was voluntary, that they could withdraw from the study and that results do no include any identifying features. The study was approved by the Stockholm University Ethical Review board. All participants provided written informed consent.
 
 ## Design
 
@@ -481,9 +481,9 @@ kable(fixed_effects %>% select(term, estimate, std.error, conf.low, conf.high),
 
 ```
 
-In terms of overall likelihood to categorize women or men, the evidence were slightly in favor of there being no difference between the binary categories and the free text conditions in terms of (OR = `r exp(h0$hypothesis$Estimate) %>% round(2)`, CI =\[`r exp(h0$hypothesis$CI.Lower)%>% round(2)`, `r exp(h0$hypothesis$CI.Upper )%>% round(2)`\], BF~01~= `r round(h0$hypothesis$Evid.Ratio , 2)`) and moderately in favor of no difference between multiple categories and binary categories conditions (OR = `r exp(h1$hypothesis$Estimate) %>% round(2)`, CI =\[`r exp(h1$hypothesis$CI.Lower)%>% round(2)`, `r exp(h1$hypothesis$CI.Upper) %>% round(2)`\], BF~01~= `r round(h1$hypothesis$Evid.Ratio , 2)`). In other words, neither the free text or the multiple categories condition changed the pattern of categorization of women and men.
+First we compared the participants overall tendencies to categorize faces as women across the conditions. Compared to the binary categories condition, participants were about equally likely to categorize faces as women in either the free text condition  (OR = `r exp(h0$hypothesis$Estimate) %>% round(2)`, CI =\[`r exp(h0$hypothesis$CI.Lower)%>% round(2)`, `r exp(h0$hypothesis$CI.Upper )%>% round(2)`\], BF~01~= `r round(h0$hypothesis$Evid.Ratio , 2)`) and in the multiple categories condition (OR = `r exp(h1$hypothesis$Estimate) %>% round(2)`, CI =\[`r exp(h1$hypothesis$CI.Lower)%>% round(2)`, `r exp(h1$hypothesis$CI.Upper) %>% round(2)`\], BF~01~= `r round(h1$hypothesis$Evid.Ratio , 2)`). In other words, neither the free text or the multiple categories condition changed the pattern of categorization of women and men.
 
-Additionally, the evidence was overwhelmingly strong that the effect of facial femininity on woman categorizations was the same in the binary categories and free text conditions  (Difference = `r h2$hypothesis$Estimate %>% round(2)`, CI =\[`r h2$hypothesis$CI.Lower%>% round(2)`, `r h2$hypothesis$CI.Upper %>% round(2)`\], BF~01~= `r round(h3 $hypothesis$Evid.Ratio , 2)`) and the binary categories and multiple categories conditions ((Difference = `r h3$hypothesis$Estimate %>% round(2)`, CI =\[`r h3$hypothesis$CI.Lower%>% round(2)`, `r h3$hypothesis$CI.Upper %>% round(2)`\], BF~01~= `r round(h3 $hypothesis$Evid.Ratio , 2)`) )
+Second, we compared the relationship between facial femininity and woman categorizations across the conditions. Compared to the binary categories condition, t (Difference = `r h2$hypothesis$Estimate %>% round(2)`, CI =\[`r h2$hypothesis$CI.Lower%>% round(2)`, `r h2$hypothesis$CI.Upper %>% round(2)`\], BF~01~= `r round(h3 $hypothesis$Evid.Ratio , 2)`) and the binary categories and multiple categories conditions ((Difference = `r h3$hypothesis$Estimate %>% round(2)`, CI =\[`r h3$hypothesis$CI.Lower%>% round(2)`, `r h3$hypothesis$CI.Upper %>% round(2)`\], BF~01~= `r round(h3 $hypothesis$Evid.Ratio , 2)`) )
 
 # Discussion
 
@@ -511,7 +511,7 @@ subs <- d %>%
 
 ```
 
-PaSwedish participants (*N* = `r length(subs$id)`) were recruited through advertising online and on the university campus (*M*~age~= `r mean(subs$age, na.rm = TRUE)`, *SD*~age~ = `r sd(subs$age, na.rm = TRUE)`, Range = `r min(subs$age, na.rm = TRUE)` - `r max(subs$age, na.rm = TRUE)`). Self-identified gender was measured using an open-ended text box; 31 women and 32 men and two participants who did not clerly indicate gender participated. Participants were monetarily compensated for their time. All participants were informed that participation was voluntary and gave written consent to participate in the study in accordance with ethical recommendations. The participants were randomly allocated to conditions.
+Swedish participants (*N* = `r length(subs$id)`) were recruited through advertising online and on the university campus (*M*~age~= `r mean(subs$age, na.rm = TRUE)`, *SD*~age~ = `r sd(subs$age, na.rm = TRUE)`, Range = `r min(subs$age, na.rm = TRUE)` - `r max(subs$age, na.rm = TRUE)`). Self-identified gender was measured using an open-ended text box; 31 women and 32 men and two participants who did not clerly indicate gender participated. Participants were monetarily compensated for their time. All participants were informed that participation was voluntary and gave written consent to participate in the study in accordance with ethical recommendations. The participants were randomly allocated to conditions.
 
 ## Stimuli & Procedure
 
@@ -527,7 +527,7 @@ Descriptive statistics were used to summarize the data to highlight, and Bayesia
 
 ## Research Question 3:
 
-First, we investigated whether participants accentuated gender compared to the physical features of the faces. To answer this question, we visualized responses in Figure \@ref(fig:descriptives-two). If participants respond only to the physical properties of faces, the lines should be a straight diagonal. Instead, Figure \@ref(fig:descriptives-two) shows that most participants display a non-linear S-shape (see the light lines) and this was indeed also the pattern of the group means in both conditions (see the dark lines). However, the Figure \@ref(fig:descriptives-two) also suggests that there was a high degree of individual variation, and some participants were more accentuative than others in their ratings.
+First, we investigated whether participants accentuated gender compared to the physical features of the faces. To answer this question, we visualized responses in Figure\@ref(fig:descriptives-two). If participants respond only to the physical properties of faces, the lines should be a straight diagonal. Instead, Figure\@ref(fig:descriptives-two) shows that most participants display a non-linear S-shape (see the light lines) and this was indeed also the pattern of the group means in both conditions (see the dark lines). However, the Figure\@ref(fig:descriptives-two) also suggests that there was a high degree of individual variation, and some participants were more accentuative than others in their ratings.
 
 ```{r descriptives-two, fig.cap= "Participant level and mean ratings of faces in Single dimension and multiple dimensions"}
 
@@ -566,19 +566,19 @@ ggplot(data = sd, aes(x=fem, y=mean_rating, color = scale)) +
   geom_line(aes(group = scale), linewidth = 1)+
   geom_point(aes(group = scale))+
   geom_point(data = f, 
-            aes(x=fem, y=mean_rating, group = id ), alpha = 0.1)+
+            aes(x=fem, y=mean_rating, group = id ), alpha = 0.2)+
   geom_line(data = f, 
-            aes(x=fem, y=mean_rating, group = id ), alpha = 0.1)+
+            aes(x=fem, y=mean_rating, group = id ), alpha = 0.2)+
   geom_point(data = m, 
-            aes(x=fem, y=mean_rating,  group = id),  alpha = 0.1 )+
+            aes(x=fem, y=mean_rating,  group = id),  alpha = 0.2 )+
   geom_line(data = m, 
-            aes(x=fem, y=mean_rating,  group = id),  alpha = 0.1 )+
+            aes(x=fem, y=mean_rating,  group = id),  alpha = 0.2 )+
   theme_minimal()+
   facet_wrap(~condition) +
   scale_x_continuous(breaks =c(0, 17, 33, 50, 67, 83, 100)) +
   ylab("Mean \"woman\" rating" ) +
   xlab("Proportion female face in the morph") +
-  scale_color_viridis_d()+
+  #scale_colour_brewer(palette = 4)+
   theme_apa() 
 
 
@@ -647,13 +647,13 @@ Study 2 showed that participants exhibited signs of accentuated gender perceptio
 
 # General discussion
 
-In two experiments, we tested how response options in gender categorization of others influence binary gender categorization. Specifically, the results suggested that participants only use beyond-binary options to categorize faces when such options are provided explicitly. Free text answers or continuous scales did not affect participants binary gender categorization. Additionally, response options which did not present women and men as opposing categories did not induce participant's perception of gender in faces to be less binary.
+In two experiments, we tested how response options in gender categorization of others influence binary gender categorization. Specifically, the results suggested that participants only use beyond-binary options to categorize faces when such options are provided explicitly. Free text answers or continuous scales did not affect participants binary gender categorization. Additionally, response options which did not present women and men as opposing categories did not induce participant's perception of gender in faces to be less accentuated
 
 These findings are somewhat consistent with previous research, such as the work of @saperstein_categorical_2021 and @lindqvist_what_2020, which has shown that including flexible response options allow participants to better express themselves. Unlike the literature on self-categorization, increased freedom did not increase the gender diversity of participants' categorizations, rather explicit reminders seem to have the largest effect. When participants categorized women or men on continuous scales, the results differ from @bem_measurement_1974 who found that participants categorize their own femininity and masculinity independently of each other. Rather, when categorizing others, the participants in the present study seemed to treat women and men as opposites, even when the response options did not pose them as such. Both of these deviations from the previous literature likely stem from the substantial difference between indicating one's own gender and categorizing that of others.
 
 It is worth noting that this study only examined participants' stated categorizations, and it is possible that they may have made other categorizations internally that were not reflected in their responses. However, it is important to recognize that a purely behavioral study such as this cannot fully capture the neurological processes underlying gender perception, which may require more sophisticated techniques such as fMRI and EEG [@kloth_neural_2010; @stolier_neural_2017].
 
-In this study we aggregated responses that did not indicate woman or man. In the multiple response option condition, both "I don't know" and "Non-binary" were included as a beyond binary categorization. We justified this on the basis that what we were interested in is any categorization beyond the binary. However, these two options are not the same. Furthermore, it is important to note that no matter how a person looks, it is impossible to know their binary or non-binary gender identity [@richards_non-binary_2016]. Therefore, if a person aims to be inclusive and not categorize in a binary way, then abstaining from categorizing, for examle by selecting "I don't know" is always the best option.
+In this study we aggregated responses that did not indicate woman or man. In the multiple response option condition, both "I don't know" and "Non-binary" were included as a beyond binary categorization. We justified this on the basis that what we were interested in is any categorization beyond the binary. However, these two options are not the same. Furthermore, it is important to note that no matter how a person looks, it is impossible to know their binary or non-binary gender identity [@richards_non-binary_2016]. Therefore, if a person aims to be inclusive and not categorize in a binary way, then abstaining from categorizing, for example by selecting "I don't know" is always the best option.
 
 In the introduction we raised the possibility that findings within gender categorization research may be biased from a sole reliance on binary response options. Based on the present results, this seems unlikely. Instead, it seems that the societal norm to treat gender as binary is the strongest determinant participants gender categorizations. Even so, we recommend researchers to carefully consider their measurements of gender categorization. Open text-boxes, forced choice-alternatives and dimensional scales are all viable alternatives. Even researchers who are primarily interested in binary categorizations should consider including beyond-binary alternatives, to avoid perpetuating the binary gender norm and to accurately represent the diversity of gender.
 

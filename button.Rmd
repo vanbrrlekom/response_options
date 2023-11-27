@@ -1,0 +1,47 @@
+---
+title: "Secret Santa Assignment"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+
+# List of participants
+participants <- c("Elli", "Philip", "Raver", "Astrid")
+
+# Function to assign Secret Santa
+assign_secret_santa <- function(participant, participants) {
+  set.seed(123)  # Set seed for reproducibility
+  remaining_participants <- setdiff(participants, participant)
+  secret_santa <- sample(remaining_participants, 1)
+  return(secret_santa)
+}
+
+# Create a data frame with Secret Santa assignments
+assignments <- data.frame(Participant = participants,
+                          SecretSanta = sapply(participants, assign_secret_santa, participants))
+
+# Display the assignments
+assignments
+
+# Function to create reveal button
+reveal_button <- function(participant, secret_santa) {
+  cat(paste0('<button onclick="document.getElementById(\'', participant, '\').innerHTML=\'', secret_santa, '\';">', participant, '</button>\n'))
+}
+
+# Create a button for each participant
+for (i in 1:nrow(assignments)) {
+  reveal_button(assignments$Participant[i], assignments$SecretSanta[i])
+}
+
+# Function to reveal assignments
+reveal_assignment <- function(participant, secret_santa) {
+  cat(paste0('<p id="', participant, '"><strong>', participant, ':</strong> Your Secret Santa is <strong>', secret_santa, '</strong></p>\n'))
+}
+
+# Display the revealed assignments
+for (i in 1:nrow(assignments)) {
+  reveal_assignment(assignments$Participant[i], assignments$SecretSanta[i])
+}
+```
