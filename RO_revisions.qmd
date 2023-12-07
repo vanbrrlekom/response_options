@@ -14,6 +14,7 @@ abstract: |
  *Problem statement can be made much clearer*
 
 editor: visual
+date: "`r format(Sys.time(), '%B %d, %Y')`"
 ---
 
 ```{r setup,warning = FALSE, message = FALSE}
