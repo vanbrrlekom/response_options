@@ -1,20 +1,86 @@
 ---
-title: "Analyses"
-format: 
-  html:
-    code-fold: true
-    theme: flatly
-comments: 
-  hypothesis: true
-bibliography      : "r-references.bib"
+title             : "Inclusive Response Options Expand Gender Categorization But Do Not Reduce Categorical Perception of Gender"
+shorttitle        : "Rsponse options and gender categorization"
+
+author: 
+  - name          : "Elli van Berlekom"
+    affiliation   : "1"
+    corresponding : yes    # Define only one corresponding author
+    address       : "Albanovägen 12"
+    email         : "elli.vanberlekom@psychology.su.se"
+    role:         # Contributorship roles (e.g., CRediT, https://casrai.org/credit/)
+      - "Conceptualization"
+      - "Data collection"
+      - "Data analysis"
+      - "Writing - Original Draft Preparation"
+      - "Writing - Review & Editing"
+  - name          : "Stefan Wiens"
+    affiliation   : "1"
+    role:
+      - "Data analysis"
+      - "Writing - Review & Editing"
+  - name          : "Anna Lindqvist"
+    affiliation   : "2"
+    role:
+      - "Conceptualization"
+      - "Writing - Review & Editing"
+  - name          : "Marie Gustavsson Sendén"
+    affiliation   : "1"
+    role:
+      - "Conceptualization"
+      - "Writing - Review & Editing"
+
+
+
+affiliation:
+  - id            : "1"
+    institution   : "Stockholm University"
+  - id            : "2"
+    institution   : "Lund University"
+
+authornote: |
+  Data & scripts are available at figshare. The authors declare no conflict of interest.
 
 abstract: | 
- *Gender diversity is becoming more salient in that more people identify beyond the binary. This study (N = ) investigated how more inclusive response options affected gender categorization in terms of options chosen and categorical perception. Participants were more likely to categorize gender beyond the binary when provided with explicit response options, such as "non-binary" and "I don't know". Additional responses did not affect categorical perception. The study highlights the importance of careful consideration of response options in gender categorization research. 
+ Gender categorization - the process through which gender categories are applied to others - is studied almost exclusively measure categorization by allowing participants to respond in terms of woman and men only. This does not capture the diversity of gender which is a problem because it may be inaccurate and it may be harmful to gender diverse individuals. This study (N = 120) investigated how more inclusive response options affected gender categorization in terms of options chosen and categorical perception. Participants were more likely to categorize gender beyond the binary when provided with explicit response options, such as "non-binary" and "I don't know". Additional responses did not affect categorical perception. The study highlights the importance of careful consideration of response options in gender categorization research. 
  
  *Problem statement can be made much clearer*
 
-editor: visual
-date: "`r format(Sys.time(), '%B %d, %Y')`"
+  
+keywords          : "Gender diversity, Gender categorization, Transgender, Measurement"
+wordcount         : "3969"
+
+bibliography      : "r-references.bib"
+
+floatsintext      : no
+linenumbers       : no
+draft             : no
+mask              : no
+
+figurelist        : no
+tablelist         : no
+footnotelist      : no
+
+header-includes:
+  - |
+    \makeatletter
+    \renewcommand{\paragraph}{\@startsection{paragraph}{4}{\parindent}%
+      {0\baselineskip \@plus 0.2ex \@minus 0.2ex}%
+      {-1em}%
+      {\normalfont\normalsize\bfseries\typesectitle}}
+    
+    \renewcommand{\subparagraph}[1]{\@startsection{subparagraph}{5}{1em}%
+      {0\baselineskip \@plus 0.2ex \@minus 0.2ex}%
+      {-\z@\relax}%
+      {\normalfont\normalsize\bfseries\itshape\hspace{\parindent}{#1}\textit{\addperi}}{\relax}}
+    \makeatother
+
+csl               : "`r system.file('rmd', 'apa7.csl', package = 'papaja')`"
+documentclass     : "apa7"
+codefold          : "True"
+comment           : "Hypothesis"
+output            : papaja::apa6_word
+
 ---
 
 ```{r setup,warning = FALSE, message = FALSE}
@@ -56,41 +122,35 @@ set.seed(42)
 knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
 ```
 
-The experiences of transgender and gender diverse (TGD) individuals suggest that many people experience gender as fluid, diffuse, and not bounded by the typical western binary of women and men [@richards_non-binary_2016, @hyde_future_2018].  In surveys and questionnaires, however, gender is often constructed as a binary by limiting ther esponse options to the categories to woman/female and man/male [@saperstein_categorical_2021]. Such measurement invisibilise and and implicitly deligitimze TGD identities [@ansara_methodologies_2014]. Recently, calls have gone out urging psychologists to include a wider range response options (e.g, nonbinary, other, ref) or using free text options [@lindqvist_what_2020] practices which are becoming widely adopted  (ref). [gender is still binary, other perception]. Research on gender categorization of others, however, is is still dominating by binary thinking (for example). Here we report two studies demonstrating how gender categorization of faces can be measured without reinforcing binary gender norms and such measurements do and do not affect participants' responses. 
+Surveys and interviews of transgender and gender diverse (TGD) individuals suggest that many people experience gender as fluid, diffuse, and not bounded by the typical western binary of women and men [@richards_non-binary_2016, @hyde_future_2018]. In addition, TGD individuals experience invisibility due to the assumption that there are only two genders and that gender should be visible from someone's face [@ansara_methodologies_2014]. Research on face perception has typically not taken this gender diversity into account, primarily constructing and measuring gender according to a binary system, although this is beginning to change (ref). Researchers may want to know what happens when gender is measured in inclusive ways,  to avoid perpetuating such marginalization and invisibility.
 
-## Measuring self-identified gender 
+One of the earliest examples of an inclusive attempt to measure gender was the Bem Sex-Role Inventory (BSRI). The BSRI measured gender as a psychological trait and challenged the dichotomous and binary conceptualizations of gender by treating femininity and masculinity as separate constructs [@bem_measurement_1974]. When gender was measured as a multidmensional construct using the BSRI, most people exhibited a mixture of feminine and masculine traits [@bem_measurement_1974]. Although Bem primarily measured participants´ own gender, recent recommendations have suggested that this multidimensional approach be used for gender research broadly [@hyde_future_2018].  
 
-An early example of a radical measurement of gender binary was Sandra Bem who argued that femininity and masculinity are not mutually exclusive and need to be measure separately (bem). Using Bem's scale, the Bem Sex-Role Inventory (BSRI), a person could score highly on both femininity and masculinity, or low on both, implying a level of flexibility in gender traits. This challenged the prevailing norm of thinking about gender as a strict and mutually exclusive binary. This bidimensional approach has been cited as significant milestone in progressive measurement (queering bem). 
+More recently, a number of recommendations have been put forward to help researchers measure participants gender identity without excluding TGD people. For example, @saperstein_categorical_2021 suggested including a range of categories in addition to "woman" and "man". In addition, @lindqvist_what_2020 suggested including an open text entry where participants can fill in whatever they want. While this practice is not yet the standard, it is increasingly common among researchers to adopt these open-ended approaches to measure participant gender [e.g. @carleton_assessing_2022; @cronin_younger_2022; @dagostino_organizational_2022; @gottgens_impact_2022]
 
-Characteristically for western research of it's time, however, Bem's work was still largely carried out within a binary gender framework, even as it implicitly challenged that framework. The BSRI defined gender as a psychological trait and the people possessing those traits were still seen as exclusively women or men. Since that time, as the extent of gender diversity has become more widely known (national geographic), it has become widely understood that any measurement which does not take this gender diversity into account is insufficient on its own. That said, this has not stopped many people from citing Bem's bidimensional conception as a model for other types of gender research. 
+However, the majority of recommendations primarily focus on research that measures participants' self-identified gender identity. This emphasis is understandable as gender identity is a commonly reported demographic variable. That said, self-identified gender identity is only one of many ways that gender can be a target of research. Another common avenue of research on gender is as a social outcome, specifically how people perceive and categorize the gender of faces. It is time to incorporate the recommendations for measuring self-identified gender into research on gender perception and categorization.
 
-Later recommendations have suggested ways to measure gender as a discrete category, while still enabling participants to choose from a diversity of identities. For example, Saperstein and Westbrook (2021) suggested that surveys measuring gender include a range of response options, such as non-binary, other, transman, agender and more. Taking a slightly different approach, Lindqvist et al. (2020) suggested an open text entry where participants can fill in whatever they want. The free text response has the advantage of being completely open. Moreover, the acceptable terms sometimes shift over time, as more marginalized voices are heard. The term "transsexual" for example, was widely used and seen as acceptable, but is now understood to be stigmatizing (APA manual). A free text easily sidesteps this issue. It is increasingly common among researchers to adopt these open-ended approaches to measure participant gender [e.g. @carleton_assessing_2022; @cronin_younger_2022; @dagostino_organizational_2022; @gottgens_impact_2022].
+# Why Should Face Perception Researh Be Beyond the Binary?
 
-Until now, most recommendations primarily suggest ways to measures participants’ own gender. This emphasis is understandable as gender identity is a commonly reported demographic variable. But gender is frequently is also frequently measured in terms of participants categorizations of others. The form such measurement takes is often quite similar, but gender is very rarely allowed to be non-binary when measured as a judgement of others. 
+Researchers may be reluctant to expand face perception research reason beyond the binary. In particular, researchers who are only interested in categorization of men and women may be concerned that to perception of introduces noise or unpredictability to the data. On the other hand, there are also reasons to suspect that including response options beyond the binary can increase accuracy overall. Indeed, measuring gender categorization using only the categories "woman" and "man" does not accurately reflect the diversity of gender as it is experienced by many people [@hyde_future_2018]. By creating a binary out of a more varying dimension, researchers may be missing an important source of variation, similar to how measurement of age as only "young" or "old" would miss a large source of variation. 
 
-## Measuring gender categoriztion of others
+Moreover, the inclusion or exclusion of certain response options communicates certain ideas to participants. Asking participants to categorize gender in terms of women and men suggests that women and men are the only two genders, just as asking participants to categorize gender in more inclusive terms suggests that gender is more expansive. Researchers are typically wary of biasing participants, but the biasing effects of gender response options is rarely considered, let alone tested empirically. If a binary construction of gender in research biases participants toward binary thinking, this would require a reexamination of much of the work done in the field of face perception research.
 
-*Before we get into response options, let's just talk about faces for a second. This paragraph, which is still largely to be written, will discuss the morphology of gender in faces. A couple of studies have examined how faces appear, and the research is largely mixed. Some studies have suggested that faces can be seen as largely two types, which correspond to female and male. Others have broken this down by looking at individual features, and find that very few features correspond only to men or women. The conclusion of this paragraph will be that, eh, who knows, but there are at least some indications that facial gender is not a strict binary. *
+To this point, the phenomenon of categorical perception of faces suggests that participants do have a binary bias in their thinking about gender, at least as it applies to their perception of faces [@campanella_categorical_2001]. This phenomenon has been observed when participants categorize a number of faces that have been morphed to vary unidimensionally from feminine to masculine. Categorizations of these morphed faces were accentuated towards the dominant gender of the face, so that for example a 60% female morph was rated as a woman by closer to 80% of participants. This accentuation was not observed when the faces were inverted, in which case the the frequency of each gender categorization was much closer to the actual level of morph (see figure 1). If binary response options are biasing participants toward binary option, then non-binary response options may reduce this categorical gender effect. *the point I want to make here is that categorical perception can itself be a useful tool for measuring binary bias*
 
-A brief survey of the research on how people perceive and categorize the gender of others still almost exclusively treats gender as a binary category. Face perception research has shown that gender is rapidly and automatically categorized [@habibi_spontaneous_2012; @jung_automaticity_2019], with facial features such as skin smoothness, jawline, and hair length used to determine gender identity. *this section probably needs to be expanded a little*
+In any case, it is becoming increasingly common for perception of gender beyond the binary to be a specific topic of research (My study, Isabelle's study, others). The study of binary gender perception has a long tradition and there is exists wealth of established methods for carrying out this type of research. The same is not true for non-binary gender perception. As awareness of both the prevalence of and marginalization faced by TGD individuals increases, how people categorize non-binary gender becomes a relevant topic for research in and of itself.
 
-However, measuring gender categorization as a binary category or on a unidimensional scale does not accurately reflect the diversity of gender as it is experienced by many people (Hyde et al., 2018). By creating a binary out of a more varying dimension, researchers and data collector miss variation, similar to how measurement of age as only “young” or “old” would miss the variation of ages. *this section probably needs to be expanded a little*
-
-Moreover, the inclusion or exclusion of certain response options communicates certain ideas to participants. Binary response options suggests that women and men are the only two genders just as multiple options imply that gender is more diverse. In other words, no matter which type of response options are used, some ideas are being communicate to participants, potentially introducing a bias in their responses. Researchers are typically wary of biasing participants (ref), but the effects of gender response options are rarely considered. If a binary construction of gender in research biases participants toward binary thinking, this *is probably something we, as resarchers, should be concerned about*
-
-To this point, the phenomenon of categorical perception (*I am changing my mind to refer to this as categorical perception. yes, probably from a psychophysics pov, this is inaccurate. However, this is the term used in social psychology journals, and that is where we are aiming to submit*) of faces suggests that participants do have a binary bias in their thinking about gender, at least as it applies to their perception of faces [@campanella_categorical_2001]. This phenomenon has been observed when participants categorize a number of faces that have been morphed to vary unidimensionally from feminine to masculine. Categorizations of these morphed faces were accentuated towards the dominant gender of the face, so that for example a 60% female morph was rated as a woman by closer to 80% of participants. This accentuation was not observed when the faces were inverted, in which case the the frequency of each gender categorization was much closer to the actual level of morph (see figure 1). If binary response options are biasing participants toward binary option, then non-binary response options may reduce this categorical gender effect. *the point I want to make here is that categorical perception can itself be a useful tool for measuring binary bias*
-
-*here is a whole unwritten paragraph. Basically, this paragraph should set up for study 2. Here is the reasoning this paragrapy syould follow: as gender is becoming more diverse, how and when people categorize outside of the binary is becoming an important topic itself. But because this is a new field, we don't really how best to measure that. Which is one of the big questions this study is trying to answer.*
+Lastly, aside from any issues of accuracy or interest in research, we most researchers wish to avoid propagating harmful stereotypes. When researchers use a limited number of gender categories, this communicates indirectly that these are the only gender categories that exist (*ref*). While TGD participants have almost certainly come across this messsage in their daily lives, over time the accumulation of such small messages reinforcing the gender binary can amplify feelings of exclusion.
 
 ## The present research
 
-The aim of this study is to broadly  how various inclusive and non-binary response options affect the perception and categorization of gender of faces. In Study 1 we measured perceptions of gender as a unidimensional and bidimensional construct. We investigated whether the rated gender was accentuated compared to physical of the faces gender (Research Question 1) and whether this accentuation was heightened when gender was measured as unidimensional construct compared to when it was measured as a bidimensional construct (Research Question 2). In Study 2 we measured perceptions of gender measured as discrete categories. We investigated whether and how often participants categorized faces beyond the binary when categorizing faces using inclusive response options (Research Question 3). Additionally, we investigated  how inclusive options influenced categorization of faces as women and men (Research Question 4). 
+The aim of this study is to broadly  how various inclusive and non-binary response options affect the perception and categorization of gender of faces. In Study 1 we measured perceptions of gender as a unidimensional and multidimensional construct. We investigated whether the rated gender was accentuated compared to physical of the faces gender (Research Question 1) and whether this accentuation was heightened when gender was measured as unidimensional construct compared to when it was measured as a multidimensional construct (Research Question 2). In Study 2 we measured perceptions of gender measured as discrete categories. We investigated whether and how often participants categorized faces beyond the binary when categorizing faces using inclusive response options (Research Question 3). Additionally, we investigated  how inclusive options influenced categorization of faces as women and men (Research Question 4). 
 
 # Study 1
 
-Study 1 tested how gender is perceived when response options are either unidimensional or multidimensional. The basis for the study is the pioneering work of @bem_measurement_1974 that highlighted the importance of measuring gender as a continuum rather than as discrete categories, and that femininity and masculinity might not be end points on the same continuum. Although Bem was primarily interested in the measurement of participant own gender, more recent recommendations have suggested continuous measurement as suitable method for any measure of gender, including perceptions of gender of others [@hyde_future_2018]. Study 1 explored the use of continuous measurement of gender in terms of two outcomes: a single woman-man continuum and separate man/women continua. 
+The pioneering work of @bem_measurement_1974 highlighted the possibility of measuring gender as a continuum rather than as discrete categories. Although they were primarily interested in the measurement of participant own gender, more recent recommendations have suggested continuous measurement as suitable method for any measure of gender, including perceptions of gender of others [@hyde_future_2018]. Study 2 explored the use of continuous measurement of gender in terms of two outcomes: a single woman-man continuum and separate man/women continua. 
 
-We examined the phenomenon of categorical gender perception, wherein participants tend to perceive more gender in a face than is actually present. The consequence of this effect is that that participants, when presented with faces displaying subtle gender cues, still categorize them as distinctly female or male. For example, a face with 66.66% facial femininity should be perceived as female, while a face with 33.33% facial femininity should be perceived as male. Study 1 examined whether this effect would be observed using a continuous gender rating (Research Question 1). Furthermore, we explored whether employing response options that do not frame women and men as opposites would diminish the accentuated gender perception (Research Question 2). 
+We examined the phenomenon of accentuated gender perception, wherein participants tend to perceive more gender in a face than is actually present. The consequence of this effect is that that participants, when presented with faces displaying subtle gender cues, still categorize them as distinctly female or male For example, a face with 66.66% facial femininity should be perceived as female, while a face with 33.33% facial femininity should be perceived as male. Study 1 examined whether this effect would be observed using a continuous gender rating (Research Question 1). Furthermore, we explored whether employing response options that do not frame women and men as opposites would diminish the accentuated gender perception (Research Question 2). 
 
 # Method
 
@@ -108,31 +168,31 @@ subs <- d %>%
 
 Swedish participants (*N* = `r length(subs$id)`) were recruited through advertising online and on the university campus (*M*~age~= `r mean(subs$age, na.rm = TRUE) %>% round(2)`, *SD*~age~ = `r sd(subs$age, na.rm = TRUE) %>% round(2)`, Range = `r min(subs$age, na.rm = TRUE)` - `r max(subs$age, na.rm = TRUE)`). Self-identified gender was measured using an open-ended text box; 31 women and 32 men and two participants who did not clearly indicate gender participated. Participants were monetarily compensated for their time. All participants were informed that participation was voluntary and gave written consent to participate in the study in accordance with ethical recommendations. The participants were randomly allocated to conditions.
 
+## Design
+
+The experiment used a between-participants design with two response options conditions. These were the *unidemnsional*,  and *multidimensional* and conditions. The administering researcher was blind to participant condition and participants were randomly allocated into one of the three experimental conditions.
+
 ## Stimuli
 
 The experiment included faces pfrom the London Face Database [@debruine_face_2017] and the Chicago Face Database [@ma_chicago_2015] morphed with on Webmorph [@debruine_webmorph_2018]. For Black, Asian and White faces, the six most feminine faces of women and the six most masculine faces of men were selected, using the codebook provided by the researchers. The faces were matched, so that the most feminine faces in the database were morphed with the most masculine faces. The morphs were made in 7 steps, from completely feminine to completely masculine. We defined the morph level as the degree of the the female face present in the morph. In other words, a 33.33% was slightly tilted toward the man, a 50% face was an even mixture and a 100% consisted only of the woman's face. Because there were 18 pairs morphed in 7 steps, the total number of faces was 126.
 
 *include a picture*
 
+## Procedure
 
-## Design and procedure
+Participants completed the experiment on a computer in a quiet room. Each trial consisted of a face accompanied by the question "How would you gender categorize this person?". Each person completed a total of 126 trials (i.e. they categorized every face in the stimuli set). Participants were randomly allocated into one of the two response options conditions: single dimension and multiple dimensions(see @fig-exp1-trial). In the single dimension condition, participants rated gender based on a single continuum with the anchors marked "woman" and "man". In the multiple dimensions condition, participants rated each face twice on two different continua, ranging from "not woman" or "not man" to "woman" or "man".
 
-The experiment used a between-participants design with two response options conditions. These were the *unidemnsional*,  and *bidimensional* and conditions. Participants were randomly allocated into one of the two response options conditions.
- The administering researcher was blind to participant condition and participants were randomly allocated into one of the three experimental conditions.
-
-Participants completed the experiment on a computer in a quiet room. Each trial consisted of a face accompanied by the question "How would you gender categorize this person?". Each person completed a total of 126 trials (i.e. they categorized every face in the stimuli set). In the single dimension condition, participants rated gender based on a single continuum with the anchors marked "woman" and "man". In the multiple dimensions condition, participants rated each face twice on two different continua, ranging from "not woman" or "not man" to "woman" or "man".
-
-![Sample trial from each of the three conditions](pix/exp2.png){#fig-exp2-trial
+![Sample trial from each of the three conditions](pix/exp1.png){#fig-exp2-trial
 
 ## Data analysis
 
-Descriptive statistics were used to summarize the data to highlight individual participants tendency toward categorical perception. Bayesian mixed-effects models were used to test categorical perception between conditions (how the response (research question 4). In all models, morph level and condition were included as fixed effects. Additionally, all models included varying intercepts for both participants and trials and varying slopes for facial femininity. The pattern of scores were clearly non-linear, meaning any linear model would probably be misspecified. Therefore, to reduce the complexity of the model, facial femininity was modelled as an ordered factor with seven levels, corresponding to each of the seven morphing steps. Any categorical perception effects should be strongest closest to the midpoint, therefore, we compared the two conditions at morph level = 33.37 and 66.66, reporting the credible intervals of the difference as well as the Savage-Dickey Bayes factors.
+Descriptive statistics were used to summarize the data to highlight, and Bayesian mixed-effects models were used to test research question 4. In all models, morph level and condition were included as fixed effects. Additionally, all models included varying intercepts for both participants and trials and varying slopes for facial femininity. The pattern of scores were clearly non-linear, meaning any linear model would probably be misspecified. Therefore, to reduce the complexity of the model, facial femininity was modelled as an ordered factor with seven levels, corresponding to each of the seven morphing steps. Any accentuation effects should be strongest closest to the midpoint, therefore, we compared the two conditions at Facial Femininity = 33.37 and 66.66, reporting the credible intervals of the difference as well as the Savage-Dickey Bayes factors.
 
 # Results
 
-## Was gender percieved categorically? (Research Question 1)
+## Was gender percieved categorically? (Research Question 3)
 
-We investigated whether participants accentuated gender compared to the morph level of the faces. To answer this question, we visualized responses in Figure\@ref(fig:descriptives-two). If participants respond only to the morph of faces, the lines should be a straight diagonal. Instead, Figure\@ref(fig:descriptives-two) shows that most participants display a non-linear S-shape (see the light lines) and this was indeed also the pattern of the group means in both conditions (see the dark lines). However, the Figure\@ref(fig:descriptives-two) also suggests that there was a high degree of individual variation, and some participants were more categorical than others in their ratings.
+We investigated whether participants accentuated gender compared to the physical features of the faces. To answer this question, we visualized responses in Figure\@ref(fig:descriptives-two). If participants respond only to the physical properties of faces, the lines should be a straight diagonal. Instead, Figure\@ref(fig:descriptives-two) shows that most participants display a non-linear S-shape (see the light lines) and this was indeed also the pattern of the group means in both conditions (see the dark lines). However, the Figure\@ref(fig:descriptives-two) also suggests that there was a high degree of individual variation, and some participants were more accentuatethan others in their ratings.
 
 ```{r descriptives-two, fig.cap= "Participant level and mean ratings of faces in Single dimension and multiple dimensions"}
 
@@ -224,7 +284,7 @@ h_dim_67 <- hypothesis(fit_dimensional_interaction, "fem66.67:conditionmd= fem66
 
 ## Is there a difference in accentuated perception by condition? (Research Question 2)
 
-We tested whether this accentuation effect was stronger in the single continuum condition compared to the multiple continua condition. To do this, we modelled the data as bayesian mixed effects models, with each level of facial femininity as a factor. *Todo: change the gridlines* 
+We tested whether this accentuation effect was stronger in the single continuum condition compared to the multiple continua condition. To do this, we modelled the data as bayesian mixed effects models, with each level of facial femininity as a factor. *We could also do nonlinear modelling, but I'm not very knowledgable about that* If perceptual gender is accentuated compared to physical gender, this effect should be strongest at the between-levels.
 
 ```{r exp-two-inf, fig.cap= "Mean gender ratings in Single Dimension and Multiple Dimensions conditions"}
 # Use brms to sample from posterior
@@ -248,12 +308,12 @@ ggplot(df,aes(x = fem, y=estimate__, group=condition))+
 
 ```
 
-We compared the mean rating at facial femininity = 33.33 and 66.67 morph for both conditions. At facial femininity = 33.33 the evidence strongly suggested that the two conditions were the same (Estimate = `r h_dim_33 $hypothesis$Estimate %>% round(2)`, CI =\[`r h_dim_33 $hypothesis$CI.Lower%>% round(2)`, `r h_dim_33 $hypothesis$CI.Upper %>% round(2)`\], BF~01~= `r round(h_dim_33 $hypothesis$Evid.Ratio , 2)`). This was also the case at facial femininity = 66.67 (Estimate = `r h_dim_67$hypothesis$Estimate %>% round(2)`, CI =\[`r h_dim_67$hypothesis$CI.Lower%>% round(2)`, `r h_dim_67$hypothesis$CI.Upper %>% round(2)`\], BF~01~= `r round(h_dim_67$hypothesis$Evid.Ratio , 2)`). Overall, both conditions showed fairly strong tendencies toward accentuated gender perception and they did not differ in this regard.
+Therefore, we compared the mean rating at facial femininity = 33.33 and 66.67 morph for both conditions. At facial femininity = 33.33 the evidence strongly suggested that the two conditions were the same (Estimate = `r h_dim_33 $hypothesis$Estimate %>% round(2)`, CI =\[`r h_dim_33 $hypothesis$CI.Lower%>% round(2)`, `r h_dim_33 $hypothesis$CI.Upper %>% round(2)`\], BF~01~= `r round(h_dim_33 $hypothesis$Evid.Ratio , 2)`). This was also the case at facial femininity = 66.67 (Estimate = `r h_dim_67$hypothesis$Estimate %>% round(2)`, CI =\[`r h_dim_67$hypothesis$CI.Lower%>% round(2)`, `r h_dim_67$hypothesis$CI.Upper %>% round(2)`\], BF~01~= `r round(h_dim_67$hypothesis$Evid.Ratio , 2)`). Overall, both conditions showed fairly strong tendencies toward accentuated gender perception and they did not differ in this regard.
 
 
 # Study 2
 
-Study 2 adapted common ways to measure participants categorization of their own gender to other categorization research. One common recommendation is to include a third option gender option, such as "non-binary" or "other". Another common practice is to give people an open text box in which they may type in whatever they like [@lindqvist_what_2020; @saperstein_categorical_2021]. Therefore, Study 2 compared the standard binary response options to two alternatives: a third gender option (such as 'non-binary' or 'other') and an open text box for participants to type in their gender. An important difference between self-categorization and the categorization of others is that most people know their own gender, whereas the gender of others cannot always be known from appearance [@richards_non-binary_2016]. To account for this, we also gave participants the ability to state that gender was unknown.
+Study 2 adapted common ways to measure participants categorization of their own gender to other categorization research. One common recommendation is to include a third option gender option, such as "non-binary" or "other". Another common practice is to give people an open text box in which they may type in whatever they like [@lindqvist_what_2020; @saperstein_categorical_2021]. Therefore, Study 1 compared the standard binary response options to two alternatives: a third gender option (such as 'non-binary' or 'other') and an open text box for participants to type in their gender. An important difference between self-categorization and the categorization of others is that most people know their own gender, whereas the gender of others cannot always be known from appearance [@richards_non-binary_2016]. To account for this, we also gave participants the ability to state that gender was unknown.
 
 # Method
 
@@ -297,7 +357,7 @@ We used `r cite_r("r-references.bib", pkgs = c("brms", "tidyverse", "papaja"), w
 
 ## How does inclusive response options affect categorizations beyond the binary (Research Question 3)
 
-
+### Group-level categorizations 
 
 The raw distribution of gender categorizations made by participants is presented in Figure\ \@ref(fig:descriptives).
 
@@ -334,6 +394,9 @@ d %>%
 ### Individual-level categorizations
 
 We investigated whether participants categorized faces beyond the binary when given the option to do so (Research Question 1). To do this, we plotted the distribution of categorizations for each participant (see Figure\@ref(fig:descriptives).)
+
+
+
 
 Even when participants had the option to categorize face beyond the binary, most still categorized faces as women and men. In the free text condition, only one participant categorized a single face as other than woman and man. In the multiple categories condition, around half of participants categorized any face beyond the binary see figure XX. Even among participants who categorized any faces beyond the binary, there was a great deal of variation in tendency to use these categories (see figure 3)
 
@@ -565,45 +628,7 @@ interaction <- brm(f_cat ~ 0 + condition * condition:fem_s  + (1 + fem_s |id) + 
 
 ```
 
-```{r, rq2-table, fig.cap= "Proportion of beyond-binary responses in the Multiple Categories and Free Text conditions", include=FALSE}
 
-#Same as before
-#loo_b1 <- loo(Null, mc_cores = 4) %>% saveRDS("loo_b1.rds")
-#loo_b2 <- loo(main_effects, mc_cores = 4) %>% saveRDS("loo_b2.rds")
-#loo_b3 <- loo(interaction, mc_cores = 4) %>% saveRDS("loo_b3rds")
-
-#again, loading loo from file
-loo_b1 <- readRDS("models/loo_b1.rds")
-loo_b2 <- readRDS("models/loo_b2.rds")
-loo_b3 <- readRDS("models/loo_b3.rds")
-
-#this is prepare to make into Apa style table
-loo_table2 <- loo_compare(loo_b1, loo_b2, loo_b3)
-
-row.names(loo_table2) = c( "Main Effect", "Null", "Interaction")
-
-
-library(knitr)
-library(kableExtra)
-
-#Make apa style table
-kable(
-  loo_table2[,1:4] %>% round(2),
-  booktabs = "TRUE",
-  col.names = c("LOO difference", "St. Error diff", "LOO", "St. Error LOO"),
-  #row.names = c("Free text", "Multiple categories", "Binary categories"),
-  align = c("l", "c", "c", "c"),
-  caption = "Relative predictive power of models describing the outcome on the categorization task"
-  ) %>% 
-  kable_classic(full_width = F) %>% 
-  footnote(
-    general_title = "Note.",
-    general = "LOO diff refers to the difference in loo between the model and the most predictive model. The first row describes the most predictive model, which is why the difference is 0",
-    threeparttable = TRUE,
-    footnote_as_chunk = TRUE
-  )
-
-```
 
 ```{r hypos 2}
 
@@ -618,30 +643,7 @@ h3 <- hypothesis(interaction, "conditionxb:fem_s = conditionft:fem_s")
 ```
 
 
-The output of the interaction model are displayed in Table\@ref(tab:interaction-table). 
 
-
-```{r interaction-table}
-library(broom.mixed)
-library(knitr)
-fixed_effects <- tidy(interaction, effects = "fixed") %>% 
-  select( term, estimate, std.error, conf.low, conf.high)
-
-
-
-
-kable(fixed_effects ,#%>% select( estimate, std.error, conf.low, conf.high), 
-      caption = "Fixed Effects Table",
-      booktabs = "TRUE",
-      #ormat = "html",
-      align = c("c", "c", "c", "c"),
-      col.names = c("Parameter", "Beta","SE", "95 CI - L", "95 CI - U"),
-      #row.names = c("Free Text", "Multiple categories", "Binary Categories", "FT:facial femininity", "MC:facial femininity", "BC:facial femininity"),
-      digits = 2) %>% 
-  kable_classic(full_width = F) 
-
-
-```
 
 Participants categorized slightly more faces as women in the multiple categories condition than in the binary categories condition, but this difference is probably due noise, as there was moderate evidence that the two conditions were the same  (OR = `r exp(h0$hypothesis$Estimate) %>% round(2)`, CI =\[`r exp(h0$hypothesis$CI.Lower)%>% round(2)`, `r exp(h0$hypothesis$CI.Upper )%>% round(2)`\], BF~01~= `r round(h0$hypothesis$Evid.Ratio , 2)`). Participants categorized faces as women almost equally often in the free text and binary categories conditions and there was strong evidence that the two conditions were the same (OR = `r exp(h1$hypothesis$Estimate) %>% round(2)`, CI =\[`r exp(h1$hypothesis$CI.Lower)%>% round(2)`, `r exp(h1$hypothesis$CI.Upper) %>% round(2)`\], BF~01~= `r round(h1$hypothesis$Evid.Ratio , 2)`). In other words, neither the free text or the multiple categories condition changed the pattern of categorization of women and men compared to the binary categories condition.
 
@@ -774,13 +776,6 @@ In the introduction we raised the possibility that findings within gender catego
 #### Conclusion
 
 In two experiments we tested how different response alternatives affected gender categorizations. Participants were more likely to categorize faces beyond the binary when using a forced-choice paradigm including "non-binary" and "I don't know" than when using a free text option, or slider scales. In comparison to self-identification questions where open ended responses are seen as the most inclusive alternative [@lindqvist_what_2020], categorization of others benefit from response options that explicitly reminds participants that not all people identify as women or men.
-
-## good points wihtout a home
-
-Researchers may be reluctant to expand face perception research reason beyond the binary. In particular, researchers who are only interested in categorization of men and women may be concerned that to perception of introduces noise or unpredictability to the data. On the other hand, there are also reasons to suspect that including response options beyond the binary can increase accuracy overall. Indeed, measuring gender categorization using only the categories "woman" and "man" does not accurately reflect the diversity of gender as it is experienced by many people [@hyde_future_2018]. By creating a binary out of a more varying dimension, researchers may be missing an important source of variation, similar to how measurement of age as only "young" or "old" would miss a large source of variation. 
-
-
-Lastly, aside from any issues of accuracy or interest in research, we most researchers wish to avoid propagating harmful stereotypes. When researchers use a limited number of gender categories, this communicates indirectly that these are the only gender categories that exist (*ref*). While TGD participants have almost certainly come across this messsage in their daily lives, over time the accumulation of such small messages reinforcing the gender binary can amplify feelings of exclusion.
 
 \newpage
 
