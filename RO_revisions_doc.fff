@@ -1,0 +1,56 @@
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\hypertarget{fig-stimuli}{%
+\centering
+\includegraphics{pix/stimuli.jpeg}
+\caption{Example of seven step morphing spectrum}\label{fig-stimuli}
+}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{RO_revisions_doc_files/figure-latex/descriptives-two-1.pdf}
+\caption{\label{fig:descriptives-two}Participant level and mean ratings of faces in Single dimension and multiple dimensions}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{RO_revisions_doc_files/figure-latex/exp-two-inf-1.pdf}
+\caption{\label{fig:exp-two-inf}Mean gender ratings in Single Dimension and Multiple Dimensions conditions}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\hypertarget{fig-exp1-trial}{%
+\centering
+\includegraphics{pix/exp1.png}
+\caption{Sample trial from each of the three conditions}\label{fig-exp1-trial}
+}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{RO_revisions_doc_files/figure-latex/descriptives-1-1.pdf}
+\caption{\label{fig:descriptives-1}Gender Categorizations by Participants}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+\centering
+\includegraphics{RO_revisions_doc_files/figure-latex/descriptivesx-1.pdf}
+\caption{\label{fig:descriptivesx}Binary Gender Categorizations by Participants in the three conditions (non-binary responses were excluded)}
+\end{figure*}
