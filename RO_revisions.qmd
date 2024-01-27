@@ -255,7 +255,7 @@ ggplot(df,aes(x = fem, y=estimate__, group=condition))+
 
 ```
 
-We compared the mean rating at morph levels 33.33 and 66.67 morph for both conditions. At morph level 33.33 the evidence strongly suggested that the mean "woman rating" in was the same in the Unidemensional () and Bidimensional conditions () (Mean difference = `r h_dim_33 $hypothesis$Estimate %>% round(2)`, CI =\[`r h_dim_33 $hypothesis$CI.Lower%>% round(2)`, `r h_dim_33 $hypothesis$CI.Upper %>% round(2)`\], BF~01~= `r round(h_dim_33 $hypothesis$Evid.Ratio , 2)`). This was also the case at morph level 66.67 (Mean difference = `r h_dim_67$hypothesis$Estimate %>% round(2)`, CI =\[`r h_dim_67$hypothesis$CI.Lower%>% round(2)`, `r h_dim_67$hypothesis$CI.Upper %>% round(2)`\], BF~01~= `r round(h_dim_67$hypothesis$Evid.Ratio , 2)`). Overall, both conditions showed fairly strong tendencies toward categorical responses and they did not differ in this regard. In other words, for face perception we did not find that a one-dimensional rating scale reduced the categorical effect.
+We compared the mean rating at morph levels 33.33 and 66.67 morph for both conditions. At morph level 33.33 the evidence strongly suggested that the mean "woman rating" in was the same in the one-dimension  and two-dimension conditions  (Mean difference = `r h_dim_33 $hypothesis$Estimate %>% round(2)`, CI =\[`r h_dim_33 $hypothesis$CI.Lower%>% round(2)`, `r h_dim_33 $hypothesis$CI.Upper %>% round(2)`\], BF~01~= `r round(h_dim_33 $hypothesis$Evid.Ratio , 2)`). This was also the case at morph level 66.67 (Mean difference = `r h_dim_67$hypothesis$Estimate %>% round(2)`, CI =\[`r h_dim_67$hypothesis$CI.Lower%>% round(2)`, `r h_dim_67$hypothesis$CI.Upper %>% round(2)`\], BF~01~= `r round(h_dim_67$hypothesis$Evid.Ratio , 2)`). Overall, both conditions showed fairly strong tendencies toward categorical responses and they did not differ in this regard. In other words, for face perception we did not find that a one-dimensional rating scale reduced the categorical effect.
 
 
 ## Discussion
@@ -566,10 +566,10 @@ person_pars <- ranef(Interaction)
  # theme_classic()
 ```
 
-# ```{r descriptives, fig.cap= "Gender Categorizations by Participants"}
+```{r descriptives, fig.cap= "Gender Categorizations by Participants"}
 # library(gridExtra)
 # grid.arrange(ft, mc, ncol = 2) 
-# ```
+```
 
 
 
