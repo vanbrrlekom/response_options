@@ -245,11 +245,11 @@ ggplot(data = sd, aes(x=fem, y=mean_rating, color = condition)) +
   geom_line(data = m, 
             aes(x=fem, y=mean_rating,  group = id),  alpha = 0.2 )+
   theme_minimal()+
-  facet_wrap(~condition, ncol = 1) +
+  facet_wrap(~condition, ncol = 2) +
   scale_x_continuous(breaks =c(0, 17, 33, 50, 67, 83, 100)) +
   scale_y_continuous(breaks =c(0, 17, 33, 50, 67, 83, 100)) +
   ylab("Mean \"woman\" rating" ) +
-  xlab("Morph level") +
+  xlab("Facial Gender") +
   scale_color_viridis_d(option = "H", direction = 1, begin = 0.7)+
   theme_minimal() +
   theme(legend.position = "none")
@@ -392,16 +392,17 @@ d %>%
   geom_bar(stat="identity", position = "fill") + 
   ggtitle("Gender Categorizations by Participants")+ 
   facet_wrap(~condition) + 
-  scale_x_continuous(breaks =c(0, 17, 33, 50, 66, 83, 100)) +
+  scale_x_continuous(breaks =c(0, 17, 33, 50, 67, 83, 100)) +
   scale_y_continuous(breaks =c(0, 0.17, 0.33, 0.50, 0.66, 0.83, 1)) +
   ylab("Proportion of responses" ) +
-  xlab("Morph level") +
+  xlab("Face gender") +
   #scale_fill_discrete(name = "Response") +
   #scale_fill_viridis_d(name = "Response")
   scale_fill_manual( values = c("#D2B48C", "#FF5733", "#3498DB", "#FFDD88"))+
   guides(fill = guide_legend(title = "Categorization"))+
   geom_hline(yintercept=0.50, linetype="dashed", color = "darkgrey")+
-  theme_minimal()
+  theme_minimal()+
+  theme(legend.position = "top")
 
 ```
 
