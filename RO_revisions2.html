@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2024-02-21">
+
+<title>The Impact of Response Options on Gender Categorization of Faces</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="RO_revisions2_files/libs/clipboard/clipboard.min.js"></script>
+<script src="RO_revisions2_files/libs/quarto-html/quarto.js"></script>
+<script src="RO_revisions2_files/libs/quarto-html/popper.min.js"></script>
+<script src="RO_revisions2_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="RO_revisions2_files/libs/quarto-html/anchor.min.js"></script>
+<link href="RO_revisions2_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="RO_revisions2_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="RO_revisions2_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="RO_revisions2_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="RO_revisions2_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">The Impact of Response Options on Gender Categorization of Faces</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 21, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="abstract-title">Abstract</div>
+    <p>Awareness is growing that gender is not a strictly binary category, yet much of gender categorization research continues to treat gender as binary in terms of they design response options. This study comprises two experiments that challenge the binary gender norm in different ways by exploring alternative response options to measure gender categorization. In Experiment 1 (N=66), we compared one-dimensional and two-dimensional scales for gender categorization of a diverse set of morphed faces. We found that regardless of the response options used, participants treated gender categorically. In other words, participants accentuated their categorizations of womanhood and manhood, even when response options did not frame them as opposites. In Experiment 2 (N = 100) we compared traditional binary response options with multiple categories and free-text answers. The results suggested that while non-binary options such as “non-binary” and “I don’t know” led to categorizations beyond the binary framework in about half of the participants, free-text options did not elicit similar results. Despite the opportunity to categorize faces beyond the binary, the predominant categorizations remained as ‘woman’ or ‘man’.We conclude that while inclusive response options can facilitate acknowledgment of gender diversity, they do not fundamentally alter the binary perception of gender.</p>
+  </div>
+</div>
+
+</header>
+
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"papaja"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>citations <span class="ot">&lt;-</span> <span class="fu">r_refs</span>(<span class="st">"r-references.bib"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(brms)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"src/functions.r"</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span>  <span class="fu">read.csv</span>(<span class="st">"data/data.csv"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="sc">!</span><span class="fu">starts_with</span>(<span class="st">"Gender"</span>), as.character)) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(.)) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">#arrange(condition.1) %&gt;% </span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pivot_longer</span>(</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">cols =</span> <span class="sc">!</span><span class="fu">c</span>(id, Age_1, <span class="fu">starts_with</span>(<span class="st">"Gender"</span>), <span class="fu">starts_with</span>(<span class="st">"choose"</span>), <span class="fu">contains</span>(<span class="st">"assign"</span>), <span class="fu">starts_with</span>(<span class="st">"Prolific"</span>), <span class="fu">starts_with</span>(<span class="st">"TIME"</span>)),</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">names_to =</span> <span class="st">"face"</span>,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">values_to =</span> <span class="st">"categorization"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="co">#separate(face, c("condition", "face", "morph", "scale")) %&gt;% </span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>   <span class="fu">select</span>(id, face, categorization, Age_1, Gender_1, <span class="fu">starts_with</span>(<span class="st">"Gender"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>   <span class="fu">filter</span>(<span class="sc">!</span>categorization <span class="sc">==</span> <span class="st">""</span>) <span class="sc">%&gt;%</span>   </span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">separate</span>(face, <span class="fu">c</span>(<span class="st">"condition"</span>, <span class="st">"face"</span>, <span class="st">"morph"</span>, <span class="st">"scale"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">race =</span> <span class="fu">substr</span>(face, <span class="dv">1</span>,<span class="dv">1</span>),</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>           <span class="at">masc =</span> <span class="fu">recode</span>(morph, <span class="st">"0"</span> <span class="ot">=</span> <span class="st">"0"</span>, <span class="st">"1"</span> <span class="ot">=</span> <span class="st">"16.67"</span>, <span class="st">"2"</span><span class="ot">=</span> <span class="st">"33.33"</span>,<span class="st">"3"</span> <span class="ot">=</span> <span class="st">"50"</span>,</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"4"</span> <span class="ot">=</span> <span class="st">"66.67"</span>, <span class="st">"5"</span> <span class="ot">=</span><span class="st">"83.33"</span>, <span class="st">"6"</span> <span class="ot">=</span>  <span class="st">"100"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">masc =</span> <span class="fu">as.numeric</span>(masc)) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">masc =</span> <span class="fu">ifelse</span>(race <span class="sc">!=</span> <span class="st">"w"</span>, masc, <span class="dv">100</span> <span class="sc">-</span> masc)) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">fem =</span> <span class="dv">100</span> <span class="sc">-</span> masc) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(id <span class="sc">!=</span><span class="dv">125</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Seed for random number generation</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">cache.extra =</span> knitr<span class="sc">::</span>rand_seed)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Many transgender and gender diverse (TGD) people experience gender as fluid, diffuse, and not bounded by the typical western binary of women and men <span class="citation" data-cites="hydeFutureSexGender2018 richardsNonbinaryGenderqueerGenders2016">(<a href="#ref-hydeFutureSexGender2018" role="doc-biblioref">Hyde et al. 2018</a>; <a href="#ref-richardsNonbinaryGenderqueerGenders2016" role="doc-biblioref">Richards et al. 2016</a>)</span>. In surveys and questionnaires that measure gender identity, however, gender is often constructed as a binary, where response options are limited to the categories to woman/female and man/male<span class="citation" data-cites="sapersteinCategoricalGradationalAlternative2021">(<a href="#ref-sapersteinCategoricalGradationalAlternative2021" role="doc-biblioref">Saperstein and Westbrook 2021</a>)</span>. Such measurement invisibilise and and implicitly deligitimze TGD identities <span class="citation" data-cites="ansaraMethodologiesMisgenderingRecommendations2014">(<a href="#ref-ansaraMethodologiesMisgenderingRecommendations2014" role="doc-biblioref">Ansara and Hegarty 2014</a>)</span>. Recently, psychologists have been encouraged to include a wider range response options<span class="citation" data-cites="sapersteinCategoricalGradationalAlternative2021">(<a href="#ref-sapersteinCategoricalGradationalAlternative2021" role="doc-biblioref">Saperstein and Westbrook 2021</a>)</span> or using free text options <span class="citation" data-cites="lindqvistWhatGenderAnyway2020">(<a href="#ref-lindqvistWhatGenderAnyway2020" role="doc-biblioref">Lindqvist, Sendén, and Renström 2020</a>)</span>. These practices are becoming widely adopted<span class="citation" data-cites="carletonAssessingImpactRoyal2022 croninYoungerGenerationsAre2022 dagostinoOrganizationalPracticesSecondGeneration2022">(see for example <a href="#ref-carletonAssessingImpactRoyal2022" role="doc-biblioref">Carleton et al. 2022</a>; <a href="#ref-croninYoungerGenerationsAre2022" role="doc-biblioref">Cronin et al. 2022</a>; <a href="#ref-dagostinoOrganizationalPracticesSecondGeneration2022" role="doc-biblioref">D’Agostino et al. 2022</a>)</span></p>
+<p>Research on gender categorization of others, however, is is still dominated by binary response options <span class="citation" data-cites="campanellaCategoricalPerceptionFacial2001 habibiSpontaneousGenderCategorization2012 jungAutomaticityGenderCategorization2019">(eg. <a href="#ref-campanellaCategoricalPerceptionFacial2001" role="doc-biblioref">Campanella, Chrysochoos, and Bruyer 2001</a>; <a href="#ref-habibiSpontaneousGenderCategorization2012" role="doc-biblioref">Habibi and Khurana 2012</a>; <a href="#ref-jungAutomaticityGenderCategorization2019" role="doc-biblioref">Jung, White, and Powanda 2019</a>)</span>. Here we report two studies demonstrating how gender categorization of faces can be measured without reinforcing binary gender norms.</p>
+<section id="two-challenges-to-the-gender-bianry" class="level2">
+<h2 class="anchored" data-anchor-id="two-challenges-to-the-gender-bianry">Two Challenges to the Gender Bianry</h2>
+<p>Psychology has a long tradition of treating gender as a simple binary. Accordingly gender was often constructed as a single dimension varying from feminine to masculine. Such a construction of gender implies that femininity is, by definition, the opposite of masculinity. An early challenge this norm came from Sandra Bem in the 70s <span class="citation" data-cites="bemMEASUREMENTPSYCHOLOGICALANDROGYNY1974">(<a href="#ref-bemMEASUREMENTPSYCHOLOGICALANDROGYNY1974" role="doc-biblioref">Bem 1974</a>)</span>. She constructed a scale that measured femininity and masculinity separately - avoiding the implication that they are mutually exclusive. This construction allowed for alternative combinations of gender to the binary, such as androgynous which meant scoring high on both femininity and masculinity, and agender which meant scoring low on both.</p>
+<p>Characteristically for research of its time, Bem’s work was still largely carried out within a binary gender framework, even as it implicitly challenged that framework. The BSRI treated gender as a psychological trait and the people possessing those traits were still seen as either women or men. Since then, as the extent of gender diversity has become more known <span class="citation" data-cites="matsunoNonbinaryGenderqueerIdentities2017">(<a href="#ref-matsunoNonbinaryGenderqueerIdentities2017" role="doc-biblioref">Matsuno and Budge 2017</a>)</span>, it has become increasingly understood that any measurement which does not take this gender diversity into account is insufficient on its own.</p>
+<p>A later group of challenges to the gender binary in psychology from the 2010s and onward to highlighted this gap. This work, often drawing from feminist research and writing, was more explicit about the need for psychology to make room for trans and non-binary gender identity <span class="citation" data-cites="hydeFutureSexGender2018 morgenrothGenderTroubleSocial2018 richardsNonbinaryGenderqueerGenders2016">(<a href="#ref-hydeFutureSexGender2018" role="doc-biblioref">Hyde et al. 2018</a>; <a href="#ref-morgenrothGenderTroubleSocial2018" role="doc-biblioref">Morgenroth and Ryan 2018</a>; <a href="#ref-richardsNonbinaryGenderqueerGenders2016" role="doc-biblioref">Richards et al. 2016</a>)</span>. <span class="citation" data-cites="sapersteinCategoricalGradationalAlternative2021">Saperstein and Westbrook (<a href="#ref-sapersteinCategoricalGradationalAlternative2021" role="doc-biblioref">2021</a>)</span> suggested that surveys measuring gender include a range of response options, such as non-binary, other, trans man, agender and more. Lindqvist et al.&nbsp;(2020) suggested an open text entry where participants can fill in their gender in an open-ended format. The free text response has the advantage of being completely unconstrained, allowing participants to enter any category, including categories which may not have occurred to the researchers. Moreover, the acceptable terms sometimes shift over time, as more marginalized voices are heard. The term “transsexual” for example, has been widely used and seen as acceptable, but is now understood to be stigmatizing (APA manual). A free text easily avoids this issue.</p>
+<p>Both the initial and later challenges to the gender binary in psychology primarily suggested ways to measures respondents’ own gender identity. This emphasis is understandable as gender identity is a commonly reported demographic variable. But gender is frequently is also frequently measured in terms of participants categorizations of others. The form such measurement takes is often quite similar to self-categorization, usually a forced-choice selection of two categories. Because self-categorization and categorization of others are different processes, however, the best measurement of self-categorization may not be the best measurement of the categorization of others.</p>
+</section>
+<section id="measuring-gender-categoriztaion-of-others" class="level2">
+<h2 class="anchored" data-anchor-id="measuring-gender-categoriztaion-of-others">Measuring gender categoriztaion of others</h2>
+<p>Research on how people perceive and categorize the gender of others has used both dimensional scales as well discrete categories, but in both cases almost exclusively treats gender as a binary category. It is fairly common, for example, to use the one-dimensional, masculine-feminine approach, where participants rate gender of others as a single dimension. Much of this research explores evolutionary and other reasons for gender in faces, correlating one-dimensional categorization of face gender with other traits, such as attractiveness <span class="citation" data-cites="littleRoleMasculinityDistinctiveness2002">(<a href="#ref-littleRoleMasculinityDistinctiveness2002" role="doc-biblioref">Little and Hancock 2002</a>)</span>, and distinctiveness <span class="citation" data-cites="otoolePerceptionFaceGender1998">(<a href="#ref-otoolePerceptionFaceGender1998" role="doc-biblioref">O’Toole et al. 1998</a>)</span>.</p>
+<p>Another common approach tasks people to categorize faces according to a set of response options decided by the researchers, almost invariably “woman” and “man”. Studies using this method have shown that people rapidly and automatically categorize gender <span class="citation" data-cites="habibiSpontaneousGenderCategorization2012 jungAutomaticityGenderCategorization2019">(<a href="#ref-habibiSpontaneousGenderCategorization2012" role="doc-biblioref">Habibi and Khurana 2012</a>; <a href="#ref-jungAutomaticityGenderCategorization2019" role="doc-biblioref">Jung, White, and Powanda 2019</a>)</span>. This in turn indicates that gender is a salient category that determines how people evaluate others on a number of traits, such as agreeableness, dominance, etc <span class="citation" data-cites="stolierNeuralMechanismSocial2017">(<a href="#ref-stolierNeuralMechanismSocial2017" role="doc-biblioref">Stolier and Freeman 2017</a>)</span>.</p>
+<p>Moreover, participants categorize faces categorically <span class="citation" data-cites="campanellaCategoricalPerceptionFacial2001">(<a href="#ref-campanellaCategoricalPerceptionFacial2001" role="doc-biblioref">Campanella, Chrysochoos, and Bruyer 2001</a>)</span>. This phenomenon has been observed when participants categorize a number of faces that have been morphed to vary from feminine to masculine. Categorizations of these morphed faces were accentuated towards the dominant gender of the face, so that for example a 60% female morph was rated as a woman by closer to 80% of participants <span class="citation" data-cites="campanellaCategoricalPerceptionFacial2001">(<a href="#ref-campanellaCategoricalPerceptionFacial2001" role="doc-biblioref">Campanella, Chrysochoos, and Bruyer 2001</a>)</span>. Observing categorical effects for any stimuli suggest that people treat that stimuli as two separate categories, even if varies for gender. The observation of a categorical effect for gender suggests that people think of gender as a strict binary consisting of women and men only.</p>
+<p>One consideration of this research is the response options used. The structure of response options communicates certain ideas about gender to participants. A one-dimensional scale implies that gender can vary on a continuum. It also places masculinity and femininity at the endpoints of the scales, so that a higher rating of femininity is by definition a lower rating of masculinity. This in turn suggests that someone cannot embody femininity and masculinity at the same time, indeed, that the two concepts are opposites. Binary response options consisting of woman/female and man/male only suggest that those are the only two categories that exist. On the other hand, two-dimensional scales and categories that include non-binary response options suggest the opposite, that femininity and masculinity are not mutually exclusive and that a multiplicity of genders exists. In other words, no matter which type of response options are used, ideas are being communicated to participants, potentially influencing their responses. Most recommendations suggest taking great care not to influence participants <span class="citation" data-cites="nicholsGoodSubjectEffectInvestigating2008">(<a href="#ref-nicholsGoodSubjectEffectInvestigating2008" role="doc-biblioref">Nichols and Maner 2008</a>)</span>, but the effects of gender response options are rarely considered.</p>
+<p>Another aspect of gender categorizations of others is that complete certainty is not possible. This is because many trans and non-binary individuals do not have a prototypical androgynous gender expression <span class="citation" data-cites="richardsNonbinaryGenderqueerGenders2016">(<a href="#ref-richardsNonbinaryGenderqueerGenders2016" role="doc-biblioref">Richards et al. 2016</a>)</span>. Indeed many non-binary and even binary trans people may appear similar to their assigned gender at birth. Therefore, if a person aims to be inclusive, abstaining from categorizing until more information is available is always the safest option when encountering a face.</p>
+<p>The purpose of Study 1 was to investigate this influencing effect of one and two-dimensional response options by investigating whether participants responses are categorical. A categorical effect are a useful outcome in this context because it suggests participants treat about the gender as consisting of only two categories: women and men. Drawing inspiration from <span class="citation" data-cites="bemMEASUREMENTPSYCHOLOGICALANDROGYNY1974">Bem (<a href="#ref-bemMEASUREMENTPSYCHOLOGICALANDROGYNY1974" role="doc-biblioref">1974</a>)</span> we compare gender categorization measured using one-dimensioanl response options and two-dimensional response options. If one-dimensional scales influence participants to think of gender as binary and opposites and two-dimensional scales don’t do this, there should be a reduced categorical effect for two-dimensional scales. We tested two research questions; would participants respond categorically to faces (Research Question 1) and would one-dimensional rating scale elicit stronger categorical responses than two-dimensional (Research Question 2).</p>
+<p>The purpose of Study 2 investigated categorization using non-binary gender response options. We used both multiple categories beyond women and men, as suggested by among others Westbrook and Saperstein and we also used a free text as suggested by Lindqvist et al.&nbsp;Study 2 was mainly interested in how the two non-binary options compared to each other and how the presence of non-binary options affected the categorization of binary gender. As non-binary options have been promoted by feminist and LGBTQ+ activists, their inclusion might have more generalized effects on binary categorization. Therefore, study 2 also investigated categorization of women and men.</p>
+</section>
+<section id="study-1" class="level1">
+<h1>Study 1</h1>
+<section id="method" class="level2">
+<h2 class="anchored" data-anchor-id="method">Method</h2>
+<section id="participants" class="level3">
+<h3 class="anchored" data-anchor-id="participants">Participants</h3>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get subjects information</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>subs <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(condition <span class="sc">==</span> <span class="st">"md"</span> <span class="sc">|</span> condition <span class="sc">==</span> <span class="st">"sd"</span> ) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">age =</span> <span class="fu">as.numeric</span>(Age_1),</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">gender =</span> <span class="fu">substr</span>(Gender_1, <span class="dv">1</span>,<span class="dv">1</span>) ) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(id, age, gender)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Swedish participants (<em>N</em> = 66) completed the study in a lab at a Stockholm University campus (<em>M</em><sub>age</sub>= 37.36, <em>SD</em><sub>age</sub> = 14.14, Range = 18 - 73). Self-identified gender was measured using an open-ended text box (31 women, 32 men and 2 participants who did indicate gender). Participants were monetarily compensated for their time (100 sek). All participants were informed that participation was voluntary and gave written consent to participate in the study. The administering researcher was blind to participant condition and participants were randomly allocated</p>
+</section>
+<section id="stimuli" class="level3">
+<h3 class="anchored" data-anchor-id="stimuli">Stimuli</h3>
+<p>The experiment included Black, Asian and White faces from the London Face Database <span class="citation" data-cites="debruineFaceResearchLab2017">(<a href="#ref-debruineFaceResearchLab2017" role="doc-biblioref">L. M. DeBruine and Jones 2017</a>)</span>and the Chicago Face Database<span class="citation" data-cites="maChicagoFaceDatabase2015">(<a href="#ref-maChicagoFaceDatabase2015" role="doc-biblioref">Ma, Correll, and Wittenbrink 2015</a>)</span> morphed with on Webmorph <span class="citation" data-cites="debruineWebMorph2018">(<a href="#ref-debruineWebMorph2018" role="doc-biblioref">L. DeBruine 2018</a>)</span>. We matched faces of women and men using the codebook provided by the researchers, ensuring that the women were rated similar levels of feminine as the men were rated masculine. The morphs were made in 7 steps, from completely feminine to completely masculine. We defined the morph level as the degree of the the female face present in the morph. In other words, a 33% was slightly tilted toward the man, a 50% face was an even mixture and a 100% consisted only of the woman’s face. Because there were 18 pairs morphed in 7 steps, the total number of faces was 126.</p>
+<div id="fig-stimuli" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="pix/stimuli.jpeg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1: Example of seven step morphing spectrum</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="design-and-procedure" class="level2">
+<h2 class="anchored" data-anchor-id="design-and-procedure">Design and procedure</h2>
+<p>The experiment used a between-participants design. The two conditions were the <em>one-dimensional</em> (control condition), and <em>two-dimensional</em> (experimental) conditions. Participants were randomly allocated into one of the two response options conditions.</p>
+<p>Participants completed the experiment on a computer in a quiet room. Each trial consisted of a face accompanied by the question “How would you gender categorize this person?”. In the one-dimensional control condition, participants rated gender based on a single continuum with the anchors marked “woman” and “man”. In the two-dimensional condition, participants rated each face twice on two different continua, ranging from “not woman” or “not man” to “woman” or “man”. Each person completed a total of 126 trials (i.e.&nbsp;they categorized every face in the stimuli set).</p>
+<p><img src="pix/exp2.png" id="fig-exp2-trial" class="img-fluid" alt="Sample trial from each of the three conditions">]</p>
+</section>
+<section id="data-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="data-analysis">Data analysis</h2>
+<p>We used R <span class="citation" data-cites="R-base">(Version 4.2.2; <a href="#ref-R-base" role="doc-biblioref">R Core Team 2022</a>)</span> and the R-packages <em>brms</em> <span class="citation" data-cites="R-brms_a R-brms_b R-brms_c">(Version 2.18.0; <a href="#ref-R-brms_a" role="doc-biblioref">Bürkner 2017</a>, <a href="#ref-R-brms_b" role="doc-biblioref">2018</a>, <a href="#ref-R-brms_c" role="doc-biblioref">2021</a>)</span>, <em>papaja</em> <span class="citation" data-cites="R-papaja">(Version 0.1.1; <a href="#ref-R-papaja" role="doc-biblioref">Aust and Barth 2022</a>)</span>, and <em>tidyverse</em> <span class="citation" data-cites="R-tidyverse">(Version 1.3.2; <a href="#ref-R-tidyverse" role="doc-biblioref">Wickham et al. 2019</a>)</span>. We fit the data to Bayesian mixed-effects models were to test the categorical effects. In all models, morph level and response options were included as fixed effects. Additionally, all models included varying intercepts for both participants and trials and varying slopes for facial femininity. The pattern of scores were clearly non-linear, meaning any linear model would probably be misspecified. Therefore, to reduce the complexity of the model, facial femininity was modeled as an ordered factor with seven levels, corresponding to each of the seven morphing steps. Any categorical effects should be strongest closest to the midpoint, therefore, we compared the two conditions at morph level = 33 and 67, reporting the credible intervals of the difference as well as the Savage-Dickey Bayes factors <span class="citation" data-cites="wagenmakersBayesianHypothesisTesting2010">(<a href="#ref-wagenmakersBayesianHypothesisTesting2010" role="doc-biblioref">Wagenmakers et al. 2010</a>)</span>. At morph level 50 we would expect the ratings to be 50, regardless of condition.</p>
+</section>
+</section>
+<section id="results" class="level1">
+<h1>Results</h1>
+<p>First, we examined whether participants responded categorially to faces (Research Question 1). Individual-level and group mean responses are visualized in Figure 3. If participants respond only to the morph of faces, the lines should be a straight diagonal. Instead, Figure 3 shows that most participants display a non-linear S-shape (see the light lines) and this was indeed also the pattern of the group means (see the dark lines).</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Wrangle data again</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(condition <span class="sc">==</span> <span class="st">"sd"</span> <span class="sc">|</span> condition <span class="sc">==</span> <span class="st">"md"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">f_rating =</span> <span class="fu">as.numeric</span>(categorization) <span class="sc">%&gt;%</span>  <span class="fu">ifelse</span>(scale <span class="sc">==</span> <span class="st">"f"</span>, ., <span class="dv">100</span><span class="sc">-</span> .),</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">scale_new =</span> <span class="fu">ifelse</span>(scale <span class="sc">==</span> <span class="st">"f"</span> <span class="sc">|</span> scale <span class="sc">==</span><span class="st">"m"</span>, scale, <span class="st">"sd"</span>),</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">fem =</span> <span class="fu">as.factor</span>(fem)) </span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>fit_dimensional_interaction <span class="ot">&lt;-</span> </span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">brm</span>(f_rating <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> fem<span class="sc">:</span>condition <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">+</span> fem<span class="sc">|</span>id) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">+</span>fem<span class="sc">|</span>face), <span class="at">family =</span> <span class="fu">gaussian</span>(<span class="at">link =</span> <span class="st">'identity'</span>), </span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>          <span class="at">prior =</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">50</span>,<span class="dv">50</span>), <span class="at">class =</span> <span class="st">"b"</span>),</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>                    <span class="co">#prior(normal(50,50), class = "Intercept"),</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">exponential</span>(<span class="dv">1</span>), <span class="at">class =</span> <span class="st">"sd"</span>),</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">lkj</span>(<span class="dv">1</span>), <span class="at">class =</span> <span class="st">"cor"</span>),</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">exponential</span>(<span class="dv">1</span>), <span class="at">class =</span> sigma)),</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>          <span class="at">data =</span> tmp,</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>          <span class="at">iter =</span> <span class="dv">4000</span>, <span class="at">warmup =</span> <span class="dv">1000</span>,</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>          <span class="at">cores =</span> <span class="dv">4</span>,</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>          <span class="at">sample_prior =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">"models/fit_dimensional_stair_factor.5"</span>)</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="co"># carrying out the hypothesis test</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>h_dim_33 <span class="ot">&lt;-</span> <span class="fu">hypothesis</span>(fit_dimensional_interaction, <span class="st">"fem33.33:conditionmd= fem33.33:conditionsd"</span> )</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>h_dim_67 <span class="ot">&lt;-</span> <span class="fu">hypothesis</span>(fit_dimensional_interaction, <span class="st">"fem66.67:conditionmd= fem66.67:conditionsd"</span> )</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>h_categ <span class="ot">&lt;-</span> <span class="fu">hypothesis</span>(fit_dimensional_interaction, <span class="st">"fem66.67:conditionmd- fem33.33:conditionmd = fem66.67:conditionsd- fem33.33:conditionsd"</span> )</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>h_dim_67 <span class="ot">&lt;-</span> <span class="fu">hypothesis</span>(fit_dimensional_interaction, <span class="st">"fem66.67:conditionmd= fem66.67:conditionsd"</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>To further test this, we calculated the difference between the mean ratings at morph level 33 and 67. If participants respond linearly, this difference should be 34. Instead, in both conditions, this difference far exceeded 34 (<em>M</em><sub>1D</sub> = 59.57, CI<sub>1D</sub> = [53.65, 65.26], <em>M</em><sub>2D</sub> = 58.53, CI = [52.53-65.10]). This suggests participants responded categorically. However, Figure3 also suggests that there was a high degree of individual variation, and some participants were more categorical than others in their ratings.</p>
+<p>Finally, we tested whether the categorical perception was reduced in the two-dimension condition compared to the one-dimension condition (Research Question 2). In fact, the two conditions were nearly the same (Difference = 0.83, CI = [-5.57, 7.24], BF<sub>0</sub>= 29.89).</p>
+<section id="discussion" class="level2">
+<h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
+<p>Participants responded categorically when rating faces in terms of gender. Additionally, two dimensional response options did not reduce this effect. Indeed a highly binary view of gender was present and participants treated womanhood and manhood as opposites even the scale would allow them to be more flexible. However, this scale only implicitly challenged the binary, as no diverse gender optipons were present.</p>
+</section>
+</section>
+<section id="study-2" class="level1">
+<h1>Study 2</h1>
+<p>Study 2 tested a wider range of response options that explicitly challenge the gender binary. These were adapted from common ways to measure participants categorization of their own gender to other categorization research. Study 2 compared a control condition consisting of standard binary response options to two alternatives: a third gender option (such as ‘non-binary’ or ‘other’) and an open text box for participants to type in their response.</p>
+</section>
+<section id="method-1" class="level1">
+<h1>Method</h1>
+<section id="participants-1" class="level2">
+<h2 class="anchored" data-anchor-id="participants-1">Participants</h2>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get subjects information</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>subs <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(condition <span class="sc">==</span> <span class="st">"ft"</span> <span class="sc">|</span> condition <span class="sc">==</span> <span class="st">"xb"</span> <span class="sc">|</span> condition <span class="sc">==</span> <span class="st">"mc"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">age =</span> <span class="fu">as.numeric</span>(Age_1),</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">gender =</span> <span class="fu">substr</span>(Gender_1, <span class="dv">1</span>,<span class="dv">1</span>) ) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(id, age, gender)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Swedish participants (<em>N</em> = 100) completed the study in a lab at a Stockholm University campus (<em>M</em><sub>age</sub>= 37.16, <em>SD</em><sub>age</sub> = 13.89, Range = 18 - 69). Self-identified gender was measured using an open-ended text box as recommended by<span class="citation" data-cites="lindqvistWhatGenderAnyway2020">(<a href="#ref-lindqvistWhatGenderAnyway2020" role="doc-biblioref">Lindqvist, Sendén, and Renström 2020</a>)</span> (56 women, 47 men 2 participants did not indicate gender). All participants were informed that participation was voluntary, that they could withdraw from the study and that results do no include any identifying features. All participants provided written informed consent. The administering researcher was blind to participant condition and participants were randomly allocated</p>
+</section>
+<section id="design-stimuli-and-procedure" class="level2">
+<h2 class="anchored" data-anchor-id="design-stimuli-and-procedure">Design, Stimuli and Procedure</h2>
+<p>The experiment used a between-participants design. There were three response options conditions, the <em>binary categories</em>, <em>free text</em> and <em>multiple categories</em> and conditions (see <a href="#fig-exp1-trial">Figure&nbsp;2</a>). In the binary categories condition the response options consisted of two categories: “woman” and “man”. In the free text condition the response options consisted of an open text box. In the multiple categories condition, the response options consisted of four categories: “woman”, “man”, “other” and “I don’t know”. The stimuli were identical to those of Study 1. After being allocated to one of the three conditions, participants categorized 126 faces according to the response options in their condition.</p>
+<div id="fig-exp1-trial" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="pix/exp1.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;2: Sample trial from each of the three conditions</figcaption>
+</figure>
+</div>
+<p>The outcome was responses to the categorization task. For analysis purposes, these were aggregated in the following ways:</p>
+<p><em>Beyond-binary categorizations</em> represented the categories where participants did not categorize the face as woman or man. In the multiple categories conditions, it was computed by summing the “I don’t know” and “other”. In the free text condition, it was computed by summint variations of “other” and “non-binary”. The beyond-binary responses were coded as 1 and binary responses as 0. In the free text condition, this included various variations of “other” and “non-binary”. The beyond-binary responses were coded as 1 and binary responses as 0.</p>
+<p><em>Binary categorization</em> represented only the responses that were either woman (coded as 1) or man (coded as 0). All other responses were removed from this dataset (this meant removing a total of 116 responses from 12 participants).</p>
+</section>
+<section id="data-analysis-1" class="level2">
+<h2 class="anchored" data-anchor-id="data-analysis-1">Data analysis</h2>
+<p>We fit the data to Bayesian mixed-effects models were to test the categorical effects. In all models, morph level and response options were included as fixed effects. Additionally, all models included varying intercepts for both participants and trials and varying slopes for morph level.</p>
+</section>
+</section>
+<section id="results-1" class="level1">
+<h1>Results</h1>
+<p>Even when participants had the option to categorize face beyond the binary, most still categorized faces as women and men. In the free text condition, only two (5.71%) of participants categorized a single face as other than woman and man. In the multiple categories condition, 10 (28.57%) of participants categorized any face beyond the binary; of those 5 (14.30%) categorized between 1 and 5 faces beyond the binaryt and 5 (14.30% categorized between 15-27 faces beyond the binary). The total number of faces was 124. Even among participants who categorized any faces beyond the binary, there was a great deal of variation in tendency to use these categories (see Figure 3)</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># make figure 1</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>d <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">fem =</span> fem ) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(condition <span class="sc">==</span> <span class="st">"ft"</span> <span class="sc">|</span> condition <span class="sc">==</span> <span class="st">"xb"</span> <span class="sc">|</span> condition <span class="sc">==</span> <span class="st">"mc"</span>) <span class="sc">%&gt;%</span> <span class="co">#select correct conditions</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(id <span class="sc">!=</span> <span class="dv">124</span>) <span class="sc">%&gt;%</span> <span class="co">#misunderstood the task, categorized by race</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(fem, race, condition) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">categorization =</span> <span class="fu">recode</span>(categorization,  <span class="co">#yes, this is pretty horrendous code, I haven't had a chance to sit down and clean it up yet.</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">"1"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Woman"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"wman"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"woman"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"female"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Female "</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Female"</span><span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Fenale"</span><span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"women"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"woman "</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"femLE"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"FEmale"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Femalw"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Fwmalw"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Female "</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"woman"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Woman"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"feMale"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"fermale"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"wman"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Femae"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"f"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"F"</span><span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"female "</span> <span class="ot">=</span> <span class="st">"Woman"</span>,</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">"2"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"man"</span> <span class="ot">=</span> <span class="st">"Man"</span>,<span class="st">"Male"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"male"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">" Male"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"M"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"nmale"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"male "</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"nale"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"ale"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"M"</span> <span class="ot">=</span> <span class="st">"Man"</span>,  <span class="st">"m"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"MALE"</span> <span class="ot">=</span> <span class="st">"Man"</span>,</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">"3"</span> <span class="ot">=</span> <span class="st">"Other"</span>, <span class="st">"Nonbinary"</span> <span class="ot">=</span> <span class="st">"Other"</span>, <span class="st">"Non Binary "</span> <span class="ot">=</span> <span class="st">"Other"</span>, <span class="st">"Non binary "</span> <span class="ot">=</span> <span class="st">"Other"</span>,  <span class="st">"nonbinary"</span> <span class="ot">=</span> <span class="st">"Other"</span>, </span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">"4"</span> <span class="ot">=</span> <span class="st">"Don't know"</span> ),</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>         <span class="at">condition =</span> <span class="fu">recode</span>(condition, <span class="st">"ft"</span> <span class="ot">=</span> <span class="st">"Free text"</span>, <span class="st">"xb"</span> <span class="ot">=</span> <span class="st">"Binary Categories"</span>, <span class="st">"mc"</span> <span class="ot">=</span> <span class="st">"Multiple Categories"</span>))<span class="sc">%&gt;%</span> </span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(categorization) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(categorization))<span class="sc">%&gt;%</span> </span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>fem, <span class="at">y=</span>n, <span class="at">fill=</span><span class="fu">factor</span>(categorization, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Man"</span>, <span class="st">"Other"</span>, <span class="st">"Don't know"</span>, <span class="st">"Woman"</span>)))) <span class="sc">+</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span> </span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Gender Categorizations by Participants"</span>)<span class="sc">+</span> </span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>condition) <span class="sc">+</span> </span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">17</span>, <span class="dv">33</span>, <span class="dv">50</span>, <span class="dv">66</span>, <span class="dv">83</span>, <span class="dv">100</span>)) <span class="sc">+</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks =</span><span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">17</span>, <span class="dv">33</span>, <span class="dv">50</span>, <span class="dv">66</span>, <span class="dv">83</span>, <span class="dv">100</span>)) <span class="sc">+</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Proportion of responses"</span> ) <span class="sc">+</span></span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Morph level"</span>) <span class="sc">+</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>  <span class="co">#scale_fill_discrete(name = "Response") +</span></span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>  <span class="co">#scale_fill_viridis_d(name = "Response")</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>( <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#D2B48C"</span>, <span class="st">"#FF5733"</span>, <span class="st">"#3498DB"</span>, <span class="st">"#FFDD88"</span>))<span class="sc">+</span></span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">title =</span> <span class="st">"Categorization"</span>))<span class="sc">+</span></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept=</span><span class="fl">0.50</span>, <span class="at">linetype=</span><span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"darkgrey"</span>)<span class="sc">+</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="RO_revisions2_files/figure-html/descriptives-1-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Gender Categorizations by Participants</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Fit models using brms.</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Can be run with premade file to save time. To reproduce in full, comment out the "file" argument</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>Null <span class="ot">&lt;-</span> <span class="fu">brm</span>(bbcat <span class="sc">~</span> <span class="dv">1</span>  <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span>id) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>face<span class="sc">:</span>fem), <span class="at">family =</span> <span class="fu">bernoulli</span>(<span class="at">link =</span> <span class="st">'logit'</span>), </span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">prior =</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>,<span class="dv">3</span>), <span class="at">class =</span> <span class="st">"Intercept"</span>), <span class="co"># weakly regularizing priors</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">cauchy</span>(<span class="dv">0</span>,<span class="dv">3</span>), <span class="at">class =</span> <span class="st">"sd"</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>                    ),</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>          <span class="at">data =</span> tmp,</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>          <span class="at">iter =</span> <span class="dv">6000</span>, <span class="at">warmup =</span> <span class="dv">2000</span>,</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>          <span class="at">chains =</span> <span class="dv">4</span>,</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>          <span class="at">cores =</span> <span class="dv">4</span>,</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>          <span class="at">sample_prior =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">"models/binary_null"</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>          )</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co">#Fitting the main effects model</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>Main_Effect <span class="ot">&lt;-</span> <span class="fu">brm</span>(bbcat <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> condition <span class="sc">+</span> fem  <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span>id) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>face<span class="sc">:</span>fem), <span class="at">family =</span> <span class="fu">bernoulli</span>(<span class="at">link =</span> <span class="st">'logit'</span>), </span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>          <span class="at">prior =</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>,<span class="dv">3</span>), <span class="at">class =</span> <span class="st">"b"</span>, <span class="at">coef =</span> <span class="st">"conditionmc"</span>), <span class="co">#again, weakly regularizing priors</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>,<span class="dv">3</span>), <span class="at">class =</span> <span class="st">"b"</span>, <span class="at">coef =</span> <span class="st">"conditionft"</span>),</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">cauchy</span>(<span class="dv">0</span>,<span class="dv">3</span>), <span class="at">class =</span> <span class="st">"sd"</span>)</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>                    ),</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>          <span class="at">data =</span> tmp,</span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>          <span class="at">iter =</span> <span class="dv">4000</span>, <span class="at">warmup =</span> <span class="dv">1000</span>,</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>          <span class="at">chains =</span> <span class="dv">4</span>,</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>          <span class="at">cores =</span> <span class="dv">4</span>,</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>          <span class="at">sample_prior =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">"models/binary_mfx"</span></span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>          )</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="co">#fitting the interaction model</span></span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>Interaction <span class="ot">&lt;-</span> <span class="fu">brm</span>(bbcat <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> condition<span class="sc">:</span>fem  <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span>id) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>face<span class="sc">:</span>fem), <span class="at">family =</span> <span class="fu">bernoulli</span>(<span class="at">link =</span> <span class="st">'logit'</span>), </span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>         <span class="at">prior =</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="sc">-</span><span class="dv">3</span>,<span class="dv">3</span>), <span class="at">class =</span> <span class="st">"b"</span>),</span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">prior</span>(<span class="fu">cauchy</span>(<span class="dv">0</span>,<span class="dv">3</span>), <span class="at">class =</span> <span class="st">"sd"</span>)),</span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>          <span class="at">data =</span> tmp,</span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>          <span class="at">iter =</span> <span class="dv">6000</span>, <span class="at">warmup =</span> <span class="dv">2000</span>,</span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>          <span class="at">chains =</span> <span class="dv">4</span>,</span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>          <span class="at">cores =</span> <span class="dv">4</span>,</span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>          <span class="at">sample_prior =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">"models/binary_int.6"</span></span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>          )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>When people categorize faces beyond the binary such categorization also affects the categorization of faces as men or women. For example, does categorization of faces as non-binary systematically decrease “woman” categorization. We therefore investigated inclusive response options changed participants overall tendency to categorize women and men. Descriptive statistics for individual level responses are displayed in Figure 4.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># make figure 1</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>d <span class="sc">%&gt;%</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">id =</span> <span class="fu">factor</span>(id) ) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(condition <span class="sc">==</span> <span class="st">"ft"</span><span class="sc">|</span> condition <span class="sc">==</span> <span class="st">"mc"</span> <span class="sc">|</span>condition <span class="sc">==</span> <span class="st">"xb"</span>) <span class="sc">%&gt;%</span> <span class="co">#select correct conditions</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(  id) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">categorization =</span> <span class="fu">recode</span>(categorization,  <span class="co">#yes, this is pretty horrendous code, I haven't had a chance to sit down and clean it up yet.</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">"1"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Woman"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"wman"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"woman"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"female"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Female "</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Female"</span><span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Fenale"</span><span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"women"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"woman "</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"femLE"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"FEmale"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Femalw"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Fwmalw"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Female "</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"woman"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Woman"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"feMale"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"fermale"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"wman"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Femae"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"f"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"F"</span><span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"female "</span> <span class="ot">=</span> <span class="st">"Woman"</span>,</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">"2"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"man"</span> <span class="ot">=</span> <span class="st">"Man"</span>,<span class="st">"Male"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"male"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">" Male"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"M"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"nmale"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"male "</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"nale"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"ale"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"M"</span> <span class="ot">=</span> <span class="st">"Man"</span>,  <span class="st">"m"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"MALE"</span> <span class="ot">=</span> <span class="st">"Man"</span>,</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">"3"</span> <span class="ot">=</span> <span class="st">"Other"</span>, <span class="st">"Nonbinary"</span> <span class="ot">=</span> <span class="st">"Other"</span>, <span class="st">"Non Binary "</span> <span class="ot">=</span> <span class="st">"Other"</span>, <span class="st">"Non binary "</span> <span class="ot">=</span> <span class="st">"Other"</span>,  <span class="st">"nonbinary"</span> <span class="ot">=</span> <span class="st">"Other"</span>, <span class="st">"Non binary"</span> <span class="ot">=</span> <span class="st">"Other"</span>, <span class="st">"non binary"</span> <span class="ot">=</span> <span class="st">"Other"</span>, <span class="st">"unisex"</span> <span class="ot">=</span> <span class="st">"other"</span>, </span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">"4"</span> <span class="ot">=</span> <span class="st">"Don't know"</span> ),</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">condition =</span> <span class="fu">recode</span>(condition, <span class="st">"ft"</span> <span class="ot">=</span> <span class="st">"Free text"</span>, <span class="st">"xb"</span> <span class="ot">=</span> <span class="st">"Binary Categories"</span>, <span class="st">"mc"</span> <span class="ot">=</span> <span class="st">"Multiple Categories"</span>))<span class="sc">%&gt;%</span> </span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(id <span class="sc">!=</span> <span class="dv">124</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(categorization <span class="sc">==</span> <span class="st">"Woman"</span> <span class="sc">|</span>categorization <span class="sc">==</span> <span class="st">"Man"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(condition, id) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(categorization) <span class="sc">%&gt;%</span> <span class="fu">pivot_wider</span>(<span class="at">id_cols =</span> <span class="fu">c</span>(id, condition), <span class="at">names_from =</span> categorization, <span class="at">values_from =</span> n) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">total =</span> Woman<span class="sc">+</span>Man) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prop_w =</span> Woman<span class="sc">/</span>total<span class="sc">*</span><span class="dv">100</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> condition, <span class="at">y =</span> prop_w)) <span class="sc">+</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"Percentage </span><span class="sc">\"</span><span class="st">woman</span><span class="sc">\"</span><span class="st"> categorizations"</span>) <span class="sc">+</span> </span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Condition"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="RO_revisions2_files/figure-html/my-plot-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Distribution of Participant Proportions for Categorizing Faces as Women Across Three Conditions</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># make figure 1</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>ft <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">id =</span> <span class="fu">factor</span>(id) ) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(condition <span class="sc">==</span> <span class="st">"ft"</span>) <span class="sc">%&gt;%</span> <span class="co">#select correct conditions</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(  id) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">categorization =</span> <span class="fu">recode</span>(categorization,  <span class="co">#yes, this is pretty horrendous code, I haven't had a chance to sit down and clean it up yet.</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">"1"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Woman"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"wman"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"woman"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"female"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Female "</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Female"</span><span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Fenale"</span><span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"women"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"woman "</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"femLE"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"FEmale"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Femalw"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Fwmalw"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Female "</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"woman"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Woman"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"feMale"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"fermale"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"wman"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Femae"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"f"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"F"</span><span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"female "</span> <span class="ot">=</span> <span class="st">"Woman"</span>,</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">"2"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"man"</span> <span class="ot">=</span> <span class="st">"Man"</span>,<span class="st">"Male"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"male"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">" Male"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"M"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"nmale"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"male "</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"nale"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"ale"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"M"</span> <span class="ot">=</span> <span class="st">"Man"</span>,  <span class="st">"m"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"MALE"</span> <span class="ot">=</span> <span class="st">"Man"</span>,</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">"3"</span> <span class="ot">=</span> <span class="st">"Other"</span>, <span class="st">"Nonbinary"</span> <span class="ot">=</span> <span class="st">"Other"</span>, <span class="st">"Non Binary "</span> <span class="ot">=</span> <span class="st">"Other"</span>, <span class="st">"Non binary "</span> <span class="ot">=</span> <span class="st">"Other"</span>,  <span class="st">"nonbinary"</span> <span class="ot">=</span> <span class="st">"Other"</span>, <span class="st">"Non binary"</span> <span class="ot">=</span> <span class="st">"Other"</span>, <span class="st">"non binary"</span> <span class="ot">=</span> <span class="st">"Other"</span>, <span class="st">"unisex"</span> <span class="ot">=</span> <span class="st">"other"</span>, </span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">"4"</span> <span class="ot">=</span> <span class="st">"Don't know"</span> ),</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">condition =</span> <span class="fu">recode</span>(condition, <span class="st">"ft"</span> <span class="ot">=</span> <span class="st">"Free text"</span>, <span class="st">"xb"</span> <span class="ot">=</span> <span class="st">"Binary Categories"</span>, <span class="st">"mc"</span> <span class="ot">=</span> <span class="st">"Multiple Categories"</span>))<span class="sc">%&gt;%</span> </span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(id <span class="sc">!=</span> <span class="dv">124</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(categorization <span class="sc">==</span> <span class="st">"Woman"</span> <span class="sc">|</span>categorization <span class="sc">==</span> <span class="st">"Man"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(categorization) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a> <span class="co"># arrange(n) %&gt;% </span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(categorization)) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Categorization =</span><span class="fu">factor</span>(categorization, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Woman"</span>, <span class="st">"Man"</span>)))</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>summarized_data <span class="ot">&lt;-</span> ft <span class="sc">%&gt;%</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(id) <span class="sc">%&gt;%</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">total =</span> <span class="fu">sum</span>(n))</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Merging summarized data back with the original data</span></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>ft <span class="ot">&lt;-</span> <span class="fu">merge</span>(ft, summarized_data, <span class="at">by =</span> <span class="st">"id"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n<span class="sc">/</span>total) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>   <span class="co"># group_by(categorization) %&gt;% </span></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(Categorization, <span class="fu">desc</span>(prop)) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">id =</span> <span class="fu">factor</span>(id, <span class="at">levels =</span> <span class="fu">unique</span>(id))) <span class="sc">%&gt;%</span> </span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>id, <span class="at">y=</span>n, <span class="at">fill=</span>Categorization)) <span class="sc">+</span></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span> </span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a> <span class="co">#ggtitle("Gender Categorizations by Participants")+</span></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>  <span class="co">#scale_x_continuous(breaks =c(0, 17, 33, 50, 66, 83, 100)) +</span></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a> <span class="co"># ylab("Proportion of responses" ) +</span></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">""</span>) <span class="sc">+</span></span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>( <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#D2B48C"</span>,  <span class="st">"#FFDD88"</span>))<span class="sc">+</span></span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>  <span class="co">#scale_fill_discrete(name = "Response") +</span></span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>  <span class="co">#scale_fill_viridis_d(name = "Response")</span></span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>  <span class="co">#scale_fill_grey( name = "Response")+</span></span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()<span class="sc">+</span></span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Free text"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>mc <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">id =</span> <span class="fu">factor</span>(id) ) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(condition <span class="sc">==</span> <span class="st">"mc"</span>) <span class="sc">%&gt;%</span> <span class="co">#select correct conditions</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(  id) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">categorization =</span> <span class="fu">recode</span>(categorization,  <span class="co">#yes, this is pretty horrendous code, I haven't had a chance to sit down and clean it up yet.</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">"1"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Woman"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"wman"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"woman"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"female"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Female "</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Female"</span><span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Fenale"</span><span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"women"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"woman "</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"femLE"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"FEmale"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Femalw"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Fwmalw"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Female "</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"woman"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Woman"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"feMale"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"fermale"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"wman"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Femae"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"f"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"F"</span><span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"female "</span> <span class="ot">=</span> <span class="st">"Woman"</span>,</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">"2"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"man"</span> <span class="ot">=</span> <span class="st">"Man"</span>,<span class="st">"Male"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"male"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">" Male"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"M"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"nmale"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"male "</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"nale"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"ale"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"M"</span> <span class="ot">=</span> <span class="st">"Man"</span>,  <span class="st">"m"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"MALE"</span> <span class="ot">=</span> <span class="st">"Man"</span>),</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">condition =</span> <span class="fu">recode</span>(condition, <span class="st">"ft"</span> <span class="ot">=</span> <span class="st">"Free text"</span>, <span class="st">"xb"</span> <span class="ot">=</span> <span class="st">"Binary Categories"</span>, <span class="st">"mc"</span> <span class="ot">=</span> <span class="st">"Multiple Categories"</span>))<span class="sc">%&gt;%</span> </span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(id <span class="sc">!=</span> <span class="dv">124</span> <span class="sc">|</span> <span class="dv">84</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(categorization <span class="sc">==</span> <span class="st">"Woman"</span> <span class="sc">|</span>categorization <span class="sc">==</span> <span class="st">"Man"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(categorization) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a> <span class="co"># arrange(n) %&gt;% </span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(categorization) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(categorization))<span class="sc">%&gt;%</span> </span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Categorization =</span><span class="fu">factor</span>(categorization, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Woman"</span>, <span class="st">"Man"</span>)))</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>summarized_data <span class="ot">&lt;-</span> mc <span class="sc">%&gt;%</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(id) <span class="sc">%&gt;%</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">total =</span> <span class="fu">sum</span>(n))</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Merging summarized data back with the original data</span></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>mc  <span class="ot">&lt;-</span> <span class="fu">merge</span>(mc, summarized_data, <span class="at">by =</span> <span class="st">"id"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n<span class="sc">/</span>total) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>   <span class="fu">arrange</span>(Categorization, <span class="fu">desc</span>(prop)) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">id =</span> <span class="fu">factor</span>(id, <span class="at">levels =</span> <span class="fu">unique</span>(id))) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>id, <span class="at">y=</span>n, <span class="at">fill=</span>Categorization)) <span class="sc">+</span></span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span> </span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a> <span class="co">#ggtitle("Gender Categorizations by Participants")+</span></span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a>  <span class="co">#scale_x_continuous(breaks =c(0, 17, 33, 50, 66, 83, 100)) +</span></span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a> <span class="co"># ylab("Proportion of responses" ) +</span></span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">""</span>) <span class="sc">+</span></span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>( <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#D2B48C"</span>,  <span class="st">"#FFDD88"</span>))<span class="sc">+</span></span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a>  <span class="co">#scale_fill_discrete(name = "Response") +</span></span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a>  <span class="co">#scale_fill_viridis_d(name = "Response")</span></span>
+<span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a>  <span class="co">#scale_fill_grey( name = "Response")+</span></span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()<span class="sc">+</span></span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Multiple Catgories"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>xb <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">id =</span> <span class="fu">factor</span>(id) ) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(condition <span class="sc">==</span> <span class="st">"xb"</span>) <span class="sc">%&gt;%</span> <span class="co">#select correct conditions</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(  id) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">categorization =</span> <span class="fu">recode</span>(categorization,  <span class="co">#yes, this is pretty horrendous code, I haven't had a chance to sit down and clean it up yet.</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">"1"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Woman"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"wman"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"woman"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"female"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Female "</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Female"</span><span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Fenale"</span><span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"women"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"woman "</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"femLE"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"FEmale"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Femalw"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Fwmalw"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Female "</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"woman"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Woman"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"feMale"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"fermale"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"wman"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"Femae"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"f"</span> <span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"F"</span><span class="ot">=</span> <span class="st">"Woman"</span>, <span class="st">"female "</span> <span class="ot">=</span> <span class="st">"Woman"</span>,</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">"2"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"man"</span> <span class="ot">=</span> <span class="st">"Man"</span>,<span class="st">"Male"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"male"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">" Male"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"M"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"nmale"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"male "</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"nale"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"ale"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"M"</span> <span class="ot">=</span> <span class="st">"Man"</span>,  <span class="st">"m"</span> <span class="ot">=</span> <span class="st">"Man"</span>, <span class="st">"MALE"</span> <span class="ot">=</span> <span class="st">"Man"</span>,</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">"3"</span> <span class="ot">=</span> <span class="st">"Other"</span>, <span class="st">"Nonbinary"</span> <span class="ot">=</span> <span class="st">"Other"</span>, <span class="st">"Non Binary "</span> <span class="ot">=</span> <span class="st">"Other"</span>, <span class="st">"Non binary "</span> <span class="ot">=</span> <span class="st">"Other"</span>,  <span class="st">"nonbinary"</span> <span class="ot">=</span> <span class="st">"Other"</span>, <span class="st">"Non binary"</span> <span class="ot">=</span> <span class="st">"Other"</span>, <span class="st">"non binary"</span> <span class="ot">=</span> <span class="st">"Other"</span>, <span class="st">"unisex"</span> <span class="ot">=</span> <span class="st">"other"</span>, </span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">"4"</span> <span class="ot">=</span> <span class="st">"Don't know"</span> ),</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>         <span class="at">condition =</span> <span class="fu">recode</span>(condition, <span class="st">"ft"</span> <span class="ot">=</span> <span class="st">"Free text"</span>, <span class="st">"xb"</span> <span class="ot">=</span> <span class="st">"Binary Categories"</span>, <span class="st">"mc"</span> <span class="ot">=</span> <span class="st">"Multiple Categories"</span>))<span class="sc">%&gt;%</span> </span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(id <span class="sc">!=</span> <span class="dv">124</span> <span class="sc">|</span> id <span class="sc">!=</span><span class="dv">84</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(categorization) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a> <span class="co"># arrange(n) %&gt;% </span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(categorization) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(categorization)) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Categorization =</span><span class="fu">factor</span>(categorization, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Woman"</span>, <span class="st">"Man"</span>)))</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>summarized_data <span class="ot">&lt;-</span> xb <span class="sc">%&gt;%</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(id) <span class="sc">%&gt;%</span></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">total =</span> <span class="fu">sum</span>(n))</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Merging summarized data back with the original data</span></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>xb  <span class="ot">&lt;-</span> <span class="fu">merge</span>(xb, summarized_data, <span class="at">by =</span> <span class="st">"id"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">prop =</span> n<span class="sc">/</span>total) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>   <span class="fu">arrange</span>(Categorization, <span class="fu">desc</span>(prop)) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">id =</span> <span class="fu">factor</span>(id, <span class="at">levels =</span> <span class="fu">unique</span>(id))) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>id, <span class="at">y=</span>n, <span class="at">fill=</span>Categorization)) <span class="sc">+</span></span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span> </span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a> <span class="co">#ggtitle("Gender Categorizations by Participants")+</span></span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>  <span class="co">#scale_x_continuous(breaks =c(0, 17, 33, 50, 66, 83, 100)) +</span></span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>  <span class="co">#ylab("Proportion of responses" ) +</span></span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"id"</span>) <span class="sc">+</span></span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>( <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#D2B48C"</span>,  <span class="st">"#FFDD88"</span>))<span class="sc">+</span></span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>  <span class="co">#scale_fill_discrete(name = "Response") +</span></span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>  <span class="co">#scale_fill_viridis_d(name = "Response")</span></span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a>  <span class="co">#scale_fill_grey( name = "Response")+</span></span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>()<span class="sc">+</span></span>
+<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()<span class="sc">+</span></span>
+<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Binary Catgories"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#library(ggpubr)</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">#ggarrange(xb, ft, mc, ncol = 3, common.legend = TRUE, legend="right", label.x = "Proportion of responses", label.y = "ID")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#remove the beyond binary responses</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>tmp <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span> </span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(condition <span class="sc">==</span> <span class="st">"mc"</span><span class="sc">|</span> condition <span class="sc">==</span> <span class="st">"xb"</span><span class="sc">|</span>condition <span class="sc">==</span> <span class="st">"ft"</span> )<span class="sc">%&gt;%</span> </span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">categorization =</span> <span class="fu">recode</span>(categorization, </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">"F"</span> <span class="ot">=</span> <span class="st">"f"</span>, <span class="st">"kvinna"</span> <span class="ot">=</span> <span class="st">"f"</span>, <span class="st">"female"</span> <span class="ot">=</span> <span class="st">"f"</span>, <span class="st">"female "</span> <span class="ot">=</span> <span class="st">"f"</span>, <span class="st">"Female"</span><span class="ot">=</span> <span class="st">"f"</span>, <span class="st">"Fenale"</span><span class="ot">=</span> <span class="st">"f"</span>, <span class="st">"women"</span> <span class="ot">=</span> <span class="st">"f"</span>, <span class="st">"woman "</span> <span class="ot">=</span> <span class="st">"f"</span>, <span class="st">"femLE"</span> <span class="ot">=</span> <span class="st">"f"</span>, <span class="st">"FEmale"</span> <span class="ot">=</span> <span class="st">"f"</span>, <span class="st">"Femalw"</span> <span class="ot">=</span> <span class="st">"f"</span>, <span class="st">"Fwmalw"</span> <span class="ot">=</span> <span class="st">"f"</span>, <span class="st">"Female "</span> <span class="ot">=</span> <span class="st">"f"</span>, <span class="st">"woman"</span> <span class="ot">=</span> <span class="st">"f"</span>, <span class="st">"Woman"</span> <span class="ot">=</span> <span class="st">"f"</span>, <span class="st">"feMale"</span> <span class="ot">=</span> <span class="st">"f"</span>, <span class="st">"fermale"</span> <span class="ot">=</span> <span class="st">"f"</span>, <span class="st">"wman"</span> <span class="ot">=</span> <span class="st">"f"</span>, <span class="st">"Femae"</span> <span class="ot">=</span> <span class="st">"f"</span>,</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">"man"</span> <span class="ot">=</span> <span class="st">"m"</span>,<span class="st">"Male "</span> <span class="ot">=</span> <span class="st">"m"</span>, <span class="st">"make"</span> <span class="ot">=</span> <span class="st">"m"</span>, <span class="st">"Male"</span><span class="ot">=</span> <span class="st">"m"</span>, <span class="st">"male"</span> <span class="ot">=</span> <span class="st">"m"</span>, <span class="st">"man "</span> <span class="ot">=</span> <span class="st">"m"</span>,  <span class="st">"male "</span> <span class="ot">=</span> <span class="st">"m"</span>, <span class="st">"guy"</span> <span class="ot">=</span> <span class="st">"m"</span>, <span class="st">"boy"</span> <span class="ot">=</span> <span class="st">"m"</span>, <span class="st">"Make"</span> <span class="ot">=</span> <span class="st">"m"</span>, <span class="st">"M"</span>  <span class="ot">=</span> <span class="st">"m"</span>, <span class="st">"Man"</span> <span class="ot">=</span> <span class="st">"m"</span>, <span class="st">"Bottom half male; above nose female., Would have to say Male"</span> <span class="ot">=</span> <span class="st">"m"</span>, <span class="st">" male"</span> <span class="ot">=</span> <span class="st">"m"</span>, <span class="st">"male  "</span> <span class="ot">=</span> <span class="st">"m"</span>, <span class="st">"ale"</span> <span class="ot">=</span> <span class="st">"m"</span>, <span class="st">"nmale"</span> <span class="ot">=</span> <span class="st">"m"</span>, <span class="st">"MALE"</span><span class="ot">=</span> <span class="st">"m"</span>, <span class="st">"nale"</span><span class="ot">=</span> <span class="st">"m"</span>, <span class="st">" Male"</span> <span class="ot">=</span> <span class="st">"m"</span>,</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">"Nonbinary"</span> <span class="ot">=</span> <span class="st">"o"</span>, <span class="st">"Non Binary "</span> <span class="ot">=</span> <span class="st">"o"</span>, <span class="st">"Unsure"</span> <span class="ot">=</span> <span class="st">"o"</span>, <span class="st">"Non binary "</span> <span class="ot">=</span> <span class="st">"o"</span>, <span class="st">"good"</span> <span class="ot">=</span> <span class="st">"o"</span>, <span class="st">"Neutral"</span> <span class="ot">=</span> <span class="st">"o"</span>, <span class="st">"neutral"</span> <span class="ot">=</span> <span class="st">"o"</span>, <span class="st">"nonbinary"</span> <span class="ot">=</span> <span class="st">"o"</span>, <span class="st">"bigender"</span> <span class="ot">=</span> <span class="st">"o"</span>, <span class="st">"hen"</span> <span class="ot">=</span> <span class="st">"o"</span>, <span class="st">"don't know"</span>  <span class="ot">=</span> <span class="st">"o"</span>, </span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>                                 <span class="st">"1"</span> <span class="ot">=</span> <span class="st">"f"</span>, <span class="st">"2"</span> <span class="ot">=</span> <span class="st">"m"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">f_cat =</span> <span class="fu">ifelse</span>(categorization <span class="sc">==</span> <span class="st">"f"</span><span class="sc">|</span>categorization <span class="sc">==</span> <span class="st">"m"</span>, categorization, <span class="cn">NA</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">f_cat =</span><span class="fu">as.numeric</span>( f_cat <span class="sc">==</span> <span class="st">"f"</span>))</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="co">#Start fitting the null model</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>Null <span class="ot">&lt;-</span> <span class="fu">brm</span>(f_cat <span class="sc">~</span> <span class="dv">1</span>  <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">+</span> fem <span class="sc">|</span>id) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>face<span class="sc">:</span>fem), <span class="at">family =</span> <span class="fu">bernoulli</span>(<span class="at">link =</span> <span class="st">'logit'</span>), </span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>          <span class="at">prior =</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>,<span class="dv">3</span>), <span class="at">class =</span> <span class="st">"Intercept"</span>),</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">exponential</span>(<span class="dv">2</span>), <span class="at">class =</span> <span class="st">"sd"</span>)</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a>                    ),</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>          <span class="at">data =</span> tmp,</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>          <span class="at">iter =</span> <span class="dv">6000</span>, <span class="at">warmup =</span> <span class="dv">2000</span>,</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>          <span class="at">chains =</span> <span class="dv">4</span>,</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>          <span class="at">cores =</span> <span class="dv">4</span>,</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>          <span class="at">sample_prior =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">"models/fit_mf_null.1"</span></span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>          )</span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a><span class="co">#Main effects model</span></span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>main_effects <span class="ot">&lt;-</span> <span class="fu">brm</span>(f_cat <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> condition <span class="sc">+</span> fem  <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span>id) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>face<span class="sc">:</span>fem), <span class="at">family =</span> <span class="fu">bernoulli</span>(<span class="at">link =</span> <span class="st">'logit'</span>), </span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a>          <span class="at">prior =</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>,<span class="dv">3</span>), <span class="at">class =</span> <span class="st">"b"</span>),</span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">prior</span>(<span class="fu">cauchy</span>(<span class="dv">0</span>,<span class="dv">3</span>), <span class="at">class =</span> <span class="st">"sd"</span>)),</span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a>          <span class="at">data =</span> tmp,</span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a>          <span class="at">iter =</span> <span class="dv">4000</span>, <span class="at">warmup =</span> <span class="dv">1000</span>,</span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>          <span class="at">chains =</span> <span class="dv">4</span>,</span>
+<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a>          <span class="at">cores =</span> <span class="dv">4</span>,</span>
+<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a>          <span class="at">sample_prior =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">"models/mainfx.2"</span></span>
+<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a>          )</span>
+<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a>tmp<span class="sc">$</span>fem_s <span class="ot">=</span> tmp<span class="sc">$</span>fem <span class="sc">-</span> <span class="dv">50</span></span>
+<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a>tmp<span class="sc">$</span>cond <span class="ot">&lt;-</span> <span class="fu">factor</span>(tmp<span class="sc">$</span>condition, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"xb"</span>, <span class="st">"ft"</span>, <span class="st">"mc"</span>))</span>
+<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a><span class="co">#Lastly the interaction model</span></span>
+<span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a>interaction <span class="ot">&lt;-</span> <span class="fu">brm</span>(f_cat <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> condition <span class="sc">*</span> condition<span class="sc">:</span>fem_s  <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">+</span> fem_s <span class="sc">|</span>id) <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">+</span> fem_s <span class="sc">|</span>face), <span class="at">family =</span> <span class="fu">bernoulli</span>(<span class="at">link =</span> <span class="st">'logit'</span>), </span>
+<span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a>         <span class="at">prior =</span> <span class="fu">c</span>(<span class="fu">prior</span>(<span class="fu">normal</span>(<span class="dv">0</span>,<span class="dv">3</span>), <span class="at">class =</span> <span class="st">"b"</span>),</span>
+<span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a>                   <span class="fu">prior</span>(<span class="fu">cauchy</span>(<span class="dv">0</span>,<span class="dv">3</span>), <span class="at">class =</span> <span class="st">"sd"</span>)),</span>
+<span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a>          <span class="at">data =</span> tmp,</span>
+<span id="cb13-45"><a href="#cb13-45" aria-hidden="true" tabindex="-1"></a>          <span class="at">iter =</span> <span class="dv">6000</span>, <span class="at">warmup =</span> <span class="dv">2000</span>,</span>
+<span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a>          <span class="at">chains =</span> <span class="dv">4</span>,</span>
+<span id="cb13-47"><a href="#cb13-47" aria-hidden="true" tabindex="-1"></a>          <span class="at">cores =</span> <span class="dv">4</span>,</span>
+<span id="cb13-48"><a href="#cb13-48" aria-hidden="true" tabindex="-1"></a>          <span class="at">sample_prior =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb13-49"><a href="#cb13-49" aria-hidden="true" tabindex="-1"></a>          <span class="at">file =</span> <span class="st">"models/fit_mf_int.6"</span></span>
+<span id="cb13-50"><a href="#cb13-50" aria-hidden="true" tabindex="-1"></a>          )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Test contrasts</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>h0 <span class="ot">&lt;-</span> <span class="fu">hypothesis</span>(interaction, <span class="st">"conditionxb = conditionmc"</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>h1 <span class="ot">&lt;-</span> <span class="fu">hypothesis</span>(interaction, <span class="st">"conditionxb = conditionft"</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>h2 <span class="ot">&lt;-</span> <span class="fu">hypothesis</span>(interaction, <span class="st">"conditionxb:fem_s = conditionmc:fem_s"</span>)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>h3 <span class="ot">&lt;-</span> <span class="fu">hypothesis</span>(interaction, <span class="st">"conditionxb:fem_s = conditionft:fem_s"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>We treated the binary categories condition as a neutral baseline and which the other two conditions were tested against. The comparison of the multiple categories condition and the binary categories condition, indicated moderate evidence that gender categorization in the two conditions were the same (OR = 0.68, CI =[0.4, 1.17], BF<sub>01</sub>= 6.07). The comparison of the free text and binary categories conditions indicated strong evidence that the two conditions were the same (OR = 1.03, CI =[0.6, 1.78], BF<sub>01</sub>= 15.58). In other words, neither the free text or the multiple categories condition changed the pattern of categorization of women and men compared to the binary categories condition.</p>
+<p>We also compared the relationship between facial femininity and woman categorizations (i.e.&nbsp;the slope of facial femininity) across the conditions. The effect of facial femininity on woman categorizations was almost exactly the same in the multiple categories and binary categories, as there was overwhelming evidence in favor of no difference (Difference = 0, CI =[-0.02, 0.03], BF<sub>01</sub>= 394.93). The effect of facial femininity on woman categorizations almost was exactly the same in the free text and binary categories, as there was overwhelming evidence in favor of no difference ((Difference &gt; 0.001`, CI =[-0.02, 0.02], BF<sub>01</sub>= 394.93) )</p>
+</section>
+<section id="discussion-1" class="level1">
+<h1>Discussion</h1>
+<p>Experiment 1 indicated that participants categorize beyond the binary when response options include more options than women and men only. However, the free text option did not differ from the binary option. Thus, the written out choices seem to act as reminders to participants. Furthermore, categorization beyond the binary affected former man and women responses to similar degrees, meaning that the ratio of women and men categorizations was still about 50/50. This did not systematically affect their overall pattern of responses in terms of woman and man categorizations.</p>
+</section>
+<section id="general-discussion" class="level1">
+<h1>General discussion</h1>
+<p>In two experiment we tested how different response options influence gender categorization. In study 1 we compared two-dimensional scales with one-dimensional controls. We found that participants responded categorically and this was the case in both the control condition and the two-dimensional condition. In Study 2, we compared free text and multiple categories. We found that only multiple categories elicited beyond-binary responses. Compared to binary control, neither changed the pattern of categorizations of women and men.</p>
+<p>The results comparing two-dimensional scales to the one-dimensional control differs from <span class="citation" data-cites="bemMEASUREMENTPSYCHOLOGICALANDROGYNY1974">(<a href="#ref-bemMEASUREMENTPSYCHOLOGICALANDROGYNY1974" role="doc-biblioref">Bem 1974</a>)</span>. who found that participants categorize their own femininity and masculinity independently of each other. The results are, however, consistent with previous work suggesting faces are perceived categorically.</p>
+<p>This categorical effect implies that the binary gender norm itself influences participants ratings. Furthermore, the two-dimensional ratings did not reduce the strength of the categorical effect. This suggests that at least in the present sample, two-dimensional response options were not enough to reduce the binary gender norms.</p>
+<p>The finding that participants use non-binary response options is consistent with the work of <span class="citation" data-cites="sapersteinCategoricalGradationalAlternative2021">Saperstein and Westbrook (<a href="#ref-sapersteinCategoricalGradationalAlternative2021" role="doc-biblioref">2021</a>)</span> and <span class="citation" data-cites="lindqvistWhatGenderAnyway2020">(<a href="#ref-lindqvistWhatGenderAnyway2020" role="doc-biblioref">Lindqvist, Sendén, and Renström 2020</a>)</span>, which has shown that including flexible response options allow participants to better express themselves. A main recommendation from that literature is that open text boxes afford participants the greatest flexibility in their responses. In our study, however, that flexibility was almost never used when the response options consisted of a free text. This likely reflects the difference between TGD people categorizing their own gender and cisgender participants categorizing others.</p>
+<p>A probable explanation for the difference between free text and multiple categories is that the multiple categories served as a visual reminder of non-binary identity. Researchers interested in categorization of non-binary identity should be aware that these may not spring to mind unless participants are explicitly reminded of them.</p>
+<p>Neither free text or multiple categories impacted the categorizations of women and men. This suggests that such inclusive response options can be suitable for investigating categorization of women and men without skewing the results or introducing noise. This is a positive finding for researchers who are primarily interested in such categorizations but do not want to contribute to the marginalization of trans and non-binary individuals.</p>
+<p>Overall, we recommend researchers to carefully consider how they measure categorization of others. Multiple dimensions, free text, and multiple categories and continua are all viable alternatives. If the primary research question is to investigate non-binary categorization, then multiple categories are most suitable. However, if the goal is to measure categorization of women and men, either free text or multiple categories may be equally suitable.</p>
+<section id="conclusion" class="level4">
+<h4 class="anchored" data-anchor-id="conclusion">Conclusion</h4>
+<p>In two experiments we tested how different response alternatives affected gender categorizations. Participants were more likely to categorize faces beyond the binary when using a multiple categires including “non-binary” and “I don’t know” than when using a free text option. In comparison to self-identification questions where open ended responses are seen as the most inclusive alternative <span class="citation" data-cites="lindqvistWhatGenderAnyway2020">(<a href="#ref-lindqvistWhatGenderAnyway2020" role="doc-biblioref">Lindqvist, Sendén, and Renström 2020</a>)</span>, categorization of others benefit from response options that explicitly reminds participants that not all people identify as women or men.</p>
+<div style="page-break-after: always;"></div>
+</section>
+</section>
+<section id="references" class="level1">
+<h1>References</h1>
+<div id="refs" class="references csl-bib-body hanging-indent" data-custom-style="Bibliography" role="list">
+<div id="ref-ansaraMethodologiesMisgenderingRecommendations2014" class="csl-entry" role="listitem">
+Ansara, Y Gavriel, and Peter Hegarty. 2014. <span>“Methodologies of Misgendering: <span>Recommendations</span> for Reducing Cisgenderism in Psychological Research.”</span> <em>Feminism &amp; Psychology</em> 24 (2): 259–70. <a href="https://doi.org/10.1177/0959353514526217">https://doi.org/10.1177/0959353514526217</a>.
+</div>
+<div id="ref-R-papaja" class="csl-entry" role="listitem">
+Aust, Frederik, and Marius Barth. 2022. <em><span class="nocase">papaja</span>: <span>Prepare</span> Reproducible <span>APA</span> Journal Articles with <span>R Markdown</span></em>. <a href="https://github.com/crsh/papaja">https://github.com/crsh/papaja</a>.
+</div>
+<div id="ref-bemMEASUREMENTPSYCHOLOGICALANDROGYNY1974" class="csl-entry" role="listitem">
+Bem, Sandra L. 1974. <span>“<span>THE MEASUREMENT OF PSYCHOLOGICAL ANDROGYNY</span>,”</span> 8.
+</div>
+<div id="ref-R-brms_a" class="csl-entry" role="listitem">
+Bürkner, Paul-Christian. 2017. <span>“<span class="nocase">brms</span>: An <span>R</span> Package for <span>Bayesian</span> Multilevel Models Using <span>Stan</span>.”</span> <em>Journal of Statistical Software</em> 80 (1): 1–28. <a href="https://doi.org/10.18637/jss.v080.i01">https://doi.org/10.18637/jss.v080.i01</a>.
+</div>
+<div id="ref-R-brms_b" class="csl-entry" role="listitem">
+———. 2018. <span>“Advanced <span>Bayesian</span> Multilevel Modeling with the <span>R</span> Package <span class="nocase">brms</span>.”</span> <em>The R Journal</em> 10 (1): 395–411. <a href="https://doi.org/10.32614/RJ-2018-017">https://doi.org/10.32614/RJ-2018-017</a>.
+</div>
+<div id="ref-R-brms_c" class="csl-entry" role="listitem">
+———. 2021. <span>“Bayesian Item Response Modeling in <span>R</span> with <span class="nocase">brms</span> and <span>Stan</span>.”</span> <em>Journal of Statistical Software</em> 100 (5): 1–54. <a href="https://doi.org/10.18637/jss.v100.i05">https://doi.org/10.18637/jss.v100.i05</a>.
+</div>
+<div id="ref-campanellaCategoricalPerceptionFacial2001" class="csl-entry" role="listitem">
+Campanella, S., A. Chrysochoos, and R. Bruyer. 2001. <span>“Categorical Perception of Facial Gender Information: <span>Behavioural</span> Evidence and the Face-Space Metaphor.”</span> <em>Visual Cognition</em> 8 (2): 237–62. <a href="https://doi.org/10.1080/13506280042000072">https://doi.org/10.1080/13506280042000072</a>.
+</div>
+<div id="ref-carletonAssessingImpactRoyal2022" class="csl-entry" role="listitem">
+Carleton, R. Nicholas, Michelle McCarron, Gregory P. Krätzig, Shannon Sauer-Zavala, J. Patrick Neary, Lisa M. Lix, Amber J. Fletcher, et al. 2022. <span>“Assessing the Impact of the <span>Royal Canadian Mounted Police</span> (<span>RCMP</span>) Protocol and <span>Emotional Resilience Skills Training</span> (<span>ERST</span>) Among Diverse Public Safety Personnel.”</span> <em>BMC Psychology</em> 10 (1): 295. <a href="https://doi.org/10.1186/s40359-022-00989-0">https://doi.org/10.1186/s40359-022-00989-0</a>.
+</div>
+<div id="ref-croninYoungerGenerationsAre2022" class="csl-entry" role="listitem">
+Cronin, Katherine A., Maureen Leahy, Stephen R. Ross, Mandi Wilder Schook, Gina M. Ferrie, and Andrew C. Alba. 2022. <span>“Younger Generations Are More Interested Than Older Generations in Having Non-Domesticated Animals as Pets.”</span> Edited by Simon Clegg. <em>PLOS ONE</em> 17 (1): e0262208. <a href="https://doi.org/10.1371/journal.pone.0262208">https://doi.org/10.1371/journal.pone.0262208</a>.
+</div>
+<div id="ref-dagostinoOrganizationalPracticesSecondGeneration2022" class="csl-entry" role="listitem">
+D’Agostino, Maria, Helisse Levine, Meghna Sabharwal, and Al C Johnson-Manning. 2022. <span>“Organizational <span>Practices</span> and <span>Second-Generation Gender Bias</span>: <span>A Qualitative Inquiry</span> into the <span>Career Progression</span> of <span>U</span>.<span>S</span>. <span>State-Level Managers</span>.”</span> <em>The American Review of Public Administration</em> 52 (5): 335–50. <a href="https://doi.org/10.1177/02750740221086605">https://doi.org/10.1177/02750740221086605</a>.
+</div>
+<div id="ref-debruineFaceResearchLab2017" class="csl-entry" role="listitem">
+DeBruine, L. M., and B. C Jones. 2017. <span>“Face <span>Research Lab London Set</span>.”</span> <em>Figshare</em>. <a href="https://doi.org/10.6084/m9.figshare.5047666">https://doi.org/10.6084/m9.figshare.5047666</a>.
+</div>
+<div id="ref-debruineWebMorph2018" class="csl-entry" role="listitem">
+DeBruine, Lisa. 2018. <span>“<span>WebMorph</span>.”</span> <em>WebMorph</em>. https://webmorph.org/.
+</div>
+<div id="ref-habibiSpontaneousGenderCategorization2012" class="csl-entry" role="listitem">
+Habibi, Ruth, and Beena Khurana. 2012. <span>“Spontaneous <span>Gender Categorization</span> in <span>Masking</span> and <span>Priming Studies</span>: <span>Key</span> for <span>Distinguishing Jane</span> from <span>John Doe</span> but <span>Not Madonna</span> from <span>Sinatra</span>.”</span> Edited by Attila Szolnoki. <em>PLoS ONE</em> 7 (2): e32377. <a href="https://doi.org/10.1371/journal.pone.0032377">https://doi.org/10.1371/journal.pone.0032377</a>.
+</div>
+<div id="ref-hydeFutureSexGender2018" class="csl-entry" role="listitem">
+Hyde, Janet Shibley, Rebecca S. Bigler, Daphna Joel, Charlotte Chucky Tate, and Sari M. van Anders. 2018. <span>“The Future of Sex and Gender in Psychology: <span>Five</span> Challenges to the Gender Binary.”</span> <em>American Psychologist</em>, July. <a href="https://doi.org/10.1037/amp0000307">https://doi.org/10.1037/amp0000307</a>.
+</div>
+<div id="ref-jungAutomaticityGenderCategorization2019" class="csl-entry" role="listitem">
+Jung, Kyung Hun, Katherine R. G. White, and Sarah J. Powanda. 2019. <span>“Automaticity of <span>Gender Categorization</span>: <span>A Test</span> of the <span>Efficiency Feature</span>.”</span> <em>Social Cognition</em> 37 (2): 122–44. <a href="https://doi.org/10.1521/soco.2019.37.2.122">https://doi.org/10.1521/soco.2019.37.2.122</a>.
+</div>
+<div id="ref-lindqvistWhatGenderAnyway2020" class="csl-entry" role="listitem">
+Lindqvist, Anna, Marie Gustafsson Sendén, and Emma A. Renström. 2020. <span>“What Is Gender, Anyway: A Review of the Options for Operationalising Gender.”</span> <em>Psychology &amp; Sexuality</em>, February, 1–13. <a href="https://doi.org/10.1080/19419899.2020.1729844">https://doi.org/10.1080/19419899.2020.1729844</a>.
+</div>
+<div id="ref-littleRoleMasculinityDistinctiveness2002" class="csl-entry" role="listitem">
+Little, Anthony C., and Peter J. B. Hancock. 2002. <span>“The Role of Masculinity and Distinctiveness in Judgments of Human Male Facial Attractiveness.”</span> <em>British Journal of Psychology</em> 93 (4): 451–64. <a href="https://doi.org/10.1348/000712602761381349">https://doi.org/10.1348/000712602761381349</a>.
+</div>
+<div id="ref-maChicagoFaceDatabase2015" class="csl-entry" role="listitem">
+Ma, Debbie S., Joshua Correll, and Bernd Wittenbrink. 2015. <span>“The <span>Chicago</span> Face Database: <span>A</span> Free Stimulus Set of Faces and Norming Data.”</span> <em>Behavior Research Methods</em> 47 (4): 1122–35. <a href="https://doi.org/10.3758/s13428-014-0532-5">https://doi.org/10.3758/s13428-014-0532-5</a>.
+</div>
+<div id="ref-matsunoNonbinaryGenderqueerIdentities2017" class="csl-entry" role="listitem">
+Matsuno, Emmie, and Stephanie L. Budge. 2017. <span>“Non-Binary/<span>Genderqueer Identities</span>: A <span>Critical Review</span> of the <span>Literature</span>.”</span> <em>Current Sexual Health Reports</em> 9 (3): 116–20. <a href="https://doi.org/10.1007/s11930-017-0111-8">https://doi.org/10.1007/s11930-017-0111-8</a>.
+</div>
+<div id="ref-morgenrothGenderTroubleSocial2018" class="csl-entry" role="listitem">
+Morgenroth, Thekla, and Michelle K. Ryan. 2018. <span>“Gender <span>Trouble</span> in <span>Social Psychology</span>: <span>How Can Butler</span>’s <span>Work Inform Experimental Social Psychologists</span>’ <span>Conceptualization</span> of <span>Gender</span>?”</span> <em>Frontiers in Psychology</em> 9 (July). <a href="https://doi.org/10.3389/fpsyg.2018.01320">https://doi.org/10.3389/fpsyg.2018.01320</a>.
+</div>
+<div id="ref-nicholsGoodSubjectEffectInvestigating2008" class="csl-entry" role="listitem">
+Nichols, Austin Lee, and Jon K. Maner. 2008. <span>“The <span>Good-Subject Effect</span>: <span>Investigating Participant Demand Characteristics</span>.”</span> <em>The Journal of General Psychology</em> 135 (2): 151–66. <a href="https://doi.org/10.3200/GENP.135.2.151-166">https://doi.org/10.3200/GENP.135.2.151-166</a>.
+</div>
+<div id="ref-otoolePerceptionFaceGender1998" class="csl-entry" role="listitem">
+O’Toole, Alice J., Kenneth A. Deffenbacher, Dominique Valentin, Karen McKee, David Huff, and Hervé Abdi. 1998. <span>“The Perception of Face Gender: <span>The</span> Role of Stimulus Structure in Recognition and Classification.”</span> <em>Memory &amp; Cognition</em> 26 (1): 146–60. <a href="https://doi.org/10.3758/BF03211378">https://doi.org/10.3758/BF03211378</a>.
+</div>
+<div id="ref-R-base" class="csl-entry" role="listitem">
+R Core Team. 2022. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+</div>
+<div id="ref-richardsNonbinaryGenderqueerGenders2016" class="csl-entry" role="listitem">
+Richards, Christina, Walter Pierre Bouman, Leighton Seal, Meg John Barker, Timo O Nieder, and Guy T’Sjoen. 2016. <span>“Non-Binary or Genderqueer Genders.”</span> <em>Int Rev Psychiatry .</em> 28(1): 95–102.
+</div>
+<div id="ref-sapersteinCategoricalGradationalAlternative2021" class="csl-entry" role="listitem">
+Saperstein, Aliya, and Laurel Westbrook. 2021. <span>“Categorical and Gradational: Alternative Survey Measures of Sex and Gender.”</span> <em>European Journal of Politics and Gender</em> 4 (1): 11–30. <a href="https://doi.org/10.1332/251510820X15995647280686">https://doi.org/10.1332/251510820X15995647280686</a>.
+</div>
+<div id="ref-stolierNeuralMechanismSocial2017" class="csl-entry" role="listitem">
+Stolier, Ryan M., and Jonathan B. Freeman. 2017. <span>“A <span>Neural Mechanism</span> of <span>Social Categorization</span>.”</span> <em>The Journal of Neuroscience</em> 37 (23): 5711–21. <a href="https://doi.org/10.1523/JNEUROSCI.3334-16.2017">https://doi.org/10.1523/JNEUROSCI.3334-16.2017</a>.
+</div>
+<div id="ref-wagenmakersBayesianHypothesisTesting2010" class="csl-entry" role="listitem">
+Wagenmakers, Eric-Jan, Tom Lodewyckx, Himanshu Kuriyal, and Raoul Grasman. 2010. <span>“Bayesian Hypothesis Testing for Psychologists: <span>A</span> Tutorial on the <span>Savage</span> Method.”</span> <em>Cognitive Psychology</em> 60 (3): 158–89. <a href="https://doi.org/10.1016/j.cogpsych.2009.12.001">https://doi.org/10.1016/j.cogpsych.2009.12.001</a>.
+</div>
+<div id="ref-R-tidyverse" class="csl-entry" role="listitem">
+Wickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy D’Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019. <span>“Welcome to the <span class="nocase">tidyverse</span>.”</span> <em>Journal of Open Source Software</em> 4 (43): 1686. <a href="https://doi.org/10.21105/joss.01686">https://doi.org/10.21105/joss.01686</a>.
+</div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
