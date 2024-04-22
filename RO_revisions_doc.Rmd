@@ -427,7 +427,9 @@ tmp <- d %>%
                                  "2" = "Man", "man" = "Man","Male" = "Man", "male" = "Man", " Male" = "Man", "M" = "Man", "nmale" = "Man", "male " = "Man", "nale" = "Man", "ale" = "Man", "M" = "Man",  "m" = "Man", "MALE" = "Man",
                                  "3" = "Other", "Nonbinary" = "Other", "Non Binary " = "Other", "Non binary " = "Other",  "nonbinary" = "Other", "Non binary" = "Other", "non binary" = "Other", "unisex" = "other", 
                                  "4" = "Don't know" ) )%>% 
-  mutate(bbcat = ifelse(categorization == "Other"|categorization == "Don't Know", 1, 0),
+  mutate(bbcat = ifelse(categorization == "Other"|categorization == "Don't know", 1, 0),
+         nb = ifelse(categorization == "Other", 1, 0),
+         dk =ifelse(categorization == "Don't know", 1, 0),
          fem = as.factor(fem))
 ```
 
@@ -436,14 +438,29 @@ tmp <- d %>%
 ```{r, message=FALSE, error=FALSE}
 tmp %>% group_by(id, condition) %>% 
   #filter(condition == "mc") %>% 
-  summarise(sum_bbcat = sum(bbcat  ==1)) %>% 
-  arrange(sum_bbcat)%>% 
-  #mutate(id = seq_len(n())) %>% 
-  ggplot(aes(x = condition, y = sum_bbcat))+
-  geom_dotplot(binaxis = "y",binwidth = 1, stackdir = "center", dotsize = 0.8, stackratio =1) +
-  scale_y_continuous(name = "N Beyond-Binary categorizations")+
+  summarise(sum_nb = sum(nb  ==1),
+            sum_dk = sum(dk  ==1)) %>% 
+  mutate(zeroes = ifelse(sum_dk ==0 & sum_nb ==0 , 0, NA),
+         more_dk = ifelse(sum_dk >0, sum_dk, NA),
+         more_nb = ifelse(sum_nb >0, sum_nb, NA) )%>% 
+  ggplot(aes(x = condition, y = zeroes))+
+  geom_dotplot(binaxis = "y",binwidth = 1, 
+               stackdir = "center", dotsize = 1, stackratio =1, fill = "black") +
+  geom_dotplot(aes(x = condition, y = more_dk), 
+               binaxis = "y",binwidth = 1, stackdir = "center", 
+               stackratio =1, fill = "#FF5733", color = "#FF5733",
+               position = position_nudge(x = 0.05)) +
+  geom_dotplot(aes(x = condition, y = more_nb), 
+               binaxis = "y",binwidth = 1, stackdir = "center",  
+               stackratio =1, fill = "#3498DB", color = "#3498DB",
+               position = position_nudge(x = -0.05))+
+  scale_y_continuous(name = "N categorizations")+
   #coord_flip()+
-  theme_classic()
+  scale_fill_manual(labels = c("x", "y", "z"))+
+  theme(legend.position = "side")+
+  theme_pubclean()
+
+
 
 # tmp %>% group_by(id, condition) %>% 
 #   #filter(condition == "mc") %>% 
@@ -484,6 +501,14 @@ tmp %>% group_by(id, condition) %>%
 # 
 # grid.arrange(ft_cols, mc_cols, ncol = 2)
 
+two <- tmp %>% group_by(id, condition) %>% 
+  #filter(condition == "mc") %>% 
+  summarise(sum_nb = sum(nb  ==1),
+            sum_dk = sum(dk  ==1),
+            sum_bb = sum(bbcat == 1)) %>% 
+    mutate(condition = recode(condition, "ft" = "Free text", "mc" = "Multiple Categories"))
+
+
  two <- tmp %>% group_by(id, condition) %>% 
    #filter(condition == "mc") %>% 
    summarise(sum_bbcat = sum(bbcat  ==1)) %>% 
@@ -491,7 +516,8 @@ tmp %>% group_by(id, condition) %>%
 
 library(kableExtra) 
 
- table(two$condition, two$sum_bbcat) %>% kable
+ table(two$condition, two$sum_nb) 
+  table(two$condition, two$sum_dk) 
 ```
 
 
