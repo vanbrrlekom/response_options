@@ -13,7 +13,17 @@ author:
     email: elli.vanberlekom@psychology.su.se
     affiliations:
       - name: Stockholm University
-        department: Psychology
+        department: Psychology Department
+  - name: Stefan Wiens
+    orcid: 0000-0002-8393-5316
+    affiliations:
+      - name: Stockholm University
+        department: Psychology Department
+  - name: Marie Gustafsson Sendén
+    orcid: 0000-0002-8393-5316
+    affiliations:
+      - name: Stockholm University
+        department: Psychology Department
 author-note:
   disclosures:
     conflict of interest: The author has no conflict of interest to declare.
@@ -80,11 +90,11 @@ Research on how people perceive and categorize the gender of others has used bot
 
 Another common approach tasks people to categorize faces according to a set of response options decided by the researchers, almost invariably "woman" and "man". Studies using this method have shown that people rapidly and automatically categorize gender [@habibiSpontaneousGenderCategorization2012; @jungAutomaticityGenderCategorization2019]. This, in turn, indicates that gender is a salient category that determines how people evaluate others on traits, such as agreeableness, dominance, etc [@stolierNeuralMechanismSocial2017].
 
-Moreover, participants categorize faces categorically [@campanellaCategoricalPerceptionFacial2001]. This phenomenon has been observed when participants categorize faces that have been morphed to vary from feminine to masculine. Categorizations of these morphed faces were accentuated so that for example a 60% female morph was rated as a woman by close to 80% of participants [@campanellaCategoricalPerceptionFacial2001]. Observing categorical effects for any stimuli suggests that people treat that stimuli as two separate categories [@simanovaLinguisticPriorsShape2016]. The observation of a categorical effect for gender suggests that people think of gender as a strict binary consisting of women and men only.
+Moreover, participants categorize faces categorically [@campanellaCategoricalPerceptionFacial2001]. This phenomenon has been observed when participants categorize faces that have been morphed to vary from feminine to masculine. Categorizations of these morphed faces were accentuated so that for example a 60% female morph was rated as a woman by close to 80% of participants [@campanellaCategoricalPerceptionFacial2001]. Categorical effects for continuous stimuli in any domain suggests that people treat that domain as consisting of separate categories [@simanovaLinguisticPriorsShape2016]. The observation of a categorical effect for gender therefore suggests that people treat gender as a strict binary consisting of women and men only.
 
-However, this research has rarely considered the risk that the structure of response options could communicate certain ideas about gender to participants. A one-dimensional scale implies that gender can vary on a continuum. It also places masculinity and femininity at the endpoints of the scales, so that a higher rating of femininity is by definition a lower rating of masculinity. This in turn suggests that someone cannot embody femininity and masculinity at the same time, indeed, that the two concepts are opposites. Binary response options consisting of woman/female and man/male only suggest that those are the only two categories that exist. On the other hand, two-dimensional scales and categories that include non-binary response options suggest the opposite, that femininity and masculinity are not mutually exclusive and that a multiplicity of genders exists. In other words, no matter which type of response options are used, ideas are being communicated to participants, potentially influencing their responses. Most recommendations suggest taking great care not to influence participants [@nicholsGoodSubjectEffectInvestigating2008], but the effects of gender response options are rarely considered.
+However, this research has rarely considered the risk that the structure of response options could communicate certain ideas about gender to participants. A one-dimensional scale implies that gender can vary on a continuum. It also places masculinity and femininity at the endpoints of the scales, so that a higher rating of femininity is by definition a lower rating of masculinity. This implies that someone cannot embody femininity and masculinity at the same time, indeed, that the two concepts are opposites. Binary response options consisting of woman/female and man/male only suggest that those are the only two categories that exist. On the other hand, two-dimensional scales and categories that include non-binary response options suggest the opposite, that femininity and masculinity are not mutually exclusive and that a multiplicity of genders exists. In other words, no matter which type of response options are used, ideas are being communicated to participants, potentially influencing their responses. Most recommendations suggest taking great care not to influence participants [@nicholsGoodSubjectEffectInvestigating2008], but the effects of gender response options are rarely considered.
 
-Another aspect of gender categorizations of others is that complete certainty is not possible. This is because many trans and non-binary individuals do not have a prototypical androgynous gender expression [@richardsNonbinaryGenderqueerGenders2016]. Indeed many non-binary and even binary trans people may appear similar to their assigned gender at birth. Therefore, if a person aims to be inclusive, abstaining from categorizing until more information is available is always the safest option when encountering a face. However, this aspect of gender categorization has received very little attention from researchers.
+Another aspect of gender categorizations of others is that complete certainty is not possible. This is because many trans and non-binary individuals are not androgynous in their gender expression [@richardsNonbinaryGenderqueerGenders2016]. Therefore, if a person aims to be inclusive, abstaining from categorizing until more information is available is always the safest option when encountering a face. However, this aspect of gender categorization has received very little attention from researchers.
 
 The purpose of Study 1 was to investigate the influencing effect of one and two-dimensional response options by investigating whether participants' responses are categorical. A categorical effect is a useful outcome in this context because it suggests participants treat gender as consisting of only two categories: women and men. Drawing inspiration from @bemMEASUREMENTPSYCHOLOGICALANDROGYNY1974 we compare gender categorization measured using one-dimensional response options and two-dimensional response options. If one-dimensional scales influence participants to think of gender as binary and opposites and two-dimensional scales don't do this, there should be a reduced categorical effect for two-dimensional scales. We tested two research questions; would participants respond categorically to faces (Research Question 1) and would a one-dimensional rating scale elicit stronger categorical responses than two-dimensional (Research Question 2)?
 
@@ -139,11 +149,11 @@ tmp <- d %>%
 
 ### Participant flow
 
-All participants completed the experiment and were included in the analyses. The one-dimension condition included `r sum(subs$condition == "sd")` participants and the two-dimension condition included `r sum(subs$condition == "md")` participants.
+All participants completed the experiment and were included in the analyses. The one-dimension condition included 33 participants and the two-dimension condition included 38 participants.
 
 ### Descriptive statistics
 
-First, we examined the relationship between ratings of "woman" and "man" in the multiple dimensions condition. These were highly correlated (R = `r  cor(tmp$f_rating[tmp$scale == "m"], tmp$f_rating[tmp$scale == "f"]) %>% round(2)`). Second, we examined whether participants responded categorically to faces (Research Question 1). Individual-level (thin lines) and group mean (thick lines) responses are visualized in Figure @fig-desc-two. If participants respond only to the morph of faces, the lines should be a straight diagonal. Instead, @fig-desc-two shows that most participants display a non-linear S-shape and this was also the pattern of the group means. 
+First, we examined the relationship between ratings of "woman" and "man" in the multiple dimensions condition. These were highly correlated (R = `r  cor(tmp$f_rating[tmp$scale == "m"], tmp$f_rating[tmp$scale == "f"]) %>% round(2)`). Second, we examined whether participants responded categorically to faces (Research Question 1). Individual-level (thin lines) and group mean (thick lines) responses are visualized in @fig-desc-two. If participants respond only to the morph of faces, the lines should be a straight diagonal. Instead, @fig-desc-two shows that most participants display a non-linear S-shape and this was also the pattern of the group means. 
 
 ```{r }
 #| label: fig-descriptives-two
@@ -185,6 +195,8 @@ m <- d %>%
 #| fig-cap: Participant level and mean ratings of faces in One-dimensiona and two-dimensional conditions
 #Visualise means using ggplot
 
+library(ggpubr)
+
 ggplot(data = sd, aes(x=fem, y=mean_rating, color = condition)) +
   geom_line(aes(group = condition), linewidth = 1)+
   geom_point(aes(group = condition))+
@@ -196,14 +208,13 @@ ggplot(data = sd, aes(x=fem, y=mean_rating, color = condition)) +
             aes(x=fem, y=mean_rating,  group = id),  alpha = 0.2 )+
   geom_line(data = m, 
             aes(x=fem, y=mean_rating,  group = id),  alpha = 0.2 )+
-  theme_minimal()+
   facet_wrap(~condition, ncol = 2) +
   scale_x_continuous(breaks =c(0, 17, 33, 50, 67, 83, 100)) +
   scale_y_continuous(breaks =c(0, 17, 33, 50, 67, 83, 100)) +
   ylab("Mean \"woman\" rating" ) +
   xlab("Facial Gender") +
   scale_color_viridis_d(option = "H", direction = 1, begin = 0.7)+
-  theme_minimal() +
+  theme_pubclean() +
   theme(legend.position = "none")
 
 
@@ -279,7 +290,7 @@ mean(post$categ_sd)
 
 ### Inferential Statistics
 
-To further test this, we calculated the difference between the mean ratings when facial gender was 33 and 67. If participants respond linearly, this difference should be 34. Instead, in both the one-dimensional condition (*M*~1D~ = `r mean(post$categ_sd) %>% round(2)`, CI~1D~ = \[`r hdi(post$categ_sd) %>% round(2)`\]) and the two-dimensional condition (*M*~2D~ = `r mean(post$categ_md) %>% round(2)`, CI = \[`r hdi(post$categ_sd) %>% round(2)`\]) this difference far exceeded 34 and the narrow credible intervals suggest these measures were precisely estimated. We interpret this to mean that participants responded categorically. However, Figure 3 also suggests that there was a degree of individual variation, and some participants were more categorical than others in their ratings.
+To further test this, we calculated the difference between the mean ratings when facial gender was 33 and 67. If participants respond linearly, this difference should be 34. Instead, in both the one-dimensional condition (*M*~1D~ = `r mean(post$categ_sd) %>% round(2)`, CI~1D~ = \[`r hdi(post$categ_sd) %>% round(2)`\]) and the two-dimensional condition (*M*~2D~ = `r mean(post$categ_md) %>% round(2)`, CI = \[`r hdi(post$categ_sd) %>% round(2)`\]) this difference far exceeded 34 and the narrow credible intervals suggest these measures were precisely estimated. We interpret this to mean that participants responded categorically. However, @fig-desc-two also suggests that there was a degree of individual variation, and some participants were more categorical than others in their ratings.
 
 Finally, we tested whether the categorical perception was reduced in the two-dimension condition compared to the one-dimension condition (Research Question 2). The two conditions were not meaningfully different (Difference = `r mean(post$categ_md-post$categ_sd) %>% round(2)`, CI = \[`r h_categ$hypothesis$CI.Lower %>% round(2)`, `r h_categ$hypothesis$CI.Upper %>% round(2)`\], BF~01~= `r h_categ$hypothesis$Evid.Ratio %>% round(2)`). This suggests that categorical perception was not reduced by two-dimensional response options.
 
@@ -337,10 +348,8 @@ We fit the data to Bayesian mixed-effects models to test the categorical effects
 
 ### Categorizations outside the binary
 
-Most faces were categorized as women or men, by most participants (see Figure @fig-descriptives-1). That said, participants did categorize faces outside of this binary in the multiple categories condition, as Figure @fig-descriptives-1), and most such categorizations were made in response to androgynous faces.
-
 ```{r  }
-#| label : fig-descriptives-1
+#| label: fig-desc-1
 #| fig.cap: Gender Categorizations by Participants
 
 # make figure 1
@@ -359,7 +368,7 @@ d %>%
   filter(!is.na(categorization))%>% 
   ggplot(aes(x=fem, y=n, fill=factor(categorization, levels = c("Man", "Other", "Don't know", "Woman")))) +
   geom_bar(stat="identity", position = "fill") + 
-  ggtitle("Gender Categorizations by Participants")+ 
+  #ggtitle("Gender Categorizations by Participants")+ 
   facet_wrap(~condition) + 
   scale_x_continuous(breaks =c(0, 17, 33, 50, 66, 83, 100)) +
   scale_y_continuous(breaks =c(0, 0.17, 0.33, 0.50, 0.66, 0.83, 1)) +
@@ -370,11 +379,9 @@ d %>%
   scale_fill_manual( values = c("#D2B48C", "#FF5733", "#3498DB", "#FFDD88"))+
   guides(fill = guide_legend(title = "Categorization"))+
   geom_hline(yintercept=0.50, linetype="dashed", color = "darkgrey")+
-  theme_minimal()
+  theme_pubclean()
 
 ```
-
-There was a very clear difference between conditions; which is visible in @fig-descriptives-nbo. Figure four illustrates how many categorizations beyond the binary participants made. Each dot represents one participant, red dots represent the number of "other" categorizations made by one participant and blue dots represent the number of "Don't know" responses. Grey dots represent participants who only categorized faces as women or men. In the Free Text condition, only two participants made any other categorization than woman and man, whereas more than half did so in the Multiple Categories condition (see @fig-descriptives-nbo).
 
 ```{r, include=FALSE}
 #create dataframe with only free text and multiple categories conditions 
@@ -395,8 +402,10 @@ tmp <- d %>%
 ```
 
 ```{r  message=FALSE, error=FALSE, warning=FALSE}
-#| label : fig-descriptives-nbo
+#| label: fig-desc-nbo
 #| fig.cap: Responses of other and I don\'t know across the multiple categories and free text condiitons
+#| fig-width: 6
+#| fig-height: 4.5
 library(ggpubr)
 tmp %>% group_by(id, condition) %>% 
   #filter(condition == "mc") %>% 
@@ -436,22 +445,7 @@ tmp %>% group_by(id, condition) %>%
 #   theme_classic()
 ```
 
-```{r}
-#|label: conditions alternative
-#|fig-cap: Alternative version of the previous figures
 
-tmp %>% group_by(id, condition) %>% 
-  #filter(condition == "mc") %>% 
-  summarise(nb = sum(nb  ==1),
-            dk = sum(dk  ==1)) %>% 
-  pivot_longer(cols = c(nb, dk), names_to = "outcome", values_to = "n") %>%
-  ggplot(aes(x = outcome, y = n, fill = condition, color = condition)) +
-  geom_dotplot( #Count the dk categorizations in each condition
-               binaxis = "y",binwidth = 1, stackdir = "center", 
-               stackratio =1, dotsize = 0.5)+
-  theme_pubclean()+
-  facet_wrap(~condition)
-```
 
 
 
@@ -497,13 +491,35 @@ Interaction <- brm(bbcat ~ 0 + condition:fem  + (1 |id) + (1|face:fem), family =
           )
 
 ```
+Most faces were categorized as women or men, by most participants (see Figure @fig-desc-1). That said, participants did categorize faces outside of this binary in the multiple categories condition, as @fig-desc-1 shows, and most such categorizations were made in response to androgynous faces.
+
+There was also a clear difference between conditions; which is visible in @fig-desc-nbo (*ellis note: or* @fig-cond) @fig-desc-nbo illustrates how many categorizations beyond the binary participants made. Each dot represents one participant, red dots represent the number of "other" categorizations made by one participant and blue dots represent the number of "Don't know" responses. Grey dots represent participants who only categorized faces as women or men. In the Free Text condition, only two participants made any other categorization than woman and man, whereas more than half did so in the Multiple Categories condition (see fig-descriptives-nbo *or* @fig-cond ).
+
+```{r warning = FALSE, message = FALSE, error = FALSE}
+#| label: fig-cond
+#| fig-cap: Alternative version of the previous figures
+
+tmp %>% group_by(id, condition) %>% 
+  #filter(condition == "mc") %>% 
+  summarise(nb = sum(nb  ==1),
+            dk = sum(dk  ==1),
+            .groups = NULL) %>% 
+  pivot_longer(cols = c(nb, dk), names_to = "outcome", values_to = "n") %>%
+  ggplot(aes(x = outcome, y = n, fill = condition, color = condition)) +
+  geom_dotplot( #Count the dk categorizations in each condition
+               binaxis = "y",binwidth = 1, stackdir = "center", 
+               stackratio =1, dotsize = 0.5)+
+  theme_pubclean()+
+  facet_wrap(~condition)
+```
 
 ### Categorization within the binary
 
-When people categorize faces beyond the binary such categorization also affects the categorization of faces as men or women. For example, the categorization of faces as non-binary could theoretically decrease either "woman" or "man" categorization, if for example "other" categorizations consistently replaced "woman" categorization. We therefore investigated how inclusive response options changed participants' binary categorizations.
+When people categorize faces beyond the binary such categorization also affects the categorization of faces as men or women. For example, the categorization of faces as non-binary could theoretically decrease either "woman" or "man" categorization, if for example "other" categorizations consistently replaced "woman" categorization. We therefore investigated how inclusive response options changed participants' binary categorizations. Overall rates of binary categorizations were similar across the three conditions (see @fig-wtf)
 
 ```{r my-plot, fig.cap= "Distribution of Participant Proportions for Categorizing Faces as Women Across Three Conditions"}
-# make figure 1
+#| label: fig-wtf 
+#make figure 1
 d %>%
   mutate(id = factor(id) ) %>% 
   filter(condition == "ft"| condition == "mc" |condition == "xb") %>% #select correct conditions
@@ -522,7 +538,7 @@ d %>%
   mutate(prop_w = Woman/total*100) %>% 
   ggplot(aes(x = condition, y = prop_w)) +
   geom_boxplot() +
-  theme_classic() +
+  theme_pubclean() +
   ylab("Percentage \"woman\" categorizations") + 
   xlab("Condition")
   
@@ -746,7 +762,7 @@ Experiment 2 indicated that participants categorize beyond the binary when respo
 
 In two experiments we tested how different response options influenced gender categorization. In Study 1 we compared two-dimensional scales with one-dimensional controls. We found that participants responded categorically and this was the case in both the control condition and the two-dimensional condition. In Study 2, we compared free text and multiple categories. We found that only multiple categories elicited beyond-binary responses. Compared to binary control, neither changed the pattern of categorizations of women and men.
 
-The results are consistent with previous work on categorical perception of gender in faces[@campanellaCategoricalPerceptionFacial2001; @campanellaCategoricalPerceptionUnfamiliar2003]. Participants exhibited a categorical pattern of responses where ratings of gender were accentuated compared to the facial gender of the faces, suggesting that they had a strong impression of gender as consisting of two distinct categories. Furthermore, the two-dimensional ratings did not reduce the strength of the categorical effect. This suggests that at least in the present sample, two-dimensional response options were not enough to reduce the binary gender norms.
+The results are consistent with previous work on categorical perception of gender in faces [@campanellaCategoricalPerceptionFacial2001; @campanellaCategoricalPerceptionUnfamiliar2003]. Participants exhibited a categorical pattern of responses where ratings of gender were accentuated compared to the facial gender of the faces, suggesting that they had a strong impression of gender as consisting of two distinct categories. Furthermore, the two-dimensional ratings did not reduce the strength of the categorical effect. This suggests that at least in the present sample, two-dimensional response options were not enough to reduce the binary gender norms.
 
 This differs slightly from the results of @bemMEASUREMENTPSYCHOLOGICALANDROGYNY1974 who found that measuring gender as two separate scales led participants to treat gender as less binary. Moreover, where she found that masculinity and femininity were largely unrelated, we found that ratings of "woman" and "man" were strongly correlated. This is probably accounted for by the differences in outcome measures. @bemMEASUREMENTPSYCHOLOGICALANDROGYNY1974 measured gender as a psychological trait in the self, whereas we measured gender as a judgment of the physical features of others. Judging physical properties is much more influenced by external stuff.
 
