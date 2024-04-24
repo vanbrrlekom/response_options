@@ -28,7 +28,7 @@ author-note:
   disclosures:
     conflict of interest: The author has no conflict of interest to declare.
 format:
-  apaquarto-docx: default
+  apaquarto-html: default
 
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 ---
@@ -493,7 +493,7 @@ Interaction <- brm(bbcat ~ 0 + condition:fem  + (1 |id) + (1|face:fem), family =
 ```
 Most faces were categorized as women or men, by most participants (see Figure @fig-desc-1). That said, participants did categorize faces outside of this binary in the multiple categories condition, as @fig-desc-1 shows, and most such categorizations were made in response to androgynous faces.
 
-There was also a clear difference between conditions; which is visible in @fig-desc-nbo (*ellis note: or* @fig-cond) @fig-desc-nbo illustrates how many categorizations beyond the binary participants made. Each dot represents one participant, red dots represent the number of "other" categorizations made by one participant and blue dots represent the number of "Don't know" responses. Grey dots represent participants who only categorized faces as women or men. In the Free Text condition, only two participants made any other categorization than woman and man, whereas more than half did so in the Multiple Categories condition (see fig-descriptives-nbo *or* @fig-cond ).
+There was also a clear difference between conditions; which is visible in @fig-desc-nbo (*ellis note: or* @fig-cond). @fig-desc-nbo illustrates how many categorizations beyond the binary participants made. Each dot represents one participant, red dots represent the number of "other" categorizations made by one participant and blue dots represent the number of "Don't know" responses. Grey dots represent participants who only categorized faces as women or men. In the Free Text condition, only two participants made any other categorization than woman and man, whereas more than half did so in the Multiple Categories condition (see @fig-desc-nbo *or* @fig-cond ).
 
 ```{r warning = FALSE, message = FALSE, error = FALSE}
 #| label: fig-cond
@@ -750,7 +750,7 @@ h3 <- hypothesis(interaction, "conditionxb:fem_s = conditionft:fem_s")
 
 ```
 
-We treated the binary categories condition as a neutral baseline against which the other two conditions were tested. The evidence indicated that faces were categorized as women and at equal rates in the Multiple Categories and Binary Categories conditions (OR = `r exp(h0$hypothesis$Estimate) %>% round(2)`, CI =\[`r exp(h0$hypothesis$CI.Lower)%>% round(2)`, `r exp(h0$hypothesis$CI.Upper )%>% round(2)`\], BF~01~= `r round(h0$hypothesis$Evid.Ratio , 2)`, corresponding to moderate evidence). The evidence also indicated that faces were categorized as women and men at equal rates the Free text and Binary Categories condition (OR = `r exp(h1$hypothesis$Estimate) %>% round(2)`, CI =\[`r exp(h1$hypothesis$CI.Lower)%>% round(2)`, `r exp(h1$hypothesis$CI.Upper) %>% round(2)`\], BF~01~= `r round(h1$hypothesis$Evid.Ratio , 2)`). In other words, neither the free text nor the multiple categories condition changed the pattern of categorization of women and men compared to the binary categories condition.
+We treated the binary categories condition as a neutral baseline against which the other two conditions were tested. The evidence indicated that faces were categorized as women and equally as often in the Multiple Categories and Binary Categories conditions (OR = `r exp(h0$hypothesis$Estimate) %>% round(2)`, CI =\[`r exp(h0$hypothesis$CI.Lower)%>% round(2)`, `r exp(h0$hypothesis$CI.Upper )%>% round(2)`\], BF~01~= `r round(h0$hypothesis$Evid.Ratio , 2)`, corresponding to moderate evidence). The evidence also indicated that faces were categorized as women and men equally as often in the Free text and Binary Categories condition (OR = `r exp(h1$hypothesis$Estimate) %>% round(2)`, CI =\[`r exp(h1$hypothesis$CI.Lower)%>% round(2)`, `r exp(h1$hypothesis$CI.Upper) %>% round(2)`\], BF~01~= `r round(h1$hypothesis$Evid.Ratio , 2)`). In other words, neither the free text nor the multiple categories condition changed the pattern of categorization of women and men compared to the binary categories condition.
 
 We also compared the relationship between facial gender and binary categorization (i.e. the slope of facial gender) across the conditions. The slope of facial gender on binary categorizations was almost the same in the multiple categories and binary categories conditions (Difference = `r h2$hypothesis$Estimate %>% round(2)`, CI =\[`r h2$hypothesis$CI.Lower%>% round(2)`, `r h2$hypothesis$CI.Upper %>% round(2)`\], BF~01~= `r round(h3 $hypothesis$Evid.Ratio , 2)`). The effect of facial femininity on woman categorizations almost was the same in the free text and binary categories (Difference \> 0.001, CI =\[`r h3$hypothesis$CI.Lower%>% round(2)`, `r h3$hypothesis$CI.Upper %>% round(2)`\], BF~01~= `r round(h3 $hypothesis$Evid.Ratio , 2)`).
 
