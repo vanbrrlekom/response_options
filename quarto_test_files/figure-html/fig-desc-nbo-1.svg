@@ -147,15 +147,15 @@
 <polyline points='28.17,157.30 31.16,157.30 ' style='stroke-width: 1.16; stroke: #333333; stroke-linecap: butt;' />
 <polyline points='28.17,116.77 31.16,116.77 ' style='stroke-width: 1.16; stroke: #333333; stroke-linecap: butt;' />
 <polyline points='28.17,76.24 31.16,76.24 ' style='stroke-width: 1.16; stroke: #333333; stroke-linecap: butt;' />
-<text x='228.59' y='315.38' text-anchor='middle' style='font-size: 12.00px; font-family: "Arial";' textLength='83.38px' lengthAdjust='spacingAndGlyphs'>Categorizations</text>
+<text x='228.59' y='315.38' text-anchor='middle' style='font-size: 12.00px; font-family: "Arial";' textLength='95.38px' lengthAdjust='spacingAndGlyphs'>N Categorizations</text>
 <text transform='translate(14.59,177.57) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-family: "Arial";' textLength='74.69px' lengthAdjust='spacingAndGlyphs'>N Participants</text>
-<rect x='115.43' y='5.98' width='226.33' height='29.24' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
-<text x='121.40' y='24.90' style='font-size: 12.00px; font-family: "Arial";' textLength='77.38px' lengthAdjust='spacingAndGlyphs'>Categorization</text>
-<rect x='204.92' y='11.96' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #F2F2F2;' />
-<rect x='205.63' y='12.66' width='15.86' height='15.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #F8766D;' />
-<rect x='273.06' y='11.96' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #F2F2F2;' />
-<rect x='273.77' y='12.66' width='15.86' height='15.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #00BFC4;' />
-<text x='228.18' y='24.04' style='font-size: 9.60px; font-family: "Arial";' textLength='37.32px' lengthAdjust='spacingAndGlyphs'>more_dk</text>
-<text x='296.32' y='24.04' style='font-size: 9.60px; font-family: "Arial";' textLength='37.86px' lengthAdjust='spacingAndGlyphs'>more_nb</text>
+<rect x='117.45' y='5.98' width='222.29' height='29.24' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+<text x='123.42' y='24.90' style='font-size: 12.00px; font-family: "Arial";' textLength='77.38px' lengthAdjust='spacingAndGlyphs'>Categorization</text>
+<rect x='206.94' y='11.96' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #F2F2F2;' />
+<rect x='207.65' y='12.66' width='15.86' height='15.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #F8766D;' />
+<rect x='285.49' y='11.96' width='17.28' height='17.28' style='stroke-width: 1.16; stroke: none; fill: #F2F2F2;' />
+<rect x='286.20' y='12.66' width='15.86' height='15.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #00BFC4;' />
+<text x='230.20' y='24.04' style='font-size: 9.60px; font-family: "Arial";' textLength='47.15px' lengthAdjust='spacingAndGlyphs'>Don't know</text>
+<text x='308.75' y='24.04' style='font-size: 9.60px; font-family: "Arial";' textLength='23.99px' lengthAdjust='spacingAndGlyphs'>Other</text>
 </g>
 </svg>
