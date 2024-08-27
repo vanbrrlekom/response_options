@@ -1,0 +1,23 @@
+---
+title: "Model for prereg"
+format: html
+editor: visual
+---
+
+$$
+\begin{aligned}
+\text{categorization}_{i} &\sim \mathrm{Bernoulli}(p) \\
+\text{logit}(p_i)&= \alpha_{i}+ \alpha_{id[i]} + \gamma_{pronoun[i]}+ \beta_{face[i],pronoun[i]}\\
+\alpha_{pronoun} &\sim \mathrm{Normal}(0,3),\: \text{for}\: pronoun =1,...,4\\
+\alpha_{subject} &\sim \mathrm{Normal}(0, \sigma_{subject}) \\
+\beta_{pronoun} & \sim \mathrm{Normal}(0,3),\: \text{for}\: pronoun =1,...,4\\
+\begin{bmatrix}
+\beta_{j,1}\\\beta_{j,2} \\\beta_{j,3}\\\beta_{j,3}
+\end{bmatrix}
+&\sim \mathrm{MVNormal}\Bigg(\begin{bmatrix} 0 \\ 0\\0\\0 \end{bmatrix}, \Sigma _{face}\Bigg) \\
+\Sigma_{face} & =\textbf{S}_{\beta[j]}\textbf{R}_{\beta[j]}\textbf{S}_{\beta[j]}  \\
+\sigma_{subject} &\sim \mathrm{HalfCauchy}(3) \\
+\sigma_{\gamma[1]},...,  \sigma_{\gamma[4]}&\sim \mathrm{HalfCauchy}(3) \\
+\textbf{R} &\sim \mathrm{LKJcorr}(2) \\
+\end{aligned}
+$$
