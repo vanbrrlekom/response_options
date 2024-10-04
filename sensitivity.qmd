@@ -5,23 +5,157 @@ format: html
 editor: visual
 ---
 
-## Quarto
+# Study 1
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
-
-## Running Code
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+## Function to simulate data
 
 ```{r}
-1 + 1
+# Parameters
+num_participants <- 10
+num_faces <- 7
+femininity_levels <- seq(0, 100, length.out = 7)
+conditions <- c("md", "sd")
+set.seed(42)
+
+# Create a function to simulate data
+simulate_data <- function(){
+
+  # Create face IDs and assign femininity levels in a repeated pattern
+face_ids <- 1:num_faces
+femininity <- rep(femininity_levels, length.out = num_faces) %>% round(2)
+
+# Assign conditions to participants randomly
+participants <- data.frame(participant_id = 1:num_participants,
+                           condition = sample(conditions, num_participants, replace = TRUE))
+
+# Generate random effects for participants and faces
+participant_effects <- rnorm(num_participants, mean = 0, sd = 15)
+face_effects <- rnorm(num_faces, mean = 0, sd = 15)
+
+# Function to exaggerate ratings based on femininity level
+exaggerate_femininity <- function(femininity) {
+  if (femininity < 50) {
+    return(femininity * 0.15) # Reduce femininity scores for lower levels
+  } else if( femininity == 50){
+    return(femininity)} else{
+    return(femininity + (100 - femininity) * 0.85) # Increase femininity scores for higher levels
+  }
+}
+
+# Function to get standard deviation based on femininity level
+get_sd <- function(femininity) {
+  if (femininity == 50) {
+    return(50)
+  } else if (femininity == 33.33 || femininity == 66.67) {
+    return(40)
+  } else {
+    return(10)
+  }
+}
+
+# Function to simulate ratings based on exaggerated femininity level with random effects
+simulate_rating <- function(femininity, participant_effect, face_effect) {
+  exaggerated_femininity <- exaggerate_femininity(femininity)
+  sd <- get_sd(femininity)
+  rating <- exaggerated_femininity + participant_effect + face_effect + rnorm(1, mean = 0, sd = sd) # Adding some random noise
+  return(round(pmax(pmin(rating, 100), 0))) # Ensure ratings are between 0 and 100
+}
+# Create a dataframe to store all ratings
+e <- data.frame()
+
+ # Simulate ratings for each participant and each face
+for (participant in 1:num_participants) {
+  for (face in 1:num_faces) {
+    rating <- simulate_rating(femininity[face], participant_effects[participant], face_effects[face])
+    e <- rbind(e, data.frame(participant_id = participant,
+                                         face_id = face,
+                                         condition = participants$condition[participant],
+                                         femininity = femininity[face],
+                                         rating = rating))
+  }
+}
+e$femininity <- as.factor(e$femininity)
+return(e)
+}
+    
+g <- simulate_data()
 ```
 
-You can add options to executable code like this
+## Initial fit
+
+Make an initial fit to be able to update later, for quicker processing later
+```{r}
+fit_sim_initial <- 
+  brm(rating ~ 0 + femininity:condition + (1  |participant_id) + (1  |face_id), family = gaussian(link = 'identity'), 
+      prior = c(prior(normal(50,50), class = "b"),
+                #prior(normal(50,50), class = "Intercept"),
+                prior(cauchy(0, 10), class = "sd"),
+                #prior(lkj(1), class = "cor"),
+                prior(cauchy(0,10), class = sigma)),
+      data = g,
+      iter = 4000, warmup = 1000,
+      cores = 4,
+      sample_prior = TRUE,
+      file = "models/fit_sim_initial")
+```
+
+## Update fit and calculate parameter values
 
 ```{r}
-#| echo: false
-2 * 2
+
+fit_then_hdis <-  function(data, seed){
+  
+  fit <- update(fit_sim_initial,
+                newdata = data,
+                seed = seed)
+  
+  fit %>% 
+    as_draws_df() %>% 
+    mutate(difference = (`b_femininity66.67:conditionmd` - `b_femininity33.33:conditionmd`) -(`b_femininity66.67:conditionsd` - `b_femininity33.33:conditionsd`) ) %>% 
+    select(difference) %>% 
+    mode_hdci() 
+}
+
+
 ```
 
-The `echo: false` option disables the printing of code (only output is displayed).
+## Simulate power
+
+```{r}
+
+num_participants <- 66
+num_faces <- 126
+femininity_levels <- seq(0, 100, length.out = 7)
+conditions <- c("md", "sd")
+
+run_experiment <- function( n_iter = 5) {
+  # Create an empty list to store the HDI dataframes
+  hdi_list <- vector("list", n_iter)
+  
+  # Loop over the number of iterations
+  for (i in 1:n_iter) {
+    # Simulate data
+    simulated_data <- simulate_data()
+    
+    # Fit model and extract HDIs
+    hdi_list[[i]] <- fit_then_hdis(simulated_data, i)
+    # Print progress status
+    cat("Iteration", i, "completed.\n")
+    flush.console() # E
+  }
+  
+  # Combine all HDI dataframes into one
+  hdi_dataframe <- bind_rows(hdi_list)
+  
+  return(hdi_dataframe)
+}
+
+test <- run_experiment()
+
+```
+
+## Finally calculate power
+
+Here, we tested whether the difference was bigger than 33.33. So, now we test how often the lower bound excludes that value
+
+
