@@ -128,7 +128,7 @@ facial gender as the degree of the female face present in the morph. In other wo
 
 ### Procedure
 
-Participants completed the experiment on a computer in a quiet room. Each trial consisted of a face accompanied by the question "How would you gender categorize this person?". In the one-dimensional condition, participants rated gender based on a single continuum, with the anchors marked *woman* and *man*. In the two-dimensional condition, participants rated each face twice once using the *woman* continuum and once using the *man* continuum. In the *woman* continuum, the anchors were marked *not woman* and *woman*; in the *man* continuum the anchors were marked *not man* and *man*. The separate continua were presented on different trials, and the order of trials was completely randomized (see @fig-exp2-trial). 
+Participants completed the experiment on a computer in a quiet room. Each trial consisted of a face accompanied by the question "How would you gender categorize this person?". In the *one-dimensional* condition, participants rated gender based on a single continuum, with the anchors marked *woman* and *man*. In the *two-dimensional* condition, participants rated each face twice once using the *woman* continuum and once using the *man* continuum. In the *woman* continuum, the anchors were marked *not woman* and *woman*. In the *man* continuum the anchors were marked *not man* and *man*. The separate continua were presented on different trials, and the order of trials was completely randomized (see @fig-exp2-trial). 
 
 ![Sample trial from each of the three conditions](pix/exp2.png){#fig-exp2-trial}
 
@@ -367,7 +367,7 @@ Participants completed the experiment on a computer in a quiet room. Each trial 
 
 The outcome was responses to the categorization task. For analysis purposes, these were recorded in the following ways:
 
-*Other categorizations* represented the trials where participants categorized faces as any other category than woman or man. This was computed by dichotomizing the variable so "other" = 1 and all other responses = 0. In the free text condition, participants' responses were manually coded so that variations of other and non-binary counted as other.
+*Other categorizations* represented the trials where participants categorized faces as any other category than woman or man. This was computed by dichotomizing the variable so other = 1 and all other responses = 0. In the free text condition, participants' responses were manually coded so that of other and non-binary counted as other.
 
 *I don't know* responses represented trials where participants did not categorize any gender category. This was computed by dichotomizing the variables so I don't know = 1 and all other responses = 0. In the free text condition, participants' responses were manually coded and variations of unsure and I don't know counted as I don't know.
 
@@ -648,7 +648,7 @@ tmp %>% group_by(id, condition) %>%
   facet_wrap(~condition)
 ```
 
-Returning to @fig-desc-1, a visual inspection of this plot suggests that perhaps participants made fewer man categorizations in the multiple categories condition. We tested whether this was the case by examining only responses of woman or man. This meant removing a total of 226 responses from 20 participants.  @fig-wtf illustrates the spread of proportions of responses.Each dot represents a single participant, and the position of the dots on the y axis shows the proportion of faces each participant categrozed as man.The overlaid boxplots  median and interquartile range proportion of faces categorized as women (in this data set, with categorizations beyond the binary removed, any face not categorized as a woman was categorized as a man). Overall rates of binary categorizations were similar across the three conditions (see @fig-wtf).
+Returning to @fig-desc-1, a visual inspection of this plot suggests that perhaps participants made fewer man categorizations in the multiple categories condition. We tested whether this was the case by examining only responses of woman or man. This meant removing a total of 226 responses from 20 participants.  @fig-wtf illustrates the spread of proportions of responses. Each dot represents a single participant, and the position of the dots on the y axis shows the proportion of faces each participant categrozed as man.The overlaid boxplots  median and interquartile range proportion of faces categorized as women (in this data set, with categorizations beyond the binary removed, any face not categorized as a woman was categorized as a man). Overall rates of binary categorizations were similar across the three conditions (see @fig-wtf).
 
 ```{r my-plot, fig.cap= "Participant Proportions for Categorizing Faces as Women Across Three Conditions"}
 #| label: fig-wtf
@@ -887,11 +887,11 @@ h3 <- hypothesis(interaction, "conditionxb:fem_s = conditionft:fem_s")
 ```
 
 
-For testing, we treated the binary categories condition as the baseline against which the other two conditions were compared. The results suggested that the proportion of faces categorized as women was the same in the Multiple Categories and Binary Categories conditions (OR = `r exp(h0$hypothesis$Estimate) %>% round(2)`, CI =\[`r exp(h0$hypothesis$CI.Lower)%>% round(2)`, `r exp(h0$hypothesis$CI.Upper )%>% round(2)`\], BF~01~= `r round(h0$hypothesis$Evid.Ratio , 2)`). The evidence also indicated that the proportion of faces categorized as women was the same in the Free text and Binary Categories condition (OR = `r exp(h1$hypothesis$Estimate) %>% round(2)`, CI =\[`r exp(h1$hypothesis$CI.Lower)%>% round(2)`, `r exp(h1$hypothesis$CI.Upper) %>% round(2)`\], BF~01~= `r round(h1$hypothesis$Evid.Ratio , 2)`). In sum, neither the free text nor the multiple categories condition changed the pattern of categorization of women and men compared to the binary categories condition.
+For testing, we treated the binary categories condition as the control against which the other two conditions were compared. The results suggested that the proportion of faces categorized as women was the same in the Multiple Categories and Binary Categories conditions (OR = `r exp(h0$hypothesis$Estimate) %>% round(2)`, CI =\[`r exp(h0$hypothesis$CI.Lower)%>% round(2)`, `r exp(h0$hypothesis$CI.Upper )%>% round(2)`\], BF~01~= `r round(h0$hypothesis$Evid.Ratio , 2)`). The results suggested that the proportion of faces categorized as women was the same in the Free text and Binary Categories condition (OR = `r exp(h1$hypothesis$Estimate) %>% round(2)`, CI =\[`r exp(h1$hypothesis$CI.Lower)%>% round(2)`, `r exp(h1$hypothesis$CI.Upper) %>% round(2)`\], BF~01~= `r round(h1$hypothesis$Evid.Ratio , 2)`). In sum, neither the free text nor the multiple categories condition changed the pattern of categorization of women and men compared to the binary categories condition.
 
 ## Discussion
 
-In Experiment 2, we tested how free text options and multiple categories affected participants' responses beyond the binary. Some participants made some categorizations beyond the binary in the multiple categories condition, but virtually none did so in the free text condition. Furthermore, categorization beyond the binary did not come at the expense of categorizations of either women or men. 
+In Experiment 2, we tested how free text options and multiple categories affected participants' responses beyond the binary. Some participants made some categorizations beyond the binary in the multiple categories condition, but virtually none did so in the free text condition. Furthermore, additional response options reduced the absolute number of faces categorized as women and men (as participants selected some of the other options) but did systematically reduce categorizations of men more than women or vice versa.
 
 # General Discussion
 
