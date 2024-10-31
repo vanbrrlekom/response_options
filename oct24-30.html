@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Elli van Berlekom">
+<meta name="author" content="Stefan Wiens">
+<meta name="author" content="Marie Gustafsson Sendén">
+<meta name="dcterms.date" content="2024-10-31">
+<meta name="description" content="TOWARD INCLUSIVE RESEARCH: THE EFFECT OF RESPONSE OPTIONS ON GENDER CATEGORIZATION OF FACES">
+
+<title>Toward Inclusive Research: The Effect of Response Options on Gender Categorization of Faces</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="oct24-30_files/libs/clipboard/clipboard.min.js"></script>
+<script src="oct24-30_files/libs/quarto-html/quarto.js"></script>
+<script src="oct24-30_files/libs/quarto-html/popper.min.js"></script>
+<script src="oct24-30_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="oct24-30_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="oct24-30_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="oct24-30_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="oct24-30_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="oct24-30_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
+
+
+<link rel="stylesheet" href="_extensions/wjschne/apaquarto/apa.css">
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#study-1" id="toc-study-1" class="nav-link active" data-scroll-target="#study-1">Study 1</a>
+  <ul class="collapse">
+  <li><a href="#method" id="toc-method" class="nav-link" data-scroll-target="#method">Method</a>
+  <ul class="collapse">
+  <li><a href="#participants" id="toc-participants" class="nav-link" data-scroll-target="#participants">Participants</a></li>
+  <li><a href="#stimuli" id="toc-stimuli" class="nav-link" data-scroll-target="#stimuli">Stimuli</a></li>
+  <li><a href="#procedure" id="toc-procedure" class="nav-link" data-scroll-target="#procedure">Procedure</a></li>
+  <li><a href="#data-analysis" id="toc-data-analysis" class="nav-link" data-scroll-target="#data-analysis">Data analysis</a></li>
+  </ul></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
+  </ul></li>
+  <li><a href="#study-2" id="toc-study-2" class="nav-link" data-scroll-target="#study-2">Study 2</a>
+  <ul class="collapse">
+  <li><a href="#method-1" id="toc-method-1" class="nav-link" data-scroll-target="#method-1">Method</a>
+  <ul class="collapse">
+  <li><a href="#participants-1" id="toc-participants-1" class="nav-link" data-scroll-target="#participants-1">Participants</a></li>
+  <li><a href="#stimuli-1" id="toc-stimuli-1" class="nav-link" data-scroll-target="#stimuli-1">Stimuli</a></li>
+  <li><a href="#design-and-procedure" id="toc-design-and-procedure" class="nav-link" data-scroll-target="#design-and-procedure">Design and Procedure</a></li>
+  <li><a href="#data-analysis-1" id="toc-data-analysis-1" class="nav-link" data-scroll-target="#data-analysis-1">Data analysis</a></li>
+  </ul></li>
+  <li><a href="#results-1" id="toc-results-1" class="nav-link" data-scroll-target="#results-1">Results</a></li>
+  <li><a href="#discussion-1" id="toc-discussion-1" class="nav-link" data-scroll-target="#discussion-1">Discussion</a></li>
+  </ul></li>
+  <li><a href="#general-discussion" id="toc-general-discussion" class="nav-link" data-scroll-target="#general-discussion">General Discussion</a>
+  <ul class="collapse">
+  <li><a href="#limitations-and-future-directions" id="toc-limitations-and-future-directions" class="nav-link" data-scroll-target="#limitations-and-future-directions">Limitations and future directions</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="oct24-30.docx"><i class="bi bi-file-word"></i>MS Word (apaquarto)</a></li></ul></div></nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+</div>
+<main class="content" id="quarto-document-content">
+
+
+
+
+<br>
+
+<br>
+
+<section id="title" class="level1 title unnumbered unlisted">
+<h1 class="title unnumbered unlisted">Toward Inclusive Research: The Effect of Response Options on Gender Categorization of Faces</h1>
+<div class="Author">
+<br>
+
+<p>Elli van Berlekom, Stefan Wiens, and Marie Gustafsson Sendén</p>
+<p>Psychology Department, Stockholm University</p>
+</div>
+</section>
+<section id="author-note" class="level1 unnumbered unlisted AuthorNote">
+<h1 class="unnumbered unlisted AuthorNote">Author Note</h1>
+<p>Elli van Berlekom <img src="_extensions/wjschne/apaquarto/ORCID-iD_icon-vector.svg" id="orchid" class="img-fluid" width="16" alt="Orcid ID Logo: A green circle with white letters ID"> http://orcid.org/0000-0002-1949-5600</p>
+<p>Stefan Wiens <img src="_extensions/wjschne/apaquarto/ORCID-iD_icon-vector.svg" id="orchid" class="img-fluid" width="16" alt="Orcid ID Logo: A green circle with white letters ID"> http://orcid.org/0000-0003-4531-4313</p>
+<p>Marie Gustafsson Sendén <img src="_extensions/wjschne/apaquarto/ORCID-iD_icon-vector.svg" id="orchid" class="img-fluid" width="16" alt="Orcid ID Logo: A green circle with white letters ID"> http://orcid.org/0000-0002-8393-5316</p>
+<p>Correspondence concerning this article should be addressed to Elli van Berlekom, Psychology Department, Stockholm University, Email: elli.vanberlekom@psychology.su.se</p>
+</section>
+<section id="abstract" class="level1 unnumbered unlisted AuthorNote">
+<h1 class="unnumbered unlisted AuthorNote">Abstract</h1>
+<div class="Abstract">
+<p>Gender is not a binary category, yet much of gender categorization research continues to treat it as such in terms of response options. This study comprises two experiments that challenge the binary gender norm by exploring alternative response options to measure gender categorization. In Experiment 1 (N = 66), we compared one-dimensional and two-dimensional scales for gender categorization of a diverse set of morphed faces. We found that regardless of the response options used, participants treated gender categorically, consistently using the ends of dimensional scales. In Experiment 2 (N = 105), we compared traditional binary response options with multiple categories and free-text answers. The results suggested that while non-binary options such as “non-binary” and “I don’t know” led to categorizations beyond the binary framework in about half of the participants, free-text options did not elicit similar results. Despite the opportunity to categorize faces beyond the binary, the predominant categorizations remained as ‘woman’ or ‘man’. We conclude that while inclusive response options can facilitate acknowledgment of gender diversity, they do not fundamentally alter the binary perception of gender.</p>
+</div>
+</section>
+<section id="firstheader" class="level1 title unnumbered unlisted">
+<h1 class="title unnumbered unlisted">Toward Inclusive Research: The Effect of Response Options on Gender Categorization of Faces</h1>
+<p><em>Note: I have used colors to mark various types of comment or changes. My own comments in response to M’s suggestions or changes are in <span style="color:blue;">blue</span> Suggested edits are in <span style="color:green;">green</span>.</em></p>
+<p>Many transgender and nonbinary people (<span style="color:blue;">I have developed a taste for not using abbreviations a much as possible. M suggested TGD here, but I think it comes up seldom enough that it’s fine to write it all out</span>) experience gender as flexible, fluid, diffuse, and not bounded by the typical binary of women and men <span class="citation" data-cites="hydeFutureSexGender2019 richardsNonbinaryGenderqueerGenders2016">(<a href="#ref-hydeFutureSexGender2019" role="doc-biblioref">Hyde et al., 2019</a>; <a href="#ref-richardsNonbinaryGenderqueerGenders2016" role="doc-biblioref">Richards et al., 2016</a>)</span>. Unlike cisgender people - who identify with their assigned gender at birth - transgender people identify with a gender different from their assigned sex at birth <span class="citation" data-cites="levittBeingTransgenderExperience2014">(<a href="#ref-levittBeingTransgenderExperience2014" role="doc-biblioref">Levitt &amp; Ippolito, 2014</a>)</span>. Moreover, many transgender people identify as nonbinary, which can be either an identity in and of itself or an umbrella term for a wide variety of gender identities other than woman or man (e.g., genderqueer, agender, genderfluid) <span class="citation" data-cites="monroNonbinaryGenderqueerOverview2019">(<a href="#ref-monroNonbinaryGenderqueerOverview2019" role="doc-biblioref">Monro, 2019</a>)</span>. Surveys and questionnaires, however, that include measures of gender have traditionally been treated gender as a binary, for example by including only the categories woman/female and male/man as response options <span class="citation" data-cites="sapersteinCategoricalGradationalAlternative2021">(<a href="#ref-sapersteinCategoricalGradationalAlternative2021" role="doc-biblioref">Saperstein &amp; Westbrook, 2021</a>)</span>. The aim of this study was to illustrate how gender categorization of others can be studied using less binary response options and to investigate how this influences participants perceptions and ratings of gender.</p>
+<p><del>These response options ignore transgender and non-binary gender identities These response options ignore transgender and non-binary identities <span class="citation" data-cites="ansaraMethodologiesMisgenderingRecommendations2014">(<a href="#ref-ansaraMethodologiesMisgenderingRecommendations2014" role="doc-biblioref">Ansara &amp; Hegarty, 2014</a>)</span>. <span style="color:green;">Psychological research seems to be moving away from this trend; recent articles encourage psychologists to include response options which allow participants to flexibly categorize themselves beyond this binary</span><span class="citation" data-cites="lindqvistWhatGenderAnyway2020 sapersteinCategoricalGradationalAlternative2021">(<a href="#ref-lindqvistWhatGenderAnyway2020" role="doc-biblioref">Lindqvist et al., 2020</a>; <a href="#ref-sapersteinCategoricalGradationalAlternative2021" role="doc-biblioref">Saperstein &amp; Westbrook, 2021</a>)</span> Moreover, a cursory review suggests that psychologists are beginning to adopt these recommendations]{style=“color:green;”} <span class="citation" data-cites="carletonAssessingImpactRoyal2022 croninYoungerGenerationsAre2022 dagostinoOrganizationalPracticesSecondgenerationgGender2022">(see <a href="#ref-carletonAssessingImpactRoyal2022" role="doc-biblioref">Carleton et al., 2022</a>; <a href="#ref-croninYoungerGenerationsAre2022" role="doc-biblioref">Cronin et al., 2022</a>; <a href="#ref-dagostinoOrganizationalPracticesSecondgenerationgGender2022" role="doc-biblioref">D’Agostino et al., 2022</a> for some recent examples)</span>. Research on gender categorization of others, however, is still dominated by binary response options <span class="citation" data-cites="campanellaCategoricalPerceptionFacial2001 habibiSpontaneousGenderCategorization2012 jungAutomaticityGenderCategorization2019">(e.g., <a href="#ref-campanellaCategoricalPerceptionFacial2001" role="doc-biblioref">Campanella et al., 2001</a>; <a href="#ref-habibiSpontaneousGenderCategorization2012" role="doc-biblioref">Habibi &amp; Khurana, 2012</a>; <a href="#ref-jungAutomaticityGenderCategorization2019" role="doc-biblioref">Jung et al., 2019</a>)</span>.</del></p>
+<section id="gender-as-concept-and-object-of-study" class="level2">
+<h2 data-anchor-id="gender-as-concept-and-object-of-study">Gender as Concept and Object of Study</h2>
+<p><span style="color:green;">Our treatment and definition of gender derives from Morgenroth and Ryan (<a href="#ref-morgenrothEffectsGenderTrouble2021">2021</a>)’s integrative framework of binary and non-binary gender. Drawing from the ethnomethodological work of Goffman (1959), the queer-theoretical writings of Butler (1990), and modern social psychological theory, this framework rejects binary and essentialist notions of gender and describes various aspects of gender as well as how these are created and maintained. The authors use the language of theater performance as a metaphor and decompose the individual and societal aspects of gender into character, costume, script and stage. <em>Character</em> comprises the aspects of gender which are bound up in the individual, the physical characteristics of their bodies as well as their felt sense of their own gender – their gender identity. Although certain physical characteristics are gendered in that they are associated with certain gender categories, gender identity is an internal felt sense of sense and therefore not visible from appearance. <em>Costume</em> contains the elements individuals use to express their character, and includes hair, makeup, and clothing. People, both transgender and cisgender, often deliberately use aspects of costume to communicate their gender identity to others. <em>Scripts</em> proscribe the acceptable behaviors and traits associated with specific gender identity, for example that women should be communally oriented and men should be agentially oriented. The <em>Stage</em> encompasses the broader material and cultural conditions that enable or limit aspects of gender. This can include both widely held beliefs about gender, for example that gender identity never changes and is intrinsically related to physical bodies, but it also includes the words and expressions available to talk about gender, such as gender labels like woman, man and non-binary.</span></p>
+<p><span style="color:green;">These elements are interconnected, both in the sense that they strongly influence each other, but also in the sense that different combinations of character, costume, script and stage radically alter how the individual elements are perceived. To use an example, a man wearing a dress would constitute a mismatch of character and costume – what Butler (<a href="#ref-butlerGenderTroubleFeminism1999">1999</a>) calls gender trouble – and may lead to various forms of social sanction in the form of ridicule, mockery or, in extreme cases, violence. Moreover, the elements of gender as well as the acceptable combinations of elements are arbitrary inasmuch as they developed over time through repeated iterations of performance. This implies that gender, all aspects of gender, are in fact an ongoing process.This work is in part en effort to investigate how research which investigates gender may also in part contribute to that ongoing iteration of gender.</span></p>
+<p><span style="color:green;">When people make gender categorizations, in other words when they attribute gender categories to themselves or to others, all aspects of gender outlined influence their decision (Kessler &amp; McKenna, 1978). Most obviously Psychology has a long history of investigating various influences of character, costume and script, in the form of facial features, clothes and behavior (ref). The purpose of this research is to investigate how one aspect of “stage”, the response options given to participants categorizing gender, influence those participants’ perception of gender.</span></p>
+</section>
+<section id="response-options-when-participants-categorize-their-own-gender" class="level2">
+<h2 data-anchor-id="response-options-when-participants-categorize-their-own-gender">Response Options when Participants Categorize Their Own Gender</h2>
+<p><del>Research in the form of surveys and questionnaires that measure gender identity gender has often been presented gender as binary, for example by limiting the response options to woman/female and man/male <span class="citation" data-cites="sapersteinCategoricalGradationalAlternative2021">(<a href="#ref-sapersteinCategoricalGradationalAlternative2021" role="doc-biblioref">Saperstein &amp; Westbrook, 2021</a>)</span>. Using Morgenroth and Ryan (<a href="#ref-morgenrothEffectsGenderTrouble2021">2021</a>)’s terminology, such response options set a binary gender stage for respondents and ignore transgender and non-binary identities <span class="citation" data-cites="ansaraMethodologiesMisgenderingRecommendations2014">(<a href="#ref-ansaraMethodologiesMisgenderingRecommendations2014" role="doc-biblioref">Ansara &amp; Hegarty, 2014</a>)</span>. The aim of this study is to apply the recommendations about collecting data on participants own gender identity to paradigms where they categorize others, to examine how various types of response options influence participants perception of gender.</del></p>
+<p><span style="color:green;">An early pioneer in terms of challenging binary gender norms in psychology</span>(<span style="color:blue;">I think it’s important to keep “in psychology” because people have been challenging the binary in gender for much longer in other areas</span>)<span style="color:green;">was Sandra Bem. Her career was marked by challenges to patriarchal assumptions and practices in the field were wide ranging (see [ref] for a summary), but we will focus specifically on her contribution to the measurement of gender as a trait. Her scale, the Bem Sex Role Inventory (BSRI) <span class="citation" data-cites="bemMeasurmentPsychologicalAndrogyny1974">(<a href="#ref-bemMeasurmentPsychologicalAndrogyny1974" role="doc-biblioref">Bem, 1974</a>)</span> diverged from earlier attempts to measure participants’ gender (see Hegarty, 2007 for a treatment of such attempts) by conceptualizing femininity and masculinity as independent entities, rather than as opposites. The scale created gender trouble at the level of the stage by allowing for novel combinations of gender characteristics, such as “androgynous” (high femininity, high masculinity) and “neutral” (low femininity, low masculinity), destabilizing binary notions of gender <span class="citation" data-cites="libenUnderstandingUnderminingDevelopment2017">(<a href="#ref-libenUnderstandingUnderminingDevelopment2017" role="doc-biblioref">Liben &amp; Bigler, 2017</a>)</span>.</span></p>
+<p><del>An early challenge to the norm of binary of gender in psychology ( came in the form of the a . She devised a scale that measured gender as a psychological trait, treating femininity and masculinity as two separate constructs. This scale allowed for combinations of gender scores that challenged previous binary conceptions. Such combinations included <em>androgynous</em>, which meant scoring high on both femininity and masculinity; and <em>agender</em>, which meant scoring low on both. Characteristically <span style="color:green;">of</span> research of its time, Bem still largely accepted the binary gender framework. In treating gender as a psychological trait rather than an identity, for example, the BSRI implicitly assumed all respondents were women or men.</del></p>
+<p>A later group of challenges moved beyond questioning to the gender binary in psychology emerged in the 2010s and onward. These researchers, often drawing from feminist and queer scholarship <span class="citation" data-cites="butlerGenderTroubleFeminism1999">(e.g., <a href="#ref-butlerGenderTroubleFeminism1999" role="doc-biblioref">Butler, 1999</a>)</span>, were explicit about the need for psychology to include trans and non-binary gender identities <span class="citation" data-cites="hydeFutureSexGender2019 morgenrothGenderTroubleSocial2018 richardsNonbinaryGenderqueerGenders2016">(<a href="#ref-hydeFutureSexGender2019" role="doc-biblioref">Hyde et al., 2019</a>; <a href="#ref-morgenrothGenderTroubleSocial2018" role="doc-biblioref">Morgenroth &amp; Ryan, 2018</a>; <a href="#ref-richardsNonbinaryGenderqueerGenders2016" role="doc-biblioref">Richards et al., 2016</a>)</span>. <span style="color:green;">As part of these wave of research recent articles encourage psychologists to include response options which allow participants to flexibly categorize themselves beyond this binary <span class="citation" data-cites="lindqvistWhatGenderAnyway2020 sapersteinCategoricalGradationalAlternative2021">(<a href="#ref-lindqvistWhatGenderAnyway2020" role="doc-biblioref">Lindqvist et al., 2020</a>; <a href="#ref-sapersteinCategoricalGradationalAlternative2021" role="doc-biblioref">Saperstein &amp; Westbrook, 2021</a>)</span>. Moreover, a cursory review suggests that psychologists are beginning to adopt these recommendations</span> <span class="citation" data-cites="carletonAssessingImpactRoyal2022 croninYoungerGenerationsAre2022 dagostinoOrganizationalPracticesSecondgenerationgGender2022">(see <a href="#ref-carletonAssessingImpactRoyal2022" role="doc-biblioref">Carleton et al., 2022</a>; <a href="#ref-croninYoungerGenerationsAre2022" role="doc-biblioref">Cronin et al., 2022</a>; <a href="#ref-dagostinoOrganizationalPracticesSecondgenerationgGender2022" role="doc-biblioref">D’Agostino et al., 2022</a> for some recent examples)</span>.</p>
+<p><span style="color:green;">Several recommendations have been put forward for how researchers can translate these goals into concrete actions</span>. Saperstein and Westbrook (<a href="#ref-sapersteinCategoricalGradationalAlternative2021">2021</a>) suggested that surveys measuring gender include a range of response options, such as non-binary, other, trans man, agender, and more. Lindqvist et al. (<a href="#ref-lindqvistWhatGenderAnyway2020">2020</a>) suggested an open text entry where participants can fill in their gender in an open-ended format. The free text response has the advantage of being completely unconstrained, allowing participants to enter any category, including categories which may not have occurred to the researchers. Moreover, the acceptable terms sometimes shift over time as more marginalized voices are heard. The term <em>transsexual</em>, for example, has been widely used and seen as acceptable but is now understood to be stigmatizing (APA manual). A free text avoids this issue.</p>
+</section>
+<section id="response-options-when-participants-categorize-the-gender-of-others" class="level2">
+<h2 data-anchor-id="response-options-when-participants-categorize-the-gender-of-others">Response Options when Participants Categorize the Gender of Others</h2>
+<p>Research on gender categorization of others is still dominated by binary response options <span class="citation" data-cites="campanellaCategoricalPerceptionFacial2001 habibiSpontaneousGenderCategorization2012 jungAutomaticityGenderCategorization2019">(e.g., <a href="#ref-campanellaCategoricalPerceptionFacial2001" role="doc-biblioref">Campanella et al., 2001</a>; <a href="#ref-habibiSpontaneousGenderCategorization2012" role="doc-biblioref">Habibi &amp; Khurana, 2012</a>; <a href="#ref-jungAutomaticityGenderCategorization2019" role="doc-biblioref">Jung et al., 2019</a>)</span>. It is fairly common, for example, to use the one-dimensional approach, where participants rate the gender of others as a single dimension, from masculine to feminine. <span style="color:green;">Much of this research explores evolutionary origins of facial features</span>, correlating one-dimensional categorization of facial gender with other traits such as attractiveness <span class="citation" data-cites="littleRoleMasculinityDistinctiveness2002">(<a href="#ref-littleRoleMasculinityDistinctiveness2002" role="doc-biblioref">Little &amp; Hancock, 2002</a>)</span> and distinctiveness <span class="citation" data-cites="otoolePerceptionFaceGender1998">(<a href="#ref-otoolePerceptionFaceGender1998" role="doc-biblioref">O’Toole et al., 1998</a>)</span>. <span style="color:green;">Researchers also commonly present participants with binary categories almost invariably woman/female and man/male</span>. Studies using this method have shown that people rapidly and automatically categorize gender <span class="citation" data-cites="habibiSpontaneousGenderCategorization2012 jungAutomaticityGenderCategorization2019">(<a href="#ref-habibiSpontaneousGenderCategorization2012" role="doc-biblioref">Habibi &amp; Khurana, 2012</a>; <a href="#ref-jungAutomaticityGenderCategorization2019" role="doc-biblioref">Jung et al., 2019</a>)</span>. This, in turn, indicates that gender is a salient category that determines how people evaluate others on traits such as agreeableness, dominance, etc <span class="citation" data-cites="stolierNeuralMechanismSocial2017">(<a href="#ref-stolierNeuralMechanismSocial2017" role="doc-biblioref">Stolier &amp; Freeman, 2017</a>)</span>.</p>
+<p><span style="color:green;">When uni-dimensional and binary gender scales are used, results also</span> show that participants categorize faces categorically <span class="citation" data-cites="campanellaCategoricalPerceptionFacial2001">(<a href="#ref-campanellaCategoricalPerceptionFacial2001" role="doc-biblioref">Campanella et al., 2001</a>)</span>. This phenomenon has been observed when participants categorize faces that have been morphed to vary from feminine to masculine. Although a 60% female morph contains only slightly more female than male features, most participants categorized this female morph as female <span class="citation" data-cites="campanellaCategoricalPerceptionFacial2001">(<a href="#ref-campanellaCategoricalPerceptionFacial2001" role="doc-biblioref">Campanella et al., 2001</a>)</span>. Such categorical effects for continuous stimuli in any domain suggest that people treat that domain as consisting of separate categories <span class="citation" data-cites="simanovaLinguisticPriorsShape2016">(<a href="#ref-simanovaLinguisticPriorsShape2016" role="doc-biblioref">Simanova et al., 2016</a>)</span>. The observation of a categorical effect for gender, therefore, suggests that people treat gender as a binary consisting of women and men only. <span style="color:green;">However, these effects have heretofore only been observed in the context of a binary gender stage established through response options.</span></p>
+<p><span style="color:green;">This limitation is important, because all measures based on masculinity and femininity communicate certain ideas about gender to participants</span>. A one-dimensional scale implies that gender can vary on a continuum. It also places masculinity and femininity at the endpoints of the scales so that a higher rating of femininity is, by definition, a lower rating of masculinity. This implies that someone cannot embody femininity and masculinity at the same time, indeed, that the two concepts are opposites. Binary response options consisting of woman/female and man/male only suggest that those are the only two categories that exist. On the other hand, two-dimensional scales and categories that include non-binary response options suggest the opposite, that femininity and masculinity are not mutually exclusive and that a multiplicity of genders exists. In other words, no matter which type of response options are used, <span data-scale="color:green;">a gendered stage is established</span> and ideas are communicated to participants, potentially influencing their responses. Most recommendations suggest taking great care not to influence participants <span class="citation" data-cites="nicholsGoodsubjectEffectInvestigating2008">(<a href="#ref-nicholsGoodsubjectEffectInvestigating2008" role="doc-biblioref">Nichols &amp; Maner, 2008</a>)</span>, but the effects of gender response options are rarely considered.</p>
+</section>
+<section id="the-present-research" class="level2">
+<h2 data-anchor-id="the-present-research">The Present Research</h2>
+<p>The purpose of Experiment 1 was to test the influence of one and two-dimensional response options on categorical perception <del>Drawing inspiration from Bem (<a href="#ref-bemMeasurmentPsychologicalAndrogyny1974">1974</a>)</del> We compare gender categorization measured using one-dimensional response options (ranging from woman to man) and two-dimensional response [options (ranging from woman/man to not woman/not man)]{style=“color:green;}. If categorical perceptions occurs participants would ratings of slightly gendered faces should cluster around the endpoints of the scales rather than the whole scale. Such a pattern would suggest that participants treat gender as consisting of only two categories: women and men. Accordingly, a reduction in this effect would suggest participants take a more expansive view of gender. We tested two research questions:”Do participants respond categorically to faces?” (Research Question 1) and “Does a one-dimensional rating scale elicit stronger categorical responses than two-dimensional (Research Question 2)?”</p>
+<p>The purpose of Study 2 was to investigate categorization using non-binary gender using multiple response options or free text answers. We included multiple categories beyond women and men, as suggested by for example, Saperstein and Westbrook (2021), and we also included a free text as suggested by Lindqvist and colleagues (2019). <span data-scale="color:green;">In Experiment 2 we were mainly interested in how these two measures affect gender categorization in comparisons to only binary response options</span> (Research Question 3). On observing the data, we also observed what seemed to be an effect where non-binary response options reduced categorizations of men. Therefore, study 2 also investigated the categorization of women and men (Research Question 4).</p>
+</section>
+</section>
+<section id="study-1" class="level1">
+<h1>Study 1</h1>
+<section id="method" class="level2">
+<h2 data-anchor-id="method">Method</h2>
+<section id="participants" class="level3">
+<h3 data-anchor-id="participants">Participants</h3>
+<p>Swedish participants (<em>N</em> = 71) took part in the Stockholm University campus (<em>M</em><sub>age</sub>= 37.87, <em>SD</em><sub>age</sub> = 14.08, Range = 18 - 73). Participants included 33 women, 35 men, and 2 participants who did not indicate gender <span class="citation" data-cites="lindqvistWhatGenderAnyway2020">(self-identified gender was measured using an open-ended text box, following <a href="#ref-lindqvistWhatGenderAnyway2020" role="doc-biblioref">Lindqvist et al., 2020</a>)</span>. Participants were randomly allocated <del>into</del> <span style="color:green;">to</span> one of the two response option conditions (<em>N</em><sub>control</sub> = 33, <em>N</em><sub>experimental</sub> = 38). Participants were monetarily compensated for their time (100 sek). In accordance with the Helsinki Declaration, all participants were informed that participation was voluntary and gave written consent to participate in the study.</p>
+</section>
+<section id="stimuli" class="level3">
+<h3 data-anchor-id="stimuli">Stimuli</h3>
+<p>The experiment included Black, Asian, and White faces from the London Face Database <span class="citation" data-cites="debruineFaceResearchLab2017">(<a href="#ref-debruineFaceResearchLab2017" role="doc-biblioref">DeBruine &amp; Jones, 2017</a>)</span> and the Chicago Face Database<span class="citation" data-cites="maChicagoFaceDatabase2015">(<a href="#ref-maChicagoFaceDatabase2015" role="doc-biblioref">Ma et al., 2015</a>)</span> morphed with Webmorph <span class="citation" data-cites="debruineWebMorph2018">(<a href="#ref-debruineWebMorph2018" role="doc-biblioref">DeBruine, 2018</a>)</span>. We selected matched pairs of faces of women and men, ensuring that the women were rated at similar levels of feminine as the men were rated masculine <del>using the codebook provided by the researchers</del> <span style="color:green;">according to the norming data</span> <span class="citation" data-cites="maChicagoFaceDatabase2015">(<a href="#ref-maChicagoFaceDatabase2015" role="doc-biblioref">Ma et al., 2015</a>)</span>. The morphs were made in 7 steps, from completely feminine to completely masculine. We defined facial gender as the degree of the female face present in the morph. In other words, a 33% face was slightly masculine, a 50% face was an even mixture of the two faces, and a 100% face consisted only of the woman’s face. Because there were 18 face pairs morphed in 7 steps, the total number of faces was 126.</p>
+</section>
+<section id="procedure" class="level3">
+<h3 data-anchor-id="procedure">Procedure</h3>
+<p>Participants completed the experiment on a computer in a quiet room. Each trial consisted of a face accompanied by the question, “How would you gender categorize this person?”. In the <em>one-dimensional</em> condition, participants rated gender based on a single continuum, with the anchors marked <em>woman</em> and <em>man</em>. <span style="color:green;">In the <em>two-dimensional</em> condition, participants rated each face once on a <em>woman</em> continuum (the anchors were marked <em>not woman</em> and <em>woman</em>) and once on a <em>man</em> continuum (anchors were marked <em>not man</em> and <em>man</em>). The separate continua were presented on different trials, and the order of trials was completely randomized in both conditions</span> (see <a href="#fig-exp2-trial" class="quarto-xref" aria-expanded="false">Figure&nbsp;2</a>).</p>
+</section>
+<section id="data-analysis" class="level3">
+<h3 data-anchor-id="data-analysis">Data analysis</h3>
+<p>We used R <span class="citation" data-cites="R-base">(Version 4.2.2; <a href="#ref-R-base" role="doc-biblioref">R Core Team, 2022</a>)</span> and the R-packages <em>brms</em> <span class="citation" data-cites="R-brms_a R-brms_b R-brms_c">(Version 2.18.0; <a href="#ref-R-brms_a" role="doc-biblioref">Bürkner, 2017</a>, <a href="#ref-R-brms_b" role="doc-biblioref">2018</a>, <a href="#ref-R-brms_c" role="doc-biblioref">2021</a>)</span>, <em>papaja</em> <span class="citation" data-cites="R-papaja">(Version 0.1.1; <a href="#ref-R-papaja" role="doc-biblioref">Aust &amp; Barth, 2022</a>)</span>, and <em>tidyverse</em> <span class="citation" data-cites="R-tidyverse">(Version 1.3.2; <a href="#ref-R-tidyverse" role="doc-biblioref">Wickham et al., 2019</a>)</span>. We <span style="color:green;">fit Bayesian mixed-effects models to the data</span> to test for patterns of responses consistent with categorical perception. In all models, facial gender (0 to 100 in seven steps) and response options (one-dimensional, two-dimensional) were included as fixed effects. Additionally, all models included varying intercepts for both participants and faces and varying slopes for facial gender. We modeled the predictor facial gender as an ordered factor with seven levels corresponding to each of the seven morphing steps. <span style="color:green;">This allowed us to test for the kinds of non-linear patterns that would be observed under categorical perception, where changes in facial gender would be expected to have a larger effect on rated gender near the midpoint than at extreme values.</span></p>
+</section>
+</section>
+<section id="results" class="level2">
+<h2 data-anchor-id="results">Results</h2>
+<p>We examined the relationship between ratings of woman and man in the two-dimensional condition. These were highly negatively correlated (R = -0.86). Therefore, man ratings in the multiple dimensions were reverse-coded for subsequent analyses. Second, we examined whether participants responded categorically to faces (Research Question 1). Individual-level (thin lines) and group mean (thick lines) responses are visualized in <a href="#fig-desc-two" class="quarto-xref" aria-expanded="false">Figure&nbsp;3</a>. If participants respond according to the morph level, the lines should be a straight diagonal. Instead, <a href="#fig-desc-two" class="quarto-xref" aria-expanded="false">Figure&nbsp;3</a> shows that most participants display a non-linear S-shape, and this was also the pattern of the group means. Note that in the two-dimensional condition, participants rated each face twice.</p>
+<p>To further test whether the faces were rated categorically, we calculated the difference between the mean ratings when facial gender was 33% and 67%. If participants respond linearly, this difference should be 34. Instead, in both the one-dimensional condition (<em>M</em><sub>1D</sub> = 59.58, CI<sub>1D</sub> = [53.65, 65.26]) and the two-dimensional condition (<em>M</em><sub>2D</sub> = 58.75, CI<sub>2D</sub> = [52.53, 65.08]) this difference far exceeded 34 and the narrow credible intervals suggest these measures were precisely estimated. We interpret this to mean that participants responded categorically.</p>
+<p>Finally, we tested whether the categorical perception was reduced in the two-dimension condition compared to the one-dimension condition (Research Question 2). In other words, we calculated the mean difference between 67% faces and 33% faces <del>across the two</del> <span style="color:green;">in both</span> conditions. The results suggested that categorical perception was not reduced by two-dimensional response options (Difference = -0.83, CI = [-5.57, 7.24], BF<sub>01</sub>= 30.47).</p>
+</section>
+<section id="discussion" class="level2">
+<h2 data-anchor-id="discussion">Discussion</h2>
+<p>Participants responded categorically when rating faces in terms of gender. Additionally, two-dimensional response options did not reduce this effect. Indeed a highly binary view of gender was present and participants treated womanhood and manhood as opposites even though the scale would allow them to be more flexible. However, this scale only implicitly challenged the binary, as no diverse gender options were present.</p>
+</section>
+</section>
+<section id="study-2" class="level1">
+<h1>Study 2</h1>
+<p>Study 2 tested a wider range of response options that explicitly challenge the gender binary. These were adapted from common ways to measure participants’ self-categorization of gender <span class="citation" data-cites="lindqvistWhatGenderAnyway2020 sapersteinCategoricalGradationalAlternative2021">(<a href="#ref-lindqvistWhatGenderAnyway2020" role="doc-biblioref">Lindqvist et al., 2020</a>; <a href="#ref-sapersteinCategoricalGradationalAlternative2021" role="doc-biblioref">Saperstein &amp; Westbrook, 2021</a>)</span>. In Study 2 we compared three types of response options in a gender categorization task: 1) only woman and man; 2) woman, man and other and 3) an open text box for participants to type in their response. As a control condition, we also included a condition with only woman and man as response options.</p>
+<section id="method-1" class="level2">
+<h2 data-anchor-id="method-1">Method</h2>
+<section id="participants-1" class="level3">
+<h3 data-anchor-id="participants-1">Participants</h3>
+<p>Swedish participants (<em>N</em> = 100) took part in the study at the Stockholm University campus (<em>M</em><sub>age</sub>= 36.89, <em>SD</em><sub>age</sub> = 13.69, Range = 18 - 69). Self-identified gender was measured using an open-ended text box as recommended by <span class="citation" data-cites="lindqvistWhatGenderAnyway2020">(<a href="#ref-lindqvistWhatGenderAnyway2020" role="doc-biblioref">Lindqvist et al., 2020</a>)</span>. The final sample included 56 women, 47 men, and 2 participants who did not indicate gender. All participants were informed that participation was voluntary and all gave written consent to participate in the study. Participants were randomly allocated to one of the two response option conditions (<em>N</em><sub>binary</sub> = 32, <em>N</em><sub>multiple</sub> = 36, <em>N</em><sub>free_text</sub> = 32). Participants were monetarily compensated for their time (100 sek).</p>
+</section>
+<section id="stimuli-1" class="level3">
+<h3 data-anchor-id="stimuli-1">Stimuli</h3>
+<p>The stimuli were identical to those of Study 1.</p>
+</section>
+<section id="design-and-procedure" class="level3">
+<h3 data-anchor-id="design-and-procedure">Design and Procedure</h3>
+<p>The experiment used a between-participants design. There were three conditions with different response options: binary categories, free text, and multiple categories (see <a href="#fig-exp1-trial" class="quarto-xref" aria-expanded="false">Figure&nbsp;4</a>). In the <em>binary categories</em> condition, the response options consisted of two categories: woman and man. In the <em>free text</em> condition, the response options consisted of an open text box. In the <em>multiple categories</em> condition, the response options consisted of four categories: woman, man, other, and I don’t know.</p>
+<p>Participants completed the experiment on a computer in a quiet room. Each trial consisted of a face accompanied by the question, “How would you gender categorize this person?” After being allocated to one of the three conditions, participants categorized 126 faces according to the response options in their condition.</p>
+<p>The outcome was responses to the categorization task. For analysis purposes, <del>these were recorded in the following ways</del> [two new variables were created]{style=“color:green”;}:</p>
+<p><em>Other categorizations</em> represented the trials where participants categorized faces as any other category than woman or man. This was computed by dichotomizing the variable so other was coded as 1 and all other responses were coded as 0. In the free text condition, participants’ responses were manually coded so that of other and non-binary counted as other.</p>
+<p><em>I don’t know</em> responses represented trials where participants did not categorize any gender category. I don’t know was coded as 1 and all other responses were coded as 0. In the free text condition, participants’ responses were manually coded so that variations of unsure and I don’t know counted as I don’t know.</p>
+</section>
+<section id="data-analysis-1" class="level3">
+<h3 data-anchor-id="data-analysis-1">Data analysis</h3>
+<p><span style="{&quot;color:green;&quot;">Bayesian linear mixed effect models were fit to the data in study 2. These models were the same as in Study 1 apart from the outcome, which was binomial and accordingly had to be modeled as a binomial distribution.</span>}</p>
+</section>
+</section>
+<section id="results-1" class="level2">
+<h2 data-anchor-id="results-1">Results</h2>
+<p><a href="#fig-desc-1" class="quarto-xref" aria-expanded="false">Figure&nbsp;5</a>. A simple visual inspection of Figure <a href="#fig-desc-1" class="quarto-xref" aria-expanded="false">Figure&nbsp;5</a> suggests that most faces were categorized as women or men. Participants did categorize faces outside of this binary in the multiple categories condition, as <a href="#fig-desc-1" class="quarto-xref" aria-expanded="false">Figure&nbsp;5</a> shows, and most such categorizations were made in response to androgynous faces.</p>
+<p><a href="#fig-desc-1" class="quarto-xref" aria-expanded="false">Figure&nbsp;5</a>, however, only illustrates the total number of categorizations across all participants. This obscures the fact that some participants made many categorizations beyond the binary and some made few or none at all. <a href="#fig-desc-nbo" class="quarto-xref" aria-expanded="false">Figure&nbsp;6</a> illustrates how many categorizations (y-axis) beyond the binary participants made. Each bar represents how many participants (y-axis) made a certain number of categorizations (x-axis). The different colors denote the different categorizations. Participants who only categorized faces as women or men are not represented in figure <a href="#fig-desc-nbo" class="quarto-xref" aria-expanded="false">Figure&nbsp;6</a>. In the Free Text condition, only two participants made any other categorization than woman and man, whereas more than half did so in the Multiple Categories condition (see <a href="#fig-desc-nbo" class="quarto-xref" aria-expanded="false">Figure&nbsp;6</a> ).The Bayesian mixed effects model suggested that participants made categorizations beyond the binary in the multiple categories condition compared to the free text condition (OR = 5.56, CI =[1.1, 27.97], BF<sub>10</sub>= 4.55).</p>
+<p>An inspection of <a href="#fig-desc-1" class="quarto-xref" aria-expanded="false">Figure&nbsp;5</a> suggests that participants made fewer man categorizations in the multiple categories condition than the other two conditions. We tested this by examining only responses of woman or man. <a href="#fig-wtf" class="quarto-xref" aria-expanded="false">Figure&nbsp;8</a> illustrates proportions of responses of women and men. Each dot represents a single participant, and the position of the dots on the y axis shows the proportion of faces that participant categorized as man; <span style="color:green;">the boxplots show median and interquartile range proportion of faces categorized as men</span> (in this data set, with categorizations beyond the binary removed, any face not categorized as a woman was categorized as a man). Overall rates of binary categorizations were <span style="color:green;">similar</span> across the three conditions (see <a href="#fig-wtf" class="quarto-xref" aria-expanded="false">Figure&nbsp;8</a>).</p>
+<p>We treated the binary categories condition as the control against which the other two conditions were compared. The results suggested that the proportion of faces categorized as women was similar in the Multiple Categories and Binary Categories conditions (OR = 0.68, CI =[0.4, 1.17], BF<sub>01</sub>= 5.98). The results suggested that the proportion of faces categorized as women was the same in the Free text and Binary Categories condition (OR = 1.03, CI =[0.6, 1.78], BF<sub>01</sub>= 15.27). In sum, neither the free text nor the multiple categories condition changed the pattern of categorization of women and men compared to the binary categories condition.</p>
+</section>
+<section id="discussion-1" class="level2">
+<h2 data-anchor-id="discussion-1">Discussion</h2>
+<p>In Experiment 2, we tested how free text options and multiple categories affected participants’ responses beyond the binary. Some participants made some categorizations beyond the binary in the multiple categories condition, but virtually none did so in the free text condition. Furthermore, additional response options reduced the absolute number of faces categorized as women and men (as participants selected some of the other options) but did systematically reduce categorizations of men more than women or vice versa.</p>
+</section>
+</section>
+<section id="general-discussion" class="level1">
+<h1>General Discussion</h1>
+<p>Across two experiments, we tested how different response options influenced gender categorization. In Study 1, we compared two-dimensional scales with one-dimensional controls. We found that participants responded categorically, and this was the case in both the control condition and the two-dimensional condition. In Study 2, we compared free text and multiple categories. We found that only multiple categories elicited beyond-binary responses. Compared to binary control, neither changed the pattern of categorizations of women and men.</p>
+<p>The results from Study 1 are consistent with previous work on categorical perception of gender in faces <span class="citation" data-cites="campanellaCategoricalPerceptionFacial2001 campanellaCategoricalPerceptionUnfamiliar2003">(<a href="#ref-campanellaCategoricalPerceptionFacial2001" role="doc-biblioref">Campanella et al., 2001</a>, <a href="#ref-campanellaCategoricalPerceptionUnfamiliar2003" role="doc-biblioref">2003</a>)</span>. Participants exhibited a categorical pattern of responses where ratings of gender were more extreme than the facial gender. This implies that participants had a conception of gender as consisting of two distinct categories. Furthermore, the two-dimensional ratings did not reduce the strength of the categorical effect. This suggests that, at least in the present sample, two-dimensional response options were not enough to reduce the binary gender norms.</p>
+<p>This differs slightly from the results of Bem (<a href="#ref-bemMeasurmentPsychologicalAndrogyny1974">1974</a>), who found that measuring gender as two separate scales led participants to treat gender as less binary. Moreover, where she found that masculinity and femininity were largely unrelated, we found that ratings of woman and man were strongly correlated. This is probably accounted for by the differences in outcome measures in Bem (<a href="#ref-bemMeasurmentPsychologicalAndrogyny1974">1974</a>) and in our study. Bem (<a href="#ref-bemMeasurmentPsychologicalAndrogyny1974">1974</a>) measured gender as a psychological trait in the self, whereas we measured gender as a judgment of the gender identity of others. The latter outcome is not only determined by the response options, but also by the physical features of the faces. In other words, judging the faces of others is a different task from judging one’s own characteristics, and one of the primary differences is the increase in external stimuli and influences.</p>
+<p>The finding from Study 2 that participants use non-binary response options is consistent with the work of Saperstein and Westbrook (<a href="#ref-sapersteinCategoricalGradationalAlternative2021">2021</a>) and Lindqvist et al. (<a href="#ref-lindqvistWhatGenderAnyway2020">2020</a>), which has shown that including flexible response options allows participants to better express themselves. A recommendation from that literature is that open text boxes afford participants the greatest flexibility in their responses. In our study that flexibility was rarely used when the response options consisted of a free text. This likely reflects the difference between transgender and gender-diverse participants categorizing their own gender and cisgender participants categorizing others.</p>
+<p>A probable explanation for the difference between free text and multiple categories in Study 2 is that the multiple categories served as a visual reminder of non-binary identity. Researchers interested in the categorization of non-binary identity should be aware that these may not spring to mind unless participants are explicitly reminded of them.</p>
+<p>Neither free text nor multiple categories influenced the categorizations of women and men. This suggests that such inclusive response options can be suitable for investigating the categorization of women and men without skewing the results or introducing noise. This is a positive finding for researchers who are primarily interested in such categorizations but do not want to contribute to the marginalization of trans and non-binary individuals.</p>
+<p>Overall, we recommend researchers include non-binary response options in gender categorization studies. Multiple dimensions, free text, and multiple categories and continua are all viable alternatives. If the primary research question is to investigate non-binary categorization, then multiple categories are most suitable. However, if the goal is to measure the categorization of women and men, free text or multiple categories may be equally suitable.</p>
+<section id="limitations-and-future-directions" class="level2">
+<h2 data-anchor-id="limitations-and-future-directions">Limitations and future directions</h2>
+<p>One limitation of this study is the sample size. The <em>N</em>s in each condition are below many of the conventional recommendations in social psychology. However, these recommendations are typically made based on the assumption of a single trial per participant. In contrast, each participant completed 126 trials in our experiment. This allows for precise detailing of the within-participant processes. As such, the present study resembles psychophysical experiments, which also feature few participants carrying out many trials. Power is often portrayed as a function of sample size, and this is true, the number of trials is also a factor in power <span class="citation" data-cites="juddExperimentsMoreOne2017">(<a href="#ref-juddExperimentsMoreOne2017" role="doc-biblioref">Judd et al., 2017</a>)</span>. Indeed, the overall analyses included more than 8000 data points in each experiment, and the final estimates were measured with a high degree of precision. That said, we note that the generalizability of the experiment is somewhat reduced.</p>
+<p>Another limitation of this study is that it does not account for the influence of markers of gender other than faces. Such markers include hair, clothes, and makeup and Transgender and gender diverse often use such markers to signal their gender to others. Moreover, the faces used here were not “realistic” in that they did not realistically depict gender diversity as it is often displayed in the real world. In that sense, it is possible that we underestimate the rates of people responding with one of the options beyond the binary.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 data-anchor-id="conclusion">Conclusion</h2>
+<p>In two studies, we tested how different response alternatives affected gender categorizations. In Study 1, participants responded categorically to the faces, both when rating gender using one-dimensional and two-dimensional scales. This suggests that participants generally had a binary conception of gender, which was not influenced by response options. In Study 2, participants were more likely to categorize faces beyond the binary when using multiple categories, including non-binary and I don’t know than when using a free text option. In comparison to self-identification questions, where open-ended responses are seen as the most inclusive alternative <span class="citation" data-cites="lindqvistWhatGenderAnyway2020">(<a href="#ref-lindqvistWhatGenderAnyway2020" role="doc-biblioref">Lindqvist et al., 2020</a>)</span>, the categorization of others benefits from response options that explicitly remind participants that not all people identify as women or men.</p>
+<div style="page-break-after: always;"></div>
+</section>
+</section>
+<section id="references" class="level1">
+<h1>References</h1>
+<div id="refs" class="references csl-bib-body hanging-indent" data-custom-style="Bibliography" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-ansaraMethodologiesMisgenderingRecommendations2014" class="csl-entry" role="listitem">
+Ansara, Y. G., &amp; Hegarty, P. (2014). Methodologies of misgendering: <span>Recommendations</span> for reducing cisgenderism in psychological research. <em>Feminism &amp; Psychology</em>, <em>24</em>(2), 259–270. <a href="https://doi.org/10.1177/0959353514526217">https://doi.org/10.1177/0959353514526217</a>
+</div>
+<div id="ref-R-papaja" class="csl-entry" role="listitem">
+Aust, F., &amp; Barth, M. (2022). <em><span class="nocase">papaja</span>: <span>Prepare</span> reproducible <span>APA</span> journal articles with <span>R Markdown</span></em>. <a href="https://github.com/crsh/papaja">https://github.com/crsh/papaja</a>
+</div>
+<div id="ref-bemMeasurmentPsychologicalAndrogyny1974" class="csl-entry" role="listitem">
+Bem, S. L. (1974). The measurment of psychological androgyny. <em>Journal of Consulting and Clinical Psychology</em>, <em>42</em>(2), 155.
+</div>
+<div id="ref-R-brms_a" class="csl-entry" role="listitem">
+Bürkner, P.-C. (2017). <span class="nocase">brms</span>: An <span>R</span> package for <span>Bayesian</span> multilevel models using <span>Stan</span>. <em>Journal of Statistical Software</em>, <em>80</em>(1), 1–28. <a href="https://doi.org/10.18637/jss.v080.i01">https://doi.org/10.18637/jss.v080.i01</a>
+</div>
+<div id="ref-R-brms_b" class="csl-entry" role="listitem">
+Bürkner, P.-C. (2018). Advanced <span>Bayesian</span> multilevel modeling with the <span>R</span> package <span class="nocase">brms</span>. <em>The R Journal</em>, <em>10</em>(1), 395–411. <a href="https://doi.org/10.32614/RJ-2018-017">https://doi.org/10.32614/RJ-2018-017</a>
+</div>
+<div id="ref-R-brms_c" class="csl-entry" role="listitem">
+Bürkner, P.-C. (2021). Bayesian item response modeling in <span>R</span> with <span class="nocase">brms</span> and <span>Stan</span>. <em>Journal of Statistical Software</em>, <em>100</em>(5), 1–54. <a href="https://doi.org/10.18637/jss.v100.i05">https://doi.org/10.18637/jss.v100.i05</a>
+</div>
+<div id="ref-butlerGenderTroubleFeminism1999" class="csl-entry" role="listitem">
+Butler, J. (1999). <em>Gender trouble: Feminism and the subversion of identity</em>. Routledge.
+</div>
+<div id="ref-campanellaCategoricalPerceptionFacial2001" class="csl-entry" role="listitem">
+Campanella, S., Chrysochoos, A., &amp; Bruyer, R. (2001). Categorical perception of facial gender information: <span>Behavioural</span> evidence and the face-space metaphor. <em>Visual Cognition</em>, <em>8</em>(2), 237–262. <a href="https://doi.org/10.1080/13506280042000072">https://doi.org/10.1080/13506280042000072</a>
+</div>
+<div id="ref-campanellaCategoricalPerceptionUnfamiliar2003" class="csl-entry" role="listitem">
+Campanella, S., Hanoteau, C., Seron, X., Joassin, F., &amp; Bruyer, R. (2003). Categorical perception of unfamiliar facial identities, the face-space metaphor, and the morphing technique. <em>Visual Cognition</em>, <em>10</em>(2), 129–156. <a href="https://doi.org/10.1080/713756676">https://doi.org/10.1080/713756676</a>
+</div>
+<div id="ref-carletonAssessingImpactRoyal2022" class="csl-entry" role="listitem">
+Carleton, R. N., McCarron, M., Krätzig, G. P., Sauer-Zavala, S., Neary, J. P., Lix, L. M., Fletcher, A. J., Camp, R. D., Shields, R. E., Jamshidi, L., Nisbet, J., Maguire, K. Q., MacPhee, R. S., Afifi, T. O., Jones, N. A., Martin, R. R., Sareen, J., Brunet, A., Beshai, S., … Asmundson, G. J. G. (2022). Assessing the impact of the <span>Royal Canadian Mounted Police</span> (<span>RCMP</span>) protocol and <span>Emotional Resilience Skills Training</span> (<span>ERST</span>) among diverse public safety personnel. <em>BMC Psychology</em>, <em>10</em>(1), 295. <a href="https://doi.org/10.1186/s40359-022-00989-0">https://doi.org/10.1186/s40359-022-00989-0</a>
+</div>
+<div id="ref-croninYoungerGenerationsAre2022" class="csl-entry" role="listitem">
+Cronin, K. A., Leahy, M., Ross, S. R., Wilder Schook, M., Ferrie, G. M., &amp; Alba, A. C. (2022). Younger generations are more interested than older generations in having non-domesticated animals as pets. <em>PLOS ONE</em>, <em>17</em>(1), e0262208. <a href="https://doi.org/10.1371/journal.pone.0262208">https://doi.org/10.1371/journal.pone.0262208</a>
+</div>
+<div id="ref-dagostinoOrganizationalPracticesSecondgenerationgGender2022" class="csl-entry" role="listitem">
+D’Agostino, M., Levine, H., Sabharwal, M., &amp; Johnson-Manning, A. C. (2022). Organizational practices and second-<span class="nocase">generationgGender</span> bias: <span>A</span> qualitative inquiry into the career progression of <span>U</span>.<span>S</span>. State-level managers. <em>The American Review of Public Administration</em>, <em>52</em>(5), 335–350. <a href="https://doi.org/10.1177/02750740221086605">https://doi.org/10.1177/02750740221086605</a>
+</div>
+<div id="ref-debruineWebMorph2018" class="csl-entry" role="listitem">
+DeBruine, L. (2018). <span>WebMorph</span>. In <em>WebMorph</em>. https://webmorph.org/.
+</div>
+<div id="ref-debruineFaceResearchLab2017" class="csl-entry" role="listitem">
+DeBruine, L., &amp; Jones, B. C. (2017). Face <span>Research Lab London Set</span>. <em>Figshare</em>. <a href="https://doi.org/10.6084/m9.figshare.5047666">https://doi.org/10.6084/m9.figshare.5047666</a>
+</div>
+<div id="ref-habibiSpontaneousGenderCategorization2012" class="csl-entry" role="listitem">
+Habibi, R., &amp; Khurana, B. (2012). Spontaneous <span>Gender Categorization</span> in <span>Masking</span> and <span>Priming Studies</span>: <span>Key</span> for <span>Distinguishing Jane</span> from <span>John Doe</span> but <span>Not Madonna</span> from <span>Sinatra</span>. <em>PLoS ONE</em>, <em>7</em>(2), e32377. <a href="https://doi.org/10.1371/journal.pone.0032377">https://doi.org/10.1371/journal.pone.0032377</a>
+</div>
+<div id="ref-hydeFutureSexGender2019" class="csl-entry" role="listitem">
+Hyde, J. S., Bigler, R. S., Joel, D., Tate, C. C., &amp; van Anders, S. M. (2019). The future of sex and gender in psychology: <span>Five</span> challenges to the gender binary. <em>American Psychologist</em>. <a href="https://doi.org/10.1037/amp0000307">https://doi.org/10.1037/amp0000307</a>
+</div>
+<div id="ref-juddExperimentsMoreOne2017" class="csl-entry" role="listitem">
+Judd, C. M., Westfall, J., &amp; Kenny, D. A. (2017). Experiments with <span>More Than One Random Factor</span>: <span>Designs</span>, <span>Analytic Models</span>, and <span>Statistical Power</span>. <em>Annual Review of Psychology</em>, <em>68</em>(1), 601–625. <a href="https://doi.org/10.1146/annurev-psych-122414-033702">https://doi.org/10.1146/annurev-psych-122414-033702</a>
+</div>
+<div id="ref-jungAutomaticityGenderCategorization2019" class="csl-entry" role="listitem">
+Jung, K. H., White, K. R. G., &amp; Powanda, S. J. (2019). Automaticity of gender categorization: <span>A</span> test of the efficiency feature. <em>Social Cognition</em>, <em>37</em>(2), 122–144. <a href="https://doi.org/10.1521/soco.2019.37.2.122">https://doi.org/10.1521/soco.2019.37.2.122</a>
+</div>
+<div id="ref-levittBeingTransgenderExperience2014" class="csl-entry" role="listitem">
+Levitt, H. M., &amp; Ippolito, M. R. (2014). Being transgender: <span>The</span> experience of transgender identity development. <em>Journal of Homosexuality</em>, <em>61</em>(12), 1727–1758. <a href="https://doi.org/10.1080/00918369.2014.951262">https://doi.org/10.1080/00918369.2014.951262</a>
+</div>
+<div id="ref-libenUnderstandingUnderminingDevelopment2017" class="csl-entry" role="listitem">
+Liben, L. S., &amp; Bigler, R. S. (2017). Understanding and <span>Undermining</span> the <span>Development</span> of <span>Gender Dichotomies</span>: <span>The Legacy</span> of <span>Sandra Lipsitz Bem</span>. <em>Sex Roles</em>, <em>76</em>(9-10), 544–555. <a href="https://doi.org/10.1007/s11199-015-0519-4">https://doi.org/10.1007/s11199-015-0519-4</a>
+</div>
+<div id="ref-lindqvistWhatGenderAnyway2020" class="csl-entry" role="listitem">
+Lindqvist, A., Sendén, M. G., &amp; Renström, E. A. (2020). What is gender, anyway: A review of the options for operationalising gender. <em>Psychology &amp; Sexuality</em>, 1–13. <a href="https://doi.org/10.1080/19419899.2020.1729844">https://doi.org/10.1080/19419899.2020.1729844</a>
+</div>
+<div id="ref-littleRoleMasculinityDistinctiveness2002" class="csl-entry" role="listitem">
+Little, A. C., &amp; Hancock, P. J. B. (2002). The role of masculinity and distinctiveness in judgments of human male facial attractiveness. <em>British Journal of Psychology</em>, <em>93</em>(4), 451–464. <a href="https://doi.org/10.1348/000712602761381349">https://doi.org/10.1348/000712602761381349</a>
+</div>
+<div id="ref-maChicagoFaceDatabase2015" class="csl-entry" role="listitem">
+Ma, D. S., Correll, J., &amp; Wittenbrink, B. (2015). The <span>Chicago</span> face database: <span>A</span> free stimulus set of faces and norming data. <em>Behavior Research Methods</em>, <em>47</em>(4), 1122–1135. <a href="https://doi.org/10.3758/s13428-014-0532-5">https://doi.org/10.3758/s13428-014-0532-5</a>
+</div>
+<div id="ref-monroNonbinaryGenderqueerOverview2019" class="csl-entry" role="listitem">
+Monro, S. (2019). Non-binary and genderqueer: <span>An</span> overview of the field. <em>International Journal of Transgenderism</em>, <em>20</em>(2-3), 126–131. <a href="https://doi.org/10.1080/15532739.2018.1538841">https://doi.org/10.1080/15532739.2018.1538841</a>
+</div>
+<div id="ref-morgenrothGenderTroubleSocial2018" class="csl-entry" role="listitem">
+Morgenroth, T., &amp; Ryan, M. K. (2018). Gender trouble in social psychology: <span>How</span> can <span>Butler</span>’s work inform experimental social psychologists’ conceptualization of gender? <em>Frontiers in Psychology</em>, <em>9</em>. <a href="https://doi.org/10.3389/fpsyg.2018.01320">https://doi.org/10.3389/fpsyg.2018.01320</a>
+</div>
+<div id="ref-morgenrothEffectsGenderTrouble2021" class="csl-entry" role="listitem">
+Morgenroth, T., &amp; Ryan, M. K. (2021). The effects of gender trouble: <span>An</span> integrative theoretical framework of the perpetuation and disruption of the gender/sex binary. <em>Perspectives on Psychological Science</em>, <em>16</em>(6), 1113–1142. <a href="https://doi.org/10.1177/1745691620902442">https://doi.org/10.1177/1745691620902442</a>
+</div>
+<div id="ref-nicholsGoodsubjectEffectInvestigating2008" class="csl-entry" role="listitem">
+Nichols, A. L., &amp; Maner, J. K. (2008). The good-subject effect: <span>Investigating</span> participant demand characteristics. <em>The Journal of General Psychology</em>, <em>135</em>(2), 151–166. <a href="https://doi.org/10.3200/GENP.135.2.151-166">https://doi.org/10.3200/GENP.135.2.151-166</a>
+</div>
+<div id="ref-otoolePerceptionFaceGender1998" class="csl-entry" role="listitem">
+O’Toole, A. J., Deffenbacher, K. A., Valentin, D., McKee, K., Huff, D., &amp; Abdi, H. (1998). The perception of face gender: <span>The</span> role of stimulus structure in recognition and classification. <em>Memory &amp; Cognition</em>, <em>26</em>(1), 146–160. <a href="https://doi.org/10.3758/BF03211378">https://doi.org/10.3758/BF03211378</a>
+</div>
+<div id="ref-R-base" class="csl-entry" role="listitem">
+R Core Team. (2022). <em>R: A language and environment for statistical computing</em>. R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>
+</div>
+<div id="ref-richardsNonbinaryGenderqueerGenders2016" class="csl-entry" role="listitem">
+Richards, C., Bouman, W. P., Seal, L., Barker, M. J., Nieder, T. O., &amp; T’Sjoen, G. (2016). Non-binary or genderqueer genders. <em>Int Rev Psychiatry .</em>, <em>28(1)</em>, 95–102.
+</div>
+<div id="ref-sapersteinCategoricalGradationalAlternative2021" class="csl-entry" role="listitem">
+Saperstein, A., &amp; Westbrook, L. (2021). Categorical and gradational: Alternative survey measures of sex and gender. <em>European Journal of Politics and Gender</em>, <em>4</em>(1), 11–30. <a href="https://doi.org/10.1332/251510820X15995647280686">https://doi.org/10.1332/251510820X15995647280686</a>
+</div>
+<div id="ref-simanovaLinguisticPriorsShape2016" class="csl-entry" role="listitem">
+Simanova, I., Francken, J. C., de Lange, F. P., &amp; Bekkering, H. (2016). Linguistic priors shape categorical perception. <em>Language, Cognition and Neuroscience</em>, <em>31</em>(1), 159–165. <a href="https://doi.org/10.1080/23273798.2015.1072638">https://doi.org/10.1080/23273798.2015.1072638</a>
+</div>
+<div id="ref-stolierNeuralMechanismSocial2017" class="csl-entry" role="listitem">
+Stolier, R. M., &amp; Freeman, J. B. (2017). A neural mechanism of social categorization. <em>The Journal of Neuroscience</em>, <em>37</em>(23), 5711–5721. <a href="https://doi.org/10.1523/JNEUROSCI.3334-16.2017">https://doi.org/10.1523/JNEUROSCI.3334-16.2017</a>
+</div>
+<div id="ref-R-tidyverse" class="csl-entry" role="listitem">
+Wickham, H., Averick, M., Bryan, J., Chang, W., McGowan, L. D., François, R., Grolemund, G., Hayes, A., Henry, L., Hester, J., Kuhn, M., Pedersen, T. L., Miller, E., Bache, S. M., Müller, K., Ooms, J., Robinson, D., Seidel, D. P., Spinu, V., … Yutani, H. (2019). Welcome to the <span class="nocase">tidyverse</span>. <em>Journal of Open Source Software</em>, <em>4</em>(43), 1686. <a href="https://doi.org/10.21105/joss.01686">https://doi.org/10.21105/joss.01686</a>
+</div>
+</div>
+<div id="fig-stimuli" class="quarto-figure quarto-figure-center quarto-float FigureWithoutNote" prefix="" data-fignum="1" data-custom-style="FigureWithoutNote">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-stimuli-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="FigureTitle" data-custom-style="FigureTitle">
+<p>Figure&nbsp;1</p>
+</div>
+<div class="Caption" data-custom-style="Caption">
+<p>Example of a seven-step morphing spectrum</p>
+</div>
+</figcaption>
+<div aria-describedby="fig-stimuli-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="pix/stimuli.jpeg" class="img-fluid figure-img">
+</div>
+</figure>
+</div>
+<div id="fig-exp2-trial" class="quarto-figure quarto-figure-center quarto-float FigureWithoutNote" prefix="" data-fignum="2" data-custom-style="FigureWithoutNote">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-exp2-trial-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="FigureTitle" data-custom-style="FigureTitle">
+<p>Figure&nbsp;2</p>
+</div>
+<div class="Caption" data-custom-style="Caption">
+<p>Sample trial from each of the three conditions</p>
+</div>
+</figcaption>
+<div aria-describedby="fig-exp2-trial-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="pix/exp2.png" class="img-fluid figure-img">
+</div>
+</figure>
+</div>
+<div class="cell FigureWithoutNote" data-custom-style="FigureWithoutNote">
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'gridExtra'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:dplyr':
+
+    combine</code></pre>
+</div>
+<div class="cell-output-display">
+<div id="fig-desc-two" class="quarto-figure quarto-figure-center quarto-float" prefix="" data-fignum="3">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-desc-two-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="FigureTitle" data-custom-style="FigureTitle">
+<p>Figure&nbsp;3</p>
+</div>
+<div class="Caption" data-custom-style="Caption">
+<p>Participant level and mean ratings of faces in One-dimensiona and two-dimensional conditions</p>
+</div>
+</figcaption>
+<div aria-describedby="fig-desc-two-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="oct24-30_files/figure-html/fig-desc-two-1.svg" class="img-fluid figure-img" width="624">
+</div>
+</figure>
+</div>
+</div>
+</div>
+<div id="fig-exp1-trial" class="quarto-figure quarto-figure-center quarto-float FigureWithoutNote" prefix="" data-fignum="4" data-custom-style="FigureWithoutNote">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-exp1-trial-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="FigureTitle" data-custom-style="FigureTitle">
+<p>Figure&nbsp;4</p>
+</div>
+<div class="Caption" data-custom-style="Caption">
+<p>Sample trial from each of the three conditions</p>
+</div>
+</figcaption>
+<div aria-describedby="fig-exp1-trial-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="pix/exp1.png" class="img-fluid figure-img">
+</div>
+</figure>
+</div>
+<div class="cell FigureWithoutNote" data-custom-style="FigureWithoutNote">
+<div class="cell-output-display">
+<div id="fig-desc-1" class="quarto-figure quarto-figure-center quarto-float" prefix="" data-fignum="5">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-desc-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="FigureTitle" data-custom-style="FigureTitle">
+<p>Figure&nbsp;5</p>
+</div>
+<div class="Caption" data-custom-style="Caption">
+<p>Gender Categorizations by Participants</p>
+</div>
+</figcaption>
+<div aria-describedby="fig-desc-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="oct24-30_files/figure-html/fig-desc-1-1.svg" class="img-fluid figure-img" width="624">
+</div>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell FigureWithoutNote" data-custom-style="FigureWithoutNote">
+<div class="cell-output-display">
+<div id="fig-desc-nbo" class="quarto-figure quarto-figure-center quarto-float" prefix="" data-fignum="6">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-desc-nbo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="FigureTitle" data-custom-style="FigureTitle">
+<p>Figure&nbsp;6</p>
+</div>
+<div class="Caption" data-custom-style="Caption">
+<p>Responses of other and I don't know across the multiple categories and free text condiitons</p>
+</div>
+</figcaption>
+<div aria-describedby="fig-desc-nbo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="oct24-30_files/figure-html/fig-desc-nbo-1.svg" class="img-fluid figure-img" width="576">
+</div>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell FigureWithoutNote" data-custom-style="FigureWithoutNote">
+<div class="cell-output-display">
+<div id="fig-cond" class="quarto-figure quarto-figure-center quarto-float" prefix="" data-fignum="7">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-cond-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="FigureTitle" data-custom-style="FigureTitle">
+<p>Figure&nbsp;7</p>
+</div>
+<div class="Caption" data-custom-style="Caption">
+<p>Alternative version of the previous figures</p>
+</div>
+</figcaption>
+<div aria-describedby="fig-cond-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="oct24-30_files/figure-html/fig-cond-1.svg" class="img-fluid figure-img" width="624">
+</div>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell FigureWithoutNote" data-fig.heigh="6" data-fig.note="Notches correspond to the Standard Error of the median" data-custom-style="FigureWithoutNote">
+<div class="cell-output-display">
+<div id="fig-wtf" class="quarto-figure quarto-figure-center quarto-float" prefix="" data-fignum="8">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-wtf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="FigureTitle" data-custom-style="FigureTitle">
+<p>Figure&nbsp;8</p>
+</div>
+<div class="Caption" data-custom-style="Caption">
+<p>Participant Proportions for Categorizing Faces as Women Across Three Conditions</p>
+</div>
+</figcaption>
+<div aria-describedby="fig-wtf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="oct24-30_files/figure-html/fig-wtf-1.svg" class="img-fluid figure-img" width="1152">
+</div>
+</figure>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
