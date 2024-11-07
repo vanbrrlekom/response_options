@@ -1,0 +1,317 @@
+
+## Looking at the outcome beyond-binary
+
+```{r}
+#create dataframe with only free text and multiple categories conditions 
+#Well, fist, first I wrangle data
+
+d <- d %>% 
+  mutate(gbb_m = rowMeans(d %>% select(starts_with("gender_")))) %>% 
+  mutate(gbb_s = gbb_m - mean(gbb_m, na.rm = TRUE))
+
+tmp <- d %>% 
+  filter(condition == "mc" | condition == "ft") %>% 
+  mutate(categorization = recode(categorization, 
+                                 "F" = "f", "kvinna" = "f", "female" = "f", "female " = "f", "Female"= "f", "Fenale"= "f", "women" = "f", "woman " = "f", "femLE" = "f", "FEmale" = "f", "Femalw" = "f", "Fwmalw" = "f", "Female " = "f", "woman" = "f", "Woman" = "f", "feMale" = "f", "fermale" = "f", "wman" = "f", "Femae" = "f",
+                                 "man" = "m","Male " = "m", "make" = "m", "Male"= "m", "male" = "m", "man " = "m",  "male " = "m", "guy" = "m", "boy" = "m", "Make" = "m", "M"  = "m", "Man" = "m", "Bottom half male; above nose female., Would have to say Male" = "m", " male" = "m", "male  " = "m", "ale" = "m", "nmale" = "m", "MALE"= "m", "nale"= "m", " Male" = "m",
+                                 "Nonbinary" = "o", "Non Binary " = "o", "Unsure" = "o", "Non binary " = "o", "good" = "o", "Neutral" = "o", "neutral" = "o", "nonbinary" = "o", "bigender" = "o", "hen" = "o", "don't know"  = "o", "Bottom half male, nose upwards female" = "o" )) %>% 
+  mutate(bbcat = ifelse(categorization == "o"|categorization == "4", 1, 0),
+         fem = as.factor(fem))
+```
+
+
+First question: does GBB predict bbcategories? Maybe, but there's so few, it's hard to tell.
+```{r}
+#fitting the mfx model
+fit_bbcat_gbb <- brm(bbcat ~ 0 +  gbb_s +condition + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
+         prior = c(prior(normal(-3,3), class = "b"),
+                   prior(cauchy(0,3), class = "sd")),
+          data = tmp,
+          iter = 6000, warmup = 2000,
+          chains = 4,
+          cores = 4,
+          sample_prior = TRUE,
+          file = "models/fit_bbcat_gbb"
+          )
+```
+
+But what if we add an interaction??
+
+```{r}
+fit_bbcat_gbb_int <- brm(bbcat ~ 1 +  gbb_s *condition + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
+         prior = c(prior(normal(0,3), class = "b"),
+                   prior(normal(-3,3), class = "Intercept"),
+                   prior(cauchy(0,3), class = "sd")),
+          data = tmp,
+          iter = 6000, warmup = 2000,
+          chains = 4,
+          cores = 4,
+          sample_prior = TRUE,
+          file = "models/fit_bbcat_gbb_mfx"
+          )
+conditional_effects(fit_bbcat_gbb_int)
+
+
+```
+Might as well add here, what happens when we look at the outcome beyond-binary in the same way?
+
+```{r}
+bb_Null <- brm(bbcat ~ 1  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
+          prior = c(prior(normal(0,3), class = "Intercept"), # weakly regularizing priors
+                    prior(cauchy(0,3), class = "sd")
+                    ),
+          data = tmp,
+          iter = 6000, warmup = 2000,
+          chains = 4,
+          cores = 4,
+          sample_prior = TRUE,
+          file = "models/binary_null"
+          )
+```
+
+```{r}
+library(gridExtra)
+bb_pp <- ranef(bb_Null)$i %>% as_tibble()
+
+a <- d %>%
+  filter(d$condition == "ft"|d$condition == "mc" )%>% group_by(id, condition) %>% 
+  summarise(gbb = mean(gbb_s))
+
+ind_ft <- cbind(a, bb_pp) %>% filter(condition == "ft")
+ind_mc <- cbind(a, bb_pp) %>% filter(condition == "mc")
+
+
+
+figure_ft <- ind_ft %>%
+  as_tibble() %>%
+  mutate(Estimate = inv_logit_scaled(Estimate.Intercept), 
+         Q2.5 = inv_logit_scaled(Q2.5.Intercept),
+         Q97.5 = inv_logit_scaled(Q97.5.Intercept)) %>% 
+  rownames_to_column() %>%
+  arrange(Estimate.Intercept) %>%
+  mutate(id = seq_len(n())) %>%
+  ggplot(aes(id, Estimate, ymin = Q2.5, ymax = Q97.5)) + 
+    geom_pointrange(alpha = 0.7) +
+    coord_flip() + labs(x = "Person Number (Sorted)")+
+  theme_classic()
+
+
+figure_mc <- ind_mc %>%
+  as_tibble() %>%
+    mutate(Estimate = inv_logit_scaled(Estimate.Intercept), 
+         Q2.5 = inv_logit_scaled(Q2.5.Intercept),
+         Q97.5 = inv_logit_scaled(Q97.5.Intercept)) %>% 
+  rownames_to_column() %>%
+  arrange(Estimate.Intercept) %>%
+  mutate(id = seq_len(n())) %>%
+  ggplot(aes(id, Estimate, ymin = Q2.5, ymax = Q97.5)) + 
+    geom_pointrange(alpha = 0.7) +
+    coord_flip() + labs(x = "Person Number (Sorted)")+
+  theme_classic()
+
+grid.arrange(figure_ft, figure_mc, ncol = 2)
+```
+
+
+
+## looking at scale 
+
+```{r}
+d <- d %>% 
+  mutate(gbb_m = rowMeans(d %>% select(starts_with("gender_")))) %>% 
+  mutate(gbb_s = gbb_m - mean(gbb_m, na.rm = TRUE))
+
+#Wrangle data again
+tmp <- d %>% 
+  filter(condition == "sd" | condition == "md") %>% 
+  mutate(f_rating = as.numeric(categorization) %>%  ifelse(scale == "f", ., 100- .),
+         scale_new = ifelse(scale == "f" | scale =="m", scale, "sd"),
+         fem = as.factor(fem)) 
+
+
+fit_dimensional_interaction_gbb <- 
+  brm(f_rating ~ fem*condition*gbb_s + (1 + masc|id) + (1|face), family = gaussian(link = 'identity'), 
+          prior = c(prior(normal(0,20), class = "b"),
+                    prior(normal(50,50), class = "Intercept"),
+                    prior(exponential(1), class = "sd"),
+                    prior(lkj(1), class = "cor"),
+                    prior(exponential(1), class = sigma)),
+          data = tmp,
+          iter = 4000, warmup = 1000,
+          cores = 4,
+          sample_prior = TRUE,
+          file = "models/fit_dimensional_interaction_gbb_2")
+
+conditional_effects(fit_dimensional_interaction_gbb)
+
+```
+
+
+# Looking at women/men 
+
+I can actually start with my old null model, just to see if some people are more likely to have a female or male bias. Seems like we have a farily even spread.
+
+
+```{r, rq2-modelling, message=FALSE}
+#remove the beyond binary responses
+tmp <- d %>% 
+  filter(condition == "mc"| condition == "xb"|condition == "ft" )%>% 
+  mutate(categorization = recode(categorization, 
+                                 "F" = "f", "kvinna" = "f", "female" = "f", "female " = "f", "Female"= "f", "Fenale"= "f", "women" = "f", "woman " = "f", "femLE" = "f", "FEmale" = "f", "Femalw" = "f", "Fwmalw" = "f", "Female " = "f", "woman" = "f", "Woman" = "f", "feMale" = "f", "fermale" = "f", "wman" = "f", "Femae" = "f",
+                                 "man" = "m","Male " = "m", "make" = "m", "Male"= "m", "male" = "m", "man " = "m",  "male " = "m", "guy" = "m", "boy" = "m", "Make" = "m", "M"  = "m", "Man" = "m", "Bottom half male; above nose female., Would have to say Male" = "m", " male" = "m", "male  " = "m", "ale" = "m", "nmale" = "m", "MALE"= "m", "nale"= "m", " Male" = "m",
+                                 "Nonbinary" = "o", "Non Binary " = "o", "Unsure" = "o", "Non binary " = "o", "good" = "o", "Neutral" = "o", "neutral" = "o", "nonbinary" = "o", "bigender" = "o", "hen" = "o", "don't know"  = "o", "Bottom half male, nose upwards female" = "o",
+                                 "1" = "f", "2" = "m")) %>% 
+  mutate(f_cat = ifelse(categorization == "f"|categorization == "m", categorization, NA)) %>% 
+  mutate(f_cat =as.numeric( f_cat == "f"))
+
+#Start fitting the null model
+Null <- brm(f_cat ~ 1  + (1 |id) + (1|face:fem), family = bernoulli(link = 'logit'), 
+          prior = c(prior(normal(0,3), class = "Intercept"),
+                    prior(exponential(2), class = "sd")
+                    ),
+          data = tmp,
+          iter = 6000, warmup = 2000,
+          chains = 4,
+          cores = 4,
+          sample_prior = TRUE,
+          file = "models/fit_mf_null"
+          )
+```
+
+## without coefs, what are the persona and item parameters?
+
+```{r}
+(person_pars <- ranef(Null)$id)
+
+person_pars[, , "Intercept"] %>%
+  as_tibble() %>%
+  rownames_to_column() %>%
+  arrange(Estimate) %>%
+  mutate(id = seq_len(n())) %>%
+  ggplot(aes(id, Estimate, ymin = Q2.5, ymax = Q97.5)) + 
+    geom_pointrange(alpha = 0.7) +
+    coord_flip() + labs(x = "Person Number (Sorted)")+
+  theme_classic()
+```
+
+And then see if this is correlated with Gener binary belief. It isn't!
+
+```{r, rq2-modelling 2, message=FALSE}
+s <- d %>%
+  filter(d$condition == "ft"|d$condition == "mc" | d$condition == "xb")%>% group_by(id) %>% 
+  summarise(gbb = mean(gbb_s))
+
+pp <- as_tibble(person_pars)
+
+intercepts <- cbind(s, pp)
+
+ggplot(intercepts, aes(x =gbb, y =Estimate.Intercept   ))+
+  geom_point()+
+  geom_smooth(method = "lm")+
+  theme_classic()
+```
+
+Okay, cool. But then we can also model each person's slope, their steepness. And that we can also see if it correlates to gbb
+
+
+```{r}
+#going back to binomial I guess and now adding gbb
+#going back to binomial I guess, but calculating slope for each person
+individual_slope <- brm(f_cat ~ 1  + (1 +fem|id) , family = bernoulli(link = 'logit'), 
+          prior = c(prior(normal(0,3), class = "Intercept"),
+                    prior(cauchy(0,3), class = "sd")),
+          data = tmp,
+          iter = 6000, warmup = 2000,
+          chains = 4,
+          cores = 4,
+          sample_prior = TRUE,
+          file = "models/individual_slope"
+          )
+```
+
+Nice. Now let's start by extracting those parameters
+
+```{r}
+person_slope <- ranef(individual_slope)$id %>% 
+  as_tibble()
+
+person_slope %>% 
+ rownames_to_column() %>%
+  arrange(Estimate.fem) %>%
+  mutate(id = seq_len(n())) %>%
+  ggplot(aes(id, Estimate.fem, ymin = Q2.5.fem, ymax = Q97.5.fem)) + 
+    geom_pointrange(alpha = 0.7) +
+    coord_flip() + labs(x = "Person Number (Sorted)")+
+  theme_classic()
+```
+
+Okay, cool. Now let's check it against gender binary beliefs. aaand there doesn't seem to be much there. Cool. I think I can let go of that. But maybe I should also present it. Yes, I should present it. 
+
+```{r}
+slope <- cbind(s, person_slope)
+
+ggplot(slope, aes(x =gbb, y =Estimate.fem   ))+
+  geom_point()+
+  geom_smooth(method = "lm")+
+  theme_classic()
+```
+
+## But should I add it as a a predictor here too?
+
+```{r, rq2-modelling 2.5, message=FALSE}
+tmp$fem_s = tmp$fem - 50
+#Main effects model
+main_effects_test <- brm(f_cat ~ 1 +fem_s + (1 |id) , family = bernoulli(link = 'logit'), 
+          prior = c(prior(normal(0,3), class = "b"),
+                    prior(cauchy(0,3), class = "sd")),
+          data = tmp,
+          iter = 4000, warmup = 1000,
+          chains = 4,
+          cores = 4,
+          sample_prior = TRUE,
+          file = "models/mainfx.test"
+          )
+
+#Lastly the interaction model
+interaction_gbb <- brm(f_cat ~ gbb_s*fem_s  + (1 |id) , family = bernoulli(link = 'logit'), 
+         prior = c(prior(normal(0,3), class = "b"),
+                   prior(cauchy(0,3), class = "sd")),
+          data = tmp,
+          iter = 6000, warmup = 2000,
+          chains = 4,
+          cores = 4,
+          sample_prior = TRUE,
+          file = "models/interaction_g"
+          )
+
+
+#going back to binomial I guess
+main_effects_test <- brm(f_cat ~ 1 + fem_s*condition + (1 +fem_s|id) , family = bernoulli(link = 'logit'), 
+          prior = c(prior(normal(0,3), class = "b"),
+                    prior(cauchy(0,3), class = "sd")),
+          data = tmp,
+          iter = 4000, warmup = 1000,
+          chains = 4,
+          cores = 4,
+          sample_prior = TRUE,
+          file = "models/mainfx.test2"
+          )
+
+
+
+
+
+
+get_prior(f_cat ~ 1  + (1 +fem|id) , family = bernoulli(link = 'logit'), data = tmp)
+
+
+
+```
+
+## plotting individual item 
+
+let's start by drawing from the posterior
+
+```{r}
+#post <- as_draws_df(main_effects_test)
+```
